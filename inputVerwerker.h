@@ -13,8 +13,8 @@
 class inputVerwerker {
 private:
 public:
-    inputVerwerker();
-    ~inputVerwerker();
+  inputVerwerker();
+  ~inputVerwerker();
 protected:
 
 };
