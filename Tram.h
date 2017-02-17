@@ -19,17 +19,17 @@ private:
   std::string fBeginStation;
   int fSnelheid;
 public:
-  // constructors
+  // CONSTRUCTORS
   Tram(); // default
   Tram(int lijnNr, int zitplaatsen, std::string beginStation, int snelheid); // full
-  // destructor
+  // DESTRUCTOR
   ~Tram();
-  // getter methods
+  // GETTER METHODS
   int getLijnNr() const;
   int getZitplaatsen() const;
   std::string getBeginStation() const;
   int getSnelheid() const;
-  // setter methods
+  // SETTER METHODS
   void setLijnNr(int newLijnNr);
   void setZitplaatsen(int newZitplaatsen);
   void setBeginStation(std::string newBeginStation);
