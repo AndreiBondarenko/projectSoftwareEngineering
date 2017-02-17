@@ -17,7 +17,7 @@ private:
   std::string fNaam;
   std::string fVorige;
   std::string fVolgende;
-  int spoor;
+  int fSpoor;
 // int fOpstappen;
 // int fAfstappen;
 public:
