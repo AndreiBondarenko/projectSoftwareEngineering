@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef MetroNet_h
-#define MetroNet_h
+#ifndef INC_METRONET_H
+#define INC_METRONET_H
 
 class MetroNet {
 private:
@@ -19,4 +19,4 @@ protected:
 };
 
 
-#endif /* MetroNet_h */
+#endif /* INC_METRONET_H */

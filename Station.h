@@ -6,19 +6,20 @@
 //
 //
 
-#ifndef Station_h
-#define Station_h
+#ifndef INC_STATION_H
+#define INC_STATION_H
 
 #include <string>
 
 class Station {
 private:
-  std::string _naam;
-  std::string _vorige;
-  std::string _volgende;
-  int _spoor;
-// int _opstappen;
-// int _afstappen;
+  Station* fInitCheck;
+  std::string fNaam;
+  std::string fVorige;
+  std::string fVolgende;
+  int spoor;
+// int fOpstappen;
+// int fAfstappen;
 public:
   // constructors
   Station(); // default
@@ -46,4 +47,4 @@ protected:
 };
 
 
-#endif /* Station_h */
+#endif /* INC_STATION_H */

@@ -6,17 +6,18 @@
 //
 //
 
-#ifndef Tram_h
-#define Tram_h
+#ifndef INC_TRAM_H
+#define INC_TRAM_H
 
 #include <string>
 
 class Tram {
 private:
-  int _lijnNr;
-  int _zitplaatsen;
-  std::string _beginStation;
-  int _snelheid;
+  Tram* fInitCheck;
+  int fLijnNr;
+  int fZitplaatsen;
+  std::string fBeginStation;
+  int fSnelheid;
 public:
   // constructors
   Tram(); // default
@@ -39,4 +40,4 @@ protected:
 };
 
 
-#endif /* Tram_h */
+#endif /* INC_TRAM_H */

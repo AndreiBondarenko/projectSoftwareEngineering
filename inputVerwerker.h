@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef inputVerwerker_h
-#define inputVerwerker_h
+#ifndef INC_INPUTVERWERKER_H
+#define INC_INPUTVERWERKER_H
 
 
 class inputVerwerker {
@@ -20,4 +20,4 @@ protected:
 };
 
 
-#endif /* inputVerwerker_h */
+#endif /* INC_INPUTVERWERKER_H */
