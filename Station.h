@@ -17,9 +17,10 @@ private:
   std::string naam;
   std::string vorige;
   std::string volgende;
-  int spoor;
-// int opstappen;
-// int afstappen;
+  unsigned int spoor;
+// unsigned int opstappen;
+// unsigned int afstappen;
+  static unsigned int aantalStations;
 public:
   // CONSTRUCTORS
   /**
@@ -29,7 +30,7 @@ public:
   /**
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   */
-  Station(std::string naam, std::string vorige, std::string volgende, int spoor); // full
+  Station(const std::string& naam, const std::string& vorige, const std::string& volgende, unsigned int spoor); // full
 
   // DESTRUCTOR
   ~Station();
@@ -53,51 +54,51 @@ public:
   /**
   \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getSpoor");
   */
-  int getSpoor() const;
+  unsigned int getSpoor() const;
 
   // OPTIONAL FEATURES
   // /**
   // \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getOpstappen");
   // */
-  // int getOpstappen() const;
+  // unsigned int getOpstappen() const;
   // /**
   // \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getAfstappen");
   // */
-  // int getAfstappen() const;
+  // unsigned int getAfstappen() const;
 
   // SETTER METHODS
   /**
   \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNaam");
   \n ENSURE(this->getNaam() == newNaam, "setNaam post condition failure");
   */
-  void setNaam(std::string newNaam);
+  void setNaam(const std::string& newNaam);
   /**
   \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setVorige");
   \n ENSURE(this->getVorige() == newVorige, "setVorige post condition failure");
   */
-  void setVorige(std::string newVorige);
+  void setVorige(const std::string& newVorige);
   /**
   \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setVolgende");
   \n ENSURE(this->getVolgende() == newVolgende, "setVolgende post condition failure");
   */
-  void setVolgende(std::string newVolgende);
+  void setVolgende(const std::string& newVolgende);
   /**
   \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setSpoor");
   \n ENSURE(this->getSpoor() == newSpoor, "setSpoor post condition failure");
   */
-  void setSpoor(int newSpoor);
+  void setSpoor(const unsigned int newSpoor);
 
   // OPTIONAL FEATURES
   // /**
   // \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setOpstappen");
   // \n ENSURE(this->getOpstappen() == newOpstappen, "setOpstappen post condition failure");
   // */
-  // void setOpstappen(int newOpstappen);
+  // void setOpstappen(const unsigned int newOpstappen);
   // /**
   // \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setAfstappen");
   // \n ENSURE(this->getAfstappen() == newAfstappen, "setAfstappen post condition failure");
   // */
-  // void setAfstappen(int newAfstappen);
+  // void setAfstappen(const unsigned int newAfstappen);
 
 
 protected:
