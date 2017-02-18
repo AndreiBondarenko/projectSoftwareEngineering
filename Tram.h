@@ -13,12 +13,12 @@
 
 class Tram {
 private:
-  Tram* InitCheck;
-  unsigned int LijnNr;
-  unsigned int Zitplaatsen;
-  std::string BeginStation;
-  unsigned int Snelheid;
-  static unsigned int AantalTrams;
+  Tram* initCheck;
+  unsigned int lijnNr;
+  unsigned int zitplaatsen;
+  std::string beginStation;
+  unsigned int snelheid;
+  static unsigned int aantalTrams;
 public:
   // CONSTRUCTORS
   /**
@@ -28,7 +28,7 @@ public:
   /**
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   */
-  Tram(const unsigned int lijnNr, const unsigned int zitplaatsen, const std::string& beginStation, 
+  Tram(const unsigned int lijnNr, const unsigned int zitplaatsen, const std::string& beginStation,
 	  const unsigned int snelheid); // full
 
   // DESTRUCTOR
