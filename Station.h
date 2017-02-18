@@ -30,7 +30,8 @@ public:
   /**
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   */
-  Station(const std::string& naam, const std::string& vorige, const std::string& volgende, unsigned int spoor); // full
+  Station(const std::string& naam, const std::string& vorige,
+    const std::string& volgende, const unsigned int spoor); // full
 
   // DESTRUCTOR
   ~Station();
@@ -40,63 +41,63 @@ public:
 
   // GETTER METHODS
   /**
-  \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getNaam");
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getNaam");
   */
   std::string getNaam() const;
   /**
-  \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getVorige");
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getVorige");
   */
   std::string getVorige() const;
   /**
-  \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getVolgende");
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getVolgende");
   */
   std::string getVolgende() const;
   /**
-  \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getSpoor");
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getSpoor");
   */
   unsigned int getSpoor() const;
 
   // OPTIONAL FEATURES
   // /**
-  // \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getOpstappen");
+  // \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getOpstappen");
   // */
   // unsigned int getOpstappen() const;
   // /**
-  // \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling getAfstappen");
+  // \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getAfstappen");
   // */
   // unsigned int getAfstappen() const;
 
   // SETTER METHODS
   /**
-  \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setNaam");
-  \n ENSURE(this->getNaam() == newNaam, "setNaam post condition failure");
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setNaam");
+  \n ENSURE(getNaam() == newNaam, "setNaam post condition failure");
   */
   void setNaam(const std::string& newNaam);
   /**
-  \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setVorige");
-  \n ENSURE(this->getVorige() == newVorige, "setVorige post condition failure");
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setVorige");
+  \n ENSURE(getVorige() == newVorige, "setVorige post condition failure");
   */
   void setVorige(const std::string& newVorige);
   /**
-  \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setVolgende");
-  \n ENSURE(this->getVolgende() == newVolgende, "setVolgende post condition failure");
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setVolgende");
+  \n ENSURE(getVolgende() == newVolgende, "setVolgende post condition failure");
   */
   void setVolgende(const std::string& newVolgende);
   /**
-  \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setSpoor");
-  \n ENSURE(this->getSpoor() == newSpoor, "setSpoor post condition failure");
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setSpoor");
+  \n ENSURE(getSpoor() == newSpoor, "setSpoor post condition failure");
   */
   void setSpoor(const unsigned int newSpoor);
 
   // OPTIONAL FEATURES
   // /**
-  // \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setOpstappen");
-  // \n ENSURE(this->getOpstappen() == newOpstappen, "setOpstappen post condition failure");
+  // \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setOpstappen");
+  // \n ENSURE(getOpstappen() == newOpstappen, "setOpstappen post condition failure");
   // */
   // void setOpstappen(const unsigned int newOpstappen);
   // /**
-  // \n REQUIRE(this->properlyInitialized(), "Station wasn't initialized when calling setAfstappen");
-  // \n ENSURE(this->getAfstappen() == newAfstappen, "setAfstappen post condition failure");
+  // \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setAfstappen");
+  // \n ENSURE(getAfstappen() == newAfstappen, "setAfstappen post condition failure");
   // */
   // void setAfstappen(const unsigned int newAfstappen);
 

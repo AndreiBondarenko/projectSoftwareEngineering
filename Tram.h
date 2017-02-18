@@ -39,41 +39,41 @@ public:
 
   // GETTER METHODS
   /**
-  \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getLijnNr");
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getLijnNr");
   */
   unsigned int getLijnNr() const;
   /**
-  \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getZitplaatsen");
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getZitplaatsen");
   */
   unsigned int getZitplaatsen() const;
   /**
-  \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getBeginStation");
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getBeginStation");
   */
   std::string getBeginStation() const;
   /**
-  \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getSnelheid");
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getSnelheid");
   */
   unsigned int getSnelheid() const;
 
   // SETTER METHODS
   /**
-  \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLijnNr");
-  \n ENSURE(this->getLijnNr() == newLijnNr, "setLijnNr post condition failure");
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setLijnNr");
+  \n ENSURE(getLijnNr() == newLijnNr, "setLijnNr post condition failure");
   */
   void setLijnNr(const unsigned int newLijnNr);
   /**
-  \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setZitplaatsen");
-  \n ENSURE(this->getZitplaatsen() == newZitplaatsen, "setZitplaatsen post condition failure");
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setZitplaatsen");
+  \n ENSURE(getZitplaatsen() == newZitplaatsen, "setZitplaatsen post condition failure");
   */
   void setZitplaatsen(const unsigned int newZitplaatsen);
   /**
-  \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setBeginStation");
-  \n ENSURE(this->getBeginStation() == newBeginStation, "setBeginStation post condition failure");
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setBeginStation");
+  \n ENSURE(getBeginStation() == newBeginStation, "setBeginStation post condition failure");
   */
   void setBeginStation(const std::string& newBeginStation);
   /**
-  \n REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSnelheid");
-  \n ENSURE(this->getSnelheid() == newSnelheid, "setSnelheid post condition failure");
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setSnelheid");
+  \n ENSURE(getSnelheid() == newSnelheid, "setSnelheid post condition failure");
   */
   void setSnelheid(const unsigned int newSnelheid);
 
