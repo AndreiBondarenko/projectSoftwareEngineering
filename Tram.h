@@ -35,7 +35,7 @@ public:
   ~Tram();
 
   // INITIALIZATION CHECK
-  bool properlyInitialized();
+  bool properlyInitialized() const;
 
   // GETTER METHODS
   /**

@@ -10,70 +10,66 @@
 #include "DesignByContract.h"
 
 Tram::Tram()  {
-	InitCheck = this;
+	initCheck = this;
 }
-Tram::Tram(const unsigned int lijnNr, const unsigned int zitplaatsen, const std::string& beginStation, 
+Tram::Tram(const unsigned int lijnNr, const unsigned int zitplaatsen, const std::string& beginStation,
 	const unsigned int snelheid) :
 	lijnNr(lijnNr),
 	zitplaatsen(zitplaatsen),
 	beginStation(beginStation),
-	snelheid(snelheid) 
+	snelheid(snelheid)
 {
-	InitCheck = this;
-	AantalTrams++;
+	initCheck = this;
+	aantalTrams++;
 }
 Tram::~Tram() {
-	AantalTrams--;
+	aantalTrams--;
 }
 
-bool Tram::properlyInitialized() {
-	return InitCheck == this;
+bool Tram::properlyInitialized() const{
+	return initCheck == this;
 }
 
 unsigned int Tram::getLijnNr() const {
-	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getLijnNr")
-	return LijnNr;
+	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling getLijnNr");
+	return lijnNr;
 }
 
 unsigned int Tram::getZitplaatsen() const {
 	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getZitplaatsen");
-	return Zitplaatsen;
+	return zitplaatsen;
 }
 
 std::string Tram::getBeginStation() const {
 	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getBeginStation");
-	return BeginStation;
+	return beginStation;
 }
 
 unsigned int Tram::getSnelheid() const {
 	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getSnelheid");
-	return Snelheid;
+	return snelheid;
 }
 
 void Tram::setLijnNr(const unsigned int newLijnNr) {
 	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setLijnNr");
-	LijnNr = newLijnNr;
+	lijnNr = newLijnNr;
 	ENSURE(this->getLijnNr() == newLijnNr, "setLijnNr post condition failure");
 }
 
 void Tram::setZitplaatsen(const unsigned int newZitplaatsen) {
 	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setZitplaatsen");
-	Zitplaatsen = newZitplaatsen;
+	zitplaatsen = newZitplaatsen;
 	ENSURE(this->getZitplaatsen() == newZitplaatsen, "setZitplaatsen post condition failure");
 }
 
 void Tram::setBeginStation(const std::string & newBeginStation) {
 	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setBeginStation");
-	BeginStation = newBeginStation;
+	beginStation = newBeginStation;
 	ENSURE(this->getBeginStation() == newBeginStation, "setBeginStation post condition failure");
 }
 
 void Tram::setSnelheid(const unsigned int newSnelheid) {
 	REQUIRE(this->properlyInitialized(), "Tram wasn't initialized when calling setSnelheid");
-	Snelheid = newSnelheid;
+	snelheid = newSnelheid;
 	ENSURE(this->getSnelheid() == newSnelheid, "setSnelheid post condition failure");
 }
-
-
-
-
