@@ -19,7 +19,7 @@ class MetroNet {
 private:
   MetroNet* initCheck;
   std::map<std::string, Station*> alleStations;
-  std::map<int, Station*> alleTrams;
+  std::map<int, Tram*> alleTrams;
   std::set<int> alleSporen;
 public:
   // CONSTRUCTOR
