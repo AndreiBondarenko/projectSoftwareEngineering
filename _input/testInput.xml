@@ -4,19 +4,19 @@
     <naam>A</naam>
     <volgende>B</volgende>
     <vorige>C</vorige>
-    <spoor>(12)</spoor>
+    <spoor>12</spoor>
   </STATION>
   <STATION>
     <naam>B</naam>
     <volgende>C</volgende>
     <vorige>A</vorige>
-    <spoor>(12)</spoor>
+    <spoor>12</spoor>
   </STATION>
   <STATION>
     <naam>C</naam>
     <volgende>A</volgende>
     <vorige>B</vorige>
-    <spoor>(12)</spoor>
+    <spoor>12</spoor>
   </STATION>
   <TRAM>
     <lijnNr>12</lijnNr>
