@@ -82,4 +82,5 @@ MetroNet* BestandIO::input(std::string file) {
     }
   }
   doc.Clear();
+  return metroNet;
 }
