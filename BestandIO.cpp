@@ -10,7 +10,7 @@
 #include "tinyxml.h"
 #include <iostream>
 
-MetroNet* BestandIO::input(const char* file) {
+MetroNet* BestandIO::initialize(const char* file) {
 
   TiXmlDocument doc;
   if(!doc.LoadFile(file)) {

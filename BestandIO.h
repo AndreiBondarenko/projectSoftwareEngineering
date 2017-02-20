@@ -15,7 +15,7 @@
 class BestandIO {
 private:
 public:
-  static MetroNet* input(const char* file);
+  static MetroNet* initialize(const char* file);
 protected:
 
 };
