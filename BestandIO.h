@@ -9,11 +9,14 @@
 #ifndef BESTANDIO_H
 #define BESTANDIO_H
 
+#include <string>
+#include "MetroNet.h"
+
 class BestandIO {
 private:
 public:
-    BestandIO();
-    ~BestandIO();
+  static MetroNet* input(std::string file);
+  static void output(MetroNet* net);
 protected:
 
 };
