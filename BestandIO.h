@@ -16,7 +16,6 @@ class BestandIO {
 private:
 public:
   static MetroNet* input(std::string file);
-  static void output(MetroNet* net);
 protected:
 
 };
