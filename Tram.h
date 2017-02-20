@@ -18,7 +18,7 @@ private:
   unsigned int zitplaatsen;
   std::string beginStation;
   unsigned int snelheid;
-  static unsigned int aantalTrams;
+  // static unsigned int aantalTrams;
 public:
   // CONSTRUCTORS
   /**
