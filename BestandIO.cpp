@@ -10,10 +10,10 @@
 #include "tinyxml.h"
 #include <iostream>
 
-MetroNet* BestandIO::input(std::string file) {
+MetroNet* BestandIO::input(const char* file) {
 
   TiXmlDocument doc;
-  if(!doc.LoadFile("input/cdCatalog.xml")) {
+  if(!doc.LoadFile(file)) {
     std::cerr << doc.ErrorDesc() << std::endl;
   }
 
