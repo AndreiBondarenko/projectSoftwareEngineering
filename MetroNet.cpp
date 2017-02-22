@@ -8,6 +8,7 @@
 
 #include "MetroNet.h"
 #include "DesignByContract.h"
+#include <iostream>
 
 MetroNet::MetroNet()  {
   initCheck = this;
@@ -64,6 +65,7 @@ bool MetroNet::isConsistent() const {
     }
   }
   // elk spoor maximaal een keer door elk station komt ???????????????????????
+  return true;
 }
 
 std::map<std::string, Station*>* MetroNet::getAlleStations() {
@@ -113,6 +115,7 @@ void MetroNet::addStation(Station* newStation) {
     "MetroNet wasn't initialized when calling addStation");
   REQUIRE(getAlleStations()->count(newStation->getNaam()) == 0,
     "This MetroNet already contains a station with this name");
+  alleSporen.insert(newStation->getSpoor());
   alleStations[newStation->getNaam()] = newStation;
   ENSURE(getAlleStations()->at(newStation->getNaam()) == newStation,
     "addStation post condition failure");
