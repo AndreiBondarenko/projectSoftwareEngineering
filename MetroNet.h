@@ -34,6 +34,12 @@ public:
   // INITIALIZATION CHECK
   bool properlyInitialized() const;
 
+  // CONSISTENCY CHECK
+  /**
+  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling isConsistent");
+  */
+  bool isConsistent() const;
+
   // GETTER METHODS
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleStations");
@@ -90,6 +96,7 @@ public:
   \n ENSURE(getAlleTrams()->count(newTram->getLijnNr()) == 0, "removeTram post condition failure");
   */
   void removeTram(const unsigned int lijnNr);
+
 
 
 protected:
