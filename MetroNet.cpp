@@ -11,6 +11,7 @@
 #include "DesignByContract.h"
 #include <iostream>
 #include <fstream>
+#include <stdexcept>
 
 MetroNet::MetroNet()  {
   initCheck = this;
@@ -167,36 +168,56 @@ MetroNet* MetroNet::initializeFromFile(const char* file) {
   }
 
   MetroNet* result = new MetroNet;
-  for(TiXmlElement* element = net->FirstChildElement();
-      element != NULL;
-      element = element->NextSiblingElement())
+  for (TiXmlElement* element = net->FirstChildElement();
+    element != NULL;
+    element = element->NextSiblingElement())
   {
+    bool deleted = false;
     std::string elementType = element->Value();
-    if(elementType == "STATION"){
+    if (elementType == "STATION") {
       Station* station = new Station;
-      for(TiXmlElement* infoElem = element->FirstChildElement();
-          infoElem != NULL;
-          infoElem = infoElem->NextSiblingElement())
+      for (TiXmlElement* infoElem = element->FirstChildElement();
+        infoElem != NULL;
+        infoElem = infoElem->NextSiblingElement())
       {
         std::string elemName = infoElem->Value();
-        for(TiXmlNode* data = infoElem->FirstChild();
-            data != NULL;
-            data = data->NextSibling())
+        for (TiXmlNode* data = infoElem->FirstChild();
+          data != NULL;
+          data = data->NextSibling())
         {
           TiXmlText* text = data->ToText();
-          if(text != NULL){
+          if (text != NULL) {
             if (elemName == "naam")
               station->setNaam(text->Value());
             else if (elemName == "vorige")
               station->setVorige(text->Value());
             else if (elemName == "volgende")
               station->setVolgende(text->Value());
-            else if (elemName == "spoor")
-              station->setSpoor(std::stoi(text->Value()));
+            else if (elemName == "spoor") {
+              try {
+                int spoor = std::stoi(text->Value());
+                if (spoor >= 0)
+                  station->setSpoor(spoor);
+                else throw 0;
+              }
+              catch (int e) {
+                delete station;
+                std::cerr << "\nStation not created, negative rail: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              }
+              catch (std::invalid_argument& e) {
+                delete station;
+                std::cerr << "\nStation not created, invalid rail: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              }
+            }
           }
         }
       }
-    result->addStation(station);
+      if (deleted) break;
+      result->addStation(station);
     }
     else if(elementType == "TRAM"){
       Tram* tram = new Tram;
@@ -210,17 +231,72 @@ MetroNet* MetroNet::initializeFromFile(const char* file) {
         {
           TiXmlText* text = data->ToText();
           if(text != NULL){
-            if (elemName == "lijnNr")
-              tram->setLijnNr(std::stoi(text->Value()));
-            else if (elemName == "zitplaatsen")
-              tram->setZitplaatsen(std::stoi(text->Value()));
-            else if (elemName == "snelheid")
-              tram->setSnelheid(std::stoi(text->Value()));
-            else if (elemName == "beginStation")
-              tram->setBeginStation(text->Value());
+            try {
+              if (elemName == "lijnNr") {
+                int nummer = std::stoi(text->Value());
+                if (nummer >= 0)
+                  tram->setLijnNr(nummer);
+                else throw 0;
+              }
+              else if (elemName == "zitplaatsen") {
+                int plaatsen = std::stoi(text->Value());
+                if (plaatsen >= 0)
+                  tram->setZitplaatsen(plaatsen);
+                else throw 1;
+              }
+              else if (elemName == "snelheid") {
+                int snelheid = std::stoi(text->Value());
+                if (snelheid > 0)
+                  tram->setSnelheid(snelheid);
+                else throw 2;
+              }
+              else if (elemName == "beginStation")
+                tram->setBeginStation(text->Value());
+            }
+            catch(int e) {
+              switch (e) {
+              case 0:
+                delete tram;
+                std::cerr << "\nTram not created, negative line number: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              case 1:
+                delete tram;
+                std::cerr << "\nTram not created, negative number of seats: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              case 2:
+                delete tram;
+                std::cerr << "\nTram not created, negative speed: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              }
+              break;
+            }
+            catch (std::invalid_argument& e) {
+              if (elemName == "lijnNr") {
+                delete tram;
+                std::cerr << "\nTram not created, invalid line number: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              }
+              else if (elemName == "zitplaatsen") {
+                delete tram;
+                std::cerr << "\nTram not created, invalid number of seats: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              }
+              else if (elemName == "snelheid") {
+                delete tram;
+                std::cerr << "\nTram not created, invalid speed: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              }
+            }
           }
         }
       }
+      if (deleted) break;
       result->addTram(tram);
     }
     else {
