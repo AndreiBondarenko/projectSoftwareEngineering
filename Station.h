@@ -18,6 +18,7 @@ private:
   std::string vorige;
   std::string volgende;
   unsigned int spoor;
+  unsigned int tramInStation;
 // unsigned int opstappen;
 // unsigned int afstappen;
 public:
@@ -55,6 +56,10 @@ public:
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getSpoor");
   */
   unsigned int getSpoor() const;
+  /**
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getTramInStation");
+  */
+  unsigned int getTramInStation() const;
 
   // OPTIONAL FEATURES
   // /**
@@ -87,6 +92,11 @@ public:
   \n ENSURE(getSpoor() == newSpoor, "setSpoor post condition failure");
   */
   void setSpoor(const unsigned int newSpoor);
+  /**
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setTramInStation");
+  \n ENSURE(getTramInStation() == newTramInStation, "setTramInStation post condition failure");
+  */
+  void setTramInStation(const unsigned int newTramInStation);
 
   // OPTIONAL FEATURES
   // /**

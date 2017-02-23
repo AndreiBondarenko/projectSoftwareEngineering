@@ -58,6 +58,12 @@ unsigned int Station::getSpoor() const {
   return spoor;
 }
 
+unsigned int Station::getTramInStation() const {
+  REQUIRE(properlyInitialized(),
+    "Station wasn't initialized when calling getTramInStation");
+  return tramInStation;
+}
+
 void Station::setNaam(const std::string& newNaam) {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling setNaam");
@@ -88,6 +94,14 @@ void Station::setSpoor(const unsigned int newSpoor) {
   spoor = newSpoor;
   ENSURE(getSpoor() == newSpoor,
     "setSpoor post condition failure");
+}
+
+void Station::setTramInStation(const unsigned int newTramInStation) {
+  REQUIRE(properlyInitialized(),
+    "Station wasn't initialized when calling setTramInStation");
+  tramInStation = newTramInStation;
+  ENSURE(getTramInStation() == newTramInStation,
+    "setTramInStation post condition failure");
 }
 
 // OPTIONAL
