@@ -7,6 +7,7 @@
 //
 
 #include "MetroNet.h"
+#include "tinyxml.h"
 #include "DesignByContract.h"
 #include <iostream>
 
@@ -149,4 +150,87 @@ void MetroNet::removeTram(const unsigned int lijnNr) {
   alleTrams.erase(lijnNr);
   ENSURE(getAlleTrams()->count(lijnNr) == 0,
     "removeTram post condition failure");
+}
+
+MetroNet* MetroNet::initializeFromFile(const char* file) {
+
+  TiXmlDocument doc;
+  if(!doc.LoadFile(file)) {
+    std::cerr << doc.ErrorDesc() << std::endl;
+  }
+
+  TiXmlElement* net = doc.FirstChildElement();
+  if(net == NULL) {
+    std::cerr << "Failed to load file: No root element." << std::endl;
+    doc.Clear();
+  }
+
+  MetroNet* result = new MetroNet;
+  for(TiXmlElement* element = net->FirstChildElement();
+      element != NULL;
+      element = element->NextSiblingElement())
+  {
+    std::string elementType = element->Value();
+    if(elementType == "STATION"){
+      Station* station = new Station;
+      for(TiXmlElement* infoElem = element->FirstChildElement();
+          infoElem != NULL;
+          infoElem = infoElem->NextSiblingElement())
+      {
+        std::string elemName = infoElem->Value();
+        for(TiXmlNode* data = infoElem->FirstChild();
+            data != NULL;
+            data = data->NextSibling())
+        {
+          TiXmlText* text = data->ToText();
+          if(text != NULL){
+            if (elemName == "naam")
+              station->setNaam(text->Value());
+            else if (elemName == "vorige")
+              station->setVorige(text->Value());
+            else if (elemName == "volgende")
+              station->setVolgende(text->Value());
+            else if (elemName == "spoor")
+              station->setSpoor(std::stoi(text->Value()));
+          }
+        }
+      }
+    result->addStation(station);
+    }
+    else if(elementType == "TRAM"){
+      Tram* tram = new Tram;
+      for(TiXmlElement* infoElem = element->FirstChildElement();
+          infoElem != NULL;
+          infoElem = infoElem->NextSiblingElement()){
+        std::string elemName = infoElem->Value();
+        for(TiXmlNode* data = infoElem->FirstChild();
+            data != NULL;
+            data = data->NextSibling())
+        {
+          TiXmlText* text = data->ToText();
+          if(text != NULL){
+            if (elemName == "lijnNr")
+              tram->setLijnNr(std::stoi(text->Value()));
+            else if (elemName == "zitplaatsen")
+              tram->setZitplaatsen(std::stoi(text->Value()));
+            else if (elemName == "snelheid")
+              tram->setSnelheid(std::stoi(text->Value()));
+            else if (elemName == "beginStation")
+              tram->setBeginStation(text->Value());
+          }
+        }
+      }
+      result->addTram(tram);
+    }
+    else {
+      std::cout << "Element of type: " << elementType << " unsupported\n";
+    }
+  }
+  doc.Clear();
+  ENSURE(result->isConsistent(), "MetroNet is inconsistent");
+  return result;
+}
+
+void MetroNet::writeToFile() {
+  /* code */
 }

@@ -97,6 +97,16 @@ public:
   */
   void removeTram(const unsigned int lijnNr);
 
+  // FILE I/O METHODS
+  /**
+  \n ENSURE(result->isConsistent(), "MetroNet is not consistent");
+  */
+  static MetroNet* initializeFromFile(const char* file);
+  /**
+  \n REQUIRE(isConsistent(), "MetroNet is not consistent");
+  */
+  void writeToFile();
+
 
 
 protected:
