@@ -10,6 +10,7 @@
 #include "tinyxml.h"
 #include "DesignByContract.h"
 #include <iostream>
+#include <fstream>
 
 MetroNet::MetroNet()  {
   initCheck = this;
@@ -232,5 +233,20 @@ MetroNet* MetroNet::initializeFromFile(const char* file) {
 }
 
 void MetroNet::writeToFile() {
-  /* code */
+  std::ofstream metroNetTXT;
+  metroNetTXT.open ("_output/MetroNet.txt");
+  for(auto mapIt = getAlleStations()->begin();
+      mapIt != getAlleStations()->end();
+      ++mapIt)
+  {
+    metroNetTXT << "Station " << mapIt->second->getNaam() << std::endl;
+    metroNetTXT << "<- Station " << mapIt->second->getVorige() << std::endl;
+    metroNetTXT << "-> Station " << mapIt->second->getVolgende() << std::endl;
+
+    unsigned int spoor = mapIt->second->getSpoor();
+    metroNetTXT << "Spoor " << spoor
+                << ", "     << (getAlleTrams()->at(spoor))->getZitplaatsen()
+                << " zitplaatsen\n\n";
+  }
+  metroNetTXT.close();
 }
