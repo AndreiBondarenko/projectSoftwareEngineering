@@ -11,7 +11,6 @@
 
 Tram::Tram()  {
 	initCheck = this;
-  	// aantalTrams++;
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 Tram::Tram(const unsigned int lijnNr, const unsigned int zitplaatsen, const std::string& beginStation,
@@ -22,11 +21,9 @@ Tram::Tram(const unsigned int lijnNr, const unsigned int zitplaatsen, const std:
 	snelheid(snelheid)
 {
 	initCheck = this;
-	// aantalTrams++;
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 Tram::~Tram() {
-	// aantalTrams--;
 }
 
 bool Tram::properlyInitialized() const{

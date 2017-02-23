@@ -20,7 +20,6 @@ private:
   unsigned int spoor;
 // unsigned int opstappen;
 // unsigned int afstappen;
-  // static unsigned int aantalStations;
 public:
   // CONSTRUCTORS
   /**

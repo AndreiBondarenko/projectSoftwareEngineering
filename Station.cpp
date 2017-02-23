@@ -23,13 +23,11 @@ Station::Station(const std::string& naam, const std::string& vorige,
   spoor(spoor)
 {
   initCheck = this;
-  // aantalStations++;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
 
 Station::~Station() {
-  // aantalStations--;
 }
 
 bool Station::properlyInitialized() const {
