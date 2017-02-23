@@ -17,8 +17,8 @@ private:
   unsigned int lijnNr;
   unsigned int zitplaatsen;
   std::string beginStation;
+  std::string currentStation;
   unsigned int snelheid;
-  // static unsigned int aantalTrams;
 public:
   // CONSTRUCTORS
   /**
@@ -51,6 +51,10 @@ public:
   */
   std::string getBeginStation() const;
   /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getCurrentStation");
+  */
+  std::string getCurrentStation() const;
+  /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getSnelheid");
   */
   unsigned int getSnelheid() const;
@@ -71,6 +75,11 @@ public:
   \n ENSURE(getBeginStation() == newBeginStation, "setBeginStation post condition failure");
   */
   void setBeginStation(const std::string& newBeginStation);
+  /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
+  \n ENSURE(getCurrentStation() == newCurrentStation, "setCurrentStation post condition failure");
+  */
+  void setCurrentStation(const std::string& newCurrentStation);
   /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setSnelheid");
   \n ENSURE(getSnelheid() == newSnelheid, "setSnelheid post condition failure");
