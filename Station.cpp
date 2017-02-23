@@ -105,30 +105,30 @@ void Station::setTramInStation(const unsigned int newTramInStation) {
 }
 
 // OPTIONAL
-//
-// unsigned int Station::getOpstappen() const {
-//  REQUIRE(properlyInitialized(),
-//    "Station wasn't initialized when calling getOpstappen");
-//  return opstappen;
-// }
-//
-// unsigned int Station::getAfstappen() const {
-//  REQUIRE(properlyInitialized(),
-//    "Station wasn't initialized when calling getAfstappen");
-//  return opstappen;
-// }
-//
-// void Station::setOpstappen(const unsigned int newOpstappen) {
-//  REQUIRE(properlyInitialized(),
-//    "Station wasn't initialized when calling setOpstappen");
-//  opstappen = newOpstappen;
-//  ENSURE(getOpstappen() == newOpstappen,
-//    "setOpstappen post condition failure");
-// }
-// void Station::setAfstappen(const unsigned int newAfstappen) {
-//  REQUIRE(properlyInitialized(),
-//    "Station wasn't initialized when calling setAfstappen");
-//  afstappen = newAfstappen;
-//  ENSURE(getAfstappen() == newAfstappen,
-//    "setAfstappen post condition failure");
-// }
+
+unsigned int Station::getOpstappen() const {
+ REQUIRE(properlyInitialized(),
+   "Station wasn't initialized when calling getOpstappen");
+ return opstappen;
+}
+
+unsigned int Station::getAfstappen() const {
+  REQUIRE(properlyInitialized(),
+    "Station wasn't initialized when calling getAfstappen");
+  return opstappen;
+}
+
+void Station::setOpstappen(const unsigned int newOpstappen) {
+  REQUIRE(properlyInitialized(),
+    "Station wasn't initialized when calling setOpstappen");
+  opstappen = newOpstappen;
+  ENSURE(getOpstappen() == newOpstappen,
+    "setOpstappen post condition failure");
+}
+void Station::setAfstappen(const unsigned int newAfstappen) {
+  REQUIRE(properlyInitialized(),
+    "Station wasn't initialized when calling setAfstappen");
+  afstappen = newAfstappen;
+  ENSURE(getAfstappen() == newAfstappen,
+    "setAfstappen post condition failure");
+}

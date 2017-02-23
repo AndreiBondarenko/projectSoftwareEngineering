@@ -99,16 +99,16 @@ public:
   void setTramInStation(const unsigned int newTramInStation);
 
   // OPTIONAL FEATURES
-  // /**
-  // \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setOpstappen");
-  // \n ENSURE(getOpstappen() == newOpstappen, "setOpstappen post condition failure");
-  // */
-  // void setOpstappen(const unsigned int newOpstappen);
-  // /**
-  // \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setAfstappen");
-  // \n ENSURE(getAfstappen() == newAfstappen, "setAfstappen post condition failure");
-  // */
-  // void setAfstappen(const unsigned int newAfstappen);
+  /**
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setOpstappen");
+  \n ENSURE(getOpstappen() == newOpstappen, "setOpstappen post condition failure");
+  */
+  void setOpstappen(const unsigned int newOpstappen);
+  /**
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setAfstappen");
+  \n ENSURE(getAfstappen() == newAfstappen, "setAfstappen post condition failure");
+  */
+  void setAfstappen(const unsigned int newAfstappen);
 
 
 protected:
