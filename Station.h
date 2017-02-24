@@ -62,14 +62,14 @@ public:
   unsigned int getTramInStation() const;
 
   // OPTIONAL FEATURES
-  // /**
-  // \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getOpstappen");
-  // */
-  // unsigned int getOpstappen() const;
-  // /**
-  // \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getAfstappen");
-  // */
-  // unsigned int getAfstappen() const;
+  /**
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getOpstappen");
+  */
+  unsigned int getOpstappen() const;
+  /**
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getAfstappen");
+  */
+  unsigned int getAfstappen() const;
 
   // SETTER METHODS
   /**
