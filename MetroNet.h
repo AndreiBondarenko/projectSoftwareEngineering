@@ -96,6 +96,11 @@ public:
   \n ENSURE(getAlleTrams()->count(newTram->getLijnNr()) == 0, "removeTram post condition failure");
   */
   void removeTram(const unsigned int lijnNr);
+  /**
+  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTrams");
+  \n ENSURE(mapIt->second->getCurrentStation() != previousStation, "moveTrams post condition failure");
+  */
+  void moveTrams();
 
   // FILE I/O METHODS
   /**

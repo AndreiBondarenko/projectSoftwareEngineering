@@ -154,6 +154,24 @@ void MetroNet::removeTram(const unsigned int lijnNr) {
     "removeTram post condition failure");
 }
 
+void MetroNet::moveTrams() {
+  REQUIRE(properlyInitialized(),
+    "MetroNet wasn't initialized when calling moveTrams");
+  for(auto mapIt = getAlleTrams()->begin(); mapIt != getAlleTrams()->end(); ++mapIt) {
+    std::string previousStation = mapIt->second->getCurrentStation();
+    std::string nextStation = getAlleStations()->at(previousStation)->getVolgende();
+    unsigned int lijnNr = mapIt->second->getLijnNr();
+    mapIt->second->setCurrentStation(nextStation);
+    getAlleStations()->at(nextStation)->setTramInStation(lijnNr);
+    ENSURE(mapIt->second->getCurrentStation() != previousStation,
+      "moveTrams post condition failure");
+    ENSURE(lijnNr == getAlleStations()->at(nextStation)->getTramInStation(),
+      "moveTrams post condition failure");
+    std::cout << "Tram " << mapIt->second->getLijnNr() << " reed van station "
+              << previousStation << " naar station " << nextStation << ".\n";
+  }
+}
+
 MetroNet* MetroNet::initializeFromFile(const char* file) {
 
   TiXmlDocument doc;
@@ -213,6 +231,46 @@ MetroNet* MetroNet::initializeFromFile(const char* file) {
                 break;
               }
             }
+            else if (elemName == "opstappen") {
+              try {
+                int opstappen = std::stoi(text->Value());
+                if (opstappen >= 0)
+                  station->setOpstappen(opstappen);
+                else throw 0;
+              }
+              catch (int e) {
+                delete station;
+                std::cerr << "\nStation not created, negative opstappen: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              }
+              catch (std::invalid_argument& e) {
+                delete station;
+                std::cerr << "\nStation not created, invalid opstappen: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              }
+            }
+            else if (elemName == "afstappen") {
+              try {
+                int afstappen = std::stoi(text->Value());
+                if (afstappen >= 0)
+                  station->setAfstappen(afstappen);
+                else throw 0;
+              }
+              catch (int e) {
+                delete station;
+                std::cerr << "\nStation not created, negative afstappen: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              }
+              catch (std::invalid_argument& e) {
+                delete station;
+                std::cerr << "\nStation not created, invalid afstappen: " << text->Value() << ".\n" << std::endl;
+                deleted = true;
+                break;
+              }
+            }
           }
         }
       }
@@ -250,8 +308,13 @@ MetroNet* MetroNet::initializeFromFile(const char* file) {
                   tram->setSnelheid(snelheid);
                 else throw 2;
               }
-              else if (elemName == "beginStation")
-                tram->setBeginStation(text->Value());
+              else if (elemName == "beginStation") {
+                std::string value = text->Value();
+                tram->setBeginStation(value);
+                tram->setCurrentStation(value);
+                result->getAlleStations()->at(value)
+                                          ->setTramInStation(tram->getLijnNr());
+              }
             }
             catch(int e) {
               switch (e) {
