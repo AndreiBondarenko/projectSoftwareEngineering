@@ -115,7 +115,7 @@ unsigned int Station::getOpstappen() const {
 unsigned int Station::getAfstappen() const {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling getAfstappen");
-  return opstappen;
+  return afstappen;
 }
 
 void Station::setOpstappen(const unsigned int newOpstappen) {
