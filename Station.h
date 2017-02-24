@@ -19,8 +19,8 @@ private:
   std::string volgende;
   unsigned int spoor;
   unsigned int tramInStation;
-// unsigned int opstappen;
-// unsigned int afstappen;
+  unsigned int opstappen;
+  unsigned int afstappen;
 public:
   // CONSTRUCTORS
   /**
