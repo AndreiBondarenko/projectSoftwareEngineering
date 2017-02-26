@@ -172,6 +172,95 @@ void MetroNet::moveTrams() {
   }
 }
 
+void MetroNet::simulate(const char* file) {
+  REQUIRE(properlyInitialized(),
+    "MetroNet wasn't initialized when calling simulate");
+
+  TiXmlDocument doc;
+  if (!doc.LoadFile(file)) {
+    std::cerr << doc.ErrorDesc() << std::endl;
+  }
+
+  TiXmlElement* net = doc.FirstChildElement();
+  if (net == NULL) {
+    std::cerr << "Failed to load file: No root element." << std::endl;
+    doc.Clear();
+  }
+
+  for (TiXmlElement* element = net->FirstChildElement();
+    element != NULL;
+    element = element->NextSiblingElement())
+  {
+    std::string elementType = element->Value();
+    if (elementType == "STATION") {
+      const char* name = element->Attribute("naam");
+      Station* station;
+      if (name != NULL) {
+        for (const auto& getStation : alleStations) {
+          if (getStation.first == name)
+            station = getStation.second;
+        }
+        if (station == NULL)
+          std::cerr << "Failed, Station not found!" << std::endl;
+        for (TiXmlElement* infoElem = element->FirstChildElement();
+          infoElem != NULL;
+          infoElem = infoElem->NextSiblingElement())
+        {
+          std::string elemName = infoElem->Value();
+          for (TiXmlNode* data = infoElem->FirstChild();
+            data != NULL;
+            data = data->NextSibling())
+          {
+            TiXmlText* text = data->ToText();
+            if (text == NULL)
+              continue;
+            if (elemName == "opstappen") {
+              try {
+                int opstappen = std::stoi(text->Value());
+                if (opstappen >= 0)
+                  station->setOpstappen(opstappen);
+                else throw 0;
+              }
+              catch (int e) {
+                std::cerr << "\nPeople not on tram, negative opstappen: "
+                  << text->Value() << ".\n" << std::endl;
+                break;
+              }
+              catch (std::invalid_argument& e) {
+                std::cerr << "\nPeople not on tram, invalid opstappen: "
+                  << text->Value() << ".\n" << std::endl;
+                break;
+              }
+            }
+            else if (elemName == "afstappen") {
+              try {
+                int afstappen = std::stoi(text->Value());
+                if (afstappen >= 0)
+                  station->setAfstappen(afstappen);
+                else throw 0;
+              }
+              catch (int e) {
+                std::cerr << "\nPeople not off tram, negative afstappen: "
+                  << text->Value() << ".\n" << std::endl;
+                break;
+              }
+              catch (std::invalid_argument& e) {
+                std::cerr << "\nPeople not off tram, invalid afstappen: "
+                  << text->Value() << ".\n" << std::endl;
+                break;
+              }
+            }
+          }
+        }
+      }
+    }
+    else {
+      std::cout << "Element of type: " << elementType << " unsupported\n";
+    }
+  }
+  doc.Clear();
+}
+
 MetroNet* MetroNet::initializeFromFile(const char* file) {
 
   TiXmlDocument doc;
