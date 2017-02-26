@@ -102,6 +102,9 @@ public:
   */
   void moveTrams();
 
+  //TODO: REQUIRES + ENSURES!!
+  void simulate(const char* file);
+
   // FILE I/O METHODS
   /**
   \n ENSURE(result->isConsistent(), "MetroNet is not consistent");
