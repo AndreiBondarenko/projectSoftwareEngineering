@@ -1,21 +1,17 @@
 <?xml version="1.0" ?>
 <METRONET>
-  <STATION>
-    <naam>A</naam>
+  <STATION naam="A">
 	<opstappen>7</opstappen>
   </STATION>  
-  <STATION>
-    <naam>B</naam>
+  <STATION naam="B">
 	<afstappen>7</afstappen>
 	<opstappen>5</opstappen>
   </STATION>
-  <STATION>
-    <naam>C</naam>
+  <STATION naam="C">
 	<afstappen>2</afstappen>
 	<opstappen>3</opstappen>
   </STATION>
-  <STATION>
-	<naam>A</naam>
+  <STATION naam="A">
 	<afstappen>6</afstappen>
   </STATION>
 </METRONET>
