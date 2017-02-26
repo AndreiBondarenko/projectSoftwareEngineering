@@ -98,7 +98,9 @@ public:
   void removeTram(const unsigned int lijnNr);
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTrams");
+  for every Tram:
   \n ENSURE(mapIt->second->getCurrentStation() != previousStation, "moveTrams post condition failure");
+  \n ENSURE(lijnNr == getAlleStations()->at(nextStation)->getTramInStation(), "moveTrams post condition failure");
   */
   void moveTrams();
 
