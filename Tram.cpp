@@ -57,6 +57,12 @@ std::string Tram::getCurrentStation() const {
   return currentStation;
 }
 
+unsigned int Tram::getPassagiers() const {
+  REQUIRE(properlyInitialized(),
+    "Tram wasn't initialized when calling getPassagiers");
+    return passagiers;
+}
+
 unsigned int Tram::getSnelheid() const {
 	REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling getSnelheid");
@@ -100,4 +106,33 @@ void Tram::setSnelheid(const unsigned int newSnelheid) {
     "Tram wasn't initialized when calling setSnelheid");
 	snelheid = newSnelheid;
 	ENSURE(getSnelheid() == newSnelheid, "setSnelheid post condition failure");
+}
+
+void Tram::setPassagiers(const unsigned int newPassagiers) {
+  REQUIRE(properlyInitialized(),
+    "Tram wasn't initialized when calling setPassagiers");
+  passagiers = newPassagiers;
+  ENSURE(getPassagiers() == newPassagiers,
+    "setPassagiers post condition failure");
+}
+
+void Tram::getOff(unsigned int off) {
+  REQUIRE(properlyInitialized(),
+    "Tram wasn't initialized when calling getOff");
+  REQUIRE(off <= getPassagiers(),
+    "More passengers getting off Tram than on Tram");
+  passagiers -= off;
+  ENSURE(getPassagiers() <= getZitplaatsen(),
+    "getOff post condition failure");
+}
+
+void Tram::getOn(unsigned int on) {
+  REQUIRE(properlyInitialized(),
+    "Tram wasn't initialized when calling getOn");
+  REQUIRE(on <= getZitplaatsen() - getPassagiers(),
+    "Not enough seats for passengers getting on Tram");
+  passagiers += on;
+  ENSURE(getPassagiers() <= getZitplaatsen(),
+    "getOn post condition failure");
+
 }

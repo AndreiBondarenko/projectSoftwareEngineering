@@ -16,6 +16,7 @@ private:
   Tram* initCheck;
   unsigned int lijnNr;
   unsigned int zitplaatsen;
+  unsigned int passagiers;
   std::string beginStation;
   std::string currentStation;
   unsigned int snelheid;
@@ -58,6 +59,10 @@ public:
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getSnelheid");
   */
   unsigned int getSnelheid() const;
+  /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getPassagiers");
+  */
+  unsigned int getPassagiers() const;
 
   // SETTER METHODS
   /**
@@ -85,6 +90,25 @@ public:
   \n ENSURE(getSnelheid() == newSnelheid, "setSnelheid post condition failure");
   */
   void setSnelheid(const unsigned int newSnelheid);
+  /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setPassagiers");
+  \n ENSURE(getPassagiers() == newPassagiers, "setPassagiers post condition failure");
+  */
+  void setPassagiers(const unsigned int newPassagiers);
+
+  // MODIFIER METHODS
+  /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getOff");
+  \n REQUIRE(off <= getPassagiers(), "More passengers getting off Tram than on Tram");
+  \n ENSURE(getPassagiers() <= getZitplaatsen(), "getOff post condition failure");
+  */
+  void getOff(unsigned int off);
+  /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getOn");
+  \n REQUIRE(on <= getZitplaatsen() - getPassagiers(), "Not enough seats for passengers getting on Tram");
+  \n ENSURE(getPassagiers() <= getZitplaatsen(), "getOn post condition failure");
+  */
+  void getOn(unsigned int on);
 
 protected:
 
