@@ -96,19 +96,19 @@ public:
   */
   void setPassagiers(const unsigned int newPassagiers);
 
-  // MODIFIER METHODS
-  /**
-  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getOff");
-  \n REQUIRE(off <= getPassagiers(), "More passengers getting off Tram than on Tram");
-  \n ENSURE(getPassagiers() <= getZitplaatsen(), "getOff post condition failure");
-  */
-  void getOff(unsigned int off);
-  /**
-  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getOn");
-  \n REQUIRE(on <= getZitplaatsen() - getPassagiers(), "Not enough seats for passengers getting on Tram");
-  \n ENSURE(getPassagiers() <= getZitplaatsen(), "getOn post condition failure");
-  */
-  void getOn(unsigned int on);
+  // // MODIFIER METHODS
+  // /**
+  // \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getOff");
+  // \n REQUIRE(off <= getPassagiers(), "More passengers getting off Tram than on Tram");
+  // \n ENSURE(getPassagiers() <= getZitplaatsen(), "getOff post condition failure");
+  // */
+  // void getOff(unsigned int off);
+  // /**
+  // \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getOn");
+  // \n REQUIRE(on <= getZitplaatsen() - getPassagiers(), "Not enough seats for passengers getting on Tram");
+  // \n ENSURE(getPassagiers() <= getZitplaatsen(), "getOn post condition failure");
+  // */
+  // void getOn(unsigned int on);
 
 protected:
 
