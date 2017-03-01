@@ -58,7 +58,7 @@ unsigned int Station::getSpoor() const {
   return spoor;
 }
 
-unsigned int Station::getTramInStation() const {
+bool Station::isTramInStation() const {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling getTramInStation");
   return tramInStation;
@@ -96,11 +96,11 @@ void Station::setSpoor(const unsigned int newSpoor) {
     "setSpoor post condition failure");
 }
 
-void Station::setTramInStation(const unsigned int newTramInStation) {
+void Station::setTramInStation(bool newTramInStation) {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling setTramInStation");
   tramInStation = newTramInStation;
-  ENSURE(getTramInStation() == newTramInStation,
+  ENSURE(isTramInStation() == newTramInStation,
     "setTramInStation post condition failure");
 }
 
