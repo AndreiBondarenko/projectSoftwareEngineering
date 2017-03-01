@@ -154,23 +154,56 @@ void MetroNet::removeTram(const unsigned int lijnNr) {
     "removeTram post condition failure");
 }
 
-void MetroNet::moveTrams() {
+void MetroNet::moveTram(std::string station, unsigned int spoor, std::ostream& output) {
   REQUIRE(properlyInitialized(),
     "MetroNet wasn't initialized when calling moveTrams");
-  for(auto mapIt = getAlleTrams()->begin(); mapIt != getAlleTrams()->end(); ++mapIt) {
-    std::string previousStation = mapIt->second->getCurrentStation();
-    std::string nextStation = getAlleStations()->at(previousStation)->getVolgende();
-    unsigned int lijnNr = mapIt->second->getLijnNr();
-    mapIt->second->setCurrentStation(nextStation);
-    getAlleStations()->at(nextStation)->setTramInStation(lijnNr);
-    ENSURE(mapIt->second->getCurrentStation() != previousStation,
-      "moveTrams post condition failure");
-    ENSURE(lijnNr == getAlleStations()->at(nextStation)->getTramInStation(),
-      "moveTrams post condition failure");
-    std::cout << "Tram " << mapIt->second->getLijnNr() << " reed van station "
-              << previousStation << " naar station " << nextStation << ".\n";
+  std::string currentStation = getAlleTrams()->at(spoor)->getCurrentStation();
+  getAlleStations()->at(currentStation)->setTramInStation(false);
+  getAlleTrams()->at(spoor)->setCurrentStation(station);
+  getAlleStations()->at(station)->setTramInStation(true);
+  output << "Tram " << spoor << " reed van station " << currentStation << " naar station " << station << ".\n";
+  ENSURE(getAlleStations()->at(station)->isTramInStation(),
+    "moveTram post condition failure");
+  ENSURE(station == getAlleTrams()->at(spoor)->getCurrentStation(),
+    "moveTram post condition failure");
+  ENSURE(isConsistent(), "moveTram made MetroNet inconsistent");
+}
+
+void MetroNet::movePassengers(std::string station, unsigned int spoor, std::ostream& output) {
+  REQUIRE(properlyInitialized(),
+    "MetroNet wasn't initialized when calling movePassengers");
+  REQUIRE(getAlleTrams()->at(spoor)->getCurrentStation() == station,
+    "Tram not in given station");
+  REQUIRE(getAlleStations()->at(station)->isTramInStation(),
+    "Station is empty");
+  const unsigned int afstappen = getAlleStations()->at(station)->getAfstappen();
+  const unsigned int opstappen = getAlleStations()->at(station)->getOpstappen();
+  const unsigned int passagiers = getAlleTrams()->at(spoor)->getPassagiers();
+  const unsigned int zitplaatsen = getAlleTrams()->at(spoor)->getZitplaatsen();
+  if(afstappen <= passagiers){
+    getAlleTrams()->at(spoor)->setPassagiers(passagiers-afstappen);
+    output << "In station " << station << " stappen " << afstappen << " mensen af tram "
+    << spoor << ".\n";
+  }
+  else {
+    getAlleTrams()->at(spoor)->setPassagiers(0);
+    output << "ERROR: Aan station " << station << " stappen " << afstappen
+    << " mensen af tram " << spoor << ". Slechts " << passagiers << " mensen op de tram.\n";
+  }
+  if(passagiers + opstappen <= zitplaatsen){
+    getAlleTrams()->at(spoor)->setPassagiers(passagiers+opstappen);
+    output << "In station " << station << " stappen " << opstappen << " mensen op tram "
+    << spoor << ".\n";
+  }
+  else {
+    getAlleTrams()->at(spoor)->setPassagiers(zitplaatsen);
+    output << "ERROR: Maximum capaciteit ("<< zitplaatsen <<") tram "<< spoor
+    <<" overschreden aan station" << station << ". Reeds " << passagiers
+    << " passagiers op tram, " << opstappen << " mensen stappen op.\n";
   }
 }
+
+
 
 MetroNet* MetroNet::initializeFromFile(const char* file) {
 
@@ -313,7 +346,7 @@ MetroNet* MetroNet::initializeFromFile(const char* file) {
                 tram->setBeginStation(value);
                 tram->setCurrentStation(value);
                 result->getAlleStations()->at(value)
-                                          ->setTramInStation(tram->getLijnNr());
+                                          ->setTramInStation(true);
               }
             }
             catch(int e) {
@@ -371,21 +404,25 @@ MetroNet* MetroNet::initializeFromFile(const char* file) {
   return result;
 }
 
-void MetroNet::writeToFile() {
-  std::ofstream metroNetTXT;
-  metroNetTXT.open ("_output/MetroNet.txt");
+void MetroNet::writeToOutputStream(std::ostream& output) {
+  REQUIRE(isConsistent(), "MetroNet is not consistent");
   for(auto mapIt = getAlleStations()->begin();
       mapIt != getAlleStations()->end();
       ++mapIt)
   {
-    metroNetTXT << "Station " << mapIt->second->getNaam() << std::endl;
-    metroNetTXT << "<- Station " << mapIt->second->getVorige() << std::endl;
-    metroNetTXT << "-> Station " << mapIt->second->getVolgende() << std::endl;
+    output << "Station " << mapIt->second->getNaam() << std::endl;
+    output << "<- Station " << mapIt->second->getVorige() << std::endl;
+    output << "-> Station " << mapIt->second->getVolgende() << std::endl;
 
     unsigned int spoor = mapIt->second->getSpoor();
-    metroNetTXT << "Spoor " << spoor
-                << ", "     << (getAlleTrams()->at(spoor))->getZitplaatsen()
-                << " zitplaatsen\n\n";
+    output << "Spoor " << spoor << ", "
+            << (getAlleTrams()->at(spoor))->getZitplaatsen() << " zitplaatsen\n\n";
   }
+}
+
+void MetroNet::writeToASCII() {
+  std::ofstream metroNetTXT;
+  metroNetTXT.open ("_output/MetroNet.txt");
+  writeToOutputStream(metroNetTXT);
   metroNetTXT.close();
 }

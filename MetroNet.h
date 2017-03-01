@@ -97,12 +97,18 @@ public:
   */
   void removeTram(const unsigned int lijnNr);
   /**
-  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTrams");
-  for every Tram:
-  \n ENSURE(mapIt->second->getCurrentStation() != previousStation, "moveTrams post condition failure");
-  \n ENSURE(lijnNr == getAlleStations()->at(nextStation)->getTramInStation(), "moveTrams post condition failure");
+  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
+  \n ENSURE(getAlleStations()->at(station)->getTramInStation() != spoor, "moveTram post condition failure");
+  \n ENSURE(station == getTrams()->at(spoor)->getCurrentStation(), "moveTram post condition failure");
+  \n ENSURE(isConsistent(), "moveTram made MetroNet inconsistent")
   */
-  void moveTrams();
+  void moveTram(std::string station, unsigned int spoor, std::ostream& output);
+  /**
+  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling movePassengers");
+  \n REQUIRE(getAlleTrams()->at(spoor)->getCurrentStation() == station, "Tram not in given station")
+  \n REQUIRE(getAlleStations()->at(station)->isTramInStation(), "Station is empty")
+  */
+  void movePassengers(std::string station, unsigned int spoor, std::ostream& output);
 
   // FILE I/O METHODS
   /**
@@ -112,7 +118,9 @@ public:
   /**
   \n REQUIRE(isConsistent(), "MetroNet is not consistent");
   */
-  void writeToFile();
+  void writeToOutputStream(std::ostream& output);
+
+  void writeToASCII();
 
 
 
