@@ -49,3 +49,4 @@ clean:
 	find . -name '*.o' -delete
 	find . -name '*.d' -delete
 	find . -name '*~'  -delete
+	rm $(TARGET)
