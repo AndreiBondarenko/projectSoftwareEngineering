@@ -10,7 +10,9 @@ SRCS =		MetroNetMain \
 			MetroNet.cpp \
 			Station.cpp \
 			Tram.cpp 
-#TSTSRCS =	
+TSTSRCS =	MetroNetTests.cpp \
+			MetroNetClassTests.cpp
+
 TINYOBJS =	tinystr.o \
 			tinyxml.o \
 			tinyxmlerror.o \
@@ -19,7 +21,7 @@ TINYSRCS =	tinystr.h \
 			tinyxml.cpp \
 			tinyxmlerror.cpp \
 			tinyxmlparser.cpp			
-TARGET =	MetroNetMain	
+TARGET =	MetroNetMain	MetroNetTests
 
 #--- primary target
 .PHONY : all
@@ -29,11 +31,11 @@ all : $(TARGET)
 MetroNetMain : $(OBJS) $(TINYOBJS) tinyxml.h MetroNetMain.o 
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS) $(TINYOBJS) MetroNetMain.o
 
-#TicTacToeTests : $(OBJS) $(TSTSRCS) $(TINYOBJS) tinyxml.h TicTacToeTests.o
-#	$(CXX) $(CXXFLAGS) $(TLIBPATH) $(TLIBS) -o $@ $(OBJS) $(TINYOBJS) TicTacToeTests.o
+MetroNetTests : $(OBJS) $(TSTSRCS) $(TINYOBJS) tinyxml.h MetroNetTests.o
+	$(CXX) $(CXXFLAGS) $(TLIBPATH) $(TLIBS) -o $@ $(OBJS) $(TINYOBJS) MetroNetTests.o
 	
-#TicTacToeTests.o : $(TSTSRCS)
-#	$(CXX) $(CXXFLAGS) -c -o $@ TicTacToeTests.cpp	
+MetroNetTests.o : $(TSTSRCS)
+	$(CXX) $(CXXFLAGS) -c -o $@ MetroNetTests.cpp	
 
 %.o : %.cpp %.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
