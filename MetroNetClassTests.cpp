@@ -37,11 +37,26 @@ TEST_F(MetroNetClassTest, SettersGettersTram) {
 }
 
 TEST_F(MetroNetClassTest, SettersGettersStation) {
+  station.setNaam("Antwerpen");
+  EXPECT_EQ("Antwerpen", station.getNaam());
+  station.setVorige("Brussel");
+  EXPECT_EQ("Brussel", station.getVorige());
+  station.setVolgende("Amsterdam");
+  EXPECT_EQ("Amsterdam", station.getVolgende());
+  station.setSpoor(12);
+  EXPECT_EQ(12, station.getSpoor());
+  station.setTramInStation(true);
+  EXPECT_TRUE(station.isTramInStation());
+  station.setOpstappen(3);
+  EXPECT_EQ(3, station.getOpstappen());
+  station.setAfstappen(5);
+  EXPECT_EQ(5, station.getAfstappen());
 
 }
 
 TEST_F(MetroNetClassTest, SettersGettersMetroNet) {
-
+  // metronet.setAlleSporen(std::set(1,8,7));
+  // EXPECT_EQ(std::set(1,8,7), *(metronet.getAlleSporen());
 }
 
 TEST_F(MetroNetClassTest, ContractViolationsTram) {
