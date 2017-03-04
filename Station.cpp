@@ -16,12 +16,13 @@ Station::Station()  {
 }
 
 Station::Station(const std::string& naam, const std::string& vorige,
-  const std::string& volgende, const unsigned int spoor) :
+  const std::string& volgende, const int spoor) :
   naam(naam),
   vorige(vorige),
   volgende(volgende),
   spoor(spoor)
 {
+  REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
   initCheck = this;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
@@ -52,7 +53,7 @@ std::string Station::getVolgende() const {
   return volgende;
 }
 
-unsigned int Station::getSpoor() const {
+int Station::getSpoor() const {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling getSpoor");
   return spoor;
@@ -88,9 +89,10 @@ void Station::setVolgende(const std::string& newVolgende) {
     "setVolgende post condition failure");
 }
 
-void Station::setSpoor(const unsigned int newSpoor) {
+void Station::setSpoor(const int newSpoor) {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling setSpoor");
+  REQUIRE(newSpoor >= 0 , "newSpoor must be bigger or equal to zero");
   spoor = newSpoor;
   ENSURE(getSpoor() == newSpoor,
     "setSpoor post condition failure");
@@ -106,28 +108,30 @@ void Station::setTramInStation(bool newTramInStation) {
 
 // OPTIONAL
 
-unsigned int Station::getOpstappen() const {
+int Station::getOpstappen() const {
  REQUIRE(properlyInitialized(),
    "Station wasn't initialized when calling getOpstappen");
  return opstappen;
 }
 
-unsigned int Station::getAfstappen() const {
+int Station::getAfstappen() const {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling getAfstappen");
   return afstappen;
 }
 
-void Station::setOpstappen(const unsigned int newOpstappen) {
+void Station::setOpstappen(const int newOpstappen) {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling setOpstappen");
+  REQUIRE(newOpstappen >= 0 , "newOpstappen must be bigger or equal to zero");
   opstappen = newOpstappen;
   ENSURE(getOpstappen() == newOpstappen,
     "setOpstappen post condition failure");
 }
-void Station::setAfstappen(const unsigned int newAfstappen) {
+void Station::setAfstappen(const int newAfstappen) {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling setAfstappen");
+  REQUIRE(newAfstappen >= 0 , "newAfstappen must be bigger or equal to zero");
   afstappen = newAfstappen;
   ENSURE(getAfstappen() == newAfstappen,
     "setAfstappen post condition failure");

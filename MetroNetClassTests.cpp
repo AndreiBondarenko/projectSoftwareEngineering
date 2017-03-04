@@ -55,16 +55,24 @@ TEST_F(MetroNetClassTest, SettersGettersStation) {
 }
 
 TEST_F(MetroNetClassTest, SettersGettersMetroNet) {
-  // metronet.setAlleSporen(std::set(1,8,7));
-  // EXPECT_EQ(std::set(1,8,7), *(metronet.getAlleSporen());
+
 }
 
 TEST_F(MetroNetClassTest, ContractViolationsTram) {
-
+  EXPECT_DEATH(Tram(-1, 1, "A", 1), "failed assertion");
+  EXPECT_DEATH(Tram(1, -1, "A", 1), "failed assertion");
+  EXPECT_DEATH(Tram(1, 1, "A", -1), "failed assertion");
+  EXPECT_DEATH(tram.setLijnNr(-1), "failed assertion");
+  EXPECT_DEATH(tram.setZitplaatsen(-1), "failed assertion");
+  EXPECT_DEATH(tram.setSnelheid(-1), "failed assertion");
+  EXPECT_DEATH(tram.setPassagiers(-1), "failed assertion");
 }
 
 TEST_F(MetroNetClassTest, ContractViolationsStation) {
-
+  EXPECT_DEATH(Station("A", "Z", "B", -1), "failed assertion");
+  EXPECT_DEATH(station.setSpoor(-1), "failed assertion");
+  EXPECT_DEATH(station.setOpstappen(-1), "failed assertion");
+  EXPECT_DEATH(station.setAfstappen(-1), "failed assertion");
 }
 
 TEST_F(MetroNetClassTest, ContractViolationsMetroNet) {

@@ -14,14 +14,17 @@ Tram::Tram()  {
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
-Tram::Tram(const unsigned int lijnNr, const unsigned int zitplaatsen, const std::string& beginStation,
-	const unsigned int snelheid) :
+Tram::Tram(const int lijnNr, const int zitplaatsen, const std::string& beginStation,
+	const int snelheid) :
 	lijnNr(lijnNr),
 	zitplaatsen(zitplaatsen),
 	beginStation(beginStation),
   currentStation(beginStation),
 	snelheid(snelheid)
 {
+  REQUIRE(lijnNr >= 0 , "lijnNr must be bigger or equal to zero");
+  REQUIRE(zitplaatsen >= 0 , "zitplaatsen must be bigger or equal to zero");
+  REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
 	initCheck = this;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
@@ -33,13 +36,13 @@ bool Tram::properlyInitialized() const{
 	return initCheck == this;
 }
 
-unsigned int Tram::getLijnNr() const {
+int Tram::getLijnNr() const {
 	REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling getLijnNr");
 	return lijnNr;
 }
 
-unsigned int Tram::getZitplaatsen() const {
+int Tram::getZitplaatsen() const {
 	REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling getZitplaatsen");
 	return zitplaatsen;
@@ -57,28 +60,32 @@ std::string Tram::getCurrentStation() const {
   return currentStation;
 }
 
-unsigned int Tram::getPassagiers() const {
+int Tram::getPassagiers() const {
   REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling getPassagiers");
     return passagiers;
 }
 
-unsigned int Tram::getSnelheid() const {
+int Tram::getSnelheid() const {
 	REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling getSnelheid");
 	return snelheid;
 }
 
-void Tram::setLijnNr(const unsigned int newLijnNr) {
+void Tram::setLijnNr(const int newLijnNr) {
 	REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling setLijnNr");
+  REQUIRE(newLijnNr >= 0 , "newLijnNr must be bigger or equal to zero");
+
 	lijnNr = newLijnNr;
 	ENSURE(getLijnNr() == newLijnNr, "setLijnNr post condition failure");
 }
 
-void Tram::setZitplaatsen(const unsigned int newZitplaatsen) {
+void Tram::setZitplaatsen(const int newZitplaatsen) {
 	REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling setZitplaatsen");
+  REQUIRE(newZitplaatsen >= 0 ,
+    "newZitplaatsen must be bigger or equal to zero");
 	zitplaatsen = newZitplaatsen;
 	ENSURE(getZitplaatsen() == newZitplaatsen,
     "setZitplaatsen post condition failure");
@@ -101,22 +108,24 @@ void Tram::setCurrentStation(const std::string &newCurrentStation) {
 
 }
 
-void Tram::setSnelheid(const unsigned int newSnelheid) {
+void Tram::setSnelheid(const int newSnelheid) {
 	REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling setSnelheid");
+  REQUIRE(newSnelheid >= 0 , "newSnelheid must be bigger or equal to zero");
 	snelheid = newSnelheid;
 	ENSURE(getSnelheid() == newSnelheid, "setSnelheid post condition failure");
 }
 
-void Tram::setPassagiers(const unsigned int newPassagiers) {
+void Tram::setPassagiers(const int newPassagiers) {
   REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling setPassagiers");
+  REQUIRE(newPassagiers >= 0 , "newPassagiers must be bigger or equal to zero");
   passagiers = newPassagiers;
   ENSURE(getPassagiers() == newPassagiers,
     "setPassagiers post condition failure");
 }
 
-// void Tram::getOff(unsigned int off) {
+// void Tram::getOff(int off) {
 //   REQUIRE(properlyInitialized(),
 //     "Tram wasn't initialized when calling getOff");
 //   REQUIRE(off <= getPassagiers(),
@@ -126,7 +135,7 @@ void Tram::setPassagiers(const unsigned int newPassagiers) {
 //     "getOff post condition failure");
 // }
 //
-// void Tram::getOn(unsigned int on) {
+// void Tram::getOn(int on) {
 //   REQUIRE(properlyInitialized(),
 //     "Tram wasn't initialized when calling getOn");
 //   REQUIRE(on <= getZitplaatsen() - getPassagiers(),

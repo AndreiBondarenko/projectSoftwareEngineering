@@ -17,9 +17,9 @@ private:
   std::string naam;
   std::string vorige;
   std::string volgende;
-  unsigned int spoor;
-  unsigned int opstappen;
-  unsigned int afstappen;
+  int spoor;
+  int opstappen;
+  int afstappen;
   bool tramInStation;
 public:
   // CONSTRUCTORS
@@ -28,10 +28,11 @@ public:
   */
   Station(); // default
   /**
+  \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   */
   Station(const std::string& naam, const std::string& vorige,
-    const std::string& volgende, const unsigned int spoor); // full
+    const std::string& volgende, const int spoor); // full
 
   // DESTRUCTOR
   ~Station();
@@ -55,7 +56,7 @@ public:
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getSpoor");
   */
-  unsigned int getSpoor() const;
+  int getSpoor() const;
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getTramInStation");
   */
@@ -65,11 +66,11 @@ public:
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getOpstappen");
   */
-  unsigned int getOpstappen() const;
+  int getOpstappen() const;
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getAfstappen");
   */
-  unsigned int getAfstappen() const;
+  int getAfstappen() const;
 
   // SETTER METHODS
   /**
@@ -89,9 +90,10 @@ public:
   void setVolgende(const std::string& newVolgende);
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setSpoor");
+  \n REQUIRE(newSpoor >= 0 , "newSpoor must be bigger or equal to zero");
   \n ENSURE(getSpoor() == newSpoor, "setSpoor post condition failure");
   */
-  void setSpoor(const unsigned int newSpoor);
+  void setSpoor(const int newSpoor);
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setTramInStation");
   \n ENSURE(isTramInStation() == newTramInStation, "setTramInStation post condition failure");
@@ -101,14 +103,16 @@ public:
   // OPTIONAL FEATURES
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setOpstappen");
+  \n REQUIRE(newOpstappen >= 0 , "newOpstappen must be bigger or equal to zero");
   \n ENSURE(getOpstappen() == newOpstappen, "setOpstappen post condition failure");
   */
-  void setOpstappen(const unsigned int newOpstappen);
+  void setOpstappen(const int newOpstappen);
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setAfstappen");
+  \n REQUIRE(newAfstappen >= 0 , "newAfstappen must be bigger or equal to zero");
   \n ENSURE(getAfstappen() == newAfstappen, "setAfstappen post condition failure");
   */
-  void setAfstappen(const unsigned int newAfstappen);
+  void setAfstappen(const int newAfstappen);
 
 
 protected:
