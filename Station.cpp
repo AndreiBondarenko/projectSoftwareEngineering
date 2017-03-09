@@ -11,6 +11,8 @@
 
 Station::Station()  {
   initCheck = this;
+  opstappen = 0;
+  afstappen = 0;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
@@ -27,6 +29,8 @@ Station::Station(const std::string& naam, const std::string& vorige,
   REQUIRE(naam != "", "naam must not be empty");
   REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
   initCheck = this;
+  opstappen = 0;
+  afstappen = 0;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }

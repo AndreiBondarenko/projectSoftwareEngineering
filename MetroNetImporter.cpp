@@ -42,11 +42,46 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
     std::string elementType = element->Value();
     if (elementType == "STATION") {
       Station* station = new Station;
+      TiXmlNode *naam, *volgende, *vorige, *spoor;
+      naam = element->FirstChild("naam");
+      volgende = element->FirstChild("volgende");
+      vorige = element->FirstChild("vorige");
+      spoor = element->FirstChild("spoor");
+      if(naam == NULL) {
+        errStream << "XML PARTIAL IMPORT: Expected <naam> ... </naam>." << std::endl;
+        endResult = PartialImport;
+        delete station;
+        continue;
+      }
+      if(volgende == NULL) {
+        errStream << "XML PARTIAL IMPORT: Expected <volgende> ... </volgende>." << std::endl;
+        endResult = PartialImport;
+        delete station;
+        continue;
+      }
+      if(vorige == NULL) {
+        errStream << "XML PARTIAL IMPORT: Expected <vorige> ... </vorige>." << std::endl;
+        endResult = PartialImport;
+        delete station;
+        continue;
+      }
+      if(spoor == NULL) {
+        errStream << "XML PARTIAL IMPORT: Expected <spoor> ... </spoor>." << std::endl;
+        endResult = PartialImport;
+        delete station;
+        continue;
+      }
+
       for (TiXmlElement* infoElem = element->FirstChildElement();
         infoElem != NULL;
         infoElem = infoElem->NextSiblingElement())
       {
         std::string elemName = infoElem->Value();
+        if(infoElem->FirstChild() == NULL) {
+          errStream << "XML PARTIAL IMPORT: <"
+    				<< elemName <<  "> ... </" << elemName << "> is empty." << std::endl;
+    			endResult = PartialImport;
+        }
         for (TiXmlNode* data = infoElem->FirstChild();
           data != NULL;
           data = data->NextSibling())
@@ -119,18 +154,56 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
                 break;
               }
             }
+            else {
+              errStream << "XML PARTIAL IMPORT:\nExpected:\n<naam> ... </naam> or\n<volgende> ... </volgende> or\n<vorige> ... </vorige> or\n<spoor> ... </spoor> or\n<opstappen> ... </opstappen> or\n<afstappen> ... </afstappen>\nand got: <"
+				            << elemName <<  "> ... </" << elemName << ">." << std::endl;
+            }
           }
         }
       }
-      if (deleted) break;
+      if (deleted) continue;
       metronet.addStation(station);
     }
     else if(elementType == "TRAM"){
       Tram* tram = new Tram;
+      TiXmlNode *lijnNr, *zitplaatsen, *snelheid, *beginStation;
+      lijnNr = element->FirstChild("lijnNr");
+      zitplaatsen = element->FirstChild("zitplaatsen");
+      snelheid = element->FirstChild("snelheid");
+      beginStation = element->FirstChild("beginStation");
+      if(lijnNr == NULL) {
+        errStream << "XML PARTIAL IMPORT: Expected <lijnNr> ... </lijnNr>." << std::endl;
+        endResult = PartialImport;
+        delete tram;
+        continue;
+      }
+      if(zitplaatsen == NULL) {
+        errStream << "XML PARTIAL IMPORT: Expected <zitplaatsen> ... </zitplaatsen>." << std::endl;
+        endResult = PartialImport;
+        delete tram;
+        continue;
+      }
+      if(snelheid == NULL) {
+        errStream << "XML PARTIAL IMPORT: Expected <snelheid> ... </snelheid>." << std::endl;
+        endResult = PartialImport;
+        delete tram;
+        continue;
+      }
+      if(beginStation == NULL) {
+        errStream << "XML PARTIAL IMPORT: Expected <beginStation> ... </beginStation>." << std::endl;
+        endResult = PartialImport;
+        delete tram;
+        continue;
+      }
       for(TiXmlElement* infoElem = element->FirstChildElement();
           infoElem != NULL;
           infoElem = infoElem->NextSiblingElement()){
         std::string elemName = infoElem->Value();
+        if(infoElem->FirstChild() == NULL) {
+          errStream << "XML PARTIAL IMPORT: <"
+    				<< elemName <<  "> ... </" << elemName << "> is empty." << std::endl;
+    			endResult = PartialImport;
+        }
         for(TiXmlNode* data = infoElem->FirstChild();
             data != NULL;
             data = data->NextSibling())
@@ -162,6 +235,10 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
                 tram->setCurrentStation(value);
                 metronet.getAlleStations()->at(value)
                                           ->setTramInStation(true);
+              }
+              else {
+                errStream << "XML PARTIAL IMPORT:\nExpected:\n<lijnNr> ... </lijnNr> or\n<zitplaatsen> ... </zitplaatsen> or\n<snelheid> ... </snelheid> or\n<beginStation> ... </beginStation>\nand got: <"
+  				            << elemName <<  "> ... </" << elemName << ">." << std::endl;
               }
             }
             catch(int e) {
@@ -207,13 +284,16 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
           }
         }
       }
-      if (deleted) break;
+      if (deleted) continue;
       metronet.addTram(tram);
     }
     else {
-      std::cout << "Element of type: " << elementType << " unsupported\n";
+      errStream << "XML PARTIAL IMPORT: Expected <STATION> ... </STATION> or <TRAM> ... </TRAM> and got <"
+				<< elementType <<  "> ... </" << elementType << ">." << std::endl;
+      endResult = PartialImport;
     }
   }
   doc.Clear();
   ENSURE(metronet.isConsistent(), "MetroNet is inconsistent");
+  return endResult;
 }

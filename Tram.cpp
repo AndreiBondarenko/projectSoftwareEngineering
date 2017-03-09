@@ -11,6 +11,7 @@
 
 Tram::Tram()  {
 	initCheck = this;
+  passagiers = 0;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
@@ -27,6 +28,7 @@ Tram::Tram(const int lijnNr, const int zitplaatsen, const std::string& beginStat
   REQUIRE(zitplaatsen >= 0 , "zitplaatsen must be bigger or equal to zero");
   REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
 	initCheck = this;
+  passagiers = 0;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
