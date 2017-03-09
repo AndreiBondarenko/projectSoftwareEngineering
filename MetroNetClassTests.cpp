@@ -60,28 +60,28 @@ TEST_F(MetroNetClassTest, SettersGettersMetroNet) {
 
 TEST_F(MetroNetClassTest, ContractViolationsTram) {
   EXPECT_DEATH(Tram(-1, 1, "A", 1), "lijnNr must be bigger or equal to zero");
-  // EXPECT_DEATH(Tram(1, -1, "A", 1), "failed assertion");
-  // EXPECT_DEATH(Tram(1, 1, "A", -1), "failed assertion");
-  // EXPECT_DEATH(Tram(1, 1, "", 1), "failed assertion");
-  // EXPECT_DEATH(tram.setCurrentStation(""), "failed assertion");
-  // EXPECT_DEATH(tram.setBeginStation(""), "failed assertion");
-  // EXPECT_DEATH(tram.setLijnNr(-1), "failed assertion");
-  // EXPECT_DEATH(tram.setZitplaatsen(-1), "failed assertion");
-  // EXPECT_DEATH(tram.setSnelheid(-1), "failed assertion");
-  // EXPECT_DEATH(tram.setPassagiers(-1), "failed assertion");
+  EXPECT_DEATH(Tram(1, -1, "A", 1), "zitplaatsen must be bigger or equal to zero");
+  EXPECT_DEATH(Tram(1, 1, "A", -1), "snelheid must be bigger or equal to zero");
+  EXPECT_DEATH(Tram(1, 1, "", 1), "beginStation must not be empty");
+  EXPECT_DEATH(tram.setCurrentStation(""), "newCurrentStation must not be empty");
+  EXPECT_DEATH(tram.setBeginStation(""), "newBeginStation must not be empty");
+  EXPECT_DEATH(tram.setLijnNr(-1), "newLijnNr must be bigger or equal to zero");
+  EXPECT_DEATH(tram.setZitplaatsen(-1), "newZitplaatsen must be bigger or equal to zero");
+  EXPECT_DEATH(tram.setSnelheid(-1), "newSnelheid must be bigger or equal to zero");
+  EXPECT_DEATH(tram.setPassagiers(-1), "newPassagiers must be bigger or equal to zero");
 }
 
 TEST_F(MetroNetClassTest, ContractViolationsStation) {
-  // EXPECT_DEATH(Station("A", "Z", "B", -1), "failed assertion");
-  // EXPECT_DEATH(Station("", "Z", "B", 1), "failed assertion");
-  // EXPECT_DEATH(Station("A", "", "B", 1), "failed assertion");
-  // EXPECT_DEATH(Station("A", "Z", "", 1), "failed assertion");
-  // EXPECT_DEATH(station.setNaam(""), "failed assertion");
-  // EXPECT_DEATH(station.setVolgende(""), "failed assertion");
-  // EXPECT_DEATH(station.setVorige(""), "failed assertion");
-  // EXPECT_DEATH(station.setSpoor(-1), "failed assertion");
-  // EXPECT_DEATH(station.setOpstappen(-1), "failed assertion");
-  // EXPECT_DEATH(station.setAfstappen(-1), "failed assertion");
+  EXPECT_DEATH(Station("A", "Z", "B", -1), "spoor must be bigger or equal to zero");
+  EXPECT_DEATH(Station("", "Z", "B", 1), "naam must not be empty");
+  EXPECT_DEATH(Station("A", "", "B", 1), "vorige must not be empty");
+  EXPECT_DEATH(Station("A", "Z", "", 1), "volgende must not be empty");
+  EXPECT_DEATH(station.setNaam(""), "newNaam must not be empty");
+  EXPECT_DEATH(station.setVolgende(""), "newVolgende must not be empty");
+  EXPECT_DEATH(station.setVorige(""), "newVorige must not be empty");
+  EXPECT_DEATH(station.setSpoor(-1), "newSpoor must be bigger or equal to zero");
+  EXPECT_DEATH(station.setOpstappen(-1), "newOpstappen must be bigger or equal to zero");
+  EXPECT_DEATH(station.setAfstappen(-1), "newAfstappen must be bigger or equal to zero");
 }
 
 TEST_F(MetroNetClassTest, ContractViolationsMetroNet) {
