@@ -1,7 +1,7 @@
 #--- google test framework
 INCL =		gtest/include
 TLIBPATH =	-Lgtest/lib
-TLIBS =		-lgtest -lgtest_main
+TLIBS =		-lgtest
 
 CXXFLAGS =	-O2 -g3 -Wall -Wextra -fmessage-length=0 -fstack-protector-all -std=c++11 -I$(INCL)
 
@@ -35,7 +35,7 @@ MetroNetMain : $(OBJS) $(TINYOBJS) tinyxml.h MetroNetMain.o
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS) $(TINYOBJS) MetroNetMain.o
 
 MetroNetTests : $(OBJS) $(TSTSRCS) $(TINYOBJS) tinyxml.h MetroNetTests.o
-	$(CXX) $(CXXFLAGS) $(TLIBPATH) $(TLIBS) -o $@ $(OBJS) $(TINYOBJS) MetroNetTests.o
+	$(CXX) $(CXXFLAGS) $(TLIBPATH) -o $@ $(OBJS) $(TINYOBJS) MetroNetTests.o $(TLIBS) 
 
 MetroNetTests.o : $(TSTSRCS)
 	$(CXX) $(CXXFLAGS) -c -o $@ MetroNetTests.cpp
