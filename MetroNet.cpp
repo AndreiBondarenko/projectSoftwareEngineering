@@ -18,6 +18,7 @@ MetroNet::MetroNet()  {
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
+
 MetroNet::~MetroNet() {
   for(auto it = alleStations.begin(); it != alleStations.end(); ++it) {
       delete it->second;
@@ -204,8 +205,6 @@ void MetroNet::movePassengers(std::string station, int spoor, std::ostream& outp
     << " passagiers op tram, " << opstappen << " mensen stappen op.\n";
   }
 }
-
-
 
 MetroNet* MetroNet::initializeFromFile(const char* file) {
 

@@ -62,6 +62,9 @@ TEST_F(MetroNetClassTest, ContractViolationsTram) {
   EXPECT_DEATH(Tram(-1, 1, "A", 1), "failed assertion");
   EXPECT_DEATH(Tram(1, -1, "A", 1), "failed assertion");
   EXPECT_DEATH(Tram(1, 1, "A", -1), "failed assertion");
+  EXPECT_DEATH(Tram(1, 1, "", 1), "failed assertion");
+  EXPECT_DEATH(tram.setCurrentStation(""), "failed assertion");
+  EXPECT_DEATH(tram.setBeginStation(""), "failed assertion");
   EXPECT_DEATH(tram.setLijnNr(-1), "failed assertion");
   EXPECT_DEATH(tram.setZitplaatsen(-1), "failed assertion");
   EXPECT_DEATH(tram.setSnelheid(-1), "failed assertion");
@@ -70,6 +73,12 @@ TEST_F(MetroNetClassTest, ContractViolationsTram) {
 
 TEST_F(MetroNetClassTest, ContractViolationsStation) {
   EXPECT_DEATH(Station("A", "Z", "B", -1), "failed assertion");
+  EXPECT_DEATH(Station("", "Z", "B", 1), "failed assertion");
+  EXPECT_DEATH(Station("A", "", "B", 1), "failed assertion");
+  EXPECT_DEATH(Station("A", "Z", "", 1), "failed assertion");
+  EXPECT_DEATH(station.setNaam(""), "failed assertion");
+  EXPECT_DEATH(station.setVolgende(""), "failed assertion");
+  EXPECT_DEATH(station.setVorige(""), "failed assertion");
   EXPECT_DEATH(station.setSpoor(-1), "failed assertion");
   EXPECT_DEATH(station.setOpstappen(-1), "failed assertion");
   EXPECT_DEATH(station.setAfstappen(-1), "failed assertion");

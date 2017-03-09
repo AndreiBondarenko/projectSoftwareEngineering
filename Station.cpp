@@ -22,6 +22,9 @@ Station::Station(const std::string& naam, const std::string& vorige,
   volgende(volgende),
   spoor(spoor)
 {
+  REQUIRE(volgende != "", "volgende must not be empty");
+  REQUIRE(vorige != "", "vorige must not be empty");
+  REQUIRE(naam != "", "naam must not be empty");
   REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
   initCheck = this;
   ENSURE(properlyInitialized(),
@@ -68,6 +71,7 @@ bool Station::isTramInStation() const {
 void Station::setNaam(const std::string& newNaam) {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling setNaam");
+  REQUIRE(newNaam != "", "newNaam must not be empty");
   naam = newNaam;
   ENSURE(getNaam() == newNaam,
     "setNaam post condition failure");
@@ -76,6 +80,7 @@ void Station::setNaam(const std::string& newNaam) {
 void Station::setVorige(const std::string& newVorige) {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling setVorige");
+  REQUIRE(newVorige != "", "newVorige must not be empty");
   vorige = newVorige;
   ENSURE(getVorige() == newVorige,
     "setVorige post condition failure");
@@ -84,6 +89,7 @@ void Station::setVorige(const std::string& newVorige) {
 void Station::setVolgende(const std::string& newVolgende) {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling setVolgende");
+  REQUIRE(newVolgende != "", "newVolgende must not be empty");
   volgende = newVolgende;
   ENSURE(getVolgende() == newVolgende,
     "setVolgende post condition failure");

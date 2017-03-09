@@ -22,6 +22,7 @@ Tram::Tram(const int lijnNr, const int zitplaatsen, const std::string& beginStat
   currentStation(beginStation),
 	snelheid(snelheid)
 {
+  REQUIRE(beginStation != "", "beginStation must not be empty");
   REQUIRE(lijnNr >= 0 , "lijnNr must be bigger or equal to zero");
   REQUIRE(zitplaatsen >= 0 , "zitplaatsen must be bigger or equal to zero");
   REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
@@ -94,6 +95,7 @@ void Tram::setZitplaatsen(const int newZitplaatsen) {
 void Tram::setBeginStation(const std::string & newBeginStation) {
 	REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling setBeginStation");
+  REQUIRE(newBeginStation != "", "newBeginStation must not be empty");
 	beginStation = newBeginStation;
 	ENSURE(getBeginStation() == newBeginStation,
     "setBeginStation post condition failure");
@@ -102,6 +104,7 @@ void Tram::setBeginStation(const std::string & newBeginStation) {
 void Tram::setCurrentStation(const std::string &newCurrentStation) {
   REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling setCurrentStation");
+  REQUIRE(newCurrentStation != "", "newCurrentStation must not be empty");
   currentStation = newCurrentStation;
   ENSURE(getCurrentStation() == newCurrentStation,
     "setCurrentStation post condition failure");

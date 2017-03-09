@@ -28,6 +28,9 @@ public:
   */
   Station(); // default
   /**
+  \n REQUIRE(volgende != "", "volgende must not be empty");
+  \n REQUIRE(vorige != "", "vorige must not be empty");
+  \n REQUIRE(naam != "", "naam must not be empty");
   \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   */
@@ -75,16 +78,19 @@ public:
   // SETTER METHODS
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setNaam");
+  \n REQUIRE(newNaam != "", "newNaam must not be empty");
   \n ENSURE(getNaam() == newNaam, "setNaam post condition failure");
   */
   void setNaam(const std::string& newNaam);
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setVorige");
+  \n REQUIRE(newVorige != "", "newVorige must not be empty");
   \n ENSURE(getVorige() == newVorige, "setVorige post condition failure");
   */
   void setVorige(const std::string& newVorige);
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setVolgende");
+  \n REQUIRE(newVolgende != "", "newVolgende must not be empty");
   \n ENSURE(getVolgende() == newVolgende, "setVolgende post condition failure");
   */
   void setVolgende(const std::string& newVolgende);
@@ -113,10 +119,6 @@ public:
   \n ENSURE(getAfstappen() == newAfstappen, "setAfstappen post condition failure");
   */
   void setAfstappen(const int newAfstappen);
-
-
-protected:
-
 };
 
 

@@ -27,6 +27,7 @@ public:
   */
   Tram(); // default
   /**
+  \n REQUIRE(beginStation != "", "newBeginStation must not be empty");
   \n REQUIRE(lijnNr >= 0 , "lijnNr must be bigger or equal to zero");
   \n REQUIRE(zitplaatsen >= 0 , "zitplaatsen must be bigger or equal to zero");
   \n REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
@@ -82,11 +83,13 @@ public:
   void setZitplaatsen(const int newZitplaatsen);
   /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setBeginStation");
+  \n REQUIRE(newBeginStation != "", "newBeginStation must not be empty");
   \n ENSURE(getBeginStation() == newBeginStation, "setBeginStation post condition failure");
   */
   void setBeginStation(const std::string& newBeginStation);
   /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setCurrentStation");
+  \n REQUIRE(newCurrentStation != "", "newCurrentStation must not be empty");
   \n ENSURE(getCurrentStation() == newCurrentStation, "setCurrentStation post condition failure");
   */
   void setCurrentStation(const std::string& newCurrentStation);
@@ -116,9 +119,6 @@ public:
   // \n ENSURE(getPassagiers() <= getZitplaatsen(), "getOn post condition failure");
   // */
   // void getOn(int on);
-
-protected:
-
 };
 
 
