@@ -1,7 +1,7 @@
 #--- google test framework
 INCL =		gtest/include
 TLIBPATH =	-Lgtest/lib
-TLIBS =		-lgtest
+TLIBS =		-pthread -lgtest
 
 CXXFLAGS =	-O2 -g3 -Wall -Wextra -fmessage-length=0 -fstack-protector-all -std=c++11 -I$(INCL)
 
