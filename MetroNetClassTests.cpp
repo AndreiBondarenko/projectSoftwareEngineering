@@ -85,5 +85,8 @@ TEST_F(MetroNetClassTest, ContractViolationsStation) {
 }
 
 TEST_F(MetroNetClassTest, ContractViolationsMetroNet) {
-
+    Station testStation("A", "Z", "B", 1);
+    Station* stationPtr = &testStation;
+    metronet.addStation(stationPtr);
+    EXPECT_DEATH(metronet.addStation(stationPtr), "This MetroNet already contains a station with this name");
 }

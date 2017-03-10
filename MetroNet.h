@@ -90,7 +90,7 @@ public:
   \n ENSURE(getAlleTrams()->at(newTram->getLijnNr()) == newTram, "addTram post condition failure");
   */
   void addTram(Tram* newTram);
-  
+
   // /**
   // \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling removeTram");
   // \n REQUIRE(getAlleTrams()->count(newTram->getLijnNr()) == 1, "This MetroNet doesn't contain a tram with this lijnNr");
@@ -115,10 +115,6 @@ public:
   void movePassengers(std::string station, int spoor, std::ostream& output);
 
   // FILE I/O METHODS
-  /**
-  \n ENSURE(result->isConsistent(), "MetroNet is not consistent");
-  */
-  static MetroNet* initializeFromFile(const char* file);
   /**
   \n REQUIRE(isConsistent(), "MetroNet is not consistent");
   */
