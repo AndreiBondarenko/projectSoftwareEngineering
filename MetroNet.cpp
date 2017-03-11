@@ -141,7 +141,10 @@ void MetroNet::addTram(Tram* newTram) {
   REQUIRE(getAlleTrams()->count(newTram->getLijnNr()) == 0,
     "This MetroNet already contains a Tram with this lijnNr");
   alleTrams[newTram->getLijnNr()] = newTram;
+  alleStations[newTram->getBeginStation()]->setTramInStation(true);
   ENSURE(getAlleTrams()->at(newTram->getLijnNr()) == newTram,
+    "addTram post condition failure");
+  ENSURE(getAlleStations()->at(newTram->getBeginStation())->isTramInStation(),
     "addTram post condition failure");
 }
 
@@ -159,6 +162,7 @@ void MetroNet::moveTram(std::string station, int spoor, std::ostream& output) {
   REQUIRE(properlyInitialized(),
     "MetroNet wasn't initialized when calling moveTrams");
   REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
+  REQUIRE(station != "", "station must not be empty");
   std::string currentStation = getAlleTrams()->at(spoor)->getCurrentStation();
   getAlleStations()->at(currentStation)->setTramInStation(false);
   getAlleTrams()->at(spoor)->setCurrentStation(station);
@@ -175,6 +179,7 @@ void MetroNet::movePassengers(std::string station, int spoor, std::ostream& outp
   REQUIRE(properlyInitialized(),
     "MetroNet wasn't initialized when calling movePassengers");
   REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
+  REQUIRE(station != "", "station must not be empty");
   REQUIRE(getAlleTrams()->at(spoor)->getCurrentStation() == station,
     "Tram not in given station");
   REQUIRE(getAlleStations()->at(station)->isTramInStation(),

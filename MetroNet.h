@@ -88,6 +88,7 @@ public:
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addTram");
   \n REQUIRE(getAlleTrams()->count(newTram->getLijnNr()) == 0, "This MetroNet already contains a Tram with this lijnNr");
   \n ENSURE(getAlleTrams()->at(newTram->getLijnNr()) == newTram, "addTram post condition failure");
+  \n ENSURE(getAlleStations()->at(newTram->getBeginStation())->isTramInStation(), "addTram post condition failure");
   */
   void addTram(Tram* newTram);
 
@@ -101,6 +102,7 @@ public:
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
   \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
+  \n REQUIRE(station != "", "station must not be empty");
   \n ENSURE(getAlleStations()->at(station)->getTramInStation() != spoor, "moveTram post condition failure");
   \n ENSURE(station == getTrams()->at(spoor)->getCurrentStation(), "moveTram post condition failure");
   \n ENSURE(isConsistent(), "moveTram made MetroNet inconsistent")
@@ -109,6 +111,7 @@ public:
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling movePassengers");
   \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
+  \n REQUIRE(station != "", "station must not be empty");
   \n REQUIRE(getAlleTrams()->at(spoor)->getCurrentStation() == station, "Tram not in given station")
   \n REQUIRE(getAlleStations()->at(station)->isTramInStation(), "Station is empty")
   */
