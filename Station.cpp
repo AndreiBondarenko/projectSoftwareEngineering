@@ -13,6 +13,7 @@ Station::Station()  {
   initCheck = this;
   opstappen = 0;
   afstappen = 0;
+  tramInStation = false;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
@@ -31,6 +32,7 @@ Station::Station(const std::string& naam, const std::string& vorige,
   initCheck = this;
   opstappen = 0;
   afstappen = 0;
+  tramInStation = false;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
