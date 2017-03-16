@@ -90,29 +90,29 @@ std::set<int>* MetroNet::getAlleSporen() {
   return &alleSporen;
 }
 
-// void MetroNet::setAlleStations(std::map<std::string, Station*>& newAlleStations) {
-//   REQUIRE(properlyInitialized(),
-//     "MetroNet wasn't initialized when calling setAlleStations");
-//   alleStations = newAlleStations;
-//   ENSURE(*getAlleStations() == newAlleStations,
-//     "setAlleStations post condition failure");
-// }
-//
-// void MetroNet::setAlleTrams(std::map<int, Tram*>& newAlleTrams) {
-//   REQUIRE(properlyInitialized(),
-//     "MetroNet wasn't initialized when calling setAlleTrams");
-//   alleTrams = newAlleTrams;
-//   ENSURE(*getAlleTrams() == newAlleTrams,
-//     "setAlleTrams post condition failure");
-// }
-//
-// void MetroNet::setAlleSporen(std::set<int>& newAlleSporen) {
-//   REQUIRE(properlyInitialized(),
-//     "MetroNet wasn't initialized when calling setAlleSporen");
-//   alleSporen = newAlleSporen;
-//   ENSURE(*getAlleSporen() == newAlleSporen,
-//     "setAlleSporen post condition failure");
-// }
+void MetroNet::setAlleStations(std::map<std::string, Station*>& newAlleStations) {
+  REQUIRE(properlyInitialized(),
+    "MetroNet wasn't initialized when calling setAlleStations");
+  alleStations = newAlleStations;
+  ENSURE(*getAlleStations() == newAlleStations,
+    "setAlleStations post condition failure");
+}
+
+void MetroNet::setAlleTrams(std::map<int, Tram*>& newAlleTrams) {
+  REQUIRE(properlyInitialized(),
+    "MetroNet wasn't initialized when calling setAlleTrams");
+  alleTrams = newAlleTrams;
+  ENSURE(*getAlleTrams() == newAlleTrams,
+    "setAlleTrams post condition failure");
+}
+
+void MetroNet::setAlleSporen(std::set<int>& newAlleSporen) {
+  REQUIRE(properlyInitialized(),
+    "MetroNet wasn't initialized when calling setAlleSporen");
+  alleSporen = newAlleSporen;
+  ENSURE(*getAlleSporen() == newAlleSporen,
+    "setAlleSporen post condition failure");
+}
 
 void MetroNet::addStation(Station* newStation) {
   REQUIRE(properlyInitialized(),
@@ -124,16 +124,6 @@ void MetroNet::addStation(Station* newStation) {
   ENSURE(getAlleStations()->at(newStation->getNaam()) == newStation,
     "addStation post condition failure");
 }
-
-// void MetroNet::removeStation(const std::string& stationName) {
-//   REQUIRE(properlyInitialized(),
-//     "MetroNet wasn't initialized when calling removeStation");
-//   REQUIRE(getAlleStations()->count(stationName) == 1,
-//     "This MetroNet doesn't contain a station with this name");
-//   alleStations.erase(stationName);
-//   ENSURE(getAlleStations()->count(stationName) == 0,
-//     "removeStation post condition failure");
-// }
 
 void MetroNet::addTram(Tram* newTram) {
   REQUIRE(properlyInitialized(),
@@ -147,16 +137,6 @@ void MetroNet::addTram(Tram* newTram) {
   ENSURE(getAlleStations()->at(newTram->getBeginStation())->isTramInStation(),
     "addTram post condition failure");
 }
-
-// void MetroNet::removeTram(const int lijnNr) {
-//   REQUIRE(properlyInitialized(),
-//     "MetroNet wasn't initialized when calling removeTram");
-//   REQUIRE(getAlleTrams()->count(lijnNr) == 1,
-//     "This MetroNet doesn't contain a tram with this lijnNr");
-//   alleTrams.erase(lijnNr);
-//   ENSURE(getAlleTrams()->count(lijnNr) == 0,
-//     "removeTram post condition failure");
-// }
 
 void MetroNet::moveTram(std::string station, int spoor, std::ostream& output) {
   REQUIRE(properlyInitialized(),

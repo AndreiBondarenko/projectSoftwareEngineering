@@ -129,24 +129,3 @@ void Tram::setPassagiers(const int newPassagiers) {
   ENSURE(getPassagiers() == newPassagiers,
     "setPassagiers post condition failure");
 }
-
-// void Tram::getOff(int off) {
-//   REQUIRE(properlyInitialized(),
-//     "Tram wasn't initialized when calling getOff");
-//   REQUIRE(off <= getPassagiers(),
-//     "More passengers getting off Tram than on Tram");
-//   passagiers -= off;
-//   ENSURE(getPassagiers() <= getZitplaatsen(),
-//     "getOff post condition failure");
-// }
-//
-// void Tram::getOn(int on) {
-//   REQUIRE(properlyInitialized(),
-//     "Tram wasn't initialized when calling getOn");
-//   REQUIRE(on <= getZitplaatsen() - getPassagiers(),
-//     "Not enough seats for passengers getting on Tram");
-//   passagiers += on;
-//   ENSURE(getPassagiers() <= getZitplaatsen(),
-//     "getOn post condition failure");
-//
-// }
