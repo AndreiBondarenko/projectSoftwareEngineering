@@ -26,7 +26,7 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
   if(net == NULL) {
     errStream << "XML PARTIAL IMPORT: " << "Failed to load file: No root element." << std::endl;
     doc.Clear();
-		return PartialImport;
+		endResult = PartialImport;
   }
   std::string rootName = net->Value();
   if(rootName != "METRONET") {
