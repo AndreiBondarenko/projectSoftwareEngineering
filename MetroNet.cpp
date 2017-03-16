@@ -68,7 +68,7 @@ bool MetroNet::isConsistent() const {
       return false;
     }
   }
-  // elk spoor maximaal een keer door elk station komt ???????????????????????
+  // elk spoor maximaal een keer door elk station komt ???????????????????????
   return true;
 }
 
@@ -166,7 +166,7 @@ void MetroNet::movePassengers(std::string station, int spoor, std::ostream& outp
     "Station is empty");
   const int afstappen = getAlleStations()->at(station)->getAfstappen();
   const int opstappen = getAlleStations()->at(station)->getOpstappen();
-  const int passagiers = getAlleTrams()->at(spoor)->getPassagiers();
+  int passagiers = getAlleTrams()->at(spoor)->getPassagiers();
   const int zitplaatsen = getAlleTrams()->at(spoor)->getZitplaatsen();
   if(afstappen <= passagiers){
     getAlleTrams()->at(spoor)->setPassagiers(passagiers-afstappen);
@@ -178,6 +178,7 @@ void MetroNet::movePassengers(std::string station, int spoor, std::ostream& outp
     output << "ERROR: Aan station " << station << " stappen " << afstappen
     << " mensen af tram " << spoor << ". Slechts " << passagiers << " mensen op de tram.\n";
   }
+  passagiers = getAlleTrams()->at(spoor)->getPassagiers();
   if(passagiers + opstappen <= zitplaatsen){
     getAlleTrams()->at(spoor)->setPassagiers(passagiers+opstappen);
     output << "In station " << station << " stappen " << opstappen << " mensen op tram "
