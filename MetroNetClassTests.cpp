@@ -51,11 +51,25 @@ TEST_F(MetroNetClassTest, SettersGettersStation) {
   EXPECT_EQ(3, station.getOpstappen());
   station.setAfstappen(5);
   EXPECT_EQ(5, station.getAfstappen());
-
 }
 
 TEST_F(MetroNetClassTest, SettersGettersMetroNet) {
-
+  Station* testStation1 = new Station("A", "Z", "B", 1);
+  Station* testStation2 = new Station("B", "X", "Z", 1);
+  std::map<std::string, Station*> stations;
+  stations[testStation1->getNaam()] = testStation1;
+  stations[testStation2->getNaam()] = testStation2;
+  metronet.setAlleStations(stations);
+  EXPECT_EQ(stations, *(metronet.getAlleStations()));
+  Tram* testTram = new Tram(1, 1, "B", 1);
+  std::map<int, Tram*> trams;
+  trams[testTram->getLijnNr()] = testTram;
+  metronet.setAlleTrams(trams);
+  EXPECT_EQ(trams, *(metronet.getAlleTrams()));
+  std::set<int> sporen;
+  sporen.insert(1); sporen.insert(8); sporen.insert(7);
+  metronet.setAlleSporen(sporen);
+  EXPECT_EQ(sporen, *(metronet.getAlleSporen()));
 }
 
 TEST_F(MetroNetClassTest, ContractViolationsTram) {
