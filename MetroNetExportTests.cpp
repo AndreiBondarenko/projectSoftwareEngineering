@@ -83,15 +83,15 @@ TEST_F(MetroNetExportTest, OutputHappyDayTest01) {
   std::ofstream movement;
   errors.open("_testOutput/happyDay01ErrorLog.txt");
   output.open("_testOutput/happyDay01.txt");
+  movement.open("_testOutput/happyDay01MovementLog.txt");
   MetroNetImporter::importMetroNet("_testInput/happyDay01.xml", errors, metronet);
-  errors.close();
-  EXPECT_TRUE(FileCompare("_testOutput/happyDay01ErrorLogExpected.txt", "_testOutput/happyDay01ErrorLog.txt"));
   metronet.writeToOutputStream(output);
   output.close();
-  EXPECT_TRUE(FileCompare("_testOutput/happyDay01Expected.txt", "_testOutput/happyDay01.txt"));
-  movement.open("_testOutput/happyDay01MovementLog.txt");
+  errors.close();
   movement.close();
+  EXPECT_TRUE(FileCompare("_testOutput/happyDay01Expected.txt", "_testOutput/happyDay01.txt"));
   EXPECT_TRUE(FileCompare("_testOutput/happyDay01MovementLogExpected.txt", "_testOutput/happyDay01MovementLog.txt"));
+  EXPECT_TRUE(FileCompare("_testOutput/happyDay01ErrorLogExpected.txt", "_testOutput/happyDay01ErrorLog.txt"));
 }
 
 TEST_F(MetroNetExportTest, OutputHappyDayTest02) {
@@ -102,13 +102,9 @@ TEST_F(MetroNetExportTest, OutputHappyDayTest02) {
   std::ofstream movement;
   errors.open("_testOutput/happyDay02ErrorLog.txt");
   output.open("_testOutput/happyDay02.txt");
-  MetroNetImporter::importMetroNet("_testInput/happyDay02.xml", errors, metronet);
-  errors.close();
-  EXPECT_TRUE(FileCompare("_testOutput/happyDay02ErrorLogExpected.txt", "_testOutput/happyDay02ErrorLog.txt"));
-  metronet.writeToOutputStream(output);
-  output.close();
-  EXPECT_TRUE(FileCompare("_testOutput/happyDay02Expected.txt", "_testOutput/happyDay02.txt"));
   movement.open("_testOutput/happyDay02MovementLog.txt");
+  MetroNetImporter::importMetroNet("_testInput/happyDay02.xml", errors, metronet);
+  metronet.writeToOutputStream(output);
   for (int n = 1; n <= 5; n++) {
     movement << n << ".\n";
     std::set<int> alreadyMoved;
@@ -116,24 +112,54 @@ TEST_F(MetroNetExportTest, OutputHappyDayTest02) {
       if (mapIt->second->isTramInStation() && alreadyMoved.find(mapIt->second->getSpoor()) == alreadyMoved.end()) {
         alreadyMoved.insert(mapIt->second->getSpoor());
         metronet.moveTram(mapIt->second->getVolgende(), mapIt->second->getSpoor(), movement);
-        metronet.movePassengers(mapIt->second->getVolgende(), mapIt->second->getSpoor(), movement);
+        metronet.movePassengers(mapIt->second->getVolgende(), mapIt->second->getSpoor(), movement, errors);
         movement << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
       }
     }
   }
   movement.close();
+  output.close();
+  errors.close();
   EXPECT_TRUE(FileCompare("_testOutput/happyDay02MovementLogExpected.txt", "_testOutput/happyDay02MovementLog.txt"));
+  EXPECT_TRUE(FileCompare("_testOutput/happyDay02Expected.txt", "_testOutput/happyDay02.txt"));
+  EXPECT_TRUE(FileCompare("_testOutput/happyDay02ErrorLogExpected.txt", "_testOutput/happyDay02ErrorLog.txt"));
 
 
 }
 
-TEST_F(MetroNetExportTest, OutputBadDayTest01) {
-	ASSERT_TRUE(DirectoryExists("_testOutput"));
+TEST_F(MetroNetExportTest, OutputBadDayTest01MaxCapacityExceeded) {
+  ASSERT_TRUE(DirectoryExists("_testOutput"));
   ASSERT_TRUE(DirectoryExists("_testInput"));
+  std::ofstream errors;
+  std::ofstream output;
+  std::ofstream movement;
+  errors.open("_testOutput/badDay01ErrorLog.txt");
+  output.open("_testOutput/badDay01.txt");
+  movement.open("_testOutput/badDay01MovementLog.txt");
+  MetroNetImporter::importMetroNet("_testInput/badDay01.xml", errors, metronet);
+  metronet.writeToOutputStream(output);
+  for (int n = 1; n <= 5; n++) {
+    movement << n << ".\n";
+    std::set<int> alreadyMoved;
+    for (auto mapIt = metronet.getAlleStations()->begin(); mapIt != metronet.getAlleStations()->end(); mapIt++) {
+      if (mapIt->second->isTramInStation() && alreadyMoved.find(mapIt->second->getSpoor()) == alreadyMoved.end()) {
+        alreadyMoved.insert(mapIt->second->getSpoor());
+        metronet.moveTram(mapIt->second->getVolgende(), mapIt->second->getSpoor(), movement);
+        metronet.movePassengers(mapIt->second->getVolgende(), mapIt->second->getSpoor(), movement, errors);
+        movement << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+      }
+    }
+  }
+  movement.close();
+  output.close();
+  errors.close();
+  EXPECT_TRUE(FileCompare("_testOutput/badDay01MovementLogExpected.txt", "_testOutput/badDay01MovementLog.txt"));
+  EXPECT_TRUE(FileCompare("_testOutput/badDay01Expected.txt", "_testOutput/badDay01.txt"));
+  EXPECT_TRUE(FileCompare("_testOutput/badDay01ErrorLogExpected.txt", "_testOutput/badDay01ErrorLog.txt"));
 
 }
 
-TEST_F(MetroNetExportTest, OutputBadDayTest02) {
+TEST_F(MetroNetExportTest, OutputBadDayTest02InsufficientPassengers) {
 	ASSERT_TRUE(DirectoryExists("_testOutput"));
   ASSERT_TRUE(DirectoryExists("_testInput"));
 

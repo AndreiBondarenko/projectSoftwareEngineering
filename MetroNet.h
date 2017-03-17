@@ -102,7 +102,7 @@ public:
   \n REQUIRE(getAlleTrams()->at(spoor)->getCurrentStation() == station, "Tram not in given station")
   \n REQUIRE(getAlleStations()->at(station)->isTramInStation(), "Station is empty")
   */
-  void movePassengers(std::string station, int spoor, std::ostream& output);
+  void movePassengers(std::string station, int spoor, std::ostream& output, std::ostream& errors);
 
   // FILE I/O METHODS
   /**

@@ -109,9 +109,9 @@ TEST_F(MetroNetClassTest, ContractViolationsMetroNet) {
     EXPECT_DEATH(metronet.addTram(testTram), "This MetroNet already contains a Tram with this lijnNr");
     EXPECT_DEATH(metronet.moveTram("A", -1, std::cout), "spoor must be bigger or equal to zero");
     EXPECT_DEATH(metronet.moveTram("", 1, std::cout), "station must not be empty");
-    EXPECT_DEATH(metronet.movePassengers("A", -1, std::cout), "spoor must be bigger or equal to zero");
-    EXPECT_DEATH(metronet.movePassengers("", 1, std::cout), "station must not be empty");
-    EXPECT_DEATH(metronet.movePassengers("A", 1, std::cout), "Tram not in given station");
+    EXPECT_DEATH(metronet.movePassengers("A", -1, std::cout, std::cout), "spoor must be bigger or equal to zero");
+    EXPECT_DEATH(metronet.movePassengers("", 1, std::cout, std::cout), "station must not be empty");
+    EXPECT_DEATH(metronet.movePassengers("A", 1, std::cout, std::cout), "Tram not in given station");
     testStation2->setTramInStation(false);
-    EXPECT_DEATH(metronet.movePassengers("B", 1, std::cout), "Station is empty");
+    EXPECT_DEATH(metronet.movePassengers("B", 1, std::cout, std::cout), "Station is empty");
 }

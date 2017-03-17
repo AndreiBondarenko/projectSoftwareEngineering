@@ -155,7 +155,7 @@ void MetroNet::moveTram(std::string station, int spoor, std::ostream& output) {
   ENSURE(isConsistent(), "moveTram made MetroNet inconsistent");
 }
 
-void MetroNet::movePassengers(std::string station, int spoor, std::ostream& output) {
+void MetroNet::movePassengers(std::string station, int spoor, std::ostream& output, std::ostream& error) {
   REQUIRE(properlyInitialized(),
     "MetroNet wasn't initialized when calling movePassengers");
   REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
@@ -174,8 +174,10 @@ void MetroNet::movePassengers(std::string station, int spoor, std::ostream& outp
     << spoor << ".\n";
   }
   else {
+    output << "In station " << station << " stappen " << passagiers << " mensen af tram "
+    << spoor << ".\n";
     getAlleTrams()->at(spoor)->setPassagiers(0);
-    output << "ERROR: Aan station " << station << " stappen " << afstappen
+    error << "ERROR: Aan station " << station << " stappen " << afstappen
     << " mensen af tram " << spoor << ". Slechts " << passagiers << " mensen op de tram.\n";
   }
   passagiers = getAlleTrams()->at(spoor)->getPassagiers();
@@ -185,8 +187,10 @@ void MetroNet::movePassengers(std::string station, int spoor, std::ostream& outp
     << spoor << ".\n";
   }
   else {
+    output << "In station " << station << " stappen " << zitplaatsen-passagiers << " mensen op tram "
+    << spoor << ".\n";
     getAlleTrams()->at(spoor)->setPassagiers(zitplaatsen);
-    output << "ERROR: Maximum capaciteit ("<< zitplaatsen <<") tram "<< spoor
+    error << "ERROR: Maximum capaciteit ("<< zitplaatsen <<") tram "<< spoor
     <<" overschreden aan station" << station << ". Reeds " << passagiers
     << " passagiers op tram, " << opstappen << " mensen stappen op.\n";
   }
