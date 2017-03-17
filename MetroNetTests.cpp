@@ -5,6 +5,7 @@
 
 #include "MetroNet.h"
 #include "MetroNetClassTests.cpp"
+#include "MetroNetExportTests.cpp"
 
 
 int main(int argc, char **argv) {

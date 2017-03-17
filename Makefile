@@ -14,7 +14,8 @@ SRCS =		MetroNetMain \
 			MetroNetUtils.cpp
 
 TSTSRCS =	MetroNetTests.cpp \
-			MetroNetClassTests.cpp
+			MetroNetClassTests.cpp \
+			MetroNetExportTests.cpp
 
 TINYOBJS =	tinystr.o \
 			tinyxml.o \
@@ -35,7 +36,7 @@ MetroNetMain : $(OBJS) $(TINYOBJS) tinyxml.h MetroNetMain.o
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS) $(TINYOBJS) MetroNetMain.o
 
 MetroNetTests : $(OBJS) $(TSTSRCS) $(TINYOBJS) tinyxml.h MetroNetTests.o
-	$(CXX) $(CXXFLAGS) $(TLIBPATH) -o $@ $(OBJS) $(TINYOBJS) MetroNetTests.o $(TLIBS) 
+	$(CXX) $(CXXFLAGS) $(TLIBPATH) -o $@ $(OBJS) $(TINYOBJS) MetroNetTests.o $(TLIBS)
 
 MetroNetTests.o : $(TSTSRCS)
 	$(CXX) $(CXXFLAGS) -c -o $@ MetroNetTests.cpp
