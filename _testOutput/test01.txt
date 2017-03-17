@@ -1,0 +1,6 @@
+In station A stappen 0 mensen af tram 12.
+In station A stappen 7 mensen op tram 12.
+Tram 12 reed van station A naar station B.
+In station B stappen 5 mensen af tram 12.
+In station B stappen 10 mensen op tram 12.
+Tram 12 reed van station B naar station C.

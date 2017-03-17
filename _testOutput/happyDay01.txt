@@ -1,0 +1,15 @@
+Station A
+<- Station C
+-> Station B
+Spoor 12, 32 zitplaatsen
+
+Station B
+<- Station A
+-> Station C
+Spoor 12, 32 zitplaatsen
+
+Station C
+<- Station B
+-> Station A
+Spoor 12, 32 zitplaatsen
+
