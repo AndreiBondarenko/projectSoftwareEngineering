@@ -55,3 +55,8 @@ clean:
 	find . -name '*.d' -delete
 	find . -name '*~'  -delete
 	rm $(TARGET)
+
+.PHONY: clearOutput
+clearOutput:
+	rm -r _testOutput/*.*
+	rm -r _output/*.*
