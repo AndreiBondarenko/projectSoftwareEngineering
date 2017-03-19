@@ -233,8 +233,10 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
                 std::string value = text->Value();
                 tram->setBeginStation(value);
                 tram->setCurrentStation(value);
-                metronet.getAlleStations()->find(value)->second
-                                          ->setTramInStation(true);
+                if (metronet.getAlleStations()->find(value) == metronet.getAlleStations()->end())
+                  errStream << "XML PARTIAL IMPORT: BeginStation not found for tram " << tram->getLijnNr() << std::endl;
+                else
+                  metronet.getAlleStations()->at(value)->setTramInStation(true);
               }
               else {
                 errStream << "XML PARTIAL IMPORT:\nExpected:\n<lijnNr> ... </lijnNr> or\n<zitplaatsen> ... </zitplaatsen> or\n<snelheid> ... </snelheid> or\n<beginStation> ... </beginStation>\nand got: <"
