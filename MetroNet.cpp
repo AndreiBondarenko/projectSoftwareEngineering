@@ -191,7 +191,7 @@ void MetroNet::movePassengers(std::string station, int spoor, std::ostream& outp
     << spoor << ".\n";
     getAlleTrams()->at(spoor)->setPassagiers(zitplaatsen);
     error << "ERROR: Maximum capaciteit ("<< zitplaatsen <<") tram "<< spoor
-    <<" overschreden aan station" << station << ". Reeds " << passagiers
+    <<" overschreden aan station " << station << ". Reeds " << passagiers
     << " passagiers op tram, " << opstappen << " mensen stappen op.\n";
   }
 }

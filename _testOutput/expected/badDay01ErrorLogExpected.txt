@@ -1,0 +1,5 @@
+ERROR: Aan station B stappen 1 mensen af tram 42. Slechts 0 mensen op de tram.
+ERROR: Aan station Noord-Oost stappen 3 mensen af tram 36. Slechts 0 mensen op de tram.
+ERROR: Aan station Oost stappen 5 mensen af tram 36. Slechts 3 mensen op de tram.
+ERROR: Aan station X stappen 7 mensen af tram 42. Slechts 1 mensen op de tram.
+ERROR: Aan station Zuid stappen 7 mensen af tram 36. Slechts 5 mensen op de tram.

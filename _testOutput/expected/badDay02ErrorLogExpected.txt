@@ -1,0 +1,3 @@
+ERROR: Maximum capaciteit (32) tram 12 overschreden aan station A. Reeds 23 passagiers op tram, 14 mensen stappen op.
+ERROR: Maximum capaciteit (32) tram 12 overschreden aan station B. Reeds 32 passagiers op tram, 14 mensen stappen op.
+ERROR: Maximum capaciteit (32) tram 12 overschreden aan station C. Reeds 29 passagiers op tram, 14 mensen stappen op.
