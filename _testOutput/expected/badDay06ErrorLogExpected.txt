@@ -1,0 +1,2 @@
+XML PARTIAL IMPORT: Expected <volgende> ... </volgende>.
+XML PARTIAL IMPORT: BeginStation not found for tram 12

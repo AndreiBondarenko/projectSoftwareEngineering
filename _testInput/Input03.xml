@@ -1,16 +1,14 @@
 <?xml version="1.0" ?>
 <METRONET>
 	<STATION>
-		<naam>A</naam>
 		<volgende>B</volgende>
-<vorige>C</vorige>
+		<vorige>C</vorige>
 		<spoor>12</spoor>
 		<opstappen>7</opstappen>
 	</STATION>
 	<STATION>
 		<naam>B</naam>
 		<volgende>C</volgende>
-<vorige>A</vorige>
 		<spoor>12</spoor>
 		<opstappen>10</opstappen>
 		<afstappen>5</afstappen>
@@ -18,7 +16,7 @@
 	<STATION>
 		<naam>C</naam>
 		<volgende>A</volgende>
-<vorige>B</vorige>
+		<vorige>B</vorige>
 		<spoor>12</spoor>
 	</STATION>
 	<TRAM>

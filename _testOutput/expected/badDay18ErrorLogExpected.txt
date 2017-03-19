@@ -1,0 +1,2 @@
+XML PARTIAL IMPORT: Station not created, negative afstappen: -2.
+XML PARTIAL IMPORT: BeginStation not found for tram 12

@@ -160,6 +160,7 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
             }
           }
         }
+        if (deleted) break;
       }
       if (deleted) continue;
       metronet.addStation(station);

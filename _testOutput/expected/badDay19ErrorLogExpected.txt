@@ -1,0 +1,9 @@
+XML PARTIAL IMPORT:
+Expected:
+<naam> ... </naam> or
+<volgende> ... </volgende> or
+<vorige> ... </vorige> or
+<spoor> ... </spoor> or
+<opstappen> ... </opstappen> or
+<afstappen> ... </afstappen>
+and got: <paard> ... </paard>.
