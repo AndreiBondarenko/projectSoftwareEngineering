@@ -233,7 +233,7 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
                 std::string value = text->Value();
                 tram->setBeginStation(value);
                 tram->setCurrentStation(value);
-                metronet.getAlleStations()->at(value)
+                metronet.getAlleStations()->find(value)->second
                                           ->setTramInStation(true);
               }
               else {
