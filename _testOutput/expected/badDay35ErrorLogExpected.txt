@@ -1,0 +1,7 @@
+XML PARTIAL IMPORT:
+Expected:
+<lijnNr> ... </lijnNr> or
+<zitplaatsen> ... </zitplaatsen> or
+<snelheid> ... </snelheid> or
+<beginStation> ... </beginStation>
+and got: <paard> ... </paard>.

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<METRONET>
+  <STATION>
+    <naam>A</naam>
+    <volgende>B</volgende>
+    <vorige>C</vorige>
+    <spoor>12</spoor>
+	<opstappen>7</opstappen>
+	<afstappen>2</afstappen>
+  </STATION>
+  <STATION>
+    <naam>B</naam>
+    <volgende>C</volgende>
+    <vorige>A</vorige>
+    <spoor>12</spoor>
+	<opstappen>5</opstappen>
+	<afstappen>7</afstappen>
+  </STATION>
+  <STATION>
+    <naam>C</naam>
+    <volgende>A</volgende>
+    <vorige>B</vorige>
+    <spoor>12</spoor>
+  </STATION>
+  <TRAM>
+    <lijnNr>12</lijnNr>
+    <zitplaatsen></zitplaatsen>
+    <snelheid>60</snelheid>
+    <beginStation>A</beginStation>
+  </TRAM>
+</METRONET>

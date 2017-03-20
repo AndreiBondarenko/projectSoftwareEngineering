@@ -1,0 +1,1 @@
+XML PARTIAL IMPORT: <lijnNr> ... </lijnNr> is empty.
