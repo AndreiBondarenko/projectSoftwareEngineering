@@ -160,7 +160,7 @@ TEST_F(MetroNetInputTests, invalidInput2) {
 	EXPECT_TRUE(FileCompare("_testOutput/Error04.txt", "_testOutput/expected/Error04Expected.txt"));
 }
 
-// error : MERONET ipv METRONET
+// error : Tram 13 missing zitplaatsen
 TEST_F(MetroNetInputTests, invalidInput3) {
 	ASSERT_TRUE(DirectoryExists("_testOutput"));
 	ASSERT_TRUE(DirectoryExists("_testInput"));
@@ -194,4 +194,40 @@ TEST_F(MetroNetInputTests, invalidInput3) {
 	ofile.close();
 	EXPECT_TRUE(importResult == PartialImport);
 	EXPECT_TRUE(FileCompare("_testOutput/Error05.txt", "_testOutput/expected/Error05Expected.txt"));
+}
+
+// error : Tram 13 missing zitplaatsen
+TEST_F(MetroNetInputTests, invalidInput4) {
+	ASSERT_TRUE(DirectoryExists("_testOutput"));
+	ASSERT_TRUE(DirectoryExists("_testInput"));
+
+	std::ofstream ofile;
+	SuccessEnum importResult;
+
+	ofile.open("_testInput/Input06.xml");
+	ofile << "<?xml version=\"1.0\" ?>" << std::endl
+		<< "<METRONET>\n\t<STATION>\n"
+		<< "\t\t<naam>A</naam>\n\t\t<volgende>B</volgende>\n"
+		<< "\t\t<vorige>C</vorige>\n\t\t<spoor>12</spoor>\n"
+		<< "\t\t<opstappen>7</opstappen>\n"
+		<< "\t</STATION>\n\t<STATION>\n"
+		<< "\t\t<naam>B</naam>\n\t\t<volgende>C</volgende>\n"
+		<< "\t\t<vorige>A</vorige>\n\t\t<spoor>12</spoor>\n"
+		<< "\t\t<opstappen>10</opstappen>\n\t\t<afstappen>5</afstappen>\n"
+		<< "\t</STATION>\n\t<STATION>\n"
+		<< "\t\t<naam>C</naam>\n\t\t<volgende>A</volgende>\n"
+		<< "\t\t<vorige>B</vorige>\n\t\t<spoor>12</spoor>\n"
+		<< "\t</STATION>\n\t<TRAM>\n"
+		<< "\t\t<lijnNr>12</lijnNr>\n\t\t<zitplaatsen>32</zitplaatsen>\n"
+		<< "\t\t<snelheid>60</snelheid>\n\t\t<beginStation>A</beginStation>\n"
+		<< "\t</TRAM>\n\t<TRAM>\n"
+		<< "\t\t<lijnNr>13</lijnNr>\n\t\t<zitplaatsen>32</zitplaatsen>\n"
+		<< "\t\t<snelheid>-60</snelheid>\n\t\t<beginStation>A</beginStation>\n"
+		<< "\t</TRAM>\n</METRONET>" << std::endl;
+	ofile.close();
+	ofile.open("_testOutput/Error06.txt");
+	importResult = MetroNetImporter::importMetroNet("_testInput/Input06.xml", ofile, metronet);
+	ofile.close();
+	EXPECT_TRUE(importResult == PartialImport);
+	EXPECT_TRUE(FileCompare("_testOutput/Error06.txt", "_testOutput/expected/Error06Expected.txt"));
 }
