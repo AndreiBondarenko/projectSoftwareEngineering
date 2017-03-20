@@ -1,1 +1,2 @@
 XML PARTIAL IMPORT: <spoor> ... </spoor> is empty.
+XML PARTIAL IMPORT: BeginStation not found for tram 12
