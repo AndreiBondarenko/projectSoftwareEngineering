@@ -96,7 +96,7 @@ public:
   */
   void moveTram(std::string station, int spoor, std::ostream& output);
   /**
-  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
+  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAlleTrams");
   \n ENSURE(isConsistent(), "moveAlleTrams made MetroNet inconsistent");
   */
   void moveAlleTrams(std::ostream& output);
@@ -108,6 +108,10 @@ public:
   \n REQUIRE(getAlleStations()->at(station)->isTramInStation(), "Station is empty");
   */
   void movePassengers(std::string station, int spoor, std::ostream& output, std::ostream& errors);
+  /**
+  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAllePassengers");
+  */
+  void moveAllePassengers(std::ostream& output, std::ostream& errors);
 
   // FILE I/O METHODS
   /**

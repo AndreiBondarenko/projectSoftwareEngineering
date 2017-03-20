@@ -156,7 +156,7 @@ void MetroNet::moveTram(std::string station, int spoor, std::ostream& output) {
 }
 
 void MetroNet::moveAlleTrams(std::ostream& output) {
-  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAlleTrams");
   for (auto& tram : alleTrams) {
     moveTram(getAlleStations()->at(tram.second->getCurrentStation())->getVolgende(), tram.first, output);
   }
@@ -202,6 +202,13 @@ void MetroNet::movePassengers(std::string station, int spoor, std::ostream& outp
     error << "ERROR: Maximum capaciteit ("<< zitplaatsen <<") tram "<< spoor
     <<" overschreden aan station " << station << ". Reeds " << passagiers
     << " passagiers op tram, " << opstappen << " mensen stappen op.\n";
+  }
+}
+
+void MetroNet::moveAllePassengers(std::ostream& output, std::ostream& errors) {
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAllePassengers");
+  for (auto& tram : alleTrams) {
+    movePassengers(getAlleStations()->at(tram.second->getCurrentStation())->getNaam(), tram.first, output, errors);
   }
 }
 
