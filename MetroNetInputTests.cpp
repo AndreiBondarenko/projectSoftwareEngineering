@@ -196,7 +196,7 @@ TEST_F(MetroNetInputTests, invalidInput3) {
 	EXPECT_TRUE(FileCompare("_testOutput/Error05.txt", "_testOutput/expected/Error05Expected.txt"));
 }
 
-// error : Tram 13 missing zitplaatsen
+// error : Tram 13 missing negative snelheid
 TEST_F(MetroNetInputTests, invalidInput4) {
 	ASSERT_TRUE(DirectoryExists("_testOutput"));
 	ASSERT_TRUE(DirectoryExists("_testInput"));
