@@ -7,7 +7,10 @@ int main(int argc, char const *argv[]) {
   std::ofstream myfile;
   MetroNet antwerpen;
   myfile.open("_output/zzzError.txt");
-  MetroNetImporter::importMetroNet("_input/testInput.xml", myfile, antwerpen);
+  MetroNetImporter::importMetroNet("_input/testInput2.xml", myfile, antwerpen);
+  antwerpen.moveAlleTrams(std::cout);
+  antwerpen.moveAlleTrams(std::cout);
+
   myfile.close();
   antwerpen.writeToASCII();
   return 0;

@@ -155,6 +155,15 @@ void MetroNet::moveTram(std::string station, int spoor, std::ostream& output) {
   ENSURE(isConsistent(), "moveTram made MetroNet inconsistent");
 }
 
+void MetroNet::moveAlleTrams(std::ostream& output) {
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
+  for (auto& tram : alleTrams) {
+    moveTram(getAlleStations()->at(tram.second->getCurrentStation())->getVolgende(), tram.first, output);
+  }
+
+  ENSURE(isConsistent(), "moveAlleTrams made MetroNet inconsistent");
+}
+
 void MetroNet::movePassengers(std::string station, int spoor, std::ostream& output, std::ostream& error) {
   REQUIRE(properlyInitialized(),
     "MetroNet wasn't initialized when calling movePassengers");
