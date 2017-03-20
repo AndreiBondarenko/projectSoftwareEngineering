@@ -83,6 +83,8 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
           errStream << "XML PARTIAL IMPORT: <"
     				<< elemName <<  "> ... </" << elemName << "> is empty." << std::endl;
     			endResult = PartialImport;
+          delete station;
+          deleted = true;
         }
         for (TiXmlNode* data = infoElem->FirstChild();
           data != NULL;
@@ -214,6 +216,8 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
           errStream << "XML PARTIAL IMPORT: <"
     				<< elemName <<  "> ... </" << elemName << "> is empty." << std::endl;
     			endResult = PartialImport;
+          delete tram;
+          deleted = true;
         }
         for(TiXmlNode* data = infoElem->FirstChild();
             data != NULL;
