@@ -78,6 +78,7 @@ TEST_F(MetroNetExportTest, FileCompareTest) {
 TEST_F(MetroNetExportTest, OutputHappyDayTest01) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     std::ofstream output;
     std::ofstream movement;
@@ -97,6 +98,7 @@ TEST_F(MetroNetExportTest, OutputHappyDayTest01) {
 TEST_F(MetroNetExportTest, OutputHappyDayTest02) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     std::ofstream output;
     std::ofstream movement;
@@ -123,13 +125,39 @@ TEST_F(MetroNetExportTest, OutputHappyDayTest02) {
     EXPECT_TRUE(FileCompare("_testOutput/expected/happyDay02MovementLogExpected.txt", "_testOutput/happyDay02MovementLog.txt"));
     EXPECT_TRUE(FileCompare("_testOutput/expected/happyDay02Expected.txt", "_testOutput/happyDay02.txt"));
     EXPECT_TRUE(FileCompare("_testOutput/expected/happyDay02ErrorLogExpected.txt", "_testOutput/happyDay02ErrorLog.txt"));
+}
 
+TEST_F(MetroNetExportTest, OutputHappyDayTest03) {
+    ASSERT_TRUE(DirectoryExists("_testOutput"));
+    ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
+    std::ofstream errors;
+    std::ofstream output;
+    std::ofstream movement;
+    errors.open("_testOutput/happyDay03ErrorLog.txt");
+    output.open("_testOutput/happyDay03.txt");
+    movement.open("_testOutput/happyDay03MovementLog.txt");
+    MetroNetImporter::importMetroNet("_testInput/happyDay02.xml", errors, metronet);
+    metronet.writeToOutputStream(output);
+    for (int n = 1; n <= 10; n++) {
+        movement << n << ".\n";
+        metronet.moveAllePassengers(movement, errors);
+        metronet.moveAlleTrams(movement);
+        movement << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 
+    }
+    movement.close();
+    output.close();
+    errors.close();
+    EXPECT_TRUE(FileCompare("_testOutput/expected/happyDay03MovementLogExpected.txt", "_testOutput/happyDay03MovementLog.txt"));
+    EXPECT_TRUE(FileCompare("_testOutput/expected/happyDay03Expected.txt", "_testOutput/happyDay03.txt"));
+    EXPECT_TRUE(FileCompare("_testOutput/expected/happyDay03ErrorLogExpected.txt", "_testOutput/happyDay03ErrorLog.txt"));
 }
 
 TEST_F(MetroNetExportTest, OutputBadDayTest01InsufficientPassengers) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     std::ofstream output;
     std::ofstream movement;
@@ -156,12 +184,12 @@ TEST_F(MetroNetExportTest, OutputBadDayTest01InsufficientPassengers) {
     EXPECT_TRUE(FileCompare("_testOutput/expected/badDay01MovementLogExpected.txt", "_testOutput/badDay01MovementLog.txt"));
     EXPECT_TRUE(FileCompare("_testOutput/expected/badDay01Expected.txt", "_testOutput/badDay01.txt"));
     EXPECT_TRUE(FileCompare("_testOutput/expected/badDay01ErrorLogExpected.txt", "_testOutput/badDay01ErrorLog.txt"));
-
 }
 
 TEST_F(MetroNetExportTest, OutputBadDayTest02MaxCapacityExceeded) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     std::ofstream output;
     std::ofstream movement;
@@ -188,12 +216,12 @@ TEST_F(MetroNetExportTest, OutputBadDayTest02MaxCapacityExceeded) {
     EXPECT_TRUE(FileCompare("_testOutput/expected/badDay02MovementLogExpected.txt", "_testOutput/badDay02MovementLog.txt"));
     EXPECT_TRUE(FileCompare("_testOutput/expected/badDay02Expected.txt", "_testOutput/badDay02.txt"));
     EXPECT_TRUE(FileCompare("_testOutput/expected/badDay02ErrorLogExpected.txt", "_testOutput/badDay02ErrorLog.txt"));
-
 }
 
 TEST_F(MetroNetExportTest, OutputBadDayTest03ImportAborted) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay03ErrorLog.txt");
     MetroNetImporter::importMetroNet("_testInput/badDay03.xml", errors, metronet);
@@ -209,12 +237,12 @@ TEST_F(MetroNetExportTest, OutputBadDayTest04NoRoot) {
     MetroNetImporter::importMetroNet("_testInput/badDay04.xml", errors, metronet);
     errors.close();
     EXPECT_TRUE(FileCompare("_testOutput/expected/badDay04ErrorLogExpected.txt", "_testOutput/badDay04ErrorLog.txt"));
-
 }
 
 TEST_F(MetroNetExportTest, OutputBadDayTest05NoStationNaam) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay05ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay05.xml", errors, metronet), "MetroNet is inconsistent");
@@ -225,6 +253,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest05NoStationNaam) {
 TEST_F(MetroNetExportTest, OutputBadDayTest06NoStationVolgende) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay06ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay06.xml", errors, metronet), "MetroNet is inconsistent");
@@ -235,6 +264,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest06NoStationVolgende) {
 TEST_F(MetroNetExportTest, OutputBadDayTest07NoStationVorige) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay07ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay07.xml", errors, metronet), "MetroNet is inconsistent");
@@ -245,6 +275,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest07NoStationVorige) {
 TEST_F(MetroNetExportTest, OutputBadDayTest08NoStationSpoor) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay08ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay08.xml", errors, metronet), "MetroNet is inconsistent");
@@ -255,6 +286,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest08NoStationSpoor) {
 TEST_F(MetroNetExportTest, OutputBadDayTest09EmptyStationNaam) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay09ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay09.xml", errors, metronet), "MetroNet is inconsistent");
@@ -265,6 +297,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest09EmptyStationNaam) {
 TEST_F(MetroNetExportTest, OutputBadDayTest10EmptyStationVolgende) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay10ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay10.xml", errors, metronet), "MetroNet is inconsistent");
@@ -275,6 +308,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest10EmptyStationVolgende) {
 TEST_F(MetroNetExportTest, OutputBadDayTest11EmptyStationVorige) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay11ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay11.xml", errors, metronet), "MetroNet is inconsistent");
@@ -285,6 +319,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest11EmptyStationVorige) {
 TEST_F(MetroNetExportTest, OutputBadDayTest12EmptyStationSpoor) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay12ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay12.xml", errors, metronet), "MetroNet is inconsistent");
@@ -295,6 +330,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest12EmptyStationSpoor) {
 TEST_F(MetroNetExportTest, OutputBadDayTest13InvalidStationSpoor) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay13ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay13.xml", errors, metronet), "MetroNet is inconsistent");
@@ -305,6 +341,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest13InvalidStationSpoor) {
 TEST_F(MetroNetExportTest, OutputBadDayTest14NegativeStationSpoor) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay14ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay14.xml", errors, metronet), "MetroNet is inconsistent");
@@ -315,6 +352,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest14NegativeStationSpoor) {
 TEST_F(MetroNetExportTest, OutputBadDayTest15InvalidStationOpstappen) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay15ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay15.xml", errors, metronet), "MetroNet is inconsistent");
@@ -325,6 +363,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest15InvalidStationOpstappen) {
 TEST_F(MetroNetExportTest, OutputBadDayTest16NegativeStationOpstappen) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay16ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay16.xml", errors, metronet), "MetroNet is inconsistent");
@@ -335,6 +374,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest16NegativeStationOpstappen) {
 TEST_F(MetroNetExportTest, OutputBadDayTest17InvalidStationAfstappen) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay17ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay17.xml", errors, metronet), "MetroNet is inconsistent");
@@ -345,6 +385,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest17InvalidStationAfstappen) {
 TEST_F(MetroNetExportTest, OutputBadDayTest18NegativeStationAfstappen) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay18ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay18.xml", errors, metronet), "MetroNet is inconsistent");
@@ -355,6 +396,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest18NegativeStationAfstappen) {
 TEST_F(MetroNetExportTest, OutputBadDayTest19UnknownElementStation) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay19ErrorLog.txt");
     MetroNetImporter::importMetroNet("_testInput/badDay19.xml", errors, metronet);
@@ -365,6 +407,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest19UnknownElementStation) {
 TEST_F(MetroNetExportTest, OutputBadDayTest20NoTramLijnNr) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay20ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay20.xml", errors, metronet), "MetroNet is inconsistent");
@@ -375,6 +418,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest20NoTramLijnNr) {
 TEST_F(MetroNetExportTest, OutputBadDayTest21EmptyTramLijnNr) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay21ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay21.xml", errors, metronet), "MetroNet is inconsistent");
@@ -385,6 +429,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest21EmptyTramLijnNr) {
 TEST_F(MetroNetExportTest, OutputBadDayTest22NegativeTramLijnNr) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay22ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay22.xml", errors, metronet), "MetroNet is inconsistent");
@@ -395,6 +440,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest22NegativeTramLijnNr) {
 TEST_F(MetroNetExportTest, OutputBadDayTest23InvalidTramLijnNr) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay23ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay23.xml", errors, metronet), "MetroNet is inconsistent");
@@ -405,6 +451,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest23InvalidTramLijnNr) {
 TEST_F(MetroNetExportTest, OutputBadDayTest24NoTramZitplaatsen) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay24ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay24.xml", errors, metronet), "MetroNet is inconsistent");
@@ -415,6 +462,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest24NoTramZitplaatsen) {
 TEST_F(MetroNetExportTest, OutputBadDayTest25EmptyZitplaatsen) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay25ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay25.xml", errors, metronet), "MetroNet is inconsistent");
@@ -425,6 +473,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest25EmptyZitplaatsen) {
 TEST_F(MetroNetExportTest, OutputBadDayTest26NegativeZitplaatsen) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay26ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay26.xml", errors, metronet), "MetroNet is inconsistent");
@@ -435,6 +484,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest26NegativeZitplaatsen) {
 TEST_F(MetroNetExportTest, OutputBadDayTest27InvalidZitplaatsen) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay27ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay27.xml", errors, metronet), "MetroNet is inconsistent");
@@ -445,6 +495,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest27InvalidZitplaatsen) {
 TEST_F(MetroNetExportTest, OutputBadDayTest28NoTramSnelheid) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay28ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay28.xml", errors, metronet), "MetroNet is inconsistent");
@@ -455,6 +506,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest28NoTramSnelheid) {
 TEST_F(MetroNetExportTest, OutputBadDayTest29EmptySnelheid) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay29ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay29.xml", errors, metronet), "MetroNet is inconsistent");
@@ -465,6 +517,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest29EmptySnelheid) {
 TEST_F(MetroNetExportTest, OutputBadDayTest30NegativeSnelheid) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay30ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay30.xml", errors, metronet), "MetroNet is inconsistent");
@@ -475,6 +528,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest30NegativeSnelheid) {
 TEST_F(MetroNetExportTest, OutputBadDayTest31InvalidSnelheid) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay31ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay31.xml", errors, metronet), "MetroNet is inconsistent");
@@ -485,6 +539,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest31InvalidSnelheid) {
 TEST_F(MetroNetExportTest, OutputBadDayTest32NoTramBeginStation) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay32ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay32.xml", errors, metronet), "MetroNet is inconsistent");
@@ -495,6 +550,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest32NoTramBeginStation) {
 TEST_F(MetroNetExportTest, OutputBadDayTest33EmptyBeginStation) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay33ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay33.xml", errors, metronet), "MetroNet is inconsistent");
@@ -505,6 +561,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest33EmptyBeginStation) {
 TEST_F(MetroNetExportTest, OutputBadDayTest34NonExistentBeginStation) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay34ErrorLog.txt");
     EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/badDay34.xml", errors, metronet), "MetroNet is inconsistent");
@@ -515,6 +572,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest34NonExistentBeginStation) {
 TEST_F(MetroNetExportTest, OutputBadDayTest35UnknownElementTram) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay35ErrorLog.txt");
     MetroNetImporter::importMetroNet("_testInput/badDay35.xml", errors, metronet);
@@ -525,6 +583,7 @@ TEST_F(MetroNetExportTest, OutputBadDayTest35UnknownElementTram) {
 TEST_F(MetroNetExportTest, OutputBadDayTest36UnknownElementMetroNet) {
     ASSERT_TRUE(DirectoryExists("_testOutput"));
     ASSERT_TRUE(DirectoryExists("_testInput"));
+    ASSERT_TRUE(DirectoryExists("_testOutput/expected"));
     std::ofstream errors;
     errors.open("_testOutput/badDay36ErrorLog.txt");
     MetroNetImporter::importMetroNet("_testInput/badDay36.xml", errors, metronet);
