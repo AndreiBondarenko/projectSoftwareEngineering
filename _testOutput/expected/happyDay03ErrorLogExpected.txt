@@ -1,0 +1,4 @@
+ERROR: Aan station Noord stappen 4 mensen af tram 36. Slechts 0 mensen op de tram.
+ERROR: Aan station A stappen 4 mensen af tram 42. Slechts 0 mensen op de tram.
+ERROR: Maximum capaciteit (32) tram 42 overschreden aan station C. Reeds 23 passagiers op tram, 12 mensen stappen op.
+ERROR: Maximum capaciteit (32) tram 42 overschreden aan station X. Reeds 25 passagiers op tram, 10 mensen stappen op.

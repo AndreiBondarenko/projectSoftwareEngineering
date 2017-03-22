@@ -1,0 +1,80 @@
+1.
+In station Noord stappen 0 mensen af tram 36.
+In station Noord stappen 7 mensen op tram 36.
+In station A stappen 0 mensen af tram 42.
+In station A stappen 7 mensen op tram 42.
+Tram 36 reed van station Noord naar station Noord-Oost.
+Tram 42 reed van station A naar station B.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.
+In station Noord-Oost stappen 0 mensen af tram 36.
+In station Noord-Oost stappen 12 mensen op tram 36.
+In station B stappen 0 mensen af tram 42.
+In station B stappen 4 mensen op tram 42.
+Tram 36 reed van station Noord-Oost naar station Oost.
+Tram 42 reed van station B naar station C.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3.
+In station Oost stappen 5 mensen af tram 36.
+In station Oost stappen 7 mensen op tram 36.
+In station C stappen 4 mensen af tram 42.
+In station C stappen 12 mensen op tram 42.
+Tram 36 reed van station Oost naar station Zuid-Oost.
+Tram 42 reed van station C naar station X.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4.
+In station Zuid-Oost stappen 5 mensen af tram 36.
+In station Zuid-Oost stappen 3 mensen op tram 36.
+In station X stappen 7 mensen af tram 42.
+In station X stappen 10 mensen op tram 42.
+Tram 36 reed van station Zuid-Oost naar station Zuid.
+Tram 42 reed van station X naar station Y.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5.
+In station Zuid stappen 7 mensen af tram 36.
+In station Zuid stappen 6 mensen op tram 36.
+In station Y stappen 6 mensen af tram 42.
+In station Y stappen 6 mensen op tram 42.
+Tram 36 reed van station Zuid naar station Zuid-West.
+Tram 42 reed van station Y naar station Z.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6.
+In station Zuid-West stappen 1 mensen af tram 36.
+In station Zuid-West stappen 3 mensen op tram 36.
+In station Z stappen 6 mensen af tram 42.
+In station Z stappen 4 mensen op tram 42.
+Tram 36 reed van station Zuid-West naar station West.
+Tram 42 reed van station Z naar station A.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7.
+In station West stappen 10 mensen af tram 36.
+In station West stappen 9 mensen op tram 36.
+In station A stappen 4 mensen af tram 42.
+In station A stappen 7 mensen op tram 42.
+Tram 36 reed van station West naar station Noord-West.
+Tram 42 reed van station A naar station B.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+8.
+In station Noord-West stappen 3 mensen af tram 36.
+In station Noord-West stappen 4 mensen op tram 36.
+In station B stappen 0 mensen af tram 42.
+In station B stappen 4 mensen op tram 42.
+Tram 36 reed van station Noord-West naar station Noord.
+Tram 42 reed van station B naar station C.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.
+In station Noord stappen 4 mensen af tram 36.
+In station Noord stappen 7 mensen op tram 36.
+In station C stappen 4 mensen af tram 42.
+In station C stappen 9 mensen op tram 42.
+Tram 36 reed van station Noord naar station Noord-Oost.
+Tram 42 reed van station C naar station X.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10.
+In station Noord-Oost stappen 0 mensen af tram 36.
+In station Noord-Oost stappen 12 mensen op tram 36.
+In station X stappen 7 mensen af tram 42.
+In station X stappen 7 mensen op tram 42.
+Tram 36 reed van station Noord-Oost naar station Oost.
+Tram 42 reed van station X naar station Y.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
