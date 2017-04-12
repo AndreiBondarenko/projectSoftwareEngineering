@@ -1,11 +1,3 @@
-//
-//  MetroNet.h
-//  projectSoftwareEngineering
-//
-//  Created by Andrei Bondarenko on 17/02/2017.
-//
-//
-
 #ifndef INC_METRONET_H
 #define INC_METRONET_H
 
@@ -14,6 +6,7 @@
 #include <string>
 #include "Tram.h"
 #include "Station.h"
+#include "Passagier.h"
 
 class MetroNet {
 private:
@@ -21,6 +14,7 @@ private:
   std::map<std::string, Station*> alleStations;
   std::map<int, Tram*> alleTrams;
   std::set<int> alleSporen; // is this data member needed?
+  std::map<std::string, Passagier*> allePassagiers;
 public:
   // CONSTRUCTOR
   /**
@@ -85,7 +79,10 @@ public:
   \n ENSURE(getAlleStations()->at(newTram->getBeginStation())->isTramInStation(), "addTram post condition failure");
   */
   void addTram(Tram* newTram);
-
+  /**
+  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addPassagier");
+  */
+  void addPassagier(Passagier* newPassagier);
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
   \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");

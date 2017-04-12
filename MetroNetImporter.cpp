@@ -1,11 +1,3 @@
-//
-//  MetroNetImporter.cpp
-//  projectSoftwareEngineering
-//
-//  Created by Andrei Bondarenko on 09/03/2017.
-//
-//
-
 #include <iostream>
 
 #include "MetroNetImporter.h"
@@ -327,5 +319,124 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
   }
   doc.Clear();
   ENSURE(metronet.isConsistent(), "MetroNet is inconsistent");
+  return endResult;
+}
+
+static SuccessEnum importPassengers(const char* inputfilename, std::ostream& errStream, MetroNet& metronet) {
+  REQUIRE(metronet.properlyInitialized(), "metronet wasn't initialized when passed to MetroNetImporter::importPassengers");
+
+	TiXmlDocument doc;
+  SuccessEnum endResult = Success;
+
+  if(!doc.LoadFile(inputfilename)) {
+    errStream << "XML IMPORT ABORTED: " << doc.ErrorDesc() << std::endl;
+    return ImportAborted;
+  }
+
+  for (TiXmlElement* passenger = doc.FirstChildElement(); 
+  	passenger != NULL;
+  	passenger = passenger->NextSiblingElement()) {
+
+  	bool deleted = false;
+		std::string rootName = passenger->Value();
+  	if (rootName != "PASSAGIER") {
+  		errStream << "XML PARTIAL IMPORT: Expected <PASSAGIER> ... </PASSAGIER> and got <"
+        << rootName <<  "> ... </" << rootName << ">." << std::endl;
+      endResult = PartialImport;
+      continue;
+  	}
+
+  	Passagier* passagier = new Passagier;
+  	TiXmlNode *naam, *beginStation, *eindStation, *hoeveelheid;
+  	naam = passenger->FirstChild("naam");
+  	beginStation = passenger->FirstChild("beginstation");
+  	eindStation = passenger->FirstChild("eindstation");
+  	hoeveelheid = passenger->FirstChild("hoeveelheid");
+  	if (naam == NULL) {
+  		errStream << "XML PARTIAL IMPORT: Expected <naam> ... </naam>." << std::endl;
+      endResult = PartialImport;
+      delete passagier;
+      continue;
+  	}
+  	if (beginStation == NULL) {
+  		errStream << "XML PARTIAL IMPORT: Expected <beginstation> ... </beginstation>." << std::endl;
+      endResult = PartialImport;
+      delete passagier;
+      continue;
+  	}
+  	if (eindStation == NULL) {
+  		errStream << "XML PARTIAL IMPORT: Expected <eindstation> ... </eindstation>." << std::endl;
+      endResult = PartialImport;
+      delete passagier;
+      continue;
+  	}
+  	if (hoeveelheid == NULL) {
+  		errStream << "XML PARTIAL IMPORT: Expected <hoeveelheid> ... </hoeveelheid>." << std::endl;
+      endResult = PartialImport;
+      delete passagier;
+      continue;
+  	}
+
+  	for (TiXmlElement* infoElem = passenger->FirstChildElement();
+      infoElem != NULL;
+      infoElem = infoElem->NextSiblingElement()) {
+
+      std::string elemName = infoElem->Value();
+      if(infoElem->FirstChild() == NULL) {
+        errStream << "XML PARTIAL IMPORT: <"
+          << elemName <<  "> ... </" << elemName << "> is empty." << std::endl;
+        endResult = PartialImport;
+        delete passagier;
+        deleted = true;
+      }
+      for (TiXmlNode* data = infoElem->FirstChild();
+        data != NULL;
+        data = data->NextSibling()) {
+
+      	TiXmlText* text = data->ToText();
+      	if (text == NULL || deleted) 
+      		continue;
+
+      	if (elemName == "naam")
+      		passagier->setNaam(text->Value());
+      	else if (elemName == "beginstation")
+      		passagier->setBeginStation(text->Value());
+      	else if (elemName == "eindstation") 
+      		passagier->setEindStation(text->Value());
+      	else if (elemName == "hoeveelheid") {
+      		try {
+      			int aantal = std::stoi(text->Value());
+      			if (aantal >= 0)
+      				passagier->setHoeveelheid(aantal);
+      			else throw 0;
+      		}
+      		catch(int e) {
+      			delete passagier;
+            endResult = PartialImport;
+            errStream << "XML PARTIAL IMPORT: Passagier not created, negative hoeveelheid: " << text->Value() << "." << std::endl;
+            deleted = true;
+            break;
+      		}
+      		catch (std::invalid_argument& e) {
+            delete passagier;
+            endResult = PartialImport;
+            errStream << "XML PARTIAL IMPORT: Passagier not created, invalid hoeveelheid: " << text->Value() << "." << std::endl;
+            deleted = true;
+            break;
+      		}
+      	}
+      	else {
+          errStream << "XML PARTIAL IMPORT:" << std::endl << "Expected:" << std::endl << "<naam> ... </naam> or" 
+          << std::endl << "<beginstation> ... </beginstation> or" << std::endl << "<eindstation> ... </eindstation> or"
+          << std::endl << "<hoeveelheid> ... </hoeveelheid> or" << std::endl << "and got: <" 
+          << elemName << "> ... </" << elemName << ">." << std::endl;
+        }
+      }
+    }
+    if (deleted) continue;
+    metronet.addPassagier(passagier);
+  }
+  doc.Clear();
+  ENSURE(metronet.isConsistent(), "MetroNet is not consistent");
   return endResult;
 }
