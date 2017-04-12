@@ -1,0 +1,12 @@
+<PASSAGIER>
+	<naam>Groep1</naam>
+	<beginStation>A</beginStation>
+	<eindStation>C</eindStation>
+	<hoeveelheid>2</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep2</naam>
+	<beginstation>C</beginstation>
+	<eindstation>A</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
