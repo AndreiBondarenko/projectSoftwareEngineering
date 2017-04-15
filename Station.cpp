@@ -62,6 +62,11 @@ std::string Station::getVolgende() const {
   return volgende;
 }
 
+std::string Station::getType() const {
+  REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getType");
+  return type;
+}
+
 int Station::getSpoor() const {
   REQUIRE(properlyInitialized(),
     "Station wasn't initialized when calling getSpoor");
@@ -99,6 +104,14 @@ void Station::setVolgende(const std::string& newVolgende) {
   volgende = newVolgende;
   ENSURE(getVolgende() == newVolgende,
     "setVolgende post condition failure");
+}
+
+void Station::setType(const std::string& newType) {
+    REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setType");
+    REQUIRE(newType != "", "newType must not be empty");
+    type = newType;
+    ENSURE(getType() == newType, "setType post condition failure");
+
 }
 
 void Station::setSpoor(const int newSpoor) {

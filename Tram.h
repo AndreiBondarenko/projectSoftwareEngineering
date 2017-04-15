@@ -15,11 +15,13 @@ class Tram {
 private:
   Tram* initCheck;
   int lijnNr;
+  int voertuigNr;
   int zitplaatsen;
   int passagiers;
+  int snelheid;
+  std::string type;
   std::string beginStation;
   std::string currentStation;
-  int snelheid;
 public:
   // CONSTRUCTORS
   /**
@@ -52,6 +54,10 @@ public:
   */
   int getZitplaatsen() const;
   /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getType");
+  */
+  std::string getType() const;
+  /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getBeginStation");
   */
   std::string getBeginStation() const;
@@ -67,6 +73,10 @@ public:
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getPassagiers");
   */
   int getPassagiers() const;
+  /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getVoertuigNr");
+  */
+  int getVoertuigNr() const;
 
   // SETTER METHODS
   /**
@@ -81,6 +91,12 @@ public:
   \n ENSURE(getZitplaatsen() == newZitplaatsen, "setZitplaatsen post condition failure");
   */
   void setZitplaatsen(const int newZitplaatsen);
+  /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setType");
+  \n REQUIRE(newType != "", "newType must not be empty");
+  \n ENSURE(getType() == newType, "setType post condition failure");
+  */
+  void setType(const std::string& newType);
   /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setBeginStation");
   \n REQUIRE(newBeginStation != "", "newBeginStation must not be empty");
@@ -105,6 +121,13 @@ public:
   \n ENSURE(getPassagiers() == newPassagiers, "setPassagiers post condition failure");
   */
   void setPassagiers(const int newPassagiers);
+  /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setVoertuigNr");
+  \n REQUIRE(newVoertuigNr >= 0 , "newVoertuigNr must be bigger or equal to zero");
+  \n ENSURE(getVoertuigNr() == newVoertuigNr, "setVoertuigNr post condition failure");
+  */
+  void setVoertuigNr(const int newVoertuigNr);
+
 };
 
 

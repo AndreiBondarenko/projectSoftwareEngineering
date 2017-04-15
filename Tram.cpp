@@ -19,9 +19,9 @@ Tram::Tram(const int lijnNr, const int zitplaatsen, const std::string& beginStat
 	const int snelheid) :
 	lijnNr(lijnNr),
 	zitplaatsen(zitplaatsen),
+    snelheid(snelheid),
 	beginStation(beginStation),
-  currentStation(beginStation),
-	snelheid(snelheid)
+  currentStation(beginStation)
 {
   REQUIRE(beginStation != "", "beginStation must not be empty");
   REQUIRE(lijnNr >= 0 , "lijnNr must be bigger or equal to zero");
@@ -51,6 +51,12 @@ int Tram::getZitplaatsen() const {
 	return zitplaatsen;
 }
 
+std::string Tram::getType() const {
+    REQUIRE(properlyInitialized(),
+      "Tram wasn't initialized when calling getType");
+    return type;
+}
+
 std::string Tram::getBeginStation() const {
 	REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling getBeginStation");
@@ -75,6 +81,12 @@ int Tram::getSnelheid() const {
 	return snelheid;
 }
 
+int Tram::getVoertuigNr() const {
+  REQUIRE(properlyInitialized(),
+    "Tram wasn't initialized when calling getVoertuigNr");
+  return voertuigNr;
+}
+
 void Tram::setLijnNr(const int newLijnNr) {
 	REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling setLijnNr");
@@ -92,6 +104,16 @@ void Tram::setZitplaatsen(const int newZitplaatsen) {
 	zitplaatsen = newZitplaatsen;
 	ENSURE(getZitplaatsen() == newZitplaatsen,
     "setZitplaatsen post condition failure");
+}
+
+void Tram::setType(const std::string &newType) {
+  REQUIRE(properlyInitialized(),
+    "Tram wasn't initialized when calling setType");
+  REQUIRE(newType != "",
+    "newType must not be empty");
+  type = newType;
+  ENSURE(getType() == newType,
+    "setType post condition failure");
 }
 
 void Tram::setBeginStation(const std::string & newBeginStation) {
@@ -128,4 +150,14 @@ void Tram::setPassagiers(const int newPassagiers) {
   passagiers = newPassagiers;
   ENSURE(getPassagiers() == newPassagiers,
     "setPassagiers post condition failure");
+}
+
+void Tram::setVoertuigNr(const int newVoertuigNr) {
+  REQUIRE(properlyInitialized(),
+    "Tram wasn't initialized when calling setVoertuigNr");
+  REQUIRE(newVoertuigNr >= 0 ,
+    "newVoertuigNr must be bigger or equal to zero");
+  voertuigNr = newVoertuigNr;
+  ENSURE(getVoertuigNr() == newVoertuigNr,
+    "setVoertuigNr post condition failure");
 }

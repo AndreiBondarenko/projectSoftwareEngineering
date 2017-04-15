@@ -17,6 +17,7 @@ private:
   std::string naam;
   std::string vorige;
   std::string volgende;
+  std::string type;
   int spoor;
   int opstappen;
   int afstappen;
@@ -57,6 +58,10 @@ public:
   */
   std::string getVolgende() const;
   /**
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getType");
+  */
+  std::string getType() const;
+  /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getSpoor");
   */
   int getSpoor() const;
@@ -94,6 +99,12 @@ public:
   \n ENSURE(getVolgende() == newVolgende, "setVolgende post condition failure");
   */
   void setVolgende(const std::string& newVolgende);
+  /**
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setType");
+  \n REQUIRE(newType != "", "newType must not be empty");
+  \n ENSURE(getType() == newType, "setType post condition failure");
+  */
+  void setType(const std::string& newType);
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setSpoor");
   \n REQUIRE(newSpoor >= 0 , "newSpoor must be bigger or equal to zero");
