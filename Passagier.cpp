@@ -1,11 +1,12 @@
 #include "Passagier.h"
+#include "DesignByContract.h"
 
-Passagier::PAssagier() {
+Passagier::Passagier() {
 	initCheck = this;
 	ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
-Passagier(std::string naam, std::string beginStation, std::string eindStation, int hoeveelheid) :
+Passagier::Passagier(std::string naam, std::string beginStation, std::string eindStation, int hoeveelheid) :
  	naam(naam),
  	beginStation(beginStation),
  	eindStation(eindStation),
@@ -19,55 +20,55 @@ Passagier(std::string naam, std::string beginStation, std::string eindStation, i
 	ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
-~Passagier() {
+Passagier::~Passagier() {
 }
 
 bool Passagier::properlyInitialized() const{
 	return initCheck == this;
 }
 
-std::string getNaam() const {
+std::string Passagier::getNaam() const {
 	REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling getNaam");
 	return naam;
 }
 
-std::string getBeginStation() const {
+std::string Passagier::getBeginStation() const {
 	REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling getBeginStation");
 	return beginStation;
 }
 
-std::string getEindStation() const {
+std::string Passagier::getEindStation() const {
 	REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling getEindStation");
 	return eindStation;
 }
 
-int getHoeveelheid() const {
+int Passagier::getHoeveelheid() const {
 	REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling getHoeveelheid");
 	return hoeveelheid;
 }
 
-void setNaam(const std::string& newNaam) {
+void Passagier::setNaam(const std::string& newNaam) {
 	REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling setNaam");
 	REQUIRE(newNaam != "" , "newNaam must not be empty");
 	naam = newNaam;
 	ENSURE(getNaam() == newNaam, "setNaam post condition failure");
 }
 
-void setBeginStation(const std::string& newBeginStation) {
+void Passagier::setBeginStation(const std::string& newBeginStation) {
 	REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling setBeginStation");
 	REQUIRE(newBeginStation != "" , "newBeginStation must not be empty");
 	beginStation = newBeginStation;
 	ENSURE(getBeginStation() == newBeginStation, "setBeginStation post condition failure");
 }
 
-void setEindStation(const std::string& newEindStation) {
+void Passagier::setEindStation(const std::string& newEindStation) {
 	REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling setEindStation");
-	REQUIRE(newEindStation >= 0 , "newEindStation must not be empty");
+	REQUIRE(newEindStation != "" , "newEindStation must not be empty");
 	eindStation = newEindStation;
 	ENSURE(getEindStation() == newEindStation, "setEindStation post condition failure");
 }
 
-void setHoeveelheid(const int newHoeveelheid) {
+void Passagier::setHoeveelheid(const int newHoeveelheid) {
 	REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling setHoeveelheid");
 	REQUIRE(newHoeveelheid >= 0 , "newHoeveelheid must be bigger or equal to zero");
 	hoeveelheid = newHoeveelheid;

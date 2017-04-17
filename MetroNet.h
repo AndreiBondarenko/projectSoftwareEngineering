@@ -47,6 +47,10 @@ public:
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleSporen");
   */
   std::set<int>* getAlleSporen();
+	/**
+	\n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getPassagier");
+	*/
+	Passagier* getPassagier(std::string naam);
 
   // SETTER METHODS (MAINLY USED FOR TESTING PURPOSES)
   /**
@@ -81,6 +85,7 @@ public:
   void addTram(Tram* newTram);
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addPassagier");
+	\n ENSURE(getPassagier(newPassagier->getNaam) == newPassagier, "addPassagier post condition failure");
   */
   void addPassagier(Passagier* newPassagier);
   /**

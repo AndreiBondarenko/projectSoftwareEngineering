@@ -90,6 +90,11 @@ std::set<int>* MetroNet::getAlleSporen() {
   return &alleSporen;
 }
 
+Passagier* MetroNet::getPassagier(std::string naam) {
+	REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getPassagier");
+	return allePassagiers[naam];
+}
+
 void MetroNet::setAlleStations(std::map<std::string, Station*>& newAlleStations) {
   REQUIRE(properlyInitialized(),
     "MetroNet wasn't initialized when calling setAlleStations");
@@ -136,6 +141,12 @@ void MetroNet::addTram(Tram* newTram) {
     "addTram post condition failure");
   ENSURE(getAlleStations()->at(newTram->getBeginStation())->isTramInStation(),
     "addTram post condition failure");
+}
+
+void MetroNet::addPassagier(Passagier* newPassagier) {
+	REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addPassagier");
+	allePassagiers[newPassagier->getNaam()] = newPassagier;
+	ENSURE(getPassagier(newPassagier->getNaam()) == newPassagier, "addPassagier post condition failure");
 }
 
 void MetroNet::moveTram(std::string station, int spoor, std::ostream& output) {
