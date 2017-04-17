@@ -5,11 +5,12 @@ TLIBS =		-pthread -lgtest
 
 CXXFLAGS =	-O2 -g3 -Wall -Wextra -fmessage-length=0 -fstack-protector-all -std=c++11 -I$(INCL)
 
-OBJS =		MetroNet.o Station.o Tram.o MetroNetImporter.o MetroNetUtils.o
+OBJS =		MetroNet.o Station.o Tram.o Passagier.o MetroNetImporter.o MetroNetUtils.o
 SRCS =		MetroNetMain \
 			MetroNet.cpp \
 			Station.cpp \
 			Tram.cpp \
+			Passagier.cpp \
 			MetroNetImporter.cpp \
 			MetroNetUtils.cpp
 
