@@ -38,53 +38,33 @@ public:
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleStations");
   */
-  std::map<std::string, Station*>* getAlleStations();
+  Station* getStation(std::string naam);
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleTrams");
   */
-  std::map<int, Tram*>* getAlleTrams();
-  /**
-  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleSporen");
-  */
-  std::set<int>* getAlleSporen();
+  Tram* getTram(int spoor);
 	/**
 	\n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getPassagier");
 	*/
 	Passagier* getPassagier(std::string naam);
 
-  // SETTER METHODS (MAINLY USED FOR TESTING PURPOSES)
-  /**
-  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling setAlleStations");
-  \n ENSURE(*getAlleStations() == newAlleStations, "setAlleStations post condition failure");
-  */
-  void setAlleStations(std::map<std::string, Station*>& newAlleStations);
-  /**
-  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling setAlleTrams");
-  \n ENSURE(*getAlleTrams() == newAlleTrams, "setAlleTrams post condition failure");
-  */
-  void setAlleTrams(std::map<int, Tram*>& newAlleTrams);
-  /**
-  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling setAlleSporen");
-  \n ENSURE(*getAlleSporen() == newAlleSporen, "setAlleSporen post condition failure");
-  */
-  void setAlleSporen(std::set<int>& newAlleSporen);
-
   // MODIFIER METHODS
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addStation");
-  \n REQUIRE(getAlleStations()->count(newStation->getNaam()) == 0, "This MetroNet already contains a station with this name");
-  \n ENSURE(getAlleStations()->at(newStation->getNaam()) == newStation, "addStation post condition failure");
+  \n REQUIRE(getStation(newStation->getNaam()) == nullptr, "This MetroNet already contains a station with this name");
+  \n ENSURE(getStation(newStation->getNaam()) == newStation, "addStation post condition failure");
   */
   void addStation(Station* newStation);
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addTram");
-  \n REQUIRE(getAlleTrams()->count(newTram->getLijnNr()) == 0, "This MetroNet already contains a Tram with this lijnNr");
-  \n ENSURE(getAlleTrams()->at(newTram->getLijnNr()) == newTram, "addTram post condition failure");
-  \n ENSURE(getAlleStations()->at(newTram->getBeginStation())->isTramInStation(), "addTram post condition failure");
+  \n REQUIRE(getTram(newTram->getLijnNr()) == nullptr, "This MetroNet already contains a Tram with this lijnNr");
+  \n ENSURE(getTram(newTram->getLijnNr()) == newTram, "addTram post condition failure");
+  \n ENSURE(getStation(newTram->getBeginStation())->isTramInStation(), "addTram post condition failure");
   */
   void addTram(Tram* newTram);
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addPassagier");
+	\n REQUIRE(getPassagier(newPassagier->getNaam()) == nullptr, "This MetroNet allready contains a passenger with this name");
 	\n ENSURE(getPassagier(newPassagier->getNaam) == newPassagier, "addPassagier post condition failure");
   */
   void addPassagier(Passagier* newPassagier);
@@ -92,8 +72,8 @@ public:
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
   \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
   \n REQUIRE(station != "", "station must not be empty");
-  \n ENSURE(getAlleStations()->at(station)->getTramInStation() != spoor, "moveTram post condition failure");
-  \n ENSURE(station == getTrams()->at(spoor)->getCurrentStation(), "moveTram post condition failure");
+  \n ENSURE(getStation(station)->isTramInStation(), "moveTram post condition failure");
+  \n ENSURE(station == getTram(spoor)->getCurrentStation(), "moveTram post condition failure");
   \n ENSURE(isConsistent(), "moveTram made MetroNet inconsistent");
   */
   void moveTram(std::string station, int spoor, std::ostream& output);
@@ -106,8 +86,8 @@ public:
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling movePassengers");
   \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
   \n REQUIRE(station != "", "station must not be empty");
-  \n REQUIRE(getAlleTrams()->at(spoor)->getCurrentStation() == station, "Tram not in given station");
-  \n REQUIRE(getAlleStations()->at(station)->isTramInStation(), "Station is empty");
+  \n REQUIRE(getTram(spoor)->getCurrentStation() == station, "Tram not in given station");
+  \n REQUIRE(getStation(station)->isTramInStation(), "Station is empty");
   */
   void movePassengers(std::string station, int spoor, std::ostream& output, std::ostream& errors);
   /**

@@ -7,7 +7,6 @@
 SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ostream &errStream, MetroNet &metronet) {
 
   REQUIRE(metronet.properlyInitialized(), "metronet wasn't initialized when passed to MetroNetImporter::importMetroNet");
-
   TiXmlDocument doc;
   SuccessEnum endResult = Success;
 
@@ -278,11 +277,11 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
                 std::string value = text->Value();
                 tram->setBeginStation(value);
                 tram->setCurrentStation(value);
-                if (metronet.getAlleStations()->find(value) == metronet.getAlleStations()->end()) {
+                if (metronet.getStation(value) == nullptr) {
                   throw 3;
                 }
                 else
-                  metronet.getAlleStations()->find(value)->second->setTramInStation(true);
+                  metronet.getStation(value)->setTramInStation(true);
               }
               else if (elemName == "type") {
                 std::string typeVal = text->Value();
@@ -391,7 +390,7 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
   return endResult;
 }
 
-static SuccessEnum importPassengers(const char* inputfilename, std::ostream& errStream, MetroNet& metronet) {
+SuccessEnum MetroNetImporter::importPassengers(const char* inputfilename, std::ostream& errStream, MetroNet& metronet) {
   REQUIRE(metronet.properlyInitialized(), "metronet wasn't initialized when passed to MetroNetImporter::importPassengers");
 
 	TiXmlDocument doc;

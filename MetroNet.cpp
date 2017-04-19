@@ -1,11 +1,3 @@
-//
-//  MetroNet.cpp
-//  projectSoftwareEngineering
-//
-//  Created by Andrei Bondarenko on 17/02/2017.
-//
-//
-
 #include "MetroNet.h"
 #include "tinyxml.h"
 #include "DesignByContract.h"
@@ -15,6 +7,9 @@
 
 MetroNet::MetroNet()  {
   initCheck = this;
+	alleStations.clear();
+	alleTrams.clear();
+	alleSporen.clear();
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
@@ -36,13 +31,12 @@ bool MetroNet::properlyInitialized() const {
 }
 
 bool MetroNet::isConsistent() const {
-  REQUIRE(properlyInitialized(),
-    "MetroNet wasn't initialized when calling isConsistent");
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling isConsistent");
   // elk station is verbonden met een voorgaand en een volgend station
   // voor elk spoor
-  for(auto mapIt = alleStations.begin(); mapIt != alleStations.end(); ++mapIt) {
-    std::string vorige = mapIt->second->getVorige();
-    std::string volgende = mapIt->second->getVolgende();
+  for(auto station : alleStations) {
+    std::string vorige = station.second->getVorige();
+    std::string volgende = station.second->getVolgende();
     if (alleStations.find(vorige) == alleStations.end() ||
         alleStations.find(volgende) == alleStations.end()) {
       return false;
@@ -72,22 +66,19 @@ bool MetroNet::isConsistent() const {
   return true;
 }
 
-std::map<std::string, Station*>* MetroNet::getAlleStations() {
-  REQUIRE(properlyInitialized(),
-    "MetroNet wasn't initialized when calling getAlleStations");
-  return &alleStations;
+Station* MetroNet::getStation(std::string naam) {
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getStation");
+	if (alleStations.find(naam) == alleStations.end()) {
+		return nullptr;
+	}
+  return alleStations[naam];
 }
 
-std::map<int, Tram*>* MetroNet::getAlleTrams() {
-  REQUIRE(properlyInitialized(),
-    "MetroNet wasn't initialized when calling getAlleTrams");
-  return &alleTrams;
-}
-
-std::set<int>* MetroNet::getAlleSporen() {
-  REQUIRE(properlyInitialized(),
-    "MetroNet wasn't initialized when calling getAlleSporen");
-  return &alleSporen;
+Tram* MetroNet::getTram(int spoor) {
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getTram");
+	if (alleTrams.find(spoor) == alleTrams.end())
+		return nullptr;
+  return alleTrams[spoor];
 }
 
 Passagier* MetroNet::getPassagier(std::string naam) {
@@ -95,138 +86,102 @@ Passagier* MetroNet::getPassagier(std::string naam) {
 	return allePassagiers[naam];
 }
 
-void MetroNet::setAlleStations(std::map<std::string, Station*>& newAlleStations) {
-  REQUIRE(properlyInitialized(),
-    "MetroNet wasn't initialized when calling setAlleStations");
-  alleStations = newAlleStations;
-  ENSURE(*getAlleStations() == newAlleStations,
-    "setAlleStations post condition failure");
-}
-
-void MetroNet::setAlleTrams(std::map<int, Tram*>& newAlleTrams) {
-  REQUIRE(properlyInitialized(),
-    "MetroNet wasn't initialized when calling setAlleTrams");
-  alleTrams = newAlleTrams;
-  ENSURE(*getAlleTrams() == newAlleTrams,
-    "setAlleTrams post condition failure");
-}
-
-void MetroNet::setAlleSporen(std::set<int>& newAlleSporen) {
-  REQUIRE(properlyInitialized(),
-    "MetroNet wasn't initialized when calling setAlleSporen");
-  alleSporen = newAlleSporen;
-  ENSURE(*getAlleSporen() == newAlleSporen,
-    "setAlleSporen post condition failure");
-}
-
 void MetroNet::addStation(Station* newStation) {
-  REQUIRE(properlyInitialized(),
-    "MetroNet wasn't initialized when calling addStation");
-  REQUIRE(getAlleStations()->count(newStation->getNaam()) == 0,
-    "This MetroNet already contains a station with this name");
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addStation");
+  REQUIRE(getStation(newStation->getNaam()) == nullptr, "This MetroNet already contains a station with this name");
   alleSporen.insert(newStation->getSpoor());
   alleStations[newStation->getNaam()] = newStation;
-  ENSURE(getAlleStations()->at(newStation->getNaam()) == newStation,
-    "addStation post condition failure");
+  ENSURE(getStation(newStation->getNaam()) == newStation, "addStation post condition failure");
 }
 
 void MetroNet::addTram(Tram* newTram) {
-  REQUIRE(properlyInitialized(),
-    "MetroNet wasn't initialized when calling addTram");
-  REQUIRE(getAlleTrams()->count(newTram->getLijnNr()) == 0,
-    "This MetroNet already contains a Tram with this lijnNr");
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addTram");
+  REQUIRE(getTram(newTram->getLijnNr()) == nullptr, "This MetroNet already contains a Tram with this lijnNr");
   alleTrams[newTram->getLijnNr()] = newTram;
   alleStations[newTram->getBeginStation()]->setTramInStation(true);
-  ENSURE(getAlleTrams()->at(newTram->getLijnNr()) == newTram,
-    "addTram post condition failure");
-  ENSURE(getAlleStations()->at(newTram->getBeginStation())->isTramInStation(),
-    "addTram post condition failure");
+  ENSURE(getTram(newTram->getLijnNr()) == newTram, "addTram post condition failure");
+  ENSURE(getStation(newTram->getBeginStation())->isTramInStation(), "addTram post condition failure");
 }
 
 void MetroNet::addPassagier(Passagier* newPassagier) {
 	REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addPassagier");
+	REQUIRE(getPassagier(newPassagier->getNaam()) == nullptr, "This MetroNet allready contains a passenger with this name");
 	allePassagiers[newPassagier->getNaam()] = newPassagier;
 	ENSURE(getPassagier(newPassagier->getNaam()) == newPassagier, "addPassagier post condition failure");
 }
 
 void MetroNet::moveTram(std::string station, int spoor, std::ostream& output) {
-  REQUIRE(properlyInitialized(),
-    "MetroNet wasn't initialized when calling moveTrams");
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTrams");
   REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
   REQUIRE(station != "", "station must not be empty");
-  std::string currentStation = getAlleTrams()->at(spoor)->getCurrentStation();
-  getAlleStations()->at(currentStation)->setTramInStation(false);
-  getAlleTrams()->at(spoor)->setCurrentStation(station);
-  getAlleStations()->at(station)->setTramInStation(true);
+  std::string currentStation = getTram(spoor)->getCurrentStation();
+  getStation(currentStation)->setTramInStation(false);
+  getTram(spoor)->setCurrentStation(station);
+  getStation(station)->setTramInStation(true);
   output << "Tram " << spoor << " reed van station " << currentStation << " naar station " << station << ".\n";
-  ENSURE(getAlleStations()->at(station)->isTramInStation(),
-    "moveTram post condition failure");
-  ENSURE(station == getAlleTrams()->at(spoor)->getCurrentStation(),
-    "moveTram post condition failure");
+  ENSURE(getStation(station)->isTramInStation(), "moveTram post condition failure");
+  ENSURE(station == getTram(spoor)->getCurrentStation(), "moveTram post condition failure");
   ENSURE(isConsistent(), "moveTram made MetroNet inconsistent");
 }
 
 void MetroNet::moveAlleTrams(std::ostream& output) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAlleTrams");
   for (auto& tram : alleTrams) {
-    moveTram(getAlleStations()->at(tram.second->getCurrentStation())->getVolgende(), tram.first, output);
+    moveTram(getStation(tram.second->getCurrentStation())->getVolgende(), tram.first, output);
   }
-
   ENSURE(isConsistent(), "moveAlleTrams made MetroNet inconsistent");
 }
 
 void MetroNet::movePassengers(std::string station, int spoor, std::ostream& output, std::ostream& error) {
-  REQUIRE(properlyInitialized(),
-    "MetroNet wasn't initialized when calling movePassengers");
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling movePassengers");
   REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
   REQUIRE(station != "", "station must not be empty");
-  REQUIRE(getAlleTrams()->at(spoor)->getCurrentStation() == station,
-    "Tram not in given station");
-  REQUIRE(getAlleStations()->at(station)->isTramInStation(),
-    "Station is empty");
-  const int afstappen = getAlleStations()->at(station)->getAfstappen();
-  const int opstappen = getAlleStations()->at(station)->getOpstappen();
-  int passagiers = getAlleTrams()->at(spoor)->getPassagiers();
-  const int zitplaatsen = getAlleTrams()->at(spoor)->getZitplaatsen();
+  REQUIRE(getTram(spoor)->getCurrentStation() == station, "Tram not in given station");
+  REQUIRE(getStation(station)->isTramInStation(), "Station is empty");
+  const int afstappen = getStation(station)->getAfstappen();
+  const int opstappen = getStation(station)->getOpstappen();
+  int passagiers = getTram(spoor)->getPassagiers();
+  const int zitplaatsen = getTram(spoor)->getZitplaatsen();
   if(afstappen <= passagiers){
-    getAlleTrams()->at(spoor)->setPassagiers(passagiers-afstappen);
+    getTram(spoor)->setPassagiers(passagiers-afstappen);
     output << "In station " << station << " stappen " << afstappen << " mensen af tram "
     << spoor << ".\n";
   }
   else {
     output << "In station " << station << " stappen " << passagiers << " mensen af tram "
     << spoor << ".\n";
-    getAlleTrams()->at(spoor)->setPassagiers(0);
+    getTram(spoor)->setPassagiers(0);
     error << "ERROR: Aan station " << station << " stappen " << afstappen
     << " mensen af tram " << spoor << ". Slechts " << passagiers << " mensen op de tram.\n";
   }
-  passagiers = getAlleTrams()->at(spoor)->getPassagiers();
+  passagiers = getTram(spoor)->getPassagiers();
   if(passagiers + opstappen <= zitplaatsen){
-    getAlleTrams()->at(spoor)->setPassagiers(passagiers+opstappen);
+    getTram(spoor)->setPassagiers(passagiers+opstappen);
     output << "In station " << station << " stappen " << opstappen << " mensen op tram "
     << spoor << ".\n";
   }
   else {
     output << "In station " << station << " stappen " << zitplaatsen-passagiers << " mensen op tram "
     << spoor << ".\n";
-    getAlleTrams()->at(spoor)->setPassagiers(zitplaatsen);
+    getTram(spoor)->setPassagiers(zitplaatsen);
     error << "ERROR: Maximum capaciteit ("<< zitplaatsen <<") tram "<< spoor
     <<" overschreden aan station " << station << ". Reeds " << passagiers
     << " passagiers op tram, " << opstappen << " mensen stappen op.\n";
   }
 }
 
+
 void MetroNet::moveAllePassengers(std::ostream& output, std::ostream& errors) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAllePassengers");
   for (auto& tram : alleTrams) {
-    movePassengers(getAlleStations()->at(tram.second->getCurrentStation())->getNaam(), tram.first, output, errors);
+    movePassengers(getStation(tram.second->getCurrentStation())->getNaam(), tram.first, output, errors);
   }
 }
 
 void MetroNet::writeToOutputStream(std::ostream& output) {
   REQUIRE(isConsistent(), "MetroNet is not consistent");
-  for(auto mapIt = getAlleStations()->begin();
-      mapIt != getAlleStations()->end();
+  for(auto mapIt = alleStations.begin();
+      mapIt != alleStations.end();
       ++mapIt)
   {
     output << "Station " << mapIt->second->getNaam() << std::endl;
@@ -235,7 +190,7 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
 
     int spoor = mapIt->second->getSpoor();
     output << "Spoor " << spoor << ", "
-            << (getAlleTrams()->at(spoor))->getZitplaatsen() << " zitplaatsen\n\n";
+            << (alleTrams.at(spoor))->getZitplaatsen() << " zitplaatsen\n\n";
   }
 }
 
