@@ -1,31 +1,39 @@
-<?xml version="1.0" ?>
 <METRONET>
   <STATION>
     <naam>A</naam>
+    <type>Metrostation</type>
     <volgende>B</volgende>
     <vorige>C</vorige>
-    <spoor>12</spoor>
-	<opstappen>7</opstappen>
-	<afstappen>2</afstappen>
+    <spoor>15</spoor>
   </STATION>
   <STATION>
     <naam>B</naam>
+    <type>Halte</type>
     <volgende>C</volgende>
     <vorige>A</vorige>
-    <spoor>12</spoor>
-	<opstappen>5</opstappen>
-	<afstappen>7</afstappen>
+    <spoor>15</spoor>
   </STATION>
   <STATION>
     <naam>C</naam>
+    <type>Metrostation</type>
     <volgende>A</volgende>
     <vorige>B</vorige>
-    <spoor>12</spoor>
+    <spoor>15</spoor>
   </STATION>
   <TRAM>
-    <lijnNr>12</lijnNr>
-    <zitplaatsen>32</zitplaatsen>
-    <snelheid>60</snelheid>
+    <lijnNr>9</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>X</beginStation>
+    <type>PCC</type>
+	<voertuigNr>1</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>15</lijnNr>
+    <zitplaatsen>72</zitplaatsen>
+    <snelheid>70</snelheid>
     <beginStation>A</beginStation>
+	<type>Albatros</type>
+	<voertuigNr>2</voertuigNr>
   </TRAM>
 </METRONET>

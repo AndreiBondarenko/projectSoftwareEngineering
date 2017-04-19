@@ -1,7 +1,7 @@
 <PASSAGIER>
 	<naam>Groep1</naam>
-	<beginStation>A</beginStation>
-	<eindStation>C</eindStation>
+	<beginstation>A</beginstation>
+	<eindstation>C</eindstation>
 	<hoeveelheid>2</hoeveelheid>
 </PASSAGIER>
 <PASSAGIER>
