@@ -16,7 +16,7 @@ protected:
     MetroNet metronet;
 
 };
-
+/*
 TEST_F(MetroNetExportTest, FileCompareTest) {
 	ASSERT_TRUE(DirectoryExists("_testOutput"));
 
@@ -590,3 +590,4 @@ TEST_F(MetroNetExportTest, OutputBadDayTest36UnknownElementMetroNet) {
     errors.close();
     EXPECT_TRUE(FileCompare("_testOutput/expected/badDay36ErrorLogExpected.txt", "_testOutput/badDay36ErrorLog.txt"));
 }
+*/
