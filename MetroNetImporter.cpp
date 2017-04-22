@@ -496,6 +496,7 @@ SuccessEnum MetroNetImporter::importPassengers(const char* inputfilename, std::o
     }
     if (deleted) continue;
     metronet.addPassagier(passagier);
+		passagier->moveToBeginStation(metronet);
   }
   doc.Clear();
   ENSURE(metronet.isConsistent(), "MetroNet is not consistent");

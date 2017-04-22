@@ -1,5 +1,6 @@
 #include "Passagier.h"
 #include "DesignByContract.h"
+#include <iostream>
 
 Passagier::Passagier() {
 	initCheck = this;
@@ -74,3 +75,13 @@ void Passagier::setHoeveelheid(const int newHoeveelheid) {
 	hoeveelheid = newHoeveelheid;
 	ENSURE(getHoeveelheid() == newHoeveelheid, "setHoeveelheid post condition failure");
 }
+
+void Passagier::moveToBeginStation(MetroNet& metronet) const {
+	REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling moveToBeginStation");
+	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling Passagier::moveToBeginStation");
+	REQUIRE(metronet.getStation(beginStation) != nullptr, "beginStation is not a station of MetroNet");
+	Station* station = metronet.getStation(beginStation);
+	station->addPassagier(naam);
+	ENSURE(metronet.isConsistent(), "Passagier::moveToBeginStation made MetroNet inconsistent");
+}
+

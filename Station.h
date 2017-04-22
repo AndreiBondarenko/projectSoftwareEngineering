@@ -1,13 +1,6 @@
-//
-//  Station.h
-//  projectSoftwareEngineering
-//
-//  Created by Andrei Bondarenko on 17/02/2017.
-//
-//
-
 #ifndef INC_STATION_H
 #define INC_STATION_H
+#pragma once
 
 #include <string>
 #include <map>
@@ -23,6 +16,7 @@ private:
   int opstappen;
   int afstappen;
   std::map<int, bool> tramInStation;
+  std::set<std::string> passagiers;
 public:
   // CONSTRUCTORS
   /**
@@ -115,6 +109,27 @@ public:
   */
   void setTramInStation(const int& spoor, const bool& newTramInStation);
 
+	// MODIFIER METHODS
+	/**
+	\n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling isInStation");
+	\n REQUIRE(passagier != "", "passagier must not be empty");
+	*/
+	bool isInStation(std::string passagier);
+	/**
+	\n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling addPassagier");
+	\n REQUIRE(passagier != "", "passagier must not be empty");
+	\n REQUIRE(isInStation(passagier) == false, "passenger allready in isInStation");
+	\n ENSURE(isInStation(passagier) == true, "addPassagier post condition failure");
+	*/
+	void addPassagier(std::string passagier);
+	/**
+	\n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling removePassagier");
+	\n REQUIRE(passagier != "", "passagier must not be empty");
+	\n REQUIRE(isInStation(passagier) == true, "passenger not in isInStation");
+	\n ENSURE(isInStation(passagier) == false, "removePassagier post condition failure");
+	*/
+	void removePassagier(std::string passagier);
+
   // OPTIONAL FEATURES
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setOpstappen");
@@ -128,6 +143,8 @@ public:
   \n ENSURE(getAfstappen() == newAfstappen, "setAfstappen post condition failure");
   */
   void setAfstappen(const int newAfstappen);
+
+
 };
 
 

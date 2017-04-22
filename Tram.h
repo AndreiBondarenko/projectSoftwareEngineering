@@ -2,6 +2,7 @@
 #define INC_TRAM_H
 
 #include <string>
+#include <set>
 
 class Tram {
 private:
@@ -9,11 +10,11 @@ private:
   int lijnNr;
   int voertuigNr;
   int zitplaatsen;
-  int passagiers;
   int snelheid;
   std::string type;
   std::string beginStation;
   std::string currentStation;
+	std::set<std::string> passagiers;
 public:
   // CONSTRUCTORS
   /**
@@ -64,7 +65,7 @@ public:
   /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getPassagiers");
   */
-  int getPassagiers() const;
+  int getPassagierCount() const;
   /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getVoertuigNr");
   */
@@ -112,7 +113,7 @@ public:
   \n REQUIRE(newPassagiers >= 0 , "newPassagiers must be bigger or equal to zero");
   \n ENSURE(getPassagiers() == newPassagiers, "setPassagiers post condition failure");
   */
-  void setPassagiers(const int newPassagiers);
+  //void setPassagiers(const int newPassagiers);
   /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setVoertuigNr");
   \n REQUIRE(newVoertuigNr >= 0 , "newVoertuigNr must be bigger or equal to zero");
@@ -120,6 +121,27 @@ public:
   */
   void setVoertuigNr(const int newVoertuigNr);
 
+	// MODIFIER METHODS
+	/**
+	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling isInTram");
+	\n REQUIRE(passagier != "", "passagier must not be empty");
+	*/
+	bool isInTram(std::string passagier);
+	/**
+	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling addPassagier");
+	\n REQUIRE(passagier != "", "passagier must not be empty");
+	\n REQUIRE(isInTram(passagier) == false, "passenger allready in Tram");
+	\n ENSURE(isInTram(passagier) == true, "addPassagier post condition failure");
+	*/
+	void addPassagier(std::string passagier);
+	/**
+	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling removePassagier");
+	\n REQUIRE(passagier != "", "passagier must not be empty");
+	\n REQUIRE(isInTram(passagier) == true, "passenger not in Tram");
+	\n ENSURE(isInTram(passagier) == false, "removePassagier post condition failure");
+	*/
+	void removePassagier(std::string passagier);
+	
 };
 
 

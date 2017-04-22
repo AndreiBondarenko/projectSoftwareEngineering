@@ -1,13 +1,7 @@
-//
-//  Station.cpp
-//  projectSoftwareEngineering
-//
-//  Created by Andrei Bondarenko on 17/02/2017.
-//
-//
-
 #include "Station.h"
 #include "DesignByContract.h"
+#include <iostream>
+#include <algorithm>
 
 Station::Station()  {
   initCheck = this;
@@ -130,6 +124,29 @@ void Station::setTramInStation(const int& spoor, const bool& newTramInStation) {
   tramInStation[spoor] = newTramInStation;
   ENSURE(isTramInStation(spoor) == newTramInStation,
     "setTramInStation post condition failure");
+}
+
+bool Station::isInStation(std::string passagier) {
+	REQUIRE(properlyInitialized(), "Station wasn't initialized when calling isInStation");
+	REQUIRE(passagier != "", "passagier must not be empty");
+	return passagiers.find(passagier) != passagiers.end();
+}
+
+void Station::addPassagier(std::string passagier) {
+
+	REQUIRE(properlyInitialized(), "Station wasn't initialized when calling addPassagier");
+	REQUIRE(passagier != "", "passagier must not be empty");
+	REQUIRE(isInStation(passagier) == false, "passenger allready in Station");
+	passagiers.insert(passagier);
+	ENSURE(isInStation(passagier) == true, "addPassagier post condition failure");
+}
+
+void Station::removePassagier(std::string passagier) {
+	REQUIRE(properlyInitialized(), "Station wasn't initialized when calling removePassagier");
+	REQUIRE(passagier != "", "passagier must not be empty");
+	REQUIRE(isInStation(passagier) == true, "passenger not in Station");
+	passagiers.erase(passagier);
+	ENSURE(isInStation(passagier) == false, "removePassagier post condition failure");
 }
 
 // OPTIONAL

@@ -3,7 +3,6 @@
 
 Tram::Tram()  {
 	initCheck = this;
-  passagiers = 0;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
@@ -20,7 +19,6 @@ Tram::Tram(const int lijnNr, const int zitplaatsen, const std::string& beginStat
   REQUIRE(zitplaatsen >= 0 , "zitplaatsen must be bigger or equal to zero");
   REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
 	initCheck = this;
-  passagiers = 0;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
@@ -61,10 +59,10 @@ std::string Tram::getCurrentStation() const {
   return currentStation;
 }
 
-int Tram::getPassagiers() const {
+int Tram::getPassagierCount() const {
   REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling getPassagiers");
-    return passagiers;
+    return passagiers.size();
 }
 
 int Tram::getSnelheid() const {
@@ -135,14 +133,14 @@ void Tram::setSnelheid(const int newSnelheid) {
 	ENSURE(getSnelheid() == newSnelheid, "setSnelheid post condition failure");
 }
 
-void Tram::setPassagiers(const int newPassagiers) {
-  REQUIRE(properlyInitialized(),
-    "Tram wasn't initialized when calling setPassagiers");
-  REQUIRE(newPassagiers >= 0 , "newPassagiers must be bigger or equal to zero");
-  passagiers = newPassagiers;
-  ENSURE(getPassagiers() == newPassagiers,
-    "setPassagiers post condition failure");
-}
+//void Tram::setPassagiers(const int newPassagiers) {
+//  REQUIRE(properlyInitialized(),
+//    "Tram wasn't initialized when calling setPassagiers");
+//  REQUIRE(newPassagiers >= 0 , "newPassagiers must be bigger or equal to zero");
+//  passagiers = newPassagiers;
+//  ENSURE(getPassagiers() == newPassagiers,
+//    "setPassagiers post condition failure");
+//}
 
 void Tram::setVoertuigNr(const int newVoertuigNr) {
   REQUIRE(properlyInitialized(),
@@ -152,4 +150,26 @@ void Tram::setVoertuigNr(const int newVoertuigNr) {
   voertuigNr = newVoertuigNr;
   ENSURE(getVoertuigNr() == newVoertuigNr,
     "setVoertuigNr post condition failure");
+}
+
+bool Tram::isInTram(std::string passagier) {
+	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setVoertuigNr");
+	REQUIRE(passagier != "", "passagier must not be empty");
+	return passagiers.find(passagier) != passagiers.end();
+}
+
+void Tram::addPassagier(std::string passagier) {
+	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setVoertuigNr");
+	REQUIRE(passagier != "", "passagier must not be empty");
+	REQUIRE(isInTram(passagier) == false, "passenger allready in Tram");
+	passagiers.insert(passagier);
+	ENSURE(isInTram(passagier) == true, "addPassagier post condition failure");
+}
+
+void Tram::removePassagier(std::string passagier) {
+	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setVoertuigNr");
+	REQUIRE(passagier != "", "passagier must not be empty");
+	REQUIRE(isInTram(passagier) == true, "passenger not in Tram");
+	passagiers.erase(passagier);
+	ENSURE(isInTram(passagier) == false, "addPassagier post condition failure");
 }
