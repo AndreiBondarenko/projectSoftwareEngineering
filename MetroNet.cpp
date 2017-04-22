@@ -63,6 +63,33 @@ bool MetroNet::isConsistent() const {
     }
   }
   // elk spoor maximaal een keer door elk station komt ???????????????????????
+
+
+	// iedere passagier ofwel in een station, ofwel in een tram zit
+	// een passagier zit niet in meerdere trams/stations
+	for (const auto& it : allePassagiers) {
+		std::string passagier = it.first;
+		int count = 0;
+		for (const auto& tramIt : alleTrams) {
+			if (tramIt.second->isInTram(passagier))
+				count++;
+		}
+		for (const auto& stationIt : alleStations) {
+			if (stationIt.second->isInStation(passagier))
+				count++;
+		}
+		if (count != 1) {
+			return false;
+		}
+	}
+	// begin- en eindStation van iedere passagier bestaat
+	for (const auto& it : allePassagiers) {
+		Passagier* passagier = it.second;
+		if (alleStations.find(passagier->getBeginStation()) == alleStations.end() ||
+			alleStations.find(passagier->getEindStation()) == alleStations.end()) {
+			return false;
+		}
+	}
   return true;
 }
 
@@ -138,6 +165,8 @@ void MetroNet::movePassengers(std::string station, int spoor, std::ostream& outp
   REQUIRE(station != "", "station must not be empty");
   REQUIRE(getTram(spoor)->getCurrentStation() == station, "Tram not in given station");
   REQUIRE(getStation(station)->isTramInStation(), "Station is empty");
+	
+	/*
   const int afstappen = getStation(station)->getAfstappen();
   const int opstappen = getStation(station)->getOpstappen();
   int passagiers = getTram(spoor)->getPassagiers();
@@ -168,6 +197,7 @@ void MetroNet::movePassengers(std::string station, int spoor, std::ostream& outp
     <<" overschreden aan station " << station << ". Reeds " << passagiers
     << " passagiers op tram, " << opstappen << " mensen stappen op.\n";
   }
+	*/
 }
 
 

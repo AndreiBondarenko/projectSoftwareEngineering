@@ -1,5 +1,6 @@
 #ifndef INC_METRONET_H
 #define INC_METRONET_H
+#pragma once
 
 #include <map>
 #include <set>
@@ -7,6 +8,10 @@
 #include "Tram.h"
 #include "Station.h"
 #include "Passagier.h"
+
+class Station;
+class Tram;
+class Passagier;
 
 class MetroNet {
 private:
