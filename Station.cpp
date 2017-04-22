@@ -148,33 +148,18 @@ void Station::removePassagier(std::string passagier) {
 	ENSURE(isInStation(passagier) == false, "removePassagier post condition failure");
 }
 
-// OPTIONAL
-
-int Station::getOpstappen() const {
- REQUIRE(properlyInitialized(),
-   "Station wasn't initialized when calling getOpstappen");
- return opstappen;
-}
-
-int Station::getAfstappen() const {
-  REQUIRE(properlyInitialized(),
-    "Station wasn't initialized when calling getAfstappen");
-  return afstappen;
-}
-
-void Station::setOpstappen(const int newOpstappen) {
-  REQUIRE(properlyInitialized(),
-    "Station wasn't initialized when calling setOpstappen");
-  REQUIRE(newOpstappen >= 0 , "newOpstappen must be bigger or equal to zero");
-  opstappen = newOpstappen;
-  ENSURE(getOpstappen() == newOpstappen,
-    "setOpstappen post condition failure");
-}
-void Station::setAfstappen(const int newAfstappen) {
-  REQUIRE(properlyInitialized(),
-    "Station wasn't initialized when calling setAfstappen");
-  REQUIRE(newAfstappen >= 0 , "newAfstappen must be bigger or equal to zero");
-  afstappen = newAfstappen;
-  ENSURE(getAfstappen() == newAfstappen,
-    "setAfstappen post condition failure");
+void Station::movePassagiers(MetroNet& metronet, std::ostream& output, std::ostream& error) {
+	REQUIRE(properlyInitialized(), "Station wasn't initialized when calling movePassagiers");
+	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling movePassagiers");
+	Tram* tram; // = getTramInStation(metronet);
+	if (tram == nullptr) {
+		return;
+	}
+	for (std::string passagierName : passagiers) {
+		Passagier* passagier = metronet.getPassagier(passagierName);
+		if (passagier->getBeginStation() == naam) {
+			tram->addPassagier(passagierName);
+			removePassagier(passagierName);
+		}
+	}
 }
