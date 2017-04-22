@@ -10,33 +10,34 @@
 #define INC_STATION_H
 
 #include <string>
+#include <map>
+#include <set>
 
 class Station {
 private:
   Station* initCheck;
   std::string naam;
-  std::string vorige;
-  std::string volgende;
+  std::map<int, std::string> vorige;
+  std::map<int, std::string> volgende;
   std::string type;
-  int spoor;
   int opstappen;
   int afstappen;
-  bool tramInStation;
+  std::map<int, bool> tramInStation;
 public:
   // CONSTRUCTORS
   /**
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   */
   Station(); // default
-  /**
-  \n REQUIRE(volgende != "", "volgende must not be empty");
-  \n REQUIRE(vorige != "", "vorige must not be empty");
-  \n REQUIRE(naam != "", "naam must not be empty");
-  \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
-  \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
-  */
-  Station(const std::string& naam, const std::string& vorige,
-    const std::string& volgende, const int spoor); // full
+  // /**
+  // \n REQUIRE(volgende != "", "volgende must not be empty");
+  // \n REQUIRE(vorige != "", "vorige must not be empty");
+  // \n REQUIRE(naam != "", "naam must not be empty");
+  // \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
+  // \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+  // */
+  // Station(const std::string& naam, const std::string& vorige,
+  //   const std::string& volgende, const int spoor); // full
 
   // DESTRUCTOR
   ~Station();
@@ -51,24 +52,27 @@ public:
   std::string getNaam() const;
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getVorige");
+  \n REQUIRE(spoor >= 0, "parameter spoor must be >= 0, when passed to getVorige");
   */
-  std::string getVorige() const;
+  std::string getVorige(const int& spoor) const;
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getVolgende");
+  \n REQUIRE(spoor >= 0, "parameter spoor must be >= 0, when passed to getVolgende");
   */
-  std::string getVolgende() const;
+  std::string getVolgende(const int& spoor) const;
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getType");
   */
   std::string getType() const;
   /**
-  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getSpoor");
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getSporen");
   */
-  int getSpoor() const;
+  std::set<int> getSporen() const;
   /**
-  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getTramInStation");
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling isTramInStation");
+  \n REQUIRE(spoor >= 0, "parameter spoor must be >= 0, when passed to isTramInStation");
   */
-  bool isTramInStation() const;
+  bool isTramInStation(const int& spoor) const;
 
   // OPTIONAL FEATURES
   /**
@@ -92,13 +96,13 @@ public:
   \n REQUIRE(newVorige != "", "newVorige must not be empty");
   \n ENSURE(getVorige() == newVorige, "setVorige post condition failure");
   */
-  void setVorige(const std::string& newVorige);
+  void addVorige(const int& spoor, const std::string& newVorige);
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setVolgende");
   \n REQUIRE(newVolgende != "", "newVolgende must not be empty");
   \n ENSURE(getVolgende() == newVolgende, "setVolgende post condition failure");
   */
-  void setVolgende(const std::string& newVolgende);
+  void addVolgende(const int& spoor, const std::string& newVolgende);
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setType");
   \n REQUIRE(newType != "", "newType must not be empty");
@@ -106,16 +110,10 @@ public:
   */
   void setType(const std::string& newType);
   /**
-  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setSpoor");
-  \n REQUIRE(newSpoor >= 0 , "newSpoor must be bigger or equal to zero");
-  \n ENSURE(getSpoor() == newSpoor, "setSpoor post condition failure");
-  */
-  void setSpoor(const int newSpoor);
-  /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setTramInStation");
   \n ENSURE(isTramInStation() == newTramInStation, "setTramInStation post condition failure");
   */
-  void setTramInStation(bool newTramInStation);
+  void setTramInStation(const int& spoor, const bool& newTramInStation);
 
   // OPTIONAL FEATURES
   /**
