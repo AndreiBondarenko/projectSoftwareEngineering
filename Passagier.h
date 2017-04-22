@@ -1,7 +1,11 @@
 #ifndef INC_PASSAGIER_H
 #define INC_PASSAGIER_H
+#pragma once
 
 #include <string>
+#include "MetroNet.h"
+
+class MetroNet;
 
 class Passagier {
 private:
@@ -74,6 +78,14 @@ public:
 	\n ENSURE(getHoeveelheid() == newHoeveelheid, "setHoeveelheid post condition failure");
 	*/
 	void setHoeveelheid(const int newHoeveelheid);
+
+	// MODIFIER METHODS
+	/**
+	\n REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling moveToBeginStation");
+	\n REQUIRE(metronet->properlyInitialized(), "MetroNet wasn't initialized when calling Passagier::moveToBeginStation");
+	\n ENSURE(metronet->isConsistent(), "Passagier::moveToBeginStation made MetroNet inconsistent");
+	*/
+	void moveToBeginStation(MetroNet& metronet) const;
 };
 
 
