@@ -134,50 +134,6 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
                 break;
               }
             }
-            else if (elemName == "opstappen") {
-              try {
-                int opstappen = std::stoi(text->Value());
-                if (opstappen >= 0)
-                  station->setOpstappen(opstappen);
-                else throw 0;
-              }
-              catch (int e) {
-                delete station;
-                endResult = PartialImport;
-                errStream << "XML PARTIAL IMPORT: Station not created, negative opstappen: " << text->Value() << "." << std::endl;
-                deleted = true;
-                break;
-              }
-              catch (std::invalid_argument& e) {
-                delete station;
-                endResult = PartialImport;
-                errStream << "XML PARTIAL IMPORT: Station not created, invalid opstappen: " << text->Value() << "." << std::endl;
-                deleted = true;
-                break;
-              }
-            }
-            else if (elemName == "afstappen") {
-              try {
-                int afstappen = std::stoi(text->Value());
-                if (afstappen >= 0)
-                  station->setAfstappen(afstappen);
-                else throw 0;
-              }
-              catch (int e) {
-                delete station;
-                endResult = PartialImport;
-                errStream << "XML PARTIAL IMPORT: Station not created, negative afstappen: " << text->Value() << "." << std::endl;
-                deleted = true;
-                break;
-              }
-              catch (std::invalid_argument& e) {
-                delete station;
-                endResult = PartialImport;
-                errStream << "XML PARTIAL IMPORT: Station not created, invalid afstappen: " << text->Value() << "." << std::endl;
-                deleted = true;
-                break;
-              }
-            }
             else {
               errStream << "XML PARTIAL IMPORT:" << std::endl << "Expected:" << std::endl << "<naam> ... </naam> or"
               << std::endl << "<volgende> ... </volgende> or" << std::endl << "<vorige> ... </vorige> or" << std::endl <<
