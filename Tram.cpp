@@ -59,9 +59,9 @@ std::string Tram::getCurrentStation() const {
   return currentStation;
 }
 
-int Tram::getPassagierCount() const {
+int Tram::getAantalPassagiers() const {
   REQUIRE(properlyInitialized(),
-    "Tram wasn't initialized when calling getPassagiers");
+    "Tram wasn't initialized when calling getAantalPassagiers");
     return passagiers.size();
 }
 
@@ -133,14 +133,12 @@ void Tram::setSnelheid(const int newSnelheid) {
 	ENSURE(getSnelheid() == newSnelheid, "setSnelheid post condition failure");
 }
 
-//void Tram::setPassagiers(const int newPassagiers) {
-//  REQUIRE(properlyInitialized(),
-//    "Tram wasn't initialized when calling setPassagiers");
-//  REQUIRE(newPassagiers >= 0 , "newPassagiers must be bigger or equal to zero");
-//  passagiers = newPassagiers;
-//  ENSURE(getPassagiers() == newPassagiers,
-//    "setPassagiers post condition failure");
-//}
+void Tram::setAantalPassagiers(const int newAantalPassagiers) {
+  REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setAantalPassagiers");
+  REQUIRE(newAantalPassagiers >= 0 , "newPassagiers must be bigger or equal to zero");
+  aantalPassagiers = newAantalPassagiers;
+  ENSURE(getAantalPassagiers() == newAantalPassagiers, "setAantalPassagiers post condition failure");
+}
 
 void Tram::setVoertuigNr(const int newVoertuigNr) {
   REQUIRE(properlyInitialized(),
@@ -172,4 +170,18 @@ void Tram::removePassagier(std::string passagier) {
 	REQUIRE(isInTram(passagier) == true, "passenger not in Tram");
 	passagiers.erase(passagier);
 	ENSURE(isInTram(passagier) == false, "addPassagier post condition failure");
+}
+
+std::set<std::string> Tram::afstappenInHalte(MetroNet& metronet, std::string station) {
+	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
+	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
+	REQUIRE(station != "", "station must not be empty");
+	std::set<std::string> afstappen;
+	for (std::string passagierName : passagiers) {
+		Passagier* passagier = metronet.getPassagier(passagierName);
+		if (passagier->getEindStation() == station) {
+			afstappen.insert(passagierName);
+		}
+	}
+	return afstappen;
 }

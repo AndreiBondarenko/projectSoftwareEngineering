@@ -1,8 +1,12 @@
 #ifndef INC_TRAM_H
 #define INC_TRAM_H
+#pragma once
 
 #include <string>
 #include <set>
+#include "MetroNet.h"
+
+class MetroNet;
 
 class Tram {
 private:
@@ -15,6 +19,7 @@ private:
   std::string beginStation;
   std::string currentStation;
 	std::set<std::string> passagiers;
+	int aantalPassagiers;
 public:
   // CONSTRUCTORS
   /**
@@ -63,9 +68,9 @@ public:
   */
   int getSnelheid() const;
   /**
-  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getPassagiers");
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getAantalPassagiers");
   */
-  int getPassagierCount() const;
+  int getAantalPassagiers() const;
   /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getVoertuigNr");
   */
@@ -109,11 +114,11 @@ public:
   */
   void setSnelheid(const int newSnelheid);
   /**
-  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setPassagiers");
-  \n REQUIRE(newPassagiers >= 0 , "newPassagiers must be bigger or equal to zero");
-  \n ENSURE(getPassagiers() == newPassagiers, "setPassagiers post condition failure");
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setAantalPassagiers");
+  \n REQUIRE(newAantalPassagiers >= 0 , "newAantalPassagiers must be bigger or equal to zero");
+  \n ENSURE(getAantalPassagiers() == newAantalPassagiers, "setAantalPassagiers post condition failure");
   */
-  //void setPassagiers(const int newPassagiers);
+  void setAantalPassagiers(const int newAantalPassagiers);
   /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setVoertuigNr");
   \n REQUIRE(newVoertuigNr >= 0 , "newVoertuigNr must be bigger or equal to zero");
@@ -141,6 +146,12 @@ public:
 	\n ENSURE(isInTram(passagier) == false, "removePassagier post condition failure");
 	*/
 	void removePassagier(std::string passagier);
+	/**
+	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
+	\n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
+	\n REQUIRE(station != "", "station must not be empty");
+	*/
+	std::set<std::string> afstappenInHalte(MetroNet& metronet, std::string station);
 	
 };
 
