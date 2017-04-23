@@ -90,38 +90,6 @@ bool MetroNet::isConsistent() const {
 			return false;
 		}
 	}
-  // REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling isConsistent");
-  // // elk station is verbonden met een voorgaand en een volgend station
-  // // voor elk spoor
-  // for(auto station : alleStations) {
-  //   std::string vorige = station.second->getVorige();
-  //   std::string volgende = station.second->getVolgende();
-  //   if (alleStations.find(vorige) == alleStations.end() ||
-  //       alleStations.find(volgende) == alleStations.end()) {
-  //     return false;
-  //   }
-  // }
-  // // er bestaan geen trams met een lijn nummer dat niet overeenkomt met een
-  // // spoor in een station
-  // // het beginstation van een tram een geldig station in het metronet is
-  // for(auto mapIt = alleTrams.begin(); mapIt != alleTrams.end(); ++mapIt) {
-  //   int lijnNr = mapIt->second->getLijnNr();
-  //   std::string beginStation = mapIt->second->getBeginStation();
-  //   if (alleSporen.find(lijnNr) == alleSporen.end()) {
-  //     return false;
-  //   }
-  //   if (alleStations.find(beginStation) == alleStations.end()) {
-  //     return false;
-  //   }
-  // }
-  // // er geen sporen zijn waarvoor geen tram bestaat
-  // for(auto setIt = alleSporen.begin(); setIt != alleSporen.end(); ++setIt) {
-  //   int spoor = *setIt;
-  //   if (alleTrams.find(spoor) == alleTrams.end()) {
-  //     return false;
-  //   }
-  // }
-  // // elk spoor maximaal een keer door elk station komt ???????????????????????
   return true;
 }
 
@@ -148,7 +116,9 @@ Passagier* MetroNet::getPassagier(std::string naam) {
 void MetroNet::addStation(Station* newStation) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addStation");
   REQUIRE(getStation(newStation->getNaam()) == nullptr, "This MetroNet already contains a station with this name");
-  alleSporen.insert(newStation->getSporen().begin(), newStation->getSporen().end());
+  for(int x: newStation->getSporen()) {
+    alleSporen.insert(x);
+  }
   alleStations[newStation->getNaam()] = newStation;
   ENSURE(getStation(newStation->getNaam()) == newStation, "addStation post condition failure");
 }
@@ -179,7 +149,7 @@ void MetroNet::moveTram(std::string station, int voertuigNr, std::ostream& outpu
   getStation(currentStation)->setTramInStation(lijnNr, false);
   tram->setCurrentStation(station);
   getStation(station)->setTramInStation(lijnNr, true);
-  output << "Tram #" << voertuigNr << "op spoor "<< lijnNr << " reed van station " << currentStation << " naar station " << station << ".\n";
+  output << "Tram #" << voertuigNr << " op spoor "<< lijnNr << " reed van station " << currentStation << " naar station " << station << ".\n";
   ENSURE(getStation(station)->isTramInStation(lijnNr), "moveTram post condition failure");
   ENSURE(station == getTram(voertuigNr)->getCurrentStation(), "moveTram post condition failure");
   ENSURE(isConsistent(), "moveTram made MetroNet inconsistent");
@@ -224,6 +194,7 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
           << std::endl;
       }
     }
+    output << std::endl;
   }
   output << std::endl << "--== TRAMS ==--" << std::endl;
   for(auto tramIt = alleTrams.begin(); tramIt != alleTrams.end(); tramIt++) {
@@ -244,10 +215,50 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
           << info->getHoeveelheid()
           << " mensen, reist naar station "
           << info->getEindStation()
-          << std::endl
           << std::endl;
       }
     }
+    output << std::endl;
+  }
+}
+
+void MetroNet::drawToOutputStream(std::ostream &output) {
+  for(auto spoorIt = alleSporen.begin(); spoorIt != alleSporen.end(); spoorIt++) {
+    output << "Spoor " << *spoorIt << " :" << std::endl;
+    std::string route = "=";
+    std::string trams = " ";
+    std::string firstStop;
+    std::string current;
+    for(auto stationIt = alleStations.begin(); stationIt != alleStations.end(); stationIt++) {
+      if (stationIt->second->getSporen().count(*spoorIt) == 1) {
+        firstStop = stationIt->first;
+        route.append(firstStop);
+        if(stationIt->second->isTramInStation(*spoorIt)) {
+          trams.append("T");
+        }
+        else {
+          trams.append(" ");
+        }
+        break;
+      }
+    }
+    current = getStation(firstStop)->getVolgende(*spoorIt);
+    while (current != firstStop) {
+      route.append("==");
+      route.append(current);
+      trams.append("  ");
+      if(getStation(current)->isTramInStation(*spoorIt)) {
+        trams.append("T");
+      }
+      else {
+        trams.append(" ");
+      }
+      current = getStation(current)->getVolgende(*spoorIt);
+    }
+    route.append("=");
+    trams.append(" ");
+    output << route << std::endl;
+    output << trams << std::endl << std::endl;
   }
 }
 
