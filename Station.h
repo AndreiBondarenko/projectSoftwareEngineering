@@ -19,7 +19,7 @@ private:
   std::string type;
   int opstappen;
   int afstappen;
-  std::map<int, bool> tramInStation;
+  std::map<std::pair<int, int>, bool> tramInStation; 
   std::set<std::string> passagiers;
 public:
   // CONSTRUCTORS
@@ -71,6 +71,11 @@ public:
   \n REQUIRE(spoor >= 0, "parameter spoor must be >= 0, when passed to isTramInStation");
   */
   bool isTramInStation(const int& spoor) const;
+	/**
+	\n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getTramInStation");
+	*/
+	int getTramInStation() const;
+
 
   // SETTER METHODS
   /**
@@ -99,9 +104,12 @@ public:
   void setType(const std::string& newType);
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setTramInStation");
-  \n ENSURE(isTramInStation() == newTramInStation, "setTramInStation post condition failure");
+	\n REQUIRE(spoor >= 0, "spoor must be bigger or equal to zero");
+	\n REQUIRE(voertuigNr >= 0, "voertuigNr must be bigger or equal to zero");
+	\n ENSURE(isTramInStation(spoor) != newTramInStation, "setTramInStation post condition failure");  // false
+  \n ENSURE(isTramInStation(spoor) == newTramInStation, "setTramInStation post condition failure");  // true
   */
-  void setTramInStation(const int& spoor, const bool& newTramInStation);
+  bool setTramInStation(const int& spoor, const int voertuigNr, const bool& newTramInStation);
 
 	// MODIFIER METHODS
 	/**
@@ -123,7 +131,11 @@ public:
 	\n ENSURE(isInStation(passagier) == false, "removePassagier post condition failure");
 	*/
 	void removePassagier(std::string passagier);
-
+	/**
+	\n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling movePassagiers");
+	\n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling movePassagiers");
+	\n ENSURE(metronet.isConsistent(), "movePassagiers made MetroNet inconsistent");
+	*/
 	void movePassagiers(MetroNet& metronet, std::ostream& output, std::ostream& error);
 
 };

@@ -78,10 +78,24 @@ std::set<int> Station::getSporen() const {
 
 bool Station::isTramInStation(const int& spoor) const {
   REQUIRE(properlyInitialized(),
-    "Station wasn't initialized when calling getTramInStation");
+    "Station wasn't initialized when calling isTramInStation");
   REQUIRE(spoor >= 0,
     "parameter spoor must be >= 0, when passed to isTramInStation");
-  return tramInStation.at(spoor);
+	for (auto& it : tramInStation) {
+		if (it.first.first == spoor && it.second) {
+			return true;
+		}
+	}
+	return false;
+}
+
+int Station::getTramInStation() const {
+	REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getTramInStation");
+	for (auto it : tramInStation) {
+		if (it.second)
+			return it.first.second;
+	}
+	return -1; //No tram in station
 }
 
 void Station::setNaam(const std::string& newNaam) {
@@ -118,12 +132,18 @@ void Station::setType(const std::string& newType) {
     ENSURE(getType() == newType, "setType post condition failure");
 }
 
-void Station::setTramInStation(const int& spoor, const bool& newTramInStation) {
-  REQUIRE(properlyInitialized(),
-    "Station wasn't initialized when calling setTramInStation");
-  tramInStation[spoor] = newTramInStation;
-  ENSURE(isTramInStation(spoor) == newTramInStation,
-    "setTramInStation post condition failure");
+bool Station::setTramInStation(const int& spoor, const int voertuigNr, const bool& newTramInStation) {
+  REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setTramInStation");
+	REQUIRE(spoor >= 0, "spoor must be bigger or equal to zero");
+	REQUIRE(voertuigNr >= 0, "voertuigNr must be bigger or equal to zero");
+	std::pair<int, int> tram = std::make_pair(spoor, voertuigNr);
+	if (newTramInStation && isTramInStation(spoor)) {
+		ENSURE(isTramInStation(spoor) != newTramInStation, "setTramInStation post condition failure");
+		return false;
+	}
+	tramInStation[tram] = newTramInStation;
+  ENSURE(isTramInStation(spoor) == newTramInStation, "setTramInStation post condition failure");
+	return true;
 }
 
 bool Station::isInStation(std::string passagier) {
@@ -152,15 +172,51 @@ void Station::removePassagier(std::string passagier) {
 void Station::movePassagiers(MetroNet& metronet, std::ostream& output, std::ostream& error) {
 	REQUIRE(properlyInitialized(), "Station wasn't initialized when calling movePassagiers");
 	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling movePassagiers");
-	Tram* tram; // = getTramInStation(metronet);
+	int tramInStation = getTramInStation();
+	if (tramInStation == -1) {
+		return;
+	}
+	Tram* tram = metronet.getTram(tramInStation);
 	if (tram == nullptr) {
 		return;
 	}
-	for (std::string passagierName : passagiers) {
-		Passagier* passagier = metronet.getPassagier(passagierName);
-		if (passagier->getBeginStation() == naam) {
-			tram->addPassagier(passagierName);
-			removePassagier(passagierName);
+	std::set<std::string> afstappen = tram->afstappenInHalte(metronet, naam);
+	std::set<std::string>::iterator it;
+	// afstappen
+	for (it = afstappen.begin(); it != afstappen.end(); ) {
+		Passagier* passagier = metronet.getPassagier(*it);
+		passagiers.insert(passagier->getNaam());
+		tram->removePassagier(passagier->getNaam());
+		output << passagier->getNaam() << " (" << passagier->getHoeveelheid() << ") stapt uit in station " << naam << std::endl;
+		if (tram->getAantalPassagiers() - passagier->getHoeveelheid() < 0) {
+			error << passagier->getNaam() << " (" << passagier->getHoeveelheid() << ") stapt uit in station " << naam << ", slechts "
+				<< tram->getAantalPassagiers() << " passagiers aan boord." << std::endl;
+			tram->setAantalPassagiers(0);
+		}
+		else {
+			tram->setAantalPassagiers(tram->getAantalPassagiers() - passagier->getHoeveelheid());
 		}
 	}
+	// opstappen
+	for (it = passagiers.begin(); it != passagiers.end(); ) {
+		Passagier* passagier = metronet.getPassagier(*it);
+		if (passagier->getBeginStation() == naam) {
+			if (tram->getAantalPassagiers() + passagier->getHoeveelheid() > tram->getZitplaatsen()) {
+				error << passagier->getNaam() << " (" << passagier->getHoeveelheid() <<
+					") kan niet meer op tram met voertuigNr" << tram->getVoertuigNr() << ", slechts " <<
+					tram->getZitplaatsen() - tram->getAantalPassagiers() << " vrije plaatsen." << std::endl;
+				++it;
+			}
+			else {
+				tram->addPassagier(*it);
+				it = passagiers.erase(it);
+				output << passagier->getNaam() << " (" << passagier->getHoeveelheid() <<
+					") stapt op tram met voertuigNr" << tram->getVoertuigNr() << std::endl;
+			}
+		}
+		else {
+			++it;
+		}
+	}
+	ENSURE(metronet.isConsistent(), "movePassagiers made MetroNet inconsistent");
 }
