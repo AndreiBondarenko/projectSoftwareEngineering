@@ -6,6 +6,10 @@
 #include <map>
 #include <set>
 
+#include "MetroNet.h"
+
+class MetroNet;
+
 class Station {
 private:
   Station* initCheck;
@@ -68,16 +72,6 @@ public:
   */
   bool isTramInStation(const int& spoor) const;
 
-  // OPTIONAL FEATURES
-  /**
-  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getOpstappen");
-  */
-  int getOpstappen() const;
-  /**
-  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getAfstappen");
-  */
-  int getAfstappen() const;
-
   // SETTER METHODS
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setNaam");
@@ -130,20 +124,7 @@ public:
 	*/
 	void removePassagier(std::string passagier);
 
-  // OPTIONAL FEATURES
-  /**
-  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setOpstappen");
-  \n REQUIRE(newOpstappen >= 0 , "newOpstappen must be bigger or equal to zero");
-  \n ENSURE(getOpstappen() == newOpstappen, "setOpstappen post condition failure");
-  */
-  void setOpstappen(const int newOpstappen);
-  /**
-  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setAfstappen");
-  \n REQUIRE(newAfstappen >= 0 , "newAfstappen must be bigger or equal to zero");
-  \n ENSURE(getAfstappen() == newAfstappen, "setAfstappen post condition failure");
-  */
-  void setAfstappen(const int newAfstappen);
-
+	void movePassagiers(MetroNet& metronet, std::ostream& output, std::ostream& error);
 
 };
 

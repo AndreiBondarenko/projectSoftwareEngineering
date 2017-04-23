@@ -180,6 +180,7 @@ void MetroNet::movePassengers(std::string station, int voeruigNr, std::ostream& 
   //   <<" overschreden aan station " << station << ". Reeds " << passagiers
   //   << " passagiers op tram, " << opstappen << " mensen stappen op.\n";
   // }
+
 }
 
 
