@@ -7,7 +7,8 @@ int main(int argc, char const *argv[]) {
   std::ofstream myfile, error;
   MetroNet antwerpen;
   error.open("_output/MetroNetErrorLog.txt");
-  MetroNetImporter::importMetroNet("_input/testInput2.xml", myfile, antwerpen);
+  MetroNetImporter::importMetroNet("_input/testInput.xml", error, antwerpen);
+	MetroNetImporter::importPassengers("_input/passagiers.xml", error, antwerpen);
   myfile.open("_output/MetroNetLog.txt");
   for (int i = 1; i <= 10; i++) {
     myfile << i << ".\n";

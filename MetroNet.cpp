@@ -31,40 +31,39 @@ bool MetroNet::properlyInitialized() const {
 }
 
 bool MetroNet::isConsistent() const {
-<<<<<<< HEAD
-  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling isConsistent");
-  // elk station is verbonden met een voorgaand en een volgend station
-  // voor elk spoor
-  for(auto station : alleStations) {
-    std::string vorige = station.second->getVorige();
-    std::string volgende = station.second->getVolgende();
-    if (alleStations.find(vorige) == alleStations.end() ||
-        alleStations.find(volgende) == alleStations.end()) {
-      return false;
-    }
-  }
-  // er bestaan geen trams met een lijn nummer dat niet overeenkomt met een
-  // spoor in een station
-  // het beginstation van een tram een geldig station in het metronet is
-  for(auto mapIt = alleTrams.begin(); mapIt != alleTrams.end(); ++mapIt) {
-    int lijnNr = mapIt->second->getLijnNr();
-    std::string beginStation = mapIt->second->getBeginStation();
-    if (alleSporen.find(lijnNr) == alleSporen.end()) {
-      return false;
-    }
-    if (alleStations.find(beginStation) == alleStations.end()) {
-      return false;
-    }
-  }
-  // er geen sporen zijn waarvoor geen tram bestaat
-  for(auto setIt = alleSporen.begin(); setIt != alleSporen.end(); ++setIt) {
-    int spoor = *setIt;
-    if (alleTrams.find(spoor) == alleTrams.end()) {
-      return false;
-    }
-  }
-  // elk spoor maximaal een keer door elk station komt ???????????????????????
-
+  //REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling isConsistent");
+  //// elk station is verbonden met een voorgaand en een volgend station
+  //// voor elk spoor
+  //for(auto station : alleStations) {
+  //  std::string vorige = station.second->getVorige();
+  //  std::string volgende = station.second->getVolgende();
+  //  if (alleStations.find(vorige) == alleStations.end() ||
+  //      alleStations.find(volgende) == alleStations.end()) {
+  //    return false;
+  //  }
+  //}
+  //// er bestaan geen trams met een lijn nummer dat niet overeenkomt met een
+  //// spoor in een station
+  //// het beginstation van een tram een geldig station in het metronet is
+  //for(auto mapIt = alleTrams.begin(); mapIt != alleTrams.end(); ++mapIt) {
+  //  int lijnNr = mapIt->second->getLijnNr();
+  //  std::string beginStation = mapIt->second->getBeginStation();
+  //  if (alleSporen.find(lijnNr) == alleSporen.end()) {
+  //    return false;
+  //  }
+  //  if (alleStations.find(beginStation) == alleStations.end()) {
+  //    return false;
+  //  }
+  //}
+  //// er geen sporen zijn waarvoor geen tram bestaat
+  //for(auto setIt = alleSporen.begin(); setIt != alleSporen.end(); ++setIt) {
+  //  int spoor = *setIt;
+  //  if (alleTrams.find(spoor) == alleTrams.end()) {
+  //    return false;
+  //  }
+  //}
+  //// elk spoor maximaal een keer door elk station komt ???????????????????????
+	//
 
 	// iedere passagier ofwel in een station, ofwel in een tram zit
 	// een passagier zit niet in meerdere trams/stations
@@ -91,7 +90,6 @@ bool MetroNet::isConsistent() const {
 			return false;
 		}
 	}
-=======
   // REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling isConsistent");
   // // elk station is verbonden met een voorgaand en een volgend station
   // // voor elk spoor
@@ -124,7 +122,6 @@ bool MetroNet::isConsistent() const {
   //   }
   // }
   // // elk spoor maximaal een keer door elk station komt ???????????????????????
->>>>>>> 0455edbafcd6e8165ce75407ca95759af45217ca
   return true;
 }
 
@@ -200,54 +197,10 @@ void MetroNet::moveAlleTrams(std::ostream& output) {
   ENSURE(isConsistent(), "moveAlleTrams made MetroNet inconsistent");
 }
 
-void MetroNet::movePassengers(std::string station, int voeruigNr, std::ostream& output, std::ostream& error) {
-  //
-  // Voorlopig weggecomment, was ni zeker of al klaar en heb er zelf wa in zitten knoeien
-  //
-  // REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling movePassengers");
-  // REQUIRE(voeruigNr >= 0 , "voeruigNr must be bigger or equal to zero");
-  // REQUIRE(station != "", "station must not be empty");
-  // REQUIRE(getTram(voeruigNr)->getCurrentStation() == station, "Tram not in given station");
-  // REQUIRE(getStation(station)->isTramInStation(getTram(voeruigNr)->getLijnNr()), "Station is empty");
-  // Tram* tram = getTram(voeruigNr);
-  // const int afstappen = getStation(station)->getAfstappen();
-  // const int opstappen = getStation(station)->getOpstappen();
-  // int passagiers = tram->getPassagierCount();
-  // const int zitplaatsen = tram->getZitplaatsen();
-  // if(afstappen <= passagiers){
-  //   tram->setPassagiers(passagiers-afstappen);
-  //   output << "In station " << station << " stappen " << afstappen << " mensen af tram "
-  //   << spoor << ".\n";
-  // }
-  // else {
-  //   output << "In station " << station << " stappen " << passagiers << " mensen af tram "
-  //   << spoor << ".\n";
-  //   getTram(spoor)->setPassagiers(0);
-  //   error << "ERROR: Aan station " << station << " stappen " << afstappen
-  //   << " mensen af tram " << spoor << ". Slechts " << passagiers << " mensen op de tram.\n";
-  // }
-  // passagiers = getTram(spoor)->getPassagiers();
-  // if(passagiers + opstappen <= zitplaatsen){
-  //   getTram(spoor)->setPassagiers(passagiers+opstappen);
-  //   output << "In station " << station << " stappen " << opstappen << " mensen op tram "
-  //   << spoor << ".\n";
-  // }
-  // else {
-  //   output << "In station " << station << " stappen " << zitplaatsen-passagiers << " mensen op tram "
-  //   << spoor << ".\n";
-  //   getTram(spoor)->setPassagiers(zitplaatsen);
-  //   error << "ERROR: Maximum capaciteit ("<< zitplaatsen <<") tram "<< spoor
-  //   <<" overschreden aan station " << station << ". Reeds " << passagiers
-  //   << " passagiers op tram, " << opstappen << " mensen stappen op.\n";
-  // }
-
-}
-
-
 void MetroNet::moveAllePassengers(std::ostream& output, std::ostream& errors) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAllePassengers");
-  for (auto& tram : alleTrams) {
-    movePassengers(getStation(tram.second->getCurrentStation())->getNaam(), tram.second->getVoertuigNr(), output, errors);
+  for (auto& station : alleStations) {
+		station.second->movePassagiers(*this, output, errors);
   }
 }
 
