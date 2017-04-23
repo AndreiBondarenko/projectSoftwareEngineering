@@ -273,8 +273,6 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
                 if (metronet.getStation(value) == nullptr) {
                    throw 3;
                 }
-                else
-                  metronet.getStation(value)->setTramInStation(tram->getLijnNr(), true);
               }
               else if (elemName == "type") {
                 std::string typeVal = text->Value();
