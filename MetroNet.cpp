@@ -101,11 +101,11 @@ Station* MetroNet::getStation(std::string naam) {
   return alleStations[naam];
 }
 
-Tram* MetroNet::getTram(int spoor) {
+Tram* MetroNet::getTram(int voertuigNr) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getTram");
-	if (alleTrams.find(spoor) == alleTrams.end())
+	if (alleTrams.find(voertuigNr) == alleTrams.end())
 		return nullptr;
-  return alleTrams[spoor];
+  return alleTrams[voertuigNr];
 }
 
 Passagier* MetroNet::getPassagier(std::string naam) {
@@ -127,7 +127,7 @@ void MetroNet::addTram(Tram* newTram) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addTram");
   REQUIRE(getTram(newTram->getVoertuigNr()) == nullptr, "This MetroNet already contains a Tram with this lijnNr");
   alleTrams[newTram->getVoertuigNr()] = newTram;
-  alleStations[newTram->getBeginStation()]->setTramInStation(newTram->getLijnNr(), true);
+  alleStations[newTram->getBeginStation()]->setTramInStation(newTram->getLijnNr(), newTram->getVoertuigNr(), true);
   ENSURE(getTram(newTram->getVoertuigNr()) == newTram, "addTram post condition failure");
   ENSURE(getStation(newTram->getBeginStation())->isTramInStation(newTram->getLijnNr()), "addTram post condition failure");
 }
@@ -146,9 +146,9 @@ void MetroNet::moveTram(std::string station, int voertuigNr, std::ostream& outpu
   Tram* tram = getTram(voertuigNr);
   std::string currentStation = tram->getCurrentStation();
   int lijnNr = tram ->getLijnNr();
-  getStation(currentStation)->setTramInStation(lijnNr, false);
+  getStation(currentStation)->setTramInStation(lijnNr, voertuigNr, false);
   tram->setCurrentStation(station);
-  getStation(station)->setTramInStation(lijnNr, true);
+  getStation(station)->setTramInStation(lijnNr, voertuigNr, true);
   output << "Tram #" << voertuigNr << " op spoor "<< lijnNr << " reed van station " << currentStation << " naar station " << station << ".\n";
   ENSURE(getStation(station)->isTramInStation(lijnNr), "moveTram post condition failure");
   ENSURE(station == getTram(voertuigNr)->getCurrentStation(), "moveTram post condition failure");
