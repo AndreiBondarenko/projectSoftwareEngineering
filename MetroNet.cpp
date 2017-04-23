@@ -122,7 +122,7 @@ void MetroNet::moveTram(std::string station, int voertuigNr, std::ostream& outpu
   getStation(currentStation)->setTramInStation(lijnNr, false);
   tram->setCurrentStation(station);
   getStation(station)->setTramInStation(lijnNr, true);
-  output << "Tram #" << voertuigNr << "op spoor "<< lijnNr << " reed van station " << currentStation << " naar station " << station << ".\n";
+  output << "Tram #" << voertuigNr << " op spoor "<< lijnNr << " reed van station " << currentStation << " naar station " << station << ".\n";
   ENSURE(getStation(station)->isTramInStation(lijnNr), "moveTram post condition failure");
   ENSURE(station == getTram(voertuigNr)->getCurrentStation(), "moveTram post condition failure");
   ENSURE(isConsistent(), "moveTram made MetroNet inconsistent");
@@ -247,8 +247,8 @@ void MetroNet::drawToOutputStream(std::ostream &output) {
     std::string firstStop;
     std::string current;
     for(auto stationIt = alleStations.begin(); stationIt != alleStations.end(); stationIt++) {
-      try {
-        firstStop = stationIt->second->getVolgende(*spoorIt);
+      if (stationIt->second->getSporen().count(*spoorIt) == 1) {
+        firstStop = stationIt->first;
         route.append(firstStop);
         if(stationIt->second->isTramInStation(*spoorIt)) {
           trams.append("T");
@@ -257,9 +257,6 @@ void MetroNet::drawToOutputStream(std::ostream &output) {
           trams.append(" ");
         }
         break;
-      }
-      catch(std::out_of_range e) {
-        continue;
       }
     }
     current = getStation(firstStop)->getVolgende(*spoorIt);
