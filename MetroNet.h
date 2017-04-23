@@ -8,12 +8,14 @@
 #include "Station.h"
 #include "Passagier.h"
 
+class Passagier;
+
 class MetroNet {
 private:
   MetroNet* initCheck;
   std::map<std::string, Station*> alleStations;
   std::map<int, Tram*> alleTrams;
-  std::set<int> alleSporen; // is this data member needed?
+  std::set<int> alleSporen;
   std::map<std::string, Passagier*> allePassagiers;
 public:
   // CONSTRUCTOR
@@ -100,6 +102,10 @@ public:
   \n REQUIRE(isConsistent(), "MetroNet is not consistent");
   */
   void writeToOutputStream(std::ostream& output);
+  /**
+  \n REQUIRE(isConsistent(), "MetroNet is not consistent");
+  */
+  void drawToOutputStream(std::ostream& output);
 
   void writeToASCII();
 

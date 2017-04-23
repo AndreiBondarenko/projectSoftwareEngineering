@@ -89,7 +89,9 @@ Passagier* MetroNet::getPassagier(std::string naam) {
 void MetroNet::addStation(Station* newStation) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addStation");
   REQUIRE(getStation(newStation->getNaam()) == nullptr, "This MetroNet already contains a station with this name");
-  alleSporen.insert(newStation->getSporen().begin(), newStation->getSporen().end());
+  for(int x: newStation->getSporen()) {
+    alleSporen.insert(x);
+  }
   alleStations[newStation->getNaam()] = newStation;
   ENSURE(getStation(newStation->getNaam()) == newStation, "addStation post condition failure");
 }
@@ -208,6 +210,7 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
           << std::endl;
       }
     }
+    output << std::endl;
   }
   output << std::endl << "--== TRAMS ==--" << std::endl;
   for(auto tramIt = alleTrams.begin(); tramIt != alleTrams.end(); tramIt++) {
@@ -228,10 +231,53 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
           << info->getHoeveelheid()
           << " mensen, reist naar station "
           << info->getEindStation()
-          << std::endl
           << std::endl;
       }
     }
+    output << std::endl;
+  }
+}
+
+void MetroNet::drawToOutputStream(std::ostream &output) {
+  for(auto spoorIt = alleSporen.begin(); spoorIt != alleSporen.end(); spoorIt++) {
+    output << "Spoor " << *spoorIt << " :" << std::endl;
+    std::string route = "=";
+    std::string trams = " ";
+    std::string firstStop;
+    std::string current;
+    for(auto stationIt = alleStations.begin(); stationIt != alleStations.end(); stationIt++) {
+      try {
+        firstStop = stationIt->second->getVolgende(*spoorIt);
+        route.append(firstStop);
+        if(stationIt->second->isTramInStation(*spoorIt)) {
+          trams.append("T");
+        }
+        else {
+          trams.append(" ");
+        }
+        break;
+      }
+      catch(std::out_of_range e) {
+        continue;
+      }
+    }
+    current = getStation(firstStop)->getVolgende(*spoorIt);
+    while (current != firstStop) {
+      route.append("==");
+      route.append(current);
+      trams.append("  ");
+      if(getStation(current)->isTramInStation(*spoorIt)) {
+        trams.append("T");
+      }
+      else {
+        trams.append(" ");
+      }
+      current = getStation(current)->getVolgende(*spoorIt);
+    }
+    route.append("=");
+    trams.append(" ");
+    output << route << std::endl;
+    output << trams << std::endl << std::endl;
   }
 }
 

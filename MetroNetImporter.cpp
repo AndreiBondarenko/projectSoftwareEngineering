@@ -73,9 +73,9 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
         }
         else if (elemName == "SPOOR") {
           TiXmlNode *spoor, *vorige, *volgende;
-          spoor = element->FirstChild("spoor");
-          vorige = element->FirstChild("vorige");
-          volgende = element->FirstChild("volgende");
+          spoor = infoElem->FirstChild("spoor");
+          vorige = infoElem->FirstChild("vorige");
+          volgende = infoElem->FirstChild("volgende");
           if(spoor == NULL) {
             errStream << "XML PARTIAL IMPORT: Expected <spoor> ... </spoor>." << std::endl;
             endResult = PartialImport;
