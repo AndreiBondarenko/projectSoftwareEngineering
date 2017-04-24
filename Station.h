@@ -71,11 +71,6 @@ public:
   \n REQUIRE(spoor >= 0, "parameter spoor must be >= 0, when passed to isTramInStation");
   */
   bool isTramInStation(const int& spoor) const;
-	/**
-	\n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getTramInStation");
-	*/
-	int getTramInStation() const;
-
 
   // SETTER METHODS
   /**
@@ -138,6 +133,11 @@ public:
 	*/
 	void movePassagiers(MetroNet& metronet, std::ostream& output, std::ostream& error);
 
+private:
+	/**
+	\n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getTramInStation");
+	*/
+	std::set<int> getTramInStation() const;
 };
 
 
