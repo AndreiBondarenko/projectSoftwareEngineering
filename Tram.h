@@ -152,6 +152,12 @@ public:
 	\n REQUIRE(station != "", "station must not be empty");
 	*/
 	std::set<std::string> afstappenInHalte(MetroNet& metronet, std::string station);
+	/**
+	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
+	\n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
+	\n REQUIRE(station != "", "station must not be empty");
+	*/
+	bool stoptInStation(MetroNet& metronet, std::string station);
 	
 };
 

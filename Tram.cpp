@@ -1,5 +1,6 @@
 #include "Tram.h"
 #include "DesignByContract.h"
+#include <iostream>
 
 Tram::Tram()  {
 	initCheck = this;
@@ -62,7 +63,7 @@ std::string Tram::getCurrentStation() const {
 int Tram::getAantalPassagiers() const {
   REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling getAantalPassagiers");
-    return passagiers.size();
+    return aantalPassagiers;
 }
 
 int Tram::getSnelheid() const {
@@ -184,4 +185,20 @@ std::set<std::string> Tram::afstappenInHalte(MetroNet& metronet, std::string sta
 		}
 	}
 	return afstappen;
+}
+
+bool Tram::stoptInStation(MetroNet& metronet, std::string station) {
+	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
+	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
+	REQUIRE(station != "", "station must not be empty");
+	std::string nextStation = metronet.getStation(currentStation)->getVolgende(lijnNr);
+	while (nextStation != currentStation) {
+		if (nextStation == station) {
+			if (type == "Albatros" && metronet.getStation(station)->getType() != "Metrostation")
+				return false;
+			return true;
+		}
+		nextStation = metronet.getStation(nextStation)->getVolgende(lijnNr);
+	}
+	return false;
 }
