@@ -181,7 +181,7 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
     output << "-> Station " << stationIt->first << std::endl;
     output << "wachtende passagiers:" << std::endl;
     for(auto passengerIt = allePassagiers.begin(); passengerIt != allePassagiers.end(); passengerIt++) {
-      if (stationIt->second->isInStation(passengerIt->first)) {
+      if (stationIt->second->isInStation(passengerIt->first) && passengerIt->second->getBeginStation() == stationIt->first) {
         Passagier* info = passengerIt->second;
         output
           << "* "
@@ -190,10 +190,21 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
           << info->getHoeveelheid()
           << " mensen, reist naar station "
           << info->getEindStation()
-          << std::endl
           << std::endl;
       }
     }
+		output << "gearriveerde passagiers:" << std::endl;
+		for (auto passengerIt = allePassagiers.begin(); passengerIt != allePassagiers.end(); passengerIt++) {
+			if (stationIt->second->isInStation(passengerIt->first) && passengerIt->second->getEindStation() == stationIt->first) {
+				Passagier* info = passengerIt->second;
+				output
+					<< "* "
+					<< info->getNaam()
+					<< ", "
+					<< info->getHoeveelheid()
+					<< std::endl;
+			}
+		}
     output << std::endl;
   }
   output << std::endl << "--== TRAMS ==--" << std::endl;
@@ -218,7 +229,9 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
           << std::endl;
       }
     }
-    output << std::endl;
+		output 
+			<< "vrije zitplaatsen: " << info->getZitplaatsen() - info->getAantalPassagiers() << std::endl
+			<< std::endl;
   }
 }
 
