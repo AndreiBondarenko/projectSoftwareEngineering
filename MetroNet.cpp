@@ -174,6 +174,23 @@ void MetroNet::moveAllePassengers(std::ostream& output, std::ostream& errors) {
   }
 }
 
+void MetroNet::runSimulation(std::ostream &output, std::ostream &errors) {
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling runSimulation");
+	bool simulationCompleted = false;
+  while (!simulationCompleted) {
+    simulationCompleted = true;
+    moveAlleTrams(output);
+    moveAllePassengers(output, errors);
+    for(auto mapIt = allePassagiers.begin(); mapIt != allePassagiers.end(); mapIt++) {
+      if (!mapIt->second->isAangekomen()) {
+        simulationCompleted = false;
+        break;
+      }
+    }
+  }
+  ENSURE(isConsistent(), "runSimulation made MetroNet inconsistent");
+}
+
 void MetroNet::writeToOutputStream(std::ostream& output) {
   REQUIRE(isConsistent(), "MetroNet is not consistent");
   output << "--== STATIONS ==--" << std::endl;

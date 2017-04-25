@@ -100,6 +100,11 @@ public:
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAllePassengers");
   */
   void moveAllePassengers(std::ostream& output, std::ostream& errors);
+  /**
+  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling runSimulation");
+  \n ENSURE(isConsistent(), "runSimulation made MetroNet inconsistent");
+  */
+  void runSimulation(std::ostream& output, std::ostream& errors);
 
   // FILE I/O METHODS
   /**

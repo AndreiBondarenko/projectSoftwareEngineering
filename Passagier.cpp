@@ -85,3 +85,13 @@ void Passagier::moveToBeginStation(MetroNet& metronet) const {
 	ENSURE(metronet.isConsistent(), "Passagier::moveToBeginStation made MetroNet inconsistent");
 }
 
+bool Passagier::isAangekomen() const {
+    REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling isAangekomen");
+    return aangekomen;
+}
+
+void Passagier::markAangekomen() {
+	REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling markAangekomen");
+	aangekomen = true;
+	ENSURE(isAangekomen() == true, "markAangekomen post condition failure");
+}

@@ -14,6 +14,7 @@ private:
 	std::string beginStation;
 	std::string eindStation;
 	int hoeveelheid;
+    bool aangekomen = false;
 public:
 	// CONSTRUCTORS
 	/**
@@ -52,6 +53,11 @@ public:
 	\n REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling getHoeveelheid");
 	*/
 	int getHoeveelheid() const;
+	/**
+	\n REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling isAangekomen");
+	*/
+	bool isAangekomen() const;
+
 
 	// SETTER METHODS
 	/**
@@ -86,6 +92,11 @@ public:
 	\n ENSURE(metronet->isConsistent(), "Passagier::moveToBeginStation made MetroNet inconsistent");
 	*/
 	void moveToBeginStation(MetroNet& metronet) const;
+	/**
+	\n REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling markAangekomen");
+	\n ENSURE(isAangekomen() == true, "markAangekomen post condition failure");
+	*/
+	void markAangekomen();
 };
 
 
