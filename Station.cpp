@@ -207,7 +207,7 @@ void Station::movePassagiers(MetroNet& metronet, std::ostream& output, std::ostr
 					++it;
 				}
 				else {
-					tram->addPassagier(*it);
+					tram->addPassagier(*it, metronet.getPassagier(*it)->getHoeveelheid());
 					it = passagiers.erase(it);
 					tram->setAantalPassagiers(tram->getAantalPassagiers() + passagier->getHoeveelheid());
 					output << passagier->getNaam() << " (" << passagier->getHoeveelheid() <<

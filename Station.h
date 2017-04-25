@@ -19,7 +19,7 @@ private:
   std::string type;
   int opstappen;
   int afstappen;
-  std::map<std::pair<int, int>, bool> tramInStation; 
+  std::map<std::pair<int, int>, bool> tramInStation;
   std::set<std::string> passagiers;
 public:
   // CONSTRUCTORS

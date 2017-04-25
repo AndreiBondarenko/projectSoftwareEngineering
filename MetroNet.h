@@ -49,10 +49,10 @@ public:
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleTrams");
   */
   Tram* getTram(int spoor);
-	/**
-	\n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getPassagier");
-	*/
-	Passagier* getPassagier(std::string naam);
+  /**
+  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getPassagier");
+  */
+  Passagier* getPassagier(std::string naam);
 
   // MODIFIER METHODS
   /**

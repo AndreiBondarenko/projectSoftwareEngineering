@@ -212,6 +212,7 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
     Tram* info = tramIt->second;
     output
       << "Tram " << info->getLijnNr() << " nr " << info->getVoertuigNr() << std::endl
+      << "omzet: " << info->getOmzet() << std::endl
       << "zitplaatsen: " << info->getZitplaatsen() << std::endl
       << "snelheid: " << info->getSnelheid() << std::endl
       << "huidige station: " << info->getCurrentStation() << std::endl
@@ -229,7 +230,7 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
           << std::endl;
       }
     }
-		output 
+		output
 			<< "vrije zitplaatsen: " << info->getZitplaatsen() - info->getAantalPassagiers() << std::endl
 			<< std::endl;
   }

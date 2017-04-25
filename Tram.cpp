@@ -2,6 +2,8 @@
 #include "DesignByContract.h"
 #include <iostream>
 
+const int ticketPrijs = 2;
+
 Tram::Tram()  {
 	initCheck = this;
   ENSURE(properlyInitialized(),
@@ -157,11 +159,12 @@ bool Tram::isInTram(std::string passagier) {
 	return passagiers.find(passagier) != passagiers.end();
 }
 
-void Tram::addPassagier(std::string passagier) {
+void Tram::addPassagier(std::string passagier, int aantal) {
 	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setVoertuigNr");
 	REQUIRE(passagier != "", "passagier must not be empty");
 	REQUIRE(isInTram(passagier) == false, "passenger allready in Tram");
 	passagiers.insert(passagier);
+  setOmzet(getOmzet() + ticketPrijs);
 	ENSURE(isInTram(passagier) == true, "addPassagier post condition failure");
 }
 
@@ -201,4 +204,16 @@ bool Tram::stoptInStation(MetroNet& metronet, std::string station) {
 		nextStation = metronet.getStation(nextStation)->getVolgende(lijnNr);
 	}
 	return false;
+}
+
+int Tram::getOmzet() const {
+  REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getOmzet");
+  return omzet;
+}
+
+void Tram::setOmzet(const int newOmzet) {
+  REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setOmzet");
+  REQUIRE(newOmzet >= 0 , "newOmzet must be bigger or equal to zero");
+  omzet = newOmzet;
+  ENSURE(getOmzet() == newOmzet, "setOmzet post condition failure");
 }
