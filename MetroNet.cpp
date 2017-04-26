@@ -82,11 +82,22 @@ bool MetroNet::isConsistent() {
 			return false;
 		}
 	}
-	// begin- en eindStation van iedere passagier bestaat
+	// begin- en eindStation van iedere passagier bestaat, en ligt op eenzelfde spoor
 	for (const auto& it : allePassagiers) {
 		Passagier* passagier = it.second;
 		if (alleStations.find(passagier->getBeginStation()) == alleStations.end() ||
 			alleStations.find(passagier->getEindStation()) == alleStations.end()) {
+			return false;
+		}
+		bool foundEindStation = false;
+		for (int lijnNr : getStation(passagier->getBeginStation())->getSporen()) {
+			std::set<int> eindSporen = getStation(passagier->getEindStation())->getSporen();
+			if (eindSporen.find(lijnNr) != eindSporen.end()) {
+				foundEindStation = true;
+				break;
+			}
+		}
+		if (!foundEindStation) {
 			return false;
 		}
 	}
