@@ -47,7 +47,7 @@ bool MetroNet::isConsistent() {
   // spoor in een station
   // het beginstation van een tram een geldig station in het metronet is
 	for (auto& tram : alleTrams) {
-		if (alleSporen.find(tram.second->getLijnNr()) == alleSporen.end() || 
+		if (alleSporen.find(tram.second->getLijnNr()) == alleSporen.end() ||
 				getStation(tram.second->getBeginStation()) == nullptr) {
 			return false;
 		}
