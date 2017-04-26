@@ -157,10 +157,12 @@ void MetroNet::moveAllePassengers(std::ostream& output, std::ostream& errors) {
 void MetroNet::runSimulation(std::ostream &output, std::ostream &errors) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling runSimulation");
 	bool simulationCompleted = false;
-  while (!simulationCompleted) {
+	for (int i = 1; !simulationCompleted; i++) {
+		output << i << "." << std::endl;
     simulationCompleted = true;
-    moveAlleTrams(output);
     moveAllePassengers(output, errors);
+		moveAlleTrams(output);
+		output << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
     for(auto mapIt = allePassagiers.begin(); mapIt != allePassagiers.end(); mapIt++) {
       if (!mapIt->second->isAangekomen()) {
         simulationCompleted = false;

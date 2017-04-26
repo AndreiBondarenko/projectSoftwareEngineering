@@ -3,20 +3,14 @@
 #include <iostream>
 #include <fstream>
 
-int main(int argc, char const *argv[]) {
+int main() {
   std::ofstream myfile, error;
   MetroNet antwerpen;
   error.open("_output/MetroNetErrorLog.txt");
   MetroNetImporter::importMetroNet("_input/testInput.xml", error, antwerpen);
 	MetroNetImporter::importPassengers("_input/passagiers.xml", error, antwerpen);
   myfile.open("_output/MetroNetLog.txt");
-  for (int i = 1; i <= 10; i++) {
-    myfile << i << ".\n";
-  	antwerpen.moveAllePassengers(myfile, error);
-  	antwerpen.moveAlleTrams(myfile);
-    myfile << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-
-  }
+	antwerpen.runSimulation(myfile, error);
   error.close();
   myfile.close();
   antwerpen.writeToASCII();
