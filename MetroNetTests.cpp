@@ -5,7 +5,7 @@
 
 #include "MetroNet.h"
 #include "ClassTestsTram.cpp"
-// #include "MetroNetExportTests.cpp"
+#include "ClassTestsStation.cpp"
 // #include "MetroNetInputTests.cpp"
 
 

@@ -17,8 +17,6 @@ private:
   std::map<int, std::string> vorige;
   std::map<int, std::string> volgende;
   std::string type;
-  int opstappen;
-  int afstappen;
   std::map<std::pair<int, int>, bool> tramInStation;
   std::set<std::string> passagiers;
 public:
@@ -27,15 +25,12 @@ public:
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   */
   Station(); // default
-  // /**
-  // \n REQUIRE(volgende != "", "volgende must not be empty");
-  // \n REQUIRE(vorige != "", "vorige must not be empty");
-  // \n REQUIRE(naam != "", "naam must not be empty");
-  // \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
-  // \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
-  // */
-  // Station(const std::string& naam, const std::string& vorige,
-  //   const std::string& volgende, const int spoor); // full
+  /**
+  \n REQUIRE(naam != "", "naam must not be empty");
+  \n REQUIRE(type != "", "type must not be empty");
+  \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+  */
+  Station(const std::string& naam, const std::string& type); // full
 
   // DESTRUCTOR
   ~Station();
@@ -74,7 +69,7 @@ public:
 	/**
 	\n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getTramInStation");
 	\n REQUIRE(spoor >= 0, "spoor must be bigger or equal to zero");
-	\n 	REQUIRE(isTramInStation(spoor), "no tram in station when calling getTramInStation");
+	\n REQUIRE(isTramInStation(spoor), "no tram in station when calling getTramInStation");
 	*/
 	int getTramInStation(const int spoor) const;
 
@@ -88,12 +83,14 @@ public:
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setVorige");
   \n REQUIRE(newVorige != "", "newVorige must not be empty");
+  \n REQUIRE(spoor >= 0, "spoor must be bigger or equal to zero");
   \n ENSURE(getVorige() == newVorige, "setVorige post condition failure");
   */
   void addVorige(const int& spoor, const std::string& newVorige);
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setVolgende");
   \n REQUIRE(newVolgende != "", "newVolgende must not be empty");
+  \n REQUIRE(spoor >= 0, "spoor must be bigger or equal to zero");
   \n ENSURE(getVolgende() == newVolgende, "setVolgende post condition failure");
   */
   void addVolgende(const int& spoor, const std::string& newVolgende);
