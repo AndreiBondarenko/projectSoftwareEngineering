@@ -71,6 +71,12 @@ public:
   \n REQUIRE(spoor >= 0, "parameter spoor must be >= 0, when passed to isTramInStation");
   */
   bool isTramInStation(const int& spoor) const;
+	/**
+	\n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getTramInStation");
+	\n REQUIRE(spoor >= 0, "spoor must be bigger or equal to zero");
+	\n 	REQUIRE(isTramInStation(spoor), "no tram in station when calling getTramInStation");
+	*/
+	int getTramInStation(const int spoor) const;
 
   // SETTER METHODS
   /**

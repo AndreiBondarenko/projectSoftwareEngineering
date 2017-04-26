@@ -89,10 +89,20 @@ bool Station::isTramInStation(const int& spoor) const {
 	return false;
 }
 
+int Station::getTramInStation(const int spoor) const {
+	REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getTramInStation");
+	REQUIRE(spoor >= 0, "spoor must be bigger or equal to zero");
+	REQUIRE(isTramInStation(spoor), "no tram in station when calling getTramInStation");
+	for (auto& it : tramInStation) {
+		if (it.second && it.first.first == spoor)
+			return it.first.second;
+	}
+}
+
 std::set<int> Station::getTramInStation() const {
 	REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getTramInStation");
 	std::set<int> voertuigNrs;
-	for (auto it : tramInStation) {
+	for (auto& it : tramInStation) {
 		if (it.second)
 			voertuigNrs.insert(it.first.second);
 	}
@@ -186,6 +196,7 @@ void Station::movePassagiers(MetroNet& metronet, std::ostream& output, std::ostr
 			Passagier* passagier = metronet.getPassagier(passagierName);
 			passagiers.insert(passagierName);
 			tram->removePassagier(passagierName);
+			passagier->markAangekomen();
 			output << passagierName << " (" << passagier->getHoeveelheid() << ") stapt uit in station " << naam << std::endl;
 			if (tram->getAantalPassagiers() - passagier->getHoeveelheid() < 0) {
 				error << passagierName << " (" << passagier->getHoeveelheid() << ") stapt uit in station " << naam << ", slechts "
