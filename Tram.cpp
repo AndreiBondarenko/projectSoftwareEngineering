@@ -19,7 +19,7 @@ Tram::Tram(const int lijnNr, const int voertuigNr, const std::string& type,
 {
   REQUIRE(beginStation != "", "beginStation must not be empty");
   REQUIRE(lijnNr >= 0 , "lijnNr must be bigger or equal to zero");
-  REQUIRE(voertuigNr >= 0 , "lijnNr must be bigger or equal to zero");
+  REQUIRE(voertuigNr >= 0 , "voertuigNr must be bigger or equal to zero");
   REQUIRE(zitplaatsen >= 0 , "zitplaatsen must be bigger or equal to zero");
   REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
   REQUIRE(type != "", "type must not be empty");
@@ -139,7 +139,7 @@ void Tram::setSnelheid(const int newSnelheid) {
 
 void Tram::setAantalPassagiers(const int newAantalPassagiers) {
   REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setAantalPassagiers");
-  REQUIRE(newAantalPassagiers >= 0 , "newPassagiers must be bigger or equal to zero");
+  REQUIRE(newAantalPassagiers >= 0 , "newAantalPassagiers must be bigger or equal to zero");
   aantalPassagiers = newAantalPassagiers;
   ENSURE(getAantalPassagiers() == newAantalPassagiers, "setAantalPassagiers post condition failure");
 }

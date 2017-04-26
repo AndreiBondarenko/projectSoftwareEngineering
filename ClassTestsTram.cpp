@@ -61,7 +61,7 @@ TEST_F(ClassTestTram, ContractViolations) {
   EXPECT_DEATH(tram.setZitplaatsen(-1), "newZitplaatsen must be bigger or equal to zero");
   EXPECT_DEATH(tram.setSnelheid(-1), "newSnelheid must be bigger or equal to zero");
   EXPECT_DEATH(tram.setAantalPassagiers(-1), "newAantalPassagiers must be bigger or equal to zero");
-  EXPECT_DEATH(tram.setType("Test"), "newType must not be empty");
+  EXPECT_DEATH(tram.setType(""), "newType must not be empty");
   EXPECT_DEATH(tram.setVoertuigNr(-1), "newVoertuigNr must be bigger or equal to zero");
   EXPECT_DEATH(tram.addPassagier("Groep1", -1), "aantal must be bigger or equal to zero");
   EXPECT_DEATH(tram.addPassagier("", 1), "passagier must not be empty");

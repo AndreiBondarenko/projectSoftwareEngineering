@@ -4,7 +4,7 @@
 #include <gtest/gtest.h>
 
 #include "MetroNet.h"
-// #include "MetroNetClassTests.cpp"
+#include "ClassTestsTram.cpp"
 // #include "MetroNetExportTests.cpp"
 // #include "MetroNetInputTests.cpp"
 
