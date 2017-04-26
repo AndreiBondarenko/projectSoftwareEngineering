@@ -50,7 +50,6 @@ std::string Station::getVorige(const int& spoor) const {
   REQUIRE(spoor >= 0,
     "parameter spoor must be >= 0, when passed to getVorige");
   return vorige.at(spoor);
-
 }
 
 std::string Station::getVolgende(const int& spoor) const {
@@ -97,6 +96,7 @@ int Station::getTramInStation(const int spoor) const {
 		if (it.second && it.first.first == spoor)
 			return it.first.second;
 	}
+	return -1;
 }
 
 std::set<int> Station::getTramInStation() const {
