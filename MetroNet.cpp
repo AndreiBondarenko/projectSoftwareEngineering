@@ -139,30 +139,10 @@ void MetroNet::addPassagier(Passagier* newPassagier) {
 	ENSURE(getPassagier(newPassagier->getNaam()) == newPassagier, "addPassagier post condition failure");
 }
 
-void MetroNet::moveTram(std::string station, int voertuigNr, std::ostream& output) {
-  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTrams");
-  REQUIRE(voertuigNr >= 0 , "spoor must be bigger or equal to zero");
-  REQUIRE(station != "", "station must not be empty");
-  Tram* tram = getTram(voertuigNr);
-  std::string currentStation = tram->getCurrentStation();
-  int lijnNr = tram ->getLijnNr();
-  getStation(currentStation)->setTramInStation(lijnNr, voertuigNr, false);
-  tram->setCurrentStation(station);
-  getStation(station)->setTramInStation(lijnNr, voertuigNr, true);
-  output << "Tram #" << voertuigNr << " op spoor "<< lijnNr << " reed van station " << currentStation << " naar station " << station << ".\n";
-  ENSURE(getStation(station)->isTramInStation(lijnNr), "moveTram post condition failure");
-  ENSURE(station == getTram(voertuigNr)->getCurrentStation(), "moveTram post condition failure");
-  ENSURE(isConsistent(), "moveTram made MetroNet inconsistent");
-}
-
 void MetroNet::moveAlleTrams(std::ostream& output) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAlleTrams");
   for (auto& tram : alleTrams) {
-    int voeruigNr = tram.first;
-    int lijnNr = tram.second->getLijnNr();
-    std::string currentStation = tram.second->getCurrentStation();
-    std::string nextStation = getStation(currentStation)->getVolgende(lijnNr);
-    moveTram(nextStation, voeruigNr, output);
+    tram.second->moveTram(*this, output);
   }
   ENSURE(isConsistent(), "moveAlleTrams made MetroNet inconsistent");
 }

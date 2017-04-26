@@ -217,3 +217,24 @@ void Tram::setOmzet(const int newOmzet) {
   omzet = newOmzet;
   ENSURE(getOmzet() == newOmzet, "setOmzet post condition failure");
 }
+
+void Tram::moveTram(MetroNet& metronet, std::ostream& output) {
+	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram");
+	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
+	Station* nextStation = metronet.getStation(metronet.getStation(currentStation)->getVolgende(lijnNr));
+	if (!nextStation->isTramInStation(lijnNr)) {
+		metronet.getStation(currentStation)->setTramInStation(lijnNr, voertuigNr, false);
+		nextStation->setTramInStation(lijnNr, voertuigNr, true);
+		output
+			<< "Tram #" << voertuigNr << " op spoor " << lijnNr << " reed van station "
+			<< currentStation << " naar station " << nextStation->getNaam() << "." << std::endl;
+		currentStation = nextStation->getNaam();
+	}
+	else {
+		output
+			<< "Tram #" << voertuigNr << " op spoor " << lijnNr << " wachtte in station "
+			<< currentStation << ", want station " << nextStation->getNaam() 
+			<< " was bezet door Tram #" << nextStation->getTramInStation(lijnNr) << "." << std::endl;
+	}
+	ENSURE(metronet.isConsistent(), "moveTram made MetroNet inconsistent");
+}

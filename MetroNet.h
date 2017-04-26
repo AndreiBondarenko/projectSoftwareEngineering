@@ -75,27 +75,10 @@ public:
   */
   void addPassagier(Passagier* newPassagier);
   /**
-  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
-  \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
-  \n REQUIRE(station != "", "station must not be empty");
-  \n ENSURE(getStation(station)->isTramInStation(), "moveTram post condition failure");
-  \n ENSURE(station == getTram(spoor)->getCurrentStation(), "moveTram post condition failure");
-  \n ENSURE(isConsistent(), "moveTram made MetroNet inconsistent");
-  */
-  void moveTram(std::string station, int spoor, std::ostream& output);
-  /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAlleTrams");
   \n ENSURE(isConsistent(), "moveAlleTrams made MetroNet inconsistent");
   */
   void moveAlleTrams(std::ostream& output);
-  /**
-  \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling movePassengers");
-  \n REQUIRE(spoor >= 0 , "spoor must be bigger or equal to zero");
-  \n REQUIRE(station != "", "station must not be empty");
-  \n REQUIRE(getTram(spoor)->getCurrentStation() == station, "Tram not in given station");
-  \n REQUIRE(getStation(station)->isTramInStation(), "Station is empty");
-  */
-  void movePassengers(std::string station, int spoor, std::ostream& output, std::ostream& errors);
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAllePassengers");
   */
