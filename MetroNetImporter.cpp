@@ -367,7 +367,13 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
           }
         }
       }
-      if (deleted) continue;
+			if (tram->getType() == "Albatros" && metronet.getStation(tram->getBeginStation())->getType() != "Metrostation") {
+				endResult = PartialImport;
+				errStream << "XML PARTIAL IMPORT: Tram not created, Albatros can only stop in : Metrostation." << std::endl;
+				delete tram;
+				deleted = true;
+			}
+			if (deleted) continue;
       metronet.addTram(tram);
     }
     else {
