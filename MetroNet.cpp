@@ -30,41 +30,41 @@ bool MetroNet::properlyInitialized() const {
   return initCheck == this;
 }
 
-bool MetroNet::isConsistent() const {
-  //REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling isConsistent");
-  //// elk station is verbonden met een voorgaand en een volgend station
-  //// voor elk spoor
-  //for(auto station : alleStations) {
-  //  std::string vorige = station.second->getVorige();
-  //  std::string volgende = station.second->getVolgende();
-  //  if (alleStations.find(vorige) == alleStations.end() ||
-  //      alleStations.find(volgende) == alleStations.end()) {
-  //    return false;
-  //  }
-  //}
-  //// er bestaan geen trams met een lijn nummer dat niet overeenkomt met een
-  //// spoor in een station
-  //// het beginstation van een tram een geldig station in het metronet is
-  //for(auto mapIt = alleTrams.begin(); mapIt != alleTrams.end(); ++mapIt) {
-  //  int lijnNr = mapIt->second->getLijnNr();
-  //  std::string beginStation = mapIt->second->getBeginStation();
-  //  if (alleSporen.find(lijnNr) == alleSporen.end()) {
-  //    return false;
-  //  }
-  //  if (alleStations.find(beginStation) == alleStations.end()) {
-  //    return false;
-  //  }
-  //}
-  //// er geen sporen zijn waarvoor geen tram bestaat
-  //for(auto setIt = alleSporen.begin(); setIt != alleSporen.end(); ++setIt) {
-  //  int spoor = *setIt;
-  //  if (alleTrams.find(spoor) == alleTrams.end()) {
-  //    return false;
-  //  }
-  //}
-  //// elk spoor maximaal een keer door elk station komt ???????????????????????
-	//
-
+bool MetroNet::isConsistent() {
+  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling isConsistent");
+	// elk station is verbonden met een voorgaand en een volgend station
+  // voor elk spoor
+	for (auto& station : alleStations) {
+		std::set<int> sporen = station.second->getSporen();
+		for (int lijnNr : sporen) {
+			if (getStation(station.second->getVolgende(lijnNr)) == nullptr ||
+					getStation(station.second->getVorige(lijnNr)) == nullptr) {
+				return false;
+			}
+		}
+	}
+  // er bestaan geen trams met een lijn nummer dat niet overeenkomt met een
+  // spoor in een station
+  // het beginstation van een tram een geldig station in het metronet is
+	for (auto& tram : alleTrams) {
+		if (alleSporen.find(tram.second->getLijnNr()) == alleSporen.end() || 
+				getStation(tram.second->getBeginStation()) == nullptr) {
+			return false;
+		}
+	}
+  // er geen sporen zijn waarvoor geen tram bestaat
+	for (int lijnNr : alleSporen) {
+		bool foundTram = false;
+		for (auto& tram : alleTrams) {
+			if (tram.second->getLijnNr() == lijnNr) {
+				foundTram = true;
+				break;
+			}
+		}
+		if (!foundTram) {
+			return false;
+		}
+	}
 	// iedere passagier ofwel in een station, ofwel in een tram zit
 	// een passagier zit niet in meerdere trams/stations
 	for (const auto& it : allePassagiers) {
