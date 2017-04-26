@@ -38,7 +38,7 @@ public:
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling isConsistent");
   */
-  bool isConsistent() const;
+  bool isConsistent();
 
   // GETTER METHODS
   /**
