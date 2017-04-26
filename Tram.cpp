@@ -2,28 +2,29 @@
 #include "DesignByContract.h"
 #include <iostream>
 
-const int ticketPrijs = 2;
-
 Tram::Tram()  {
 	initCheck = this;
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
-Tram::Tram(const int lijnNr, const int zitplaatsen, const std::string& beginStation,
-	const int snelheid) :
+Tram::Tram(const int lijnNr, const int voertuigNr, const std::string& type,
+    const int zitplaatsen, const std::string& beginStation, const int snelheid) :
 	lijnNr(lijnNr),
+	voertuigNr(voertuigNr),
 	zitplaatsen(zitplaatsen),
-    snelheid(snelheid),
+  snelheid(snelheid),
+  type(type),
 	beginStation(beginStation),
   currentStation(beginStation)
 {
   REQUIRE(beginStation != "", "beginStation must not be empty");
   REQUIRE(lijnNr >= 0 , "lijnNr must be bigger or equal to zero");
+  REQUIRE(voertuigNr >= 0 , "lijnNr must be bigger or equal to zero");
   REQUIRE(zitplaatsen >= 0 , "zitplaatsen must be bigger or equal to zero");
   REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
+  REQUIRE(type != "", "type must not be empty");
 	initCheck = this;
-  ENSURE(properlyInitialized(),
-    "constructor must end in properlyInitialized state");
+  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 Tram::~Tram() {
 }
@@ -153,7 +154,7 @@ void Tram::setVoertuigNr(const int newVoertuigNr) {
     "setVoertuigNr post condition failure");
 }
 
-bool Tram::isInTram(std::string passagier) {
+bool Tram::isInTram(std::string passagier) const {
 	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setVoertuigNr");
 	REQUIRE(passagier != "", "passagier must not be empty");
 	return passagiers.find(passagier) != passagiers.end();
@@ -162,9 +163,10 @@ bool Tram::isInTram(std::string passagier) {
 void Tram::addPassagier(std::string passagier, int aantal) {
 	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setVoertuigNr");
 	REQUIRE(passagier != "", "passagier must not be empty");
+	REQUIRE(aantal >= 0, "aantal must be bigger or equal to zero");
 	REQUIRE(isInTram(passagier) == false, "passenger allready in Tram");
 	passagiers.insert(passagier);
-  setOmzet(getOmzet() + ticketPrijs);
+  setOmzet(getOmzet() + ticketPrijs*aantal);
 	ENSURE(isInTram(passagier) == true, "addPassagier post condition failure");
 }
 
@@ -190,7 +192,7 @@ std::set<std::string> Tram::afstappenInHalte(MetroNet& metronet, std::string sta
 	return afstappen;
 }
 
-bool Tram::stoptInStation(MetroNet& metronet, std::string station) {
+bool Tram::stoptInStation(MetroNet& metronet, std::string station) const {
 	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
 	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
 	REQUIRE(station != "", "station must not be empty");
@@ -236,7 +238,7 @@ void Tram::moveTram(MetroNet& metronet, std::ostream& output) {
 	else {
 		output
 			<< "Tram #" << voertuigNr << " op spoor " << lijnNr << " wachtte in station "
-			<< currentStation << ", want station " << nextStation->getNaam() 
+			<< currentStation << ", want station " << nextStation->getNaam()
 			<< " was bezet door Tram #" << nextStation->getTramInStation(lijnNr) << "." << std::endl;
 	}
 	ENSURE(metronet.isConsistent(), "moveTram made MetroNet inconsistent");

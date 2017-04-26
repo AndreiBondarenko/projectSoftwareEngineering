@@ -21,6 +21,7 @@ private:
   std::set<std::string> passagiers;
   int aantalPassagiers;
   int omzet = 0;
+  const int ticketPrijs = 2;
 public:
   // CONSTRUCTORS
   /**
@@ -30,12 +31,13 @@ public:
   /**
   \n REQUIRE(beginStation != "", "newBeginStation must not be empty");
   \n REQUIRE(lijnNr >= 0 , "lijnNr must be bigger or equal to zero");
+  \n REQUIRE(newVoertuigNr >= 0 , "newVoertuigNr must be bigger or equal to zero");
   \n REQUIRE(zitplaatsen >= 0 , "zitplaatsen must be bigger or equal to zero");
   \n REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   */
-  Tram(const int lijnNr, const int zitplaatsen, const std::string& beginStation,
-	  const int snelheid); // full
+  Tram(const int lijnNr, const int voertuigNr, const std::string& type,
+    const int zitplaatsen, const std::string& beginStation, const int snelheid); // full
 
   // DESTRUCTOR
   ~Tram();
@@ -80,6 +82,17 @@ public:
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getOmzet");
   */
   int getOmzet() const;
+  /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling isInTram");
+  \n REQUIRE(passagier != "", "passagier must not be empty");
+  */
+  bool isInTram(std::string passagier) const;
+  /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
+  \n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
+  \n REQUIRE(station != "", "station must not be empty");
+  */
+  bool stoptInStation(MetroNet& metronet, std::string station) const;
 
   // SETTER METHODS
   /**
@@ -139,13 +152,9 @@ public:
 
 	// MODIFIER METHODS
 	/**
-	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling isInTram");
-	\n REQUIRE(passagier != "", "passagier must not be empty");
-	*/
-	bool isInTram(std::string passagier);
-	/**
 	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling addPassagier");
 	\n REQUIRE(passagier != "", "passagier must not be empty");
+	\n REQUIRE(aantal >= 0, "aantal must be bigger or equal to zero");
 	\n REQUIRE(isInTram(passagier) == false, "passenger allready in Tram");
 	\n ENSURE(isInTram(passagier) == true, "addPassagier post condition failure");
 	*/
@@ -163,12 +172,6 @@ public:
 	\n REQUIRE(station != "", "station must not be empty");
 	*/
 	std::set<std::string> afstappenInHalte(MetroNet& metronet, std::string station);
-	/**
-	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
-	\n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
-	\n REQUIRE(station != "", "station must not be empty");
-	*/
-	bool stoptInStation(MetroNet& metronet, std::string station);
 	/**
 	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram");
 	\n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");

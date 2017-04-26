@@ -4,9 +4,9 @@
 #include <gtest/gtest.h>
 
 #include "MetroNet.h"
-#include "MetroNetClassTests.cpp"
-#include "MetroNetExportTests.cpp"
-#include "MetroNetInputTests.cpp"
+// #include "MetroNetClassTests.cpp"
+// #include "MetroNetExportTests.cpp"
+// #include "MetroNetInputTests.cpp"
 
 
 int main(int argc, char **argv) {

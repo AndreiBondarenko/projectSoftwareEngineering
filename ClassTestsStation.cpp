@@ -3,7 +3,7 @@
 #include "MetroNet.h"
 
 
-class MetroNetClassTest: public ::testing::Test {
+class ClassTestStation: public ::testing::Test {
 protected:
 	friend class MetroNet;
 	// You should make the members protected s.t. they can be
