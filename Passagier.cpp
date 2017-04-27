@@ -14,8 +14,8 @@ Passagier::Passagier(std::string naam, std::string beginStation, std::string ein
  	hoeveelheid(hoeveelheid)
 {
 	REQUIRE(naam != "", "naam must not be empty");
-	REQUIRE(beginStation != "", "newBeginStation must not be empty");
-	REQUIRE(eindStation != "", "newEindStation must not be empty");
+	REQUIRE(beginStation != "", "beginStation must not be empty");
+	REQUIRE(eindStation != "", "eindStation must not be empty");
 	REQUIRE(hoeveelheid >= 0 , "hoeveelheid must be bigger or equal to zero");
 	initCheck = this;
 	ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");

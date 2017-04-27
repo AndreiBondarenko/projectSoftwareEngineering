@@ -27,7 +27,7 @@ TEST_F(ClassTestMetroNet, DefaultConstructors) {
   EXPECT_TRUE(metronet.properlyInitialized());
 }
 
-TEST_F(ClassTestMetroNet, SettersGettersMetroNet) {
+TEST_F(ClassTestMetroNet, SettersGetters) {
   Station* testStation = new Station("testNaam", "testType");
   metronet.addStation(testStation);
   EXPECT_EQ(testStation, metronet.getStation("testNaam"));
@@ -39,7 +39,7 @@ TEST_F(ClassTestMetroNet, SettersGettersMetroNet) {
   EXPECT_EQ(testPassagier, metronet.getPassagier("testNaam"));
 }
 
-TEST_F(ClassTestMetroNet, ContractViolationsMetroNet) {
+TEST_F(ClassTestMetroNet, ContractViolations) {
   EXPECT_DEATH(metronet.getStation(""), "naam must not be empty");
   EXPECT_DEATH(metronet.getTram(-1), "voertuigNr must be greater or equal to zero");
   EXPECT_DEATH(metronet.getPassagier(""), "naam must not be empty");

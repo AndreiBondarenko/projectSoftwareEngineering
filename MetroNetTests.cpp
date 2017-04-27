@@ -7,6 +7,7 @@
 #include "ClassTestsTram.cpp"
 #include "ClassTestsStation.cpp"
 #include "ClassTestsMetroNet.cpp"
+#include "ClassTestsPassagier.cpp"
 
 
 int main(int argc, char **argv) {

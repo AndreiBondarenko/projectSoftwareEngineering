@@ -41,7 +41,7 @@ TEST_F(ClassTestStation, SettersGetters) {
   EXPECT_FALSE(station.isInStation("groep1"));
 }
 
-TEST_F(ClassTestStation, ContractViolationsStation) {
+TEST_F(ClassTestStation, ContractViolations) {
   EXPECT_DEATH(Station("", "TEST"), "naam must not be empty");
   EXPECT_DEATH(Station("TEST", ""), "type must not be empty");
   EXPECT_DEATH(station.getVorige(-1), "parameter spoor must be >= 0, when passed to getVorige");

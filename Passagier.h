@@ -74,7 +74,7 @@ public:
 	void setBeginStation(const std::string& newBeginStation);
 	/**
 	\n REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling setEindStation");
-	\n REQUIRE(newEindStation >= 0 , "newEindStation must not be empty");
+	\n REQUIRE(newEindStation != "" , "newEindStation must not be empty");
 	\n ENSURE(getEindStation() == newEindStation, "setEindStation post condition failure");
 	*/
 	void setEindStation(const std::string& newEindStation);
