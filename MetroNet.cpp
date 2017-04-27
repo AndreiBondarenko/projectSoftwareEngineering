@@ -106,6 +106,7 @@ bool MetroNet::isConsistent() {
 
 Station* MetroNet::getStation(std::string naam) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getStation");
+  REQUIRE(naam != "", "naam must not be empty");
 	if (alleStations.find(naam) == alleStations.end()) {
 		return nullptr;
 	}
@@ -114,6 +115,7 @@ Station* MetroNet::getStation(std::string naam) {
 
 Tram* MetroNet::getTram(int voertuigNr) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getTram");
+  REQUIRE(voertuigNr >= 0, "voertuigNr must be greater or equal to zero");
 	if (alleTrams.find(voertuigNr) == alleTrams.end())
 		return nullptr;
   return alleTrams[voertuigNr];
@@ -121,6 +123,7 @@ Tram* MetroNet::getTram(int voertuigNr) {
 
 Passagier* MetroNet::getPassagier(std::string naam) {
 	REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getPassagier");
+	REQUIRE(naam != "", "naam must not be empty");
 	return allePassagiers[naam];
 }
 
@@ -136,7 +139,7 @@ void MetroNet::addStation(Station* newStation) {
 
 void MetroNet::addTram(Tram* newTram) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addTram");
-  REQUIRE(getTram(newTram->getVoertuigNr()) == nullptr, "This MetroNet already contains a Tram with this lijnNr");
+  REQUIRE(getTram(newTram->getVoertuigNr()) == nullptr, "This MetroNet already contains a Tram with this voertuigNr");
   alleTrams[newTram->getVoertuigNr()] = newTram;
   alleStations[newTram->getBeginStation()]->setTramInStation(newTram->getLijnNr(), newTram->getVoertuigNr(), true);
   ENSURE(getTram(newTram->getVoertuigNr()) == newTram, "addTram post condition failure");

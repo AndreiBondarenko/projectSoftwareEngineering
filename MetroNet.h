@@ -43,14 +43,17 @@ public:
   // GETTER METHODS
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleStations");
+  \n REQUIRE(naam != "", "naam must not be empty");
   */
   Station* getStation(std::string naam);
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleTrams");
+  \n REQUIRE(voertuigNr >= 0, "voertuigNr must be greater or equal to zero");
   */
-  Tram* getTram(int spoor);
+  Tram* getTram(int voertuigNr);
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getPassagier");
+  \n REQUIRE(naam != "", "naam must not be empty");
   */
   Passagier* getPassagier(std::string naam);
 
@@ -63,8 +66,8 @@ public:
   void addStation(Station* newStation);
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addTram");
-  \n REQUIRE(getTram(newTram->getLijnNr()) == nullptr, "This MetroNet already contains a Tram with this lijnNr");
-  \n ENSURE(getTram(newTram->getLijnNr()) == newTram, "addTram post condition failure");
+  \n REQUIRE(getTram(newTram->voertuigNr()) == nullptr, "This MetroNet already contains a Tram with this voertuigNr");
+  \n ENSURE(getTram(newTram->voertuigNr()) == newTram, "addTram post condition failure");
   \n ENSURE(getStation(newTram->getBeginStation())->isTramInStation(), "addTram post condition failure");
   */
   void addTram(Tram* newTram);

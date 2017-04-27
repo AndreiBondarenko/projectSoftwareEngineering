@@ -6,7 +6,7 @@
 #include "MetroNet.h"
 #include "ClassTestsTram.cpp"
 #include "ClassTestsStation.cpp"
-// #include "MetroNetInputTests.cpp"
+#include "ClassTestsMetroNet.cpp"
 
 
 int main(int argc, char **argv) {

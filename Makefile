@@ -16,7 +16,8 @@ SRCS =		MetroNetMain \
 
 TSTSRCS =	MetroNetTests.cpp \
 			ClassTestsTram.cpp \
-			ClassTestsStation.cpp
+			ClassTestsStation.cpp \
+			ClassTestsMetroNet.cpp
 
 TINYOBJS =	tinystr.o \
 			tinyxml.o \
