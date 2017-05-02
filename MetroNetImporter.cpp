@@ -403,26 +403,22 @@ SuccessEnum MetroNetImporter::importPassengers(const char* inputfilename, std::o
   	if (naam == NULL) {
   		errStream << "XML PARTIAL IMPORT: Expected <naam> ... </naam>." << std::endl;
       endResult = PartialImport;
-      delete passagier;
-      continue;
+			deleted = true;
   	}
   	if (beginStation == NULL) {
   		errStream << "XML PARTIAL IMPORT: Expected <beginstation> ... </beginstation>." << std::endl;
       endResult = PartialImport;
-      delete passagier;
-      continue;
+			deleted = true;
   	}
   	if (eindStation == NULL) {
   		errStream << "XML PARTIAL IMPORT: Expected <eindstation> ... </eindstation>." << std::endl;
       endResult = PartialImport;
-      delete passagier;
-      continue;
+			deleted = true;
   	}
   	if (hoeveelheid == NULL) {
   		errStream << "XML PARTIAL IMPORT: Expected <hoeveelheid> ... </hoeveelheid>." << std::endl;
       endResult = PartialImport;
-      delete passagier;
-      continue;
+			deleted = true;
   	}
 
   	for (TiXmlElement* infoElem = passenger->FirstChildElement();
@@ -434,7 +430,6 @@ SuccessEnum MetroNetImporter::importPassengers(const char* inputfilename, std::o
         errStream << "XML PARTIAL IMPORT: <"
           << elemName <<  "> ... </" << elemName << "> is empty." << std::endl;
         endResult = PartialImport;
-        delete passagier;
         deleted = true;
       }
       for (TiXmlNode* data = infoElem->FirstChild();
@@ -442,7 +437,7 @@ SuccessEnum MetroNetImporter::importPassengers(const char* inputfilename, std::o
         data = data->NextSibling()) {
 
       	TiXmlText* text = data->ToText();
-      	if (text == NULL || deleted)
+      	if (text == NULL)
       		continue;
 
       	if (elemName == "naam")
@@ -459,14 +454,12 @@ SuccessEnum MetroNetImporter::importPassengers(const char* inputfilename, std::o
       			else throw 0;
       		}
       		catch(int e) {
-      			delete passagier;
             endResult = PartialImport;
             errStream << "XML PARTIAL IMPORT: Passagier not created, negative hoeveelheid: " << text->Value() << "." << std::endl;
             deleted = true;
             break;
       		}
       		catch (std::invalid_argument& e) {
-            delete passagier;
             endResult = PartialImport;
             errStream << "XML PARTIAL IMPORT: Passagier not created, invalid hoeveelheid: " << text->Value() << "." << std::endl;
             deleted = true;
@@ -481,7 +474,10 @@ SuccessEnum MetroNetImporter::importPassengers(const char* inputfilename, std::o
         }
       }
     }
-    if (deleted) continue;
+		if (deleted) {
+			delete passagier;
+			continue;
+		}
     metronet.addPassagier(passagier);
 		passagier->moveToBeginStation(metronet);
   }
