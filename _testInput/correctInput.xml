@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<METRONET>
+	<STATION>
+		<naam>A</naam>
+		<type>Metrostation</type>
+		<SPOOR>
+			<spoor>12</spoor>
+			<volgende>B</volgende>
+			<vorige>B</vorige>
+		</SPOOR>
+	</STATION>
+	<STATION>
+		<naam>B</naam>
+		<type>Halte</type>
+		<SPOOR>
+			<spoor>12</spoor>
+			<volgende>A</volgende>
+			<vorige>A</vorige>
+		</SPOOR>
+	</STATION>
+	<TRAM>
+		<lijnNr>12</lijnNr>
+		<zitplaatsen>32</zitplaatsen>
+		<snelheid>60</snelheid>
+		<beginStation>A</beginStation>
+		<type>PCC</type>
+		<voertuigNr>1</voertuigNr>
+	</TRAM>
+</METRONET>

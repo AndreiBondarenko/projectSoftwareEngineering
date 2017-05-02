@@ -1,0 +1,6 @@
+XML PARTIAL IMPORT:
+Expected:
+<spoor> ... </spoor> or
+<volgende> ... </volgende> or
+<vorige> ... </vorige>
+and got: <huidig> ... </huidig>.

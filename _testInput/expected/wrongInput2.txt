@@ -1,0 +1,1 @@
+XML PARTIAL IMPORT: Expected <STATION> ... </STATION> or <TRAM> ... </TRAM> and got <HALTE> ... </HALTE>.
