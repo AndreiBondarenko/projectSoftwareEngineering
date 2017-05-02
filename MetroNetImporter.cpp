@@ -43,20 +43,17 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
       if(naam == NULL) {
         errStream << "XML PARTIAL IMPORT: Expected <naam> ... </naam>." << std::endl;
         endResult = PartialImport;
-        delete station;
-        continue;
+        deleted = true;
       }
       if(type == NULL) {
         errStream << "XML PARTIAL IMPORT: Expected <type> ... </type>." << std::endl;
         endResult = PartialImport;
-        delete station;
-        continue;
+				deleted = true;
       }
       if(SPOOR == NULL) {
         errStream << "XML PARTIAL IMPORT: Expected <SPOOR> ... </SPOOR>." << std::endl;
         endResult = PartialImport;
-        delete station;
-        continue;
+				deleted = true;
       }
 
       for (TiXmlElement* infoElem = element->FirstChildElement();
@@ -68,7 +65,6 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
           errStream << "XML PARTIAL IMPORT: <"
     				<< elemName <<  "> ... </" << elemName << "> is empty." << std::endl;
     			endResult = PartialImport;
-          delete station;
           deleted = true;
         }
         else if (elemName == "SPOOR") {
@@ -79,23 +75,17 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
           if(spoor == NULL) {
             errStream << "XML PARTIAL IMPORT: Expected <spoor> ... </spoor>." << std::endl;
             endResult = PartialImport;
-            delete station;
             deleted = true;
-            break;
           }
           if(vorige == NULL) {
             errStream << "XML PARTIAL IMPORT: Expected <vorige> ... </vorige>." << std::endl;
             endResult = PartialImport;
-            delete station;
             deleted = true;
-            break;
           }
           if(volgende == NULL) {
             errStream << "XML PARTIAL IMPORT: Expected <volgende> ... </volgende>." << std::endl;
             endResult = PartialImport;
-            delete station;
             deleted = true;
-            break;
           }
           for (TiXmlElement* infoElemSpoor = infoElem->FirstChildElement();
             infoElemSpoor != NULL;
@@ -106,10 +96,9 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
               errStream << "XML PARTIAL IMPORT: <"
         				<< elemNameSpoor <<  "> ... </" << elemNameSpoor << "> is empty." << std::endl;
         			endResult = PartialImport;
-              delete station;
               deleted = true;
             }
-            if (deleted) break;
+						if (deleted) continue;
             int spoorTemp;
             for (TiXmlNode* dataSpoor = infoElemSpoor->FirstChild();
               dataSpoor != NULL;
@@ -124,7 +113,6 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
                   else throw 0;
                 }
                 catch(int e){
-                  delete station;
                   endResult = PartialImport;
                   errStream << "XML PARTIAL IMPORT: Station not created, negative line number: " << text->Value() << "." << std::endl;
                   deleted = true;
@@ -132,7 +120,6 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
 
                 }
                 catch(std::invalid_argument e){
-                    delete station;
                     endResult = PartialImport;
                     errStream << "XML PARTIAL IMPORT: Station not created, invalid line number: " << text->Value() << "." << std::endl;
                     deleted = true;
@@ -145,8 +132,14 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
               else if(elemNameSpoor == "volgende"){
                 station->addVolgende(spoorTemp, text->Value());
               }
+							else {
+								errStream << "XML PARTIAL IMPORT:" << std::endl << "Expected:" << std::endl << "<spoor> ... </spoor> or" << std::endl <<
+									"<volgende> ... </volgende> or" << std::endl << "<vorige> ... </vorige>" <<
+									std::endl << "and got: <" << elemNameSpoor << "> ... </" << elemNameSpoor << ">." << std::endl;
+								endResult = PartialImport;
+							}
             }
-            if (deleted) break;
+            if (deleted) continue;
           }
         }
         for (TiXmlNode* data = infoElem->FirstChild();
@@ -154,7 +147,7 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
           data = data->NextSibling())
         {
           TiXmlText* text = data->ToText();
-          if (text != NULL && !deleted) {
+          if (text != NULL) {
             if (elemName == "naam")
               station->setNaam(text->Value());
             else if (elemName == "type") {
@@ -166,7 +159,6 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
                 else throw 0;
               }
               catch (int e) {
-                delete station;
                 endResult = PartialImport;
                 errStream << "XML PARTIAL IMPORT: Station not created, station type \"" << text->Value() << "\" not recognized." << std::endl;
                 deleted = true;
@@ -175,12 +167,17 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
             }
             else {
               errStream << "XML PARTIAL IMPORT:" << std::endl << "Expected:" << std::endl << "<naam> ... </naam> or" << std::endl <<
-              "<type> ... </type> or" << std::endl << "<SPOOR> ... </SPOOR>" << std::endl << "and got: <" << elemName << "> ... </" << elemName << ">." << std::endl;
-            }
+                "<type> ... </type> or" << std::endl << "<SPOOR> ... </SPOOR>" << 
+								std::endl << "and got: <" << elemName << "> ... </" << elemName << ">." << std::endl;
+							endResult = PartialImport;
+						}
           }
         }
       }
-      if (deleted) continue;
+			if (deleted) {
+				delete station;
+				continue;
+			}
       metronet.addStation(station);
     }
     else if(elementType == "TRAM"){
@@ -195,38 +192,32 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
       if(lijnNr == NULL) {
         errStream << "XML PARTIAL IMPORT: Expected <lijnNr> ... </lijnNr>." << std::endl;
         endResult = PartialImport;
-        delete tram;
-        continue;
+				deleted = true;
       }
       if(zitplaatsen == NULL) {
         errStream << "XML PARTIAL IMPORT: Expected <zitplaatsen> ... </zitplaatsen>." << std::endl;
         endResult = PartialImport;
-        delete tram;
-        continue;
+				deleted = true;
       }
       if(snelheid == NULL) {
         errStream << "XML PARTIAL IMPORT: Expected <snelheid> ... </snelheid>." << std::endl;
         endResult = PartialImport;
-        delete tram;
-        continue;
+				deleted = true;
       }
       if(beginStation == NULL) {
         errStream << "XML PARTIAL IMPORT: Expected <beginStation> ... </beginStation>." << std::endl;
         endResult = PartialImport;
-        delete tram;
-        continue;
+				deleted = true;
       }
       if(type == NULL) {
         errStream << "XML PARTIAL IMPORT: Expected <type> ... </type>." << std::endl;
         endResult = PartialImport;
-        delete tram;
-        continue;
+				deleted = true;
       }
       if(voertuigNr == NULL) {
         errStream << "XML PARTIAL IMPORT: Expected <voertuigNr> ... </voertuigNr>." << std::endl;
         endResult = PartialImport;
-        delete tram;
-        continue;
+				deleted = true;
       }
       for(TiXmlElement* infoElem = element->FirstChildElement();
           infoElem != NULL;
@@ -236,7 +227,6 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
           errStream << "XML PARTIAL IMPORT: <"
     				<< elemName <<  "> ... </" << elemName << "> is empty." << std::endl;
     			endResult = PartialImport;
-          delete tram;
           deleted = true;
         }
         for(TiXmlNode* data = infoElem->FirstChild();
@@ -244,7 +234,7 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
             data = data->NextSibling())
         {
           TiXmlText* text = data->ToText();
-          if(text != NULL && !deleted) {
+          if(text != NULL) {
             try {
               if (elemName == "lijnNr") {
                 int nummer = std::stoi(text->Value());
@@ -292,43 +282,38 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
                 "<zitplaatsen> ... </zitplaatsen> or" << std::endl << "<snelheid> ... </snelheid> or" << std::endl <<
                 "<type> ... </type> or" << std::endl << "<voertuigNr> ... </voertuigNr> or" << std::endl << "<beginStation> ... </beginStation>" <<
                 std::endl << "and got: <" << elemName << "> ... </" << elemName << ">." << std::endl;
+								endResult = PartialImport;
               }
             }
             catch(int e) {
               switch (e) {
               case 0:
-                delete tram;
                 endResult = PartialImport;
                 errStream << "XML PARTIAL IMPORT: Tram not created, negative line number: " << text->Value() << "." << std::endl;
                 deleted = true;
                 break;
               case 1:
                 errStream << "XML PARTIAL IMPORT: Tram not created, negative number of seats: " << text->Value() << "." << std::endl;
-                delete tram;
                 endResult = PartialImport;
                 deleted = true;
                 break;
               case 2:
                 errStream << "XML PARTIAL IMPORT: Tram not created, negative speed: " << text->Value() << "." << std::endl;
-                delete tram;
                 endResult = PartialImport;
                 deleted = true;
                 break;
               case 3:
                 errStream << "XML PARTIAL IMPORT: BeginStation not found for tram " << tram->getLijnNr() << std::endl;
-                delete tram;
                 endResult = PartialImport;
                 deleted = true;
                 break;
               case 4:
                 errStream << "XML PARTIAL IMPORT: Tram not created, tram type \"" << text->Value() << "\" not recognized." << std::endl;
-                delete tram;
                 endResult = PartialImport;
                 deleted = true;
                 break;
               case 5:
                 errStream << "XML PARTIAL IMPORT: Tram not created, negative voertuigNr: " << text->Value() << "." << std::endl;
-                delete tram;
                 endResult = PartialImport;
                 deleted = true;
                 break;
@@ -336,28 +321,24 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
             }
             catch (std::invalid_argument& e) {
               if (elemName == "lijnNr") {
-                delete tram;
                 endResult = PartialImport;
                 errStream << "XML PARTIAL IMPORT: Tram not created, invalid line number: " << text->Value() << "." << std::endl;
                 deleted = true;
                 break;
               }
               else if (elemName == "zitplaatsen") {
-                delete tram;
                 endResult = PartialImport;
                 errStream << "XML PARTIAL IMPORT: Tram not created, invalid number of seats: " << text->Value() << "." << std::endl;
                 deleted = true;
                 break;
               }
               else if (elemName == "snelheid") {
-                delete tram;
                 endResult = PartialImport;
                 errStream << "XML PARTIAL IMPORT: Tram not created, invalid speed: " << text->Value() << "." << std::endl;
                 deleted = true;
                 break;
               }
               else if (elemName == "voertuigNr") {
-                delete tram;
                 endResult = PartialImport;
                 errStream << "XML PARTIAL IMPORT: Tram not created, invalid voertuigNr: " << text->Value() << "." << std::endl;
                 deleted = true;
@@ -370,10 +351,12 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
 			if (tram->getType() == "Albatros" && metronet.getStation(tram->getBeginStation())->getType() != "Metrostation") {
 				endResult = PartialImport;
 				errStream << "XML PARTIAL IMPORT: Tram not created, Albatros can only stop in : Metrostation." << std::endl;
-				delete tram;
 				deleted = true;
 			}
-			if (deleted) continue;
+			if (deleted) {
+				delete tram;
+				continue;
+			}
       metronet.addTram(tram);
     }
     else {
