@@ -18,7 +18,8 @@ TSTSRCS =	MetroNetTests.cpp \
 			ClassTestsTram.cpp \
 			ClassTestsStation.cpp \
 			ClassTestsMetroNet.cpp \
-			ClassTestsPassagier.cpp
+			ClassTestsPassagier.cpp \
+			MetroNetInputTests.cpp
 
 TINYOBJS =	tinystr.o \
 			tinyxml.o \
