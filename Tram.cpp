@@ -220,6 +220,21 @@ void Tram::setOmzet(const int newOmzet) {
   ENSURE(getOmzet() == newOmzet, "setOmzet post condition failure");
 }
 
+bool Tram::isReachable(MetroNet& metronet, std::string station) {
+	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram");
+	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
+	Station* nextStation = metronet.getStation(metronet.getStation(currentStation)->getVolgende(lijnNr));
+	while (nextStation->getNaam() != station) {
+		if (nextStation->isTramInStation(lijnNr)) {
+			ENSURE(metronet.isConsistent(), "isReachable made MetroNet inconsistent");
+ 			return false;
+		}
+		nextStation = metronet.getStation(nextStation->getVolgende(lijnNr));
+	}
+	ENSURE(metronet.isConsistent(), "isReachable made MetroNet inconsistent");
+	return true;
+}
+
 void Tram::moveTram(MetroNet& metronet, std::ostream& output) {
 	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram");
 	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
@@ -228,12 +243,20 @@ void Tram::moveTram(MetroNet& metronet, std::ostream& output) {
 		nextStation = metronet.getStation(nextStation->getVolgende(lijnNr));
 	}
 	if (!nextStation->isTramInStation(lijnNr)) {
-		metronet.getStation(currentStation)->setTramInStation(lijnNr, voertuigNr, false);
-		nextStation->setTramInStation(lijnNr, voertuigNr, true);
-		output
-			<< "Tram #" << voertuigNr << " op spoor " << lijnNr << " reed van station "
-			<< currentStation << " naar station " << nextStation->getNaam() << "." << std::endl;
-		currentStation = nextStation->getNaam();
+		if (isReachable(metronet, nextStation->getNaam())) {
+			metronet.getStation(currentStation)->setTramInStation(lijnNr, voertuigNr, false);
+			nextStation->setTramInStation(lijnNr, voertuigNr, true);
+			output
+				<< "Tram #" << voertuigNr << " op spoor " << lijnNr << " reed van station "
+				<< currentStation << " naar station " << nextStation->getNaam() << "." << std::endl;
+			currentStation = nextStation->getNaam();
+		}
+		else {
+			output
+				<< "Tram #" << voertuigNr << " op spoor " << lijnNr << " wachtte in station "
+				<< currentStation << ", want de route naar station " << nextStation->getNaam()
+				<< " was bezet." << std::endl;
+		}
 	}
 	else {
 		output

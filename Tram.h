@@ -175,6 +175,12 @@ public:
 	/**
 	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram");
 	\n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
+	\n ENSURE(metronet.isConsistent(), "isReachable made MetroNet inconsistent");
+	*/
+	bool isReachable(MetroNet& metronet, std::string station);
+	/**
+	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram");
+	\n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
 	\n ENSURE(metronet.isConsistent(), "moveTram made MetroNet inconsistent");
 	*/
 	void moveTram(MetroNet& metronet, std::ostream& output);
