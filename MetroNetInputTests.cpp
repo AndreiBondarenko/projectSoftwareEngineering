@@ -15,7 +15,11 @@ protected:
 		metronet = new MetroNet();
 	}
 
-	MetroNet* metronet;	
+	virtual void TearDown() {
+		delete metronet;
+	}
+
+	MetroNet* metronet = new MetroNet();	
 };
 
 TEST_F(MetroNetInputTests, InputHappyDay) {
@@ -108,11 +112,11 @@ TEST_F(MetroNetInputTests, wrongInputNoCrash) {
 		EXPECT_TRUE(importResult == PartialImport);
 		std::string expectedFileName = "_testInput/expected/wrongInput" + std::to_string(fileCounter) + ".txt";
 		EXPECT_TRUE(FileCompare("_testInput/zzzError.txt", expectedFileName));
-
 		fileCounter++;
 		fileName = "_testInput/wrongInput" + std::to_string(fileCounter) + ".xml";
 	}
-	EXPECT_TRUE(fileCounter == 39);
+	EXPECT_TRUE(fileCounter == 40);
+	
 }
 
 TEST_F(MetroNetInputTests, inconsistent) {
