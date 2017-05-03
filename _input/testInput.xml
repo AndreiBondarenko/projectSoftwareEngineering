@@ -4,7 +4,7 @@
     <lijnNr>12</lijnNr>
     <zitplaatsen>16</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>A</beginStation>
+    <beginStation>B</beginStation>
     <type>PCC</type>
 	<voertuigNr>1</voertuigNr>
   </TRAM>
