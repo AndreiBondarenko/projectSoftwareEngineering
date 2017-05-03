@@ -388,8 +388,7 @@ SuccessEnum MetroNetImporter::importPassengers(const char* inputfilename, std::o
 		return ImportAborted;
 	}
 
-  for (;
-  	passenger != NULL;
+  for (; passenger != NULL;
   	passenger = passenger->NextSiblingElement()) {
 
   	bool deleted = false;
