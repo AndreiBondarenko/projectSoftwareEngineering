@@ -8,6 +8,7 @@
 #include "ClassTestsStation.cpp"
 #include "ClassTestsMetroNet.cpp"
 #include "ClassTestsPassagier.cpp"
+#include "MetroNetInputTests.cpp"
 
 
 int main(int argc, char **argv) {
