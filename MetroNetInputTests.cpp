@@ -91,7 +91,7 @@ TEST_F(MetroNetInputTests, wrongInputSyntaxError) {
 	EXPECT_TRUE(fileCounter == 6);
 }
 
-TEST_F(MetroNetInputTests, wrongInput) {
+TEST_F(MetroNetInputTests, wrongInputNoCrash) {
 	ASSERT_TRUE(DirectoryExists("_testInput"));
 	ASSERT_TRUE(DirectoryExists("_testInput/expected"));
 
@@ -112,6 +112,38 @@ TEST_F(MetroNetInputTests, wrongInput) {
 		fileCounter++;
 		fileName = "_testInput/wrongInput" + std::to_string(fileCounter) + ".xml";
 	}
+	EXPECT_TRUE(fileCounter == 38);
+}
+
+TEST_F(MetroNetInputTests, inconsistent) {
+	ASSERT_TRUE(DirectoryExists("_testInput"));
+	ASSERT_TRUE(DirectoryExists("_testInput/expected"));
+
+	std::ofstream ofile;
+	int fileCounter = 1;
+	std::string fileName = "_testInput/inconsistent" + std::to_string(fileCounter) + ".xml";
+
+	while (FileExists(fileName)) {
+		SetUp();
+		ofile.open("_testInput/zzzError.txt");
+		EXPECT_DEATH(MetroNetImporter::importMetroNet(fileName.c_str(), ofile, *metronet), "MetroNet is inconsistent");
+		ofile.close();
+		std::string expectedFileName = "_testInput/expected/inconsistent" + std::to_string(fileCounter) + ".txt";
+		EXPECT_TRUE(FileCompare("_testInput/zzzError.txt", expectedFileName));
+
+		fileCounter++;
+		fileName = "_testInput/inconsistent" + std::to_string(fileCounter) + ".xml";
+	}
 	// EXPECT_TRUE(fileCounter == 6);
 }
 
+// TEST_F(MetroNetInputTests, wrongInputCrash) {
+// 	ASSERT_TRUE(DirectoryExists("_testInput"));
+// 	ASSERT_TRUE(DirectoryExists("_testInput/expected"));
+// 
+// 	std::ofstream ofile;
+// 	EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/crashTest1.xml", ofile, *metronet), "naam must not be empty");
+// 	EXPECT_TRUE(FileCompare("_testInput/zzzError.txt", expectedFileName));
+// 
+// 	// EXPECT_TRUE(fileCounter == 6);
+// }
