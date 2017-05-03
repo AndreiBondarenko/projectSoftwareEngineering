@@ -9,6 +9,7 @@
 #include "ClassTestsMetroNet.cpp"
 #include "ClassTestsPassagier.cpp"
 #include "MetroNetInputTests.cpp"
+#include "PassagierInputTests.cpp"
 
 
 int main(int argc, char **argv) {
