@@ -1,1 +1,0 @@
-XML PARTIAL IMPORT: <zitplaatsen> ... </zitplaatsen> is empty.

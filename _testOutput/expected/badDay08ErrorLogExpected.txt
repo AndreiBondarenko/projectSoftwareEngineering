@@ -1,2 +1,0 @@
-XML PARTIAL IMPORT: Expected <spoor> ... </spoor>.
-XML PARTIAL IMPORT: BeginStation not found for tram 12

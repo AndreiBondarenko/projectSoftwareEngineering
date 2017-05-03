@@ -1,2 +1,0 @@
-XML PARTIAL IMPORT: Expected <naam> ... </naam>.
-XML PARTIAL IMPORT: BeginStation not found for tram 12
