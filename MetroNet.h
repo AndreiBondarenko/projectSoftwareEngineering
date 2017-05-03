@@ -67,7 +67,7 @@ public:
   /**
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addTram");
   \n REQUIRE(getTram(newTram->voertuigNr()) == nullptr, "This MetroNet already contains a Tram with this voertuigNr");
-	\n REQUIRE(getStation(newTram->getLijnNr())->isTramInStation() == false, "BeginStation of newTram isn't empty");
+	\n REQUIRE(getStation(newTram->getBeginStation())->isTramInStation(newTram->getLijnNr()) == false, "BeginStation of newTram isn't empty");
   \n ENSURE(getTram(newTram->voertuigNr()) == newTram, "addTram post condition failure");
   \n ENSURE(getStation(newTram->getBeginStation())->isTramInStation(), "addTram post condition failure");
   */
