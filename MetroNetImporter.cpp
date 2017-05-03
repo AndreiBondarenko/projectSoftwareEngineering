@@ -477,6 +477,7 @@ SuccessEnum MetroNetImporter::importPassengers(const char* inputfilename, std::o
           << std::endl << "<beginstation> ... </beginstation> or" << std::endl << "<eindstation> ... </eindstation> or"
           << std::endl << "<hoeveelheid> ... </hoeveelheid> or" << std::endl << "and got: <"
           << elemName << "> ... </" << elemName << ">." << std::endl;
+					endResult = PartialImport;
         }
       }
     }
