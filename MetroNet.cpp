@@ -140,6 +140,7 @@ void MetroNet::addStation(Station* newStation) {
 void MetroNet::addTram(Tram* newTram) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addTram");
   REQUIRE(getTram(newTram->getVoertuigNr()) == nullptr, "This MetroNet already contains a Tram with this voertuigNr");
+	REQUIRE(getStation(newTram->getLijnNr())->isTramInStation() == false, "BeginStation of newTram isn't empty");
   alleTrams[newTram->getVoertuigNr()] = newTram;
   alleStations[newTram->getBeginStation()]->setTramInStation(newTram->getLijnNr(), newTram->getVoertuigNr(), true);
   ENSURE(getTram(newTram->getVoertuigNr()) == newTram, "addTram post condition failure");
