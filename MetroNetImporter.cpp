@@ -381,7 +381,14 @@ SuccessEnum MetroNetImporter::importPassengers(const char* inputfilename, std::o
     return ImportAborted;
   }
 
-  for (TiXmlElement* passenger = doc.FirstChildElement();
+	TiXmlElement* passenger = doc.FirstChildElement();
+	if (passenger == NULL) {
+		errStream << "XML IMPORT ABORTED: " << "Failed to load file: No root element." << std::endl;
+		doc.Clear();
+		return ImportAborted;
+	}
+
+  for (;
   	passenger != NULL;
   	passenger = passenger->NextSiblingElement()) {
 
