@@ -24,11 +24,13 @@ protected:
 
 TEST_F(MetroNetInputTests, InputHappyDay) {
 	ASSERT_TRUE(DirectoryExists("_testInput"));
+	ASSERT_TRUE(DirectoryExists("_testInput/MetroNetInputTests"));
+	ASSERT_TRUE(DirectoryExists("_testOutput"));
 
 	std::ofstream ofile;
 	SuccessEnum importResult;
 
-	ofile.open("_testInput/correctInput.xml");
+	ofile.open("_testInput/MetroNetInputTests/correctInput.xml");
 	ofile << "<?xml version=\"1.0\" ?>" << std::endl
 		<< "<METRONET>\n\t<STATION>\n"
 		<< "\t\t<naam>A</naam>\n\t\t<type>Metrostation</type>\n"
@@ -44,76 +46,82 @@ TEST_F(MetroNetInputTests, InputHappyDay) {
 		<< "\t\t<type>PCC</type>\n\t\t<voertuigNr>1</voertuigNr>\n"
 		<< "\t</TRAM>\n</METRONET>" << std::endl;
 	ofile.close();
-	ofile.open("_testInput/zzzError.txt");
-	importResult = MetroNetImporter::importMetroNet("_testInput/correctInput.xml", ofile, *metronet);
+	ofile.open("_testOutput/metronetInputTestsError.txt");
+	importResult = MetroNetImporter::importMetroNet("_testInput/MetroNetInputTests/correctInput.xml", ofile, *metronet);
 	ofile.close();
 	EXPECT_TRUE(importResult == Success);
-	EXPECT_TRUE(FileIsEmpty("_testInput/zzzError.txt"));
+	EXPECT_TRUE(FileIsEmpty("_testOutput/metronetInputTestsError.txt"));
 }
 
 TEST_F(MetroNetInputTests, correctInput) {
 	ASSERT_TRUE(DirectoryExists("_testInput"));
+	ASSERT_TRUE(DirectoryExists("_testInput/MetroNetInputTests"));
+	ASSERT_TRUE(DirectoryExists("_testOutput"));
 
 	std::ofstream ofile;
 	SuccessEnum importResult;
 	int fileCounter = 1;
-	std::string fileName = "_testInput/correctInput" + std::to_string(fileCounter) + ".xml";
+	std::string fileName = "_testInput/MetroNetInputTests/correctInput" + std::to_string(fileCounter) + ".xml";
 
 	while (FileExists(fileName)) {
-		ofile.open("_testInput/zzzError.txt");
+		ofile.open("_testOutput/metronetInputTestsError.txt");
 		importResult = MetroNetImporter::importMetroNet(fileName.c_str(), ofile, *metronet);
 		ofile.close();
 		EXPECT_TRUE(importResult == Success);
-		EXPECT_TRUE(FileIsEmpty("_testInput/zzzError.txt"));
+		EXPECT_TRUE(FileIsEmpty("_testOutput/metronetInputTestsError.txt"));
 
 		fileCounter++;
-		fileName = "_testInput/correctInput" + std::to_string(fileCounter) + ".xml";
+		fileName = "_testInput/MetroNetInputTests/correctInput" + std::to_string(fileCounter) + ".xml";
 	}
 	EXPECT_TRUE(fileCounter == 2);
 }
 
 TEST_F(MetroNetInputTests, wrongInputSyntaxError) {
 	ASSERT_TRUE(DirectoryExists("_testInput"));
-	ASSERT_TRUE(DirectoryExists("_testInput/expected"));
+	ASSERT_TRUE(DirectoryExists("_testInput/MetroNetInputTests"));
+	ASSERT_TRUE(DirectoryExists("_testOutput"));
+	ASSERT_TRUE(DirectoryExists("_testOutput/MetroNetInputTestsExpected"));
 
 	std::ofstream ofile;
 	SuccessEnum importResult;
 	int fileCounter = 1;
-	std::string fileName = "_testInput/syntaxErrorInput" + std::to_string(fileCounter) + ".xml";
+	std::string fileName = "_testInput/MetroNetInputTests/syntaxErrorInput" + std::to_string(fileCounter) + ".xml";
 
 	while (FileExists(fileName)) {
-		ofile.open("_testInput/zzzError.txt");
+		ofile.open("_testOutput/metronetInputTestsError.txt");
 		importResult = MetroNetImporter::importMetroNet(fileName.c_str(), ofile, *metronet);
 		ofile.close();
 		EXPECT_TRUE(importResult == ImportAborted);
-		std::string expectedFileName = "_testInput/expected/syntaxError" + std::to_string(fileCounter) + ".txt";
-		EXPECT_TRUE(FileCompare("_testInput/zzzError.txt", expectedFileName));
+		std::string expectedFileName = "_testOutput/MetroNetInputTestsExpected/syntaxError" + std::to_string(fileCounter) + ".txt";
+		EXPECT_TRUE(FileCompare("_testOutput/metronetInputTestsError.txt", expectedFileName));
 
 		fileCounter++;
-		fileName = "_testInput/syntaxErrorInput" + std::to_string(fileCounter) + ".xml";
+		fileName = "_testInput/MetroNetInputTests/syntaxErrorInput" + std::to_string(fileCounter) + ".xml";
 	}
 	EXPECT_TRUE(fileCounter == 6);
 }
 
 TEST_F(MetroNetInputTests, wrongInputNoCrash) {
 	ASSERT_TRUE(DirectoryExists("_testInput"));
-	ASSERT_TRUE(DirectoryExists("_testInput/expected"));
+	ASSERT_TRUE(DirectoryExists("_testInput/MetroNetInputTests"));
+	ASSERT_TRUE(DirectoryExists("_testOutput"));
+	ASSERT_TRUE(DirectoryExists("_testOutput/MetroNetInputTestsExpected"));
 
 	std::ofstream ofile;
 	SuccessEnum importResult;
 	int fileCounter = 1;
-	std::string fileName = "_testInput/wrongInput" + std::to_string(fileCounter) + ".xml";
+	std::string fileName = "_testInput/MetroNetInputTests/wrongInput" + std::to_string(fileCounter) + ".xml";
 
 	while (FileExists(fileName)) {
 		SetUp();
-		ofile.open("_testInput/zzzError.txt");
+		ofile.open("_testOutput/metronetInputTestsError.txt");
 		importResult = MetroNetImporter::importMetroNet(fileName.c_str(), ofile, *metronet);
 		ofile.close();
 		EXPECT_TRUE(importResult == PartialImport);
-		std::string expectedFileName = "_testInput/expected/wrongInput" + std::to_string(fileCounter) + ".txt";
-		EXPECT_TRUE(FileCompare("_testInput/zzzError.txt", expectedFileName));
+		std::string expectedFileName = "_testOutput/MetroNetInputTestsExpected/wrongInput" + std::to_string(fileCounter) + ".txt";
+		EXPECT_TRUE(FileCompare("_testOutput/metronetInputTestsError.txt", expectedFileName));
 		fileCounter++;
-		fileName = "_testInput/wrongInput" + std::to_string(fileCounter) + ".xml";
+		fileName = "_testInput/MetroNetInputTests/wrongInput" + std::to_string(fileCounter) + ".xml";
 	}
 	EXPECT_TRUE(fileCounter == 40);
 	
@@ -121,72 +129,84 @@ TEST_F(MetroNetInputTests, wrongInputNoCrash) {
 
 TEST_F(MetroNetInputTests, inconsistent) {
 	ASSERT_TRUE(DirectoryExists("_testInput"));
-	ASSERT_TRUE(DirectoryExists("_testInput/expected"));
+	ASSERT_TRUE(DirectoryExists("_testInput/MetroNetInputTests"));
+	ASSERT_TRUE(DirectoryExists("_testOutput"));
+	ASSERT_TRUE(DirectoryExists("_testOutput/MetroNetInputTestsExpected"));
 
 	std::ofstream ofile;
 	int fileCounter = 1;
-	std::string fileName = "_testInput/inconsistent" + std::to_string(fileCounter) + ".xml";
+	std::string fileName = "_testInput/MetroNetInputTests/inconsistent" + std::to_string(fileCounter) + ".xml";
 
 	while (FileExists(fileName)) {
 		SetUp();
-		ofile.open("_testInput/zzzError.txt");
+		ofile.open("_testOutput/metronetInputTestsError.txt");
 		EXPECT_DEATH(MetroNetImporter::importMetroNet(fileName.c_str(), ofile, *metronet), "MetroNet is inconsistent");
 		ofile.close();
-		std::string expectedFileName = "_testInput/expected/inconsistent" + std::to_string(fileCounter) + ".txt";
-		EXPECT_TRUE(FileCompare("_testInput/zzzError.txt", expectedFileName));
+		std::string expectedFileName = "_testOutput/MetroNetInputTestsExpected/inconsistent" + std::to_string(fileCounter) + ".txt";
+		EXPECT_TRUE(FileCompare("_testOutput/metronetInputTestsError.txt", expectedFileName));
 
 		fileCounter++;
-		fileName = "_testInput/inconsistent" + std::to_string(fileCounter) + ".xml";
+		fileName = "_testInput/MetroNetInputTests/inconsistent" + std::to_string(fileCounter) + ".xml";
 	}
 	EXPECT_TRUE(fileCounter == 7);
 }
 
 TEST_F(MetroNetInputTests, wrongInputCrash1) {
 	ASSERT_TRUE(DirectoryExists("_testInput"));
-	ASSERT_TRUE(DirectoryExists("_testInput/expected"));
+	ASSERT_TRUE(DirectoryExists("_testInput/MetroNetInputTests"));
+	ASSERT_TRUE(DirectoryExists("_testOutput"));
+	ASSERT_TRUE(DirectoryExists("_testOutput/MetroNetInputTestsExpected"));
 
 	std::ofstream ofile;
-	ofile.open("_testInput/zzzError.txt");
-	EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/crashInput1.xml", ofile, *metronet), "naam must not be empty");
+	ofile.open("_testOutput/metronetInputTestsError.txt");
+	EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/MetroNetInputTests/crashInput1.xml", ofile, *metronet), 
+		"naam must not be empty");
 	ofile.close();
-	std::string expectedFileName = "_testInput/expected/crash1.txt";
-	EXPECT_TRUE(FileCompare("_testInput/zzzError.txt", expectedFileName));
+	std::string expectedFileName = "_testOutput/MetroNetInputTestsExpected/crash1.txt";
+	EXPECT_TRUE(FileCompare("_testOutput/metronetInputTestsError.txt", expectedFileName));
 }
 
 TEST_F(MetroNetInputTests, wrongInputCrash2) {
 	ASSERT_TRUE(DirectoryExists("_testInput"));
-	ASSERT_TRUE(DirectoryExists("_testInput/expected"));
+	ASSERT_TRUE(DirectoryExists("_testInput/MetroNetInputTests"));
+	ASSERT_TRUE(DirectoryExists("_testOutput"));
+	ASSERT_TRUE(DirectoryExists("_testOutput/MetroNetInputTestsExpected"));
 
 	std::ofstream ofile;
-	ofile.open("_testInput/zzzError.txt");
-	EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/crashInput2.xml", ofile, *metronet), "BeginStation of newTram isn't empty");
+	ofile.open("_testOutput/metronetInputTestsError.txt");
+	EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/MetroNetInputTests/crashInput2.xml", ofile, *metronet), 
+		"BeginStation of newTram isn't empty");
 	ofile.close();
-	std::string expectedFileName = "_testInput/expected/crash2.txt";
-	EXPECT_TRUE(FileCompare("_testInput/zzzError.txt", expectedFileName));
+	std::string expectedFileName = "_testOutput/MetroNetInputTestsExpected/crash2.txt";
+	EXPECT_TRUE(FileCompare("_testOutput/metronetInputTestsError.txt", expectedFileName));
 }
 
 TEST_F(MetroNetInputTests, wrongInputCrash3) {
 	ASSERT_TRUE(DirectoryExists("_testInput"));
-	ASSERT_TRUE(DirectoryExists("_testInput/expected"));
+	ASSERT_TRUE(DirectoryExists("_testInput/MetroNetInputTests"));
+	ASSERT_TRUE(DirectoryExists("_testOutput"));
+	ASSERT_TRUE(DirectoryExists("_testOutput/MetroNetInputTestsExpected"));
 
 	std::ofstream ofile;
-	ofile.open("_testInput/zzzError.txt");
-	EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/crashInput3.xml", ofile, *metronet), 
+	ofile.open("_testOutput/metronetInputTestsError.txt");
+	EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/MetroNetInputTests/crashInput3.xml", ofile, *metronet), 
 	  "This MetroNet already contains a Tram with this voertuigNr");
 	ofile.close();
-	std::string expectedFileName = "_testInput/expected/crash3.txt";
-	EXPECT_TRUE(FileCompare("_testInput/zzzError.txt", expectedFileName));
+	std::string expectedFileName = "_testOutput/MetroNetInputTestsExpected/crash3.txt";
+	EXPECT_TRUE(FileCompare("_testOutput/metronetInputTestsError.txt", expectedFileName));
 }
 
 TEST_F(MetroNetInputTests, wrongInputCrash4) {
 	ASSERT_TRUE(DirectoryExists("_testInput"));
-	ASSERT_TRUE(DirectoryExists("_testInput/expected"));
+	ASSERT_TRUE(DirectoryExists("_testInput/MetroNetInputTests"));
+	ASSERT_TRUE(DirectoryExists("_testOutput"));
+	ASSERT_TRUE(DirectoryExists("_testOutput/MetroNetInputTestsExpected"));
 
 	std::ofstream ofile;
-	ofile.open("_testInput/zzzError.txt");
-	EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/crashInput4.xml", ofile, *metronet), 
+	ofile.open("_testOutput/metronetInputTestsError.txt");
+	EXPECT_DEATH(MetroNetImporter::importMetroNet("_testInput/MetroNetInputTests/crashInput4.xml", ofile, *metronet), 
 		"This MetroNet already contains a station with this name");
 	ofile.close();
-	std::string expectedFileName = "_testInput/expected/crash4.txt";
-	EXPECT_TRUE(FileCompare("_testInput/zzzError.txt", expectedFileName));
+	std::string expectedFileName = "_testOutput/MetroNetInputTestsExpected/crash4.txt";
+	EXPECT_TRUE(FileCompare("_testOutput/metronetInputTestsError.txt", expectedFileName));
 }
