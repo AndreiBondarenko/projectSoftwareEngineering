@@ -228,6 +228,7 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
     				<< elemName <<  "> ... </" << elemName << "> is empty." << std::endl;
     			endResult = PartialImport;
           deleted = true;
+          continue;
         }
         for(TiXmlNode* data = infoElem->FirstChild();
             data != NULL;

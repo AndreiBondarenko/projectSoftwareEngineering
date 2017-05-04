@@ -7,10 +7,10 @@
 #include "ClassTestsTram.cpp"
 #include "ClassTestsStation.cpp"
 #include "ClassTestsMetroNet.cpp"
-#include "ClassTestsPassagier.cpp"
+// #include "ClassTestsPassagier.cpp"
 #include "MetroNetInputTests.cpp"
-#include "PassagierInputTests.cpp"
-#include "MetroNetOutputTests.cpp"
+// #include "PassagierInputTests.cpp"
+// #include "MetroNetOutputTests.cpp"
 
 
 int main(int argc, char **argv) {

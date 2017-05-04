@@ -1,1 +1,1 @@
-XML PARTIAL IMPORT: Tram not created, Albatros can only stop in : Metrostation.
+XML PARTIAL IMPORT: <beginStation> ... </beginStation> is empty.
