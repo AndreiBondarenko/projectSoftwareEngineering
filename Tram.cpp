@@ -196,6 +196,11 @@ bool Tram::stoptInStation(MetroNet& metronet, std::string station) const {
 	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
 	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
 	REQUIRE(station != "", "station must not be empty");
+	if (currentStation == station) {
+		if (type == "Albatros" && metronet.getStation(station)->getType() != "Metrostation")
+			return false;
+		return true;
+	}
 	std::string nextStation = metronet.getStation(currentStation)->getVolgende(lijnNr);
 	while (nextStation != currentStation) {
 		if (nextStation == station) {
