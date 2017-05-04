@@ -200,7 +200,9 @@ void Station::movePassagiers(MetroNet& metronet, std::ostream& output) {
 		// opstappen
 		for (it = passagiers.begin(); it != passagiers.end(); ) {
 			Passagier* passagier = metronet.getPassagier(*it);
-			if (passagier->getBeginStation() == naam && tram->stoptInStation(metronet, passagier->getEindStation())) {
+			if (passagier->getBeginStation() == naam &&
+				tram->stoptInStation(metronet, passagier->getEindStation()) && 
+				tram->stoptInStation(metronet, passagier->getBeginStation())) {
 				if (tram->getAantalPassagiers() + passagier->getHoeveelheid() > tram->getZitplaatsen()) {
 					output << passagier->getNaam() << " (" << passagier->getHoeveelheid() <<
 						") kan niet meer op tram met voertuigNr " << tram->getVoertuigNr() << ", slechts " <<
