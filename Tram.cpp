@@ -239,9 +239,6 @@ void Tram::moveTram(MetroNet& metronet, std::ostream& output) {
 	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram");
 	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
 	Station* nextStation = metronet.getStation(metronet.getStation(currentStation)->getVolgende(lijnNr));
-	while (!stoptInStation(metronet, nextStation->getNaam())) {
-		nextStation = metronet.getStation(nextStation->getVolgende(lijnNr));
-	}
 	if (!nextStation->isTramInStation(lijnNr)) {
 		if (isReachable(metronet, nextStation->getNaam())) {
 			metronet.getStation(currentStation)->setTramInStation(lijnNr, voertuigNr, false);
