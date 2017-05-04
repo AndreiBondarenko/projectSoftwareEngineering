@@ -4,7 +4,7 @@ Spoor 1 :
 
 Spoor 2 :
 =C==M==E==F=
- T        T 
+ T     T    
 
 Spoor 3 :
 =E==G==H==I=

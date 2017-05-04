@@ -1,26 +1,26 @@
 1.
-Tram #1 op spoor 1 reed van station C naar station A.
+Tram #1 op spoor 1 reed van station C naar station D.
 Tram #2 op spoor 1 reed van station B naar station C.
 Tram #3 op spoor 2 wachtte in station F, want station C was bezet door Tram #4.
-Tram #4 op spoor 2 reed van station C naar station E.
-Tram #5 op spoor 4 reed van station K naar station F.
+Tram #4 op spoor 2 reed van station C naar station M.
+Tram #5 op spoor 4 reed van station K naar station J.
 Tram #6 op spoor 4 reed van station L naar station K.
 Tram #7 op spoor 3 reed van station H naar station I.
 Tram #8 op spoor 3 reed van station E naar station G.
-Groep1 (7) stapt op tram met voertuigNr 1
 Groep2 (10) stapt op tram met voertuigNr 2
 Groep5 (12) stapt op tram met voertuigNr 8
 Groep7 (10) stapt op tram met voertuigNr 7
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2.
-Tram #1 op spoor 1 wachtte in station A, want station C was bezet door Tram #2.
+Tram #1 op spoor 1 reed van station D naar station A.
 Tram #2 op spoor 1 reed van station C naar station D.
 Tram #3 op spoor 2 reed van station F naar station C.
-Tram #4 op spoor 2 reed van station E naar station F.
-Tram #5 op spoor 4 wachtte in station F, want station K was bezet door Tram #6.
+Tram #4 op spoor 2 reed van station M naar station E.
+Tram #5 op spoor 4 reed van station J naar station F.
 Tram #6 op spoor 4 reed van station K naar station J.
 Tram #7 op spoor 3 reed van station I naar station E.
 Tram #8 op spoor 3 reed van station G naar station H.
+Groep1 (7) stapt op tram met voertuigNr 1
 Groep4 (8) stapt op tram met voertuigNr 3
 Groep2 (10) stapt uit in station D
 Groep7 (10) stapt uit in station E
@@ -29,26 +29,26 @@ Groep6 (8) stapt op tram met voertuigNr 8
 Groep10 (10) stapt op tram met voertuigNr 6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 3.
-Tram #1 op spoor 1 reed van station A naar station C.
+Tram #1 op spoor 1 reed van station A naar station B.
 Tram #2 op spoor 1 reed van station D naar station A.
 Tram #3 op spoor 2 reed van station C naar station M.
-Tram #4 op spoor 2 reed van station F naar station C.
-Tram #5 op spoor 4 reed van station F naar station K.
+Tram #4 op spoor 2 reed van station E naar station F.
+Tram #5 op spoor 4 reed van station F naar station L.
 Tram #6 op spoor 4 reed van station J naar station F.
 Tram #7 op spoor 3 reed van station E naar station G.
 Tram #8 op spoor 3 reed van station H naar station I.
-Groep1 (7) stapt uit in station C
 Groep3 (9) stapt op tram met voertuigNr 3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 4.
-Tram #1 op spoor 1 wachtte in station C, want station A was bezet door Tram #2.
+Tram #1 op spoor 1 reed van station B naar station C.
 Tram #2 op spoor 1 reed van station A naar station B.
 Tram #3 op spoor 2 reed van station M naar station E.
-Tram #4 op spoor 2 wachtte in station C, want station E was bezet door Tram #3.
-Tram #5 op spoor 4 wachtte in station K, want station F was bezet door Tram #6.
+Tram #4 op spoor 2 reed van station F naar station C.
+Tram #5 op spoor 4 reed van station L naar station K.
 Tram #6 op spoor 4 reed van station F naar station L.
 Tram #7 op spoor 3 reed van station G naar station H.
 Tram #8 op spoor 3 reed van station I naar station E.
+Groep1 (7) stapt uit in station C
 Groep3 (9) stapt uit in station E
 Groep4 (8) stapt uit in station E
 Groep5 (12) stapt uit in station E
@@ -58,21 +58,21 @@ Groep10 (10) stapt uit in station L
 Groep9 (10) stapt op tram met voertuigNr 6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 5.
-Tram #1 op spoor 1 reed van station C naar station A.
+Tram #1 op spoor 1 reed van station C naar station D.
 Tram #2 op spoor 1 reed van station B naar station C.
 Tram #3 op spoor 2 reed van station E naar station F.
-Tram #4 op spoor 2 reed van station C naar station E.
-Tram #5 op spoor 4 reed van station K naar station F.
+Tram #4 op spoor 2 reed van station C naar station M.
+Tram #5 op spoor 4 reed van station K naar station J.
 Tram #6 op spoor 4 reed van station L naar station K.
 Tram #7 op spoor 3 reed van station H naar station I.
 Tram #8 op spoor 3 reed van station E naar station G.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 6.
-Tram #1 op spoor 1 wachtte in station A, want station C was bezet door Tram #2.
+Tram #1 op spoor 1 reed van station D naar station A.
 Tram #2 op spoor 1 reed van station C naar station D.
 Tram #3 op spoor 2 reed van station F naar station C.
-Tram #4 op spoor 2 reed van station E naar station F.
-Tram #5 op spoor 4 wachtte in station F, want station K was bezet door Tram #6.
+Tram #4 op spoor 2 reed van station M naar station E.
+Tram #5 op spoor 4 reed van station J naar station F.
 Tram #6 op spoor 4 reed van station K naar station J.
 Tram #7 op spoor 3 reed van station I naar station E.
 Tram #8 op spoor 3 reed van station G naar station H.

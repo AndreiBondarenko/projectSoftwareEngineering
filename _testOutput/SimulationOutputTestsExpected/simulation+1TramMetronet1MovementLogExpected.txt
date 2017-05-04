@@ -1,16 +1,20 @@
 1.
-Tram #1 op spoor 1 reed van station C naar station A.
+Tram #1 op spoor 1 reed van station C naar station D.
 Tram #2 op spoor 1 reed van station B naar station C.
-Groep1 (7) stapt op tram met voertuigNr 1
 Groep2 (10) stapt op tram met voertuigNr 2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2.
-Tram #1 op spoor 1 wachtte in station A, want station C was bezet door Tram #2.
+Tram #1 op spoor 1 reed van station D naar station A.
 Tram #2 op spoor 1 reed van station C naar station D.
+Groep1 (7) stapt op tram met voertuigNr 1
 Groep2 (10) stapt uit in station D
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 3.
-Tram #1 op spoor 1 reed van station A naar station C.
+Tram #1 op spoor 1 reed van station A naar station B.
 Tram #2 op spoor 1 reed van station D naar station A.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4.
+Tram #1 op spoor 1 reed van station B naar station C.
+Tram #2 op spoor 1 reed van station A naar station B.
 Groep1 (7) stapt uit in station C
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

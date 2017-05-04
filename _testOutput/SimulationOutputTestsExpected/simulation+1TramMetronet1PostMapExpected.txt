@@ -1,4 +1,4 @@
 Spoor 1 :
 =A==B==C==D=
- T     T    
+    T  T    
 
