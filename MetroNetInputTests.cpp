@@ -120,7 +120,7 @@ TEST_F(MetroNetInputTests, wrongInputNoCrash) {
 		fileCounter++;
 		fileName = "_testInput/MetroNetInputTests/wrongInput" + std::to_string(fileCounter) + ".xml";
 	}
-	EXPECT_TRUE(fileCounter == 40);
+	EXPECT_TRUE(fileCounter == 39);
 	
 }
 
