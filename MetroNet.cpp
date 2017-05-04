@@ -162,21 +162,21 @@ void MetroNet::moveAlleTrams(std::ostream& output) {
   ENSURE(isConsistent(), "moveAlleTrams made MetroNet inconsistent");
 }
 
-void MetroNet::moveAllePassengers(std::ostream& output, std::ostream& errors) {
+void MetroNet::moveAllePassengers(std::ostream& output) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAllePassengers");
   for (auto& station : alleStations) {
-		station.second->movePassagiers(*this, output, errors);
+		station.second->movePassagiers(*this, output);
   }
 }
 
-void MetroNet::runSimulation(std::ostream &output, std::ostream &errors) {
+void MetroNet::runSimulation(std::ostream &output) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling runSimulation");
 	bool simulationCompleted = false;
 	for (int i = 1; !simulationCompleted; i++) {
 		output << i << "." << std::endl;
     simulationCompleted = true;
-    moveAllePassengers(output, errors);
-		moveAlleTrams(output);
+	moveAlleTrams(output);
+    moveAllePassengers(output);
 		output << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
     for(auto mapIt = allePassagiers.begin(); mapIt != allePassagiers.end(); mapIt++) {
       if (!mapIt->second->isAangekomen()) {

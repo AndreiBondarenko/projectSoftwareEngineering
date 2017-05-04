@@ -1,0 +1,90 @@
+<PASSAGIER>
+	<naam>Groep1</naam>
+	<beginstation>A</beginstation>
+	<eindstation>C</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep2</naam>
+	<beginstation>C</beginstation>
+	<eindstation>D</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep3</naam>
+	<beginstation>A</beginstation>
+	<eindstation>C</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep4</naam>
+	<beginstation>C</beginstation>
+	<eindstation>D</eindstation>
+	<hoeveelheid>14</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep5</naam>
+	<beginstation>M</beginstation>
+	<eindstation>E</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep6</naam>
+	<beginstation>C</beginstation>
+	<eindstation>E</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep7</naam>
+	<beginstation>M</beginstation>
+	<eindstation>E</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep8</naam>
+	<beginstation>C</beginstation>
+	<eindstation>E</eindstation>
+	<hoeveelheid>20</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep9</naam>
+	<beginstation>G</beginstation>
+	<eindstation>E</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep10</naam>
+	<beginstation>H</beginstation>
+	<eindstation>E</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep11</naam>
+	<beginstation>I</beginstation>
+	<eindstation>E</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep12</naam>
+	<beginstation>E</beginstation>
+	<eindstation>H</eindstation>
+	<hoeveelheid>20</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep15</naam>
+	<beginstation>E</beginstation>
+	<eindstation>H</eindstation>
+	<hoeveelheid>20</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep13</naam>
+	<beginstation>L</beginstation>
+	<eindstation>F</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep14</naam>
+	<beginstation>J</beginstation>
+	<eindstation>L</eindstation>
+	<hoeveelheid>16</hoeveelheid>
+</PASSAGIER>

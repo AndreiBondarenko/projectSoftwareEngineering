@@ -170,7 +170,7 @@ void Station::removePassagier(std::string passagier) {
 	ENSURE(isInStation(passagier) == false, "removePassagier post condition failure");
 }
 
-void Station::movePassagiers(MetroNet& metronet, std::ostream& output, std::ostream& error) {
+void Station::movePassagiers(MetroNet& metronet, std::ostream& output) {
 	REQUIRE(properlyInitialized(), "Station wasn't initialized when calling movePassagiers");
 	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling movePassagiers");
 	std::set<int> tramsInStation = getTramInStation();
@@ -189,7 +189,7 @@ void Station::movePassagiers(MetroNet& metronet, std::ostream& output, std::ostr
 			passagier->markAangekomen();
 			output << passagierName << " (" << passagier->getHoeveelheid() << ") stapt uit in station " << naam << std::endl;
 			if (tram->getAantalPassagiers() - passagier->getHoeveelheid() < 0) {
-				error << passagierName << " (" << passagier->getHoeveelheid() << ") stapt uit in station " << naam << ", slechts "
+				output << passagierName << " (" << passagier->getHoeveelheid() << ") stapt uit in station " << naam << ", slechts "
 					<< tram->getAantalPassagiers() << " passagiers aan boord." << std::endl;
 				tram->setAantalPassagiers(0);
 			}
@@ -202,8 +202,8 @@ void Station::movePassagiers(MetroNet& metronet, std::ostream& output, std::ostr
 			Passagier* passagier = metronet.getPassagier(*it);
 			if (passagier->getBeginStation() == naam && tram->stoptInStation(metronet, passagier->getEindStation())) {
 				if (tram->getAantalPassagiers() + passagier->getHoeveelheid() > tram->getZitplaatsen()) {
-					error << passagier->getNaam() << " (" << passagier->getHoeveelheid() <<
-						") kan niet meer op tram met voertuigNr" << tram->getVoertuigNr() << ", slechts " <<
+					output << passagier->getNaam() << " (" << passagier->getHoeveelheid() <<
+						") kan niet meer op tram met voertuigNr " << tram->getVoertuigNr() << ", slechts " <<
 						tram->getZitplaatsen() - tram->getAantalPassagiers() << " vrije plaatsen." << std::endl;
 					++it;
 				}
@@ -212,7 +212,7 @@ void Station::movePassagiers(MetroNet& metronet, std::ostream& output, std::ostr
 					it = passagiers.erase(it);
 					tram->setAantalPassagiers(tram->getAantalPassagiers() + passagier->getHoeveelheid());
 					output << passagier->getNaam() << " (" << passagier->getHoeveelheid() <<
-						") stapt op tram met voertuigNr" << tram->getVoertuigNr() << std::endl;
+						") stapt op tram met voertuigNr " << tram->getVoertuigNr() << std::endl;
 				}
 			}
 			else {

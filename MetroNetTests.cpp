@@ -10,6 +10,7 @@
 #include "ClassTestsPassagier.cpp"
 #include "MetroNetInputTests.cpp"
 #include "PassagierInputTests.cpp"
+#include "MetroNetOutputTests.cpp"
 
 
 int main(int argc, char **argv) {

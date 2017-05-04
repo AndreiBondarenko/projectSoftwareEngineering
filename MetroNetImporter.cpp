@@ -167,7 +167,7 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
             }
             else {
               errStream << "XML PARTIAL IMPORT:" << std::endl << "Expected:" << std::endl << "<naam> ... </naam> or" << std::endl <<
-                "<type> ... </type> or" << std::endl << "<SPOOR> ... </SPOOR>" << 
+                "<type> ... </type> or" << std::endl << "<SPOOR> ... </SPOOR>" <<
 								std::endl << "and got: <" << elemName << "> ... </" << elemName << ">." << std::endl;
 							endResult = PartialImport;
 						}

@@ -1,0 +1,24 @@
+<PASSAGIER>
+	<naam>Groep1</naam>
+	<beginstation>A</beginstation>
+	<eindstation>C</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep2</naam>
+	<beginstation>C</beginstation>
+	<eindstation>D</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep3</naam>
+	<beginstation>M</beginstation>
+	<eindstation>E</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep4</naam>
+	<beginstation>C</beginstation>
+	<eindstation>E</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>

@@ -1,0 +1,8 @@
+Spoor 1 :
+=A==B==C==D=
+    T  T    
+
+Spoor 2 :
+=C==M==E==F=
+ T     T    
+

@@ -1,0 +1,102 @@
+1.
+Tram #2 op spoor 1 reed van station B naar station C.
+Tram #3 op spoor 2 reed van station F naar station C.
+Tram #6 op spoor 4 reed van station L naar station K.
+Tram #8 op spoor 3 reed van station E naar station G.
+Groep2 (10) stapt op tram met voertuigNr 2
+Groep4 (14) kan niet meer op tram met voertuigNr 2, slechts 10 vrije plaatsen.
+Groep6 (8) stapt op tram met voertuigNr 3
+Groep8 (20) kan niet meer op tram met voertuigNr 3, slechts 12 vrije plaatsen.
+Groep9 (15) stapt op tram met voertuigNr 8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.
+Tram #2 op spoor 1 reed van station C naar station D.
+Tram #3 op spoor 2 reed van station C naar station M.
+Tram #6 op spoor 4 reed van station K naar station J.
+Tram #8 op spoor 3 reed van station G naar station H.
+Groep2 (10) stapt uit in station D
+Groep10 (15) stapt op tram met voertuigNr 8
+Groep14 (16) stapt op tram met voertuigNr 6
+Groep5 (12) stapt op tram met voertuigNr 3
+Groep7 (9) kan niet meer op tram met voertuigNr 3, slechts 0 vrije plaatsen.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3.
+Tram #2 op spoor 1 reed van station D naar station A.
+Tram #3 op spoor 2 reed van station M naar station E.
+Tram #6 op spoor 4 reed van station J naar station F.
+Tram #8 op spoor 3 reed van station H naar station I.
+Groep1 (7) stapt op tram met voertuigNr 2
+Groep3 (9) stapt op tram met voertuigNr 2
+Groep5 (12) stapt uit in station E
+Groep6 (8) stapt uit in station E
+Groep11 (10) kan niet meer op tram met voertuigNr 8, slechts 0 vrije plaatsen.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4.
+Tram #2 op spoor 1 reed van station A naar station B.
+Tram #3 op spoor 2 reed van station E naar station F.
+Tram #6 op spoor 4 reed van station F naar station L.
+Tram #8 op spoor 3 reed van station I naar station E.
+Groep10 (15) stapt uit in station E
+Groep9 (15) stapt uit in station E
+Groep12 (20) stapt op tram met voertuigNr 8
+Groep15 (20) kan niet meer op tram met voertuigNr 8, slechts 10 vrije plaatsen.
+Groep14 (16) stapt uit in station L
+Groep13 (10) stapt op tram met voertuigNr 6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5.
+Tram #2 op spoor 1 reed van station B naar station C.
+Tram #3 op spoor 2 reed van station F naar station C.
+Tram #6 op spoor 4 reed van station L naar station K.
+Tram #8 op spoor 3 reed van station E naar station G.
+Groep1 (7) stapt uit in station C
+Groep3 (9) stapt uit in station C
+Groep4 (14) stapt op tram met voertuigNr 2
+Groep8 (20) stapt op tram met voertuigNr 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6.
+Tram #2 op spoor 1 reed van station C naar station D.
+Tram #3 op spoor 2 reed van station C naar station M.
+Tram #6 op spoor 4 reed van station K naar station J.
+Tram #8 op spoor 3 reed van station G naar station H.
+Groep4 (14) stapt uit in station D
+Groep12 (20) stapt uit in station H
+Groep7 (9) kan niet meer op tram met voertuigNr 3, slechts 0 vrije plaatsen.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7.
+Tram #2 op spoor 1 reed van station D naar station A.
+Tram #3 op spoor 2 reed van station M naar station E.
+Tram #6 op spoor 4 reed van station J naar station F.
+Tram #8 op spoor 3 reed van station H naar station I.
+Groep8 (20) stapt uit in station E
+Groep13 (10) stapt uit in station F
+Groep11 (10) stapt op tram met voertuigNr 8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+8.
+Tram #2 op spoor 1 reed van station A naar station B.
+Tram #3 op spoor 2 reed van station E naar station F.
+Tram #6 op spoor 4 reed van station F naar station L.
+Tram #8 op spoor 3 reed van station I naar station E.
+Groep11 (10) stapt uit in station E
+Groep15 (20) stapt op tram met voertuigNr 8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.
+Tram #2 op spoor 1 reed van station B naar station C.
+Tram #3 op spoor 2 reed van station F naar station C.
+Tram #6 op spoor 4 reed van station L naar station K.
+Tram #8 op spoor 3 reed van station E naar station G.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10.
+Tram #2 op spoor 1 reed van station C naar station D.
+Tram #3 op spoor 2 reed van station C naar station M.
+Tram #6 op spoor 4 reed van station K naar station J.
+Tram #8 op spoor 3 reed van station G naar station H.
+Groep15 (20) stapt uit in station H
+Groep7 (9) stapt op tram met voertuigNr 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+11.
+Tram #2 op spoor 1 reed van station D naar station A.
+Tram #3 op spoor 2 reed van station M naar station E.
+Tram #6 op spoor 4 reed van station J naar station F.
+Tram #8 op spoor 3 reed van station H naar station I.
+Groep7 (9) stapt uit in station E
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

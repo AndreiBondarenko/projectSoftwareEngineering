@@ -19,7 +19,7 @@ private:
   std::string beginStation;
   std::string currentStation;
   std::set<std::string> passagiers;
-  int aantalPassagiers;
+  int aantalPassagiers = 0;
   int omzet = 0;
   const int ticketPrijs = 2;
 public:

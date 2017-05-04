@@ -134,7 +134,7 @@ public:
 	\n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling movePassagiers");
 	\n ENSURE(metronet.isConsistent(), "movePassagiers made MetroNet inconsistent");
 	*/
-	void movePassagiers(MetroNet& metronet, std::ostream& output, std::ostream& error);
+	void movePassagiers(MetroNet& metronet, std::ostream& output);
 
 private:
 	/**
