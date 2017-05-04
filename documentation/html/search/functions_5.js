@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tram',['Tram',['../class_tram.html#aad83b2e7e79d57528691bf317ab0e1ef',1,'Tram::Tram()'],['../class_tram.html#a2c6e0319cec185edb72cc477b88c6206',1,'Tram::Tram(const int lijnNr, const int zitplaatsen, const std::string &amp;beginStation, const int snelheid)']]]
+  ['passagier',['Passagier',['../class_passagier.html#a1a2bc82f5780448cd2a9a47d08cc824f',1,'Passagier::Passagier()'],['../class_passagier.html#a7f78c9d68fcb6ff2a9aa6323a1237e2a',1,'Passagier::Passagier(std::string naam, std::string beginStation, std::string eindStation, int hoeveelheid)']]]
 ];

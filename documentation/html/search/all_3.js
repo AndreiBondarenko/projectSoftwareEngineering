@@ -1,12 +1,22 @@
 var searchData=
 [
-  ['metronet',['MetroNet',['../class_metro_net.html',1,'MetroNet'],['../class_metro_net.html#ac412bda72e2e95d64ddce9f860acdf92',1,'MetroNet::MetroNet()']]],
-  ['metronetclasstest',['MetroNetClassTest',['../class_metro_net_class_test.html',1,'']]],
-  ['metronetexporttest',['MetroNetExportTest',['../class_metro_net_export_test.html',1,'']]],
-  ['metronetimporter',['MetroNetImporter',['../class_metro_net_importer.html',1,'']]],
-  ['metronetinputtests',['MetroNetInputTests',['../class_metro_net_input_tests.html',1,'']]],
-  ['moveallepassengers',['moveAllePassengers',['../class_metro_net.html#a56d0e4a961c5f3d4da235d0e15312b2e',1,'MetroNet']]],
-  ['movealletrams',['moveAlleTrams',['../class_metro_net.html#a43b7e0167bc86727a6a863f3213a77e9',1,'MetroNet']]],
-  ['movepassengers',['movePassengers',['../class_metro_net.html#a15cca106d51e0928512e282039497524',1,'MetroNet']]],
-  ['movetram',['moveTram',['../class_metro_net.html#a874191fcb2c270d57f7abb1b268e714d',1,'MetroNet']]]
+  ['getaantalpassagiers',['getAantalPassagiers',['../class_tram.html#a0326abfc7705c890d7b7dbca87ff08bb',1,'Tram']]],
+  ['getbeginstation',['getBeginStation',['../class_passagier.html#a1e074e8ac56856c8f8c858d91abb5d0d',1,'Passagier::getBeginStation()'],['../class_tram.html#ae4a7cf6313452140ed54d219d1f6afba',1,'Tram::getBeginStation()']]],
+  ['getcurrentstation',['getCurrentStation',['../class_tram.html#aa8cd4cb2eeae4b1ca73e891cd8a63b91',1,'Tram']]],
+  ['geteindstation',['getEindStation',['../class_passagier.html#a8792a22db51141ebea6712ff88ceb2a3',1,'Passagier']]],
+  ['gethoeveelheid',['getHoeveelheid',['../class_passagier.html#aee09f1854b6f4f2f95516b29d124df99',1,'Passagier']]],
+  ['getlijnnr',['getLijnNr',['../class_tram.html#ad2404fa7837b41287feab05f6a1b52bf',1,'Tram']]],
+  ['getnaam',['getNaam',['../class_passagier.html#ac5ac22827e98cf8bf70c8a66c473ebbd',1,'Passagier::getNaam()'],['../class_station.html#aea6c31c39a5e1eb4c30337e7ce489e69',1,'Station::getNaam()']]],
+  ['getomzet',['getOmzet',['../class_tram.html#abcdc393787aa1d23669f0564521207b6',1,'Tram']]],
+  ['getpassagier',['getPassagier',['../class_metro_net.html#a4ad953a0dda4f33551945460249ba8d8',1,'MetroNet']]],
+  ['getsnelheid',['getSnelheid',['../class_tram.html#aa8bcd980469801cb8524f170006f666c',1,'Tram']]],
+  ['getsporen',['getSporen',['../class_station.html#a60fa96894d67fb517eeaa4605fa6d480',1,'Station']]],
+  ['getstation',['getStation',['../class_metro_net.html#ad261828021880b64f3da045db24fc55e',1,'MetroNet']]],
+  ['gettram',['getTram',['../class_metro_net.html#ad0ba9a3bc5867a334d5e8d6e4e6060d8',1,'MetroNet']]],
+  ['gettraminstation',['getTramInStation',['../class_station.html#a3b7ce860cb7c857d05fd2b78f759ee40',1,'Station']]],
+  ['gettype',['getType',['../class_station.html#a230fd67de82b464b0c9c41ce53954c0f',1,'Station::getType()'],['../class_tram.html#a2e75ee5e2cbc43da2862334e6ff148e1',1,'Tram::getType()']]],
+  ['getvoertuignr',['getVoertuigNr',['../class_tram.html#a412e29599e83015c030b44419d183c1e',1,'Tram']]],
+  ['getvolgende',['getVolgende',['../class_station.html#a68f6d062b37f0a834aa13cb7dc238b39',1,'Station']]],
+  ['getvorige',['getVorige',['../class_station.html#a771cd7fac65b48ec45c1aa24f24921c1',1,'Station']]],
+  ['getzitplaatsen',['getZitplaatsen',['../class_tram.html#abcb1ce0d10e394fce8a99b460e5104de',1,'Tram']]]
 ];

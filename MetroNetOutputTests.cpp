@@ -274,3 +274,69 @@ TEST_F(MetroNetOutputTest, SimulationTramsOverloaded) {
 	}
     EXPECT_TRUE(fileCounter-1 == 3);
 }
+
+TEST_F(MetroNetOutputTest, SimulationInfLoop) {
+
+	std::ofstream errors;
+    std::ofstream initOverview;
+    std::ofstream initMap;
+    std::ofstream postOverview;
+    std::ofstream postMap;
+    std::ofstream movement;
+    int fileCounter = 1;
+    std::string fileName1 = "_testInput/SimulationOutputTests/simulationInfLoopMetronet" + std::to_string(fileCounter) + ".xml";
+    std::string fileName2 = "_testInput/SimulationOutputTests/simulationInfLoopPassagiers" + std::to_string(fileCounter) + ".xml";
+
+    while (FileExists(fileName1) && FileExists(fileName2)) {
+		SetUp();
+		errors.open("_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "ErrorLog.txt");
+		initOverview.open("_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "InitOverview.txt");
+		initMap.open("_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "InitMap.txt");
+		postOverview.open("_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "PostOverview.txt");
+		postMap.open("_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "PostMap.txt");
+		movement.open("_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "MovementLog.txt");
+        MetroNetImporter::importMetroNet(fileName1.c_str(), errors, *metronet);
+		MetroNetImporter::importPassengers(fileName2.c_str(), errors, *metronet);
+		metronet->writeToOutputStream(initOverview);
+		metronet->drawToOutputStream(initMap);
+		metronet->runSimulation(movement);
+		metronet->writeToOutputStream(postOverview);
+		metronet->drawToOutputStream(postMap);
+        errors.close();
+        initOverview.close();
+        initMap.close();
+        postOverview.close();
+        postMap.close();
+        movement.close();
+
+		EXPECT_TRUE(FileCompare(
+			"_testOutput/SimulationOutputTestsExpected/simulationInfLoopMetronet" + std::to_string(fileCounter) + "ErrorLogExpected.txt",
+			"_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "ErrorLog.txt")
+		);
+		EXPECT_TRUE(FileCompare(
+			"_testOutput/SimulationOutputTestsExpected/simulationInfLoopMetronet" + std::to_string(fileCounter) + "InitOverviewExpected.txt",
+			"_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "InitOverview.txt")
+		);
+		EXPECT_TRUE(FileCompare(
+			"_testOutput/SimulationOutputTestsExpected/simulationInfLoopMetronet" + std::to_string(fileCounter) + "InitMapExpected.txt",
+			"_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "InitMap.txt")
+		);
+		EXPECT_TRUE(FileCompare(
+			"_testOutput/SimulationOutputTestsExpected/simulationInfLoopMetronet" + std::to_string(fileCounter) + "PostOverviewExpected.txt",
+			"_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "PostOverview.txt")
+		);
+		EXPECT_TRUE(FileCompare(
+			"_testOutput/SimulationOutputTestsExpected/simulationInfLoopMetronet" + std::to_string(fileCounter) + "PostMapExpected.txt",
+			"_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "PostMap.txt")
+		);
+		EXPECT_TRUE(FileCompare(
+			"_testOutput/SimulationOutputTestsExpected/simulationInfLoopMetronet" + std::to_string(fileCounter) + "MovementLogExpected.txt",
+			"_testOutput/simulationInfLoopMetronet" + std::to_string(fileCounter) + "MovementLog.txt")
+		);
+
+        fileCounter++;
+		fileName1 = "_testInput/SimulationOutputTests/simulationInfLoopMetronet" + std::to_string(fileCounter) + ".xml";
+	    fileName2 = "_testInput/SimulationOutputTests/simulationInfLoopPassagiers" + std::to_string(fileCounter) + ".xml";
+	}
+    EXPECT_TRUE(fileCounter-1 == 1);
+}

@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="UA-logo-3-700x300.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Software Engineering
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">Simulation of a metro network</div>
   </td>
@@ -94,6 +94,8 @@ $(document).ready(function(){initNavTree('class_metro_net_importer.html','');});
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a817edcdd0d1286b0076d67083dca2e9e"><td class="memItemLeft" align="right" valign="top">static SuccessEnum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net_importer.html#a817edcdd0d1286b0076d67083dca2e9e">importMetroNet</a> (const char *inputfilename, std::ostream &amp;errStream, <a class="el" href="class_metro_net.html">MetroNet</a> &amp;metronet)</td></tr>
 <tr class="separator:a817edcdd0d1286b0076d67083dca2e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb7990308f3cf821b30443853b7e7265"><td class="memItemLeft" align="right" valign="top">static SuccessEnum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net_importer.html#abb7990308f3cf821b30443853b7e7265">importPassengers</a> (const char *inputfilename, std::ostream &amp;errStream, <a class="el" href="class_metro_net.html">MetroNet</a> &amp;metronet)</td></tr>
+<tr class="separator:abb7990308f3cf821b30443853b7e7265"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a817edcdd0d1286b0076d67083dca2e9e"></a>
@@ -137,7 +139,52 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p><br />
  REQUIRE(metronet.properlyInitialized(), "metronet wasn't initialized when passed to MetroNetImporter::importMetroNet"); <br />
- ENSURE(result-&gt;isConsistent(), "MetroNet is not consistent"); </p>
+ ENSURE(metronet.isConsistent(), "MetroNet is not consistent"); </p>
+
+</div>
+</div>
+<a id="abb7990308f3cf821b30443853b7e7265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb7990308f3cf821b30443853b7e7265">&#9670;&nbsp;</a></span>importPassengers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SuccessEnum MetroNetImporter::importPassengers </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>inputfilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>errStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_metro_net.html">MetroNet</a> &amp;&#160;</td>
+          <td class="paramname"><em>metronet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(metronet.properlyInitialized(), "metronet wasn't initialized when passed to MetroNetImporter::importPassengers"); <br />
+ ENSURE(metronet.isConsistent(), "MetroNet is not consistent"); </p>
 
 </div>
 </div>

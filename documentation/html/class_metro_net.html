@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="UA-logo-3-700x300.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Software Engineering
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">Simulation of a metro network</div>
   </td>
@@ -97,34 +97,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad7b306379f1788b660df08b9c6a0882f"><td class="memItemLeft" align="right" valign="top"><a id="ad7b306379f1788b660df08b9c6a0882f"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</b> () const</td></tr>
 <tr class="separator:ad7b306379f1788b660df08b9c6a0882f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6043975099a0257fd3a96ce67ebf12a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a6043975099a0257fd3a96ce67ebf12a8">isConsistent</a> () const</td></tr>
-<tr class="separator:a6043975099a0257fd3a96ce67ebf12a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1a6ded0af5b8c3697d638b97934087f"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="class_station.html">Station</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#ae1a6ded0af5b8c3697d638b97934087f">getAlleStations</a> ()</td></tr>
-<tr class="separator:ae1a6ded0af5b8c3697d638b97934087f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6147dc8838b5d5c5c825a908e15d04bc"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, <a class="el" href="class_tram.html">Tram</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a6147dc8838b5d5c5c825a908e15d04bc">getAlleTrams</a> ()</td></tr>
-<tr class="separator:a6147dc8838b5d5c5c825a908e15d04bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dc6397560d74d475e3536c211eacd5c"><td class="memItemLeft" align="right" valign="top">std::set&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a5dc6397560d74d475e3536c211eacd5c">getAlleSporen</a> ()</td></tr>
-<tr class="separator:a5dc6397560d74d475e3536c211eacd5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab72fb5bccef975884f0ee09cd0c35b28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#ab72fb5bccef975884f0ee09cd0c35b28">setAlleStations</a> (std::map&lt; std::string, <a class="el" href="class_station.html">Station</a> *&gt; &amp;newAlleStations)</td></tr>
-<tr class="separator:ab72fb5bccef975884f0ee09cd0c35b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a737c6f063b9719cedb3eec9bd6c66dde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a737c6f063b9719cedb3eec9bd6c66dde">setAlleTrams</a> (std::map&lt; int, <a class="el" href="class_tram.html">Tram</a> *&gt; &amp;newAlleTrams)</td></tr>
-<tr class="separator:a737c6f063b9719cedb3eec9bd6c66dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdcabc401c5389ed80315ba5f4501974"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#afdcabc401c5389ed80315ba5f4501974">setAlleSporen</a> (std::set&lt; int &gt; &amp;newAlleSporen)</td></tr>
-<tr class="separator:afdcabc401c5389ed80315ba5f4501974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c35b41e3a86ddd00d973e0dc7f3b3aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a0c35b41e3a86ddd00d973e0dc7f3b3aa">isConsistent</a> ()</td></tr>
+<tr class="separator:a0c35b41e3a86ddd00d973e0dc7f3b3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad261828021880b64f3da045db24fc55e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_station.html">Station</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#ad261828021880b64f3da045db24fc55e">getStation</a> (std::string naam)</td></tr>
+<tr class="separator:ad261828021880b64f3da045db24fc55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0ba9a3bc5867a334d5e8d6e4e6060d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tram.html">Tram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#ad0ba9a3bc5867a334d5e8d6e4e6060d8">getTram</a> (int voertuigNr)</td></tr>
+<tr class="separator:ad0ba9a3bc5867a334d5e8d6e4e6060d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ad953a0dda4f33551945460249ba8d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_passagier.html">Passagier</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a4ad953a0dda4f33551945460249ba8d8">getPassagier</a> (std::string naam)</td></tr>
+<tr class="separator:a4ad953a0dda4f33551945460249ba8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87bfd5b255b01f93fdb440a1ac16c6e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a87bfd5b255b01f93fdb440a1ac16c6e2">addStation</a> (<a class="el" href="class_station.html">Station</a> *newStation)</td></tr>
 <tr class="separator:a87bfd5b255b01f93fdb440a1ac16c6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5441680029d64824e9e8a184bbbe295e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a5441680029d64824e9e8a184bbbe295e">addTram</a> (<a class="el" href="class_tram.html">Tram</a> *newTram)</td></tr>
 <tr class="separator:a5441680029d64824e9e8a184bbbe295e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a874191fcb2c270d57f7abb1b268e714d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a874191fcb2c270d57f7abb1b268e714d">moveTram</a> (std::string station, int spoor, std::ostream &amp;output)</td></tr>
-<tr class="separator:a874191fcb2c270d57f7abb1b268e714d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb913802d064e7851b92523e1ebcf734"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#afb913802d064e7851b92523e1ebcf734">addPassagier</a> (<a class="el" href="class_passagier.html">Passagier</a> *newPassagier)</td></tr>
+<tr class="separator:afb913802d064e7851b92523e1ebcf734"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b7e0167bc86727a6a863f3213a77e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a43b7e0167bc86727a6a863f3213a77e9">moveAlleTrams</a> (std::ostream &amp;output)</td></tr>
 <tr class="separator:a43b7e0167bc86727a6a863f3213a77e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15cca106d51e0928512e282039497524"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a15cca106d51e0928512e282039497524">movePassengers</a> (std::string station, int spoor, std::ostream &amp;output, std::ostream &amp;errors)</td></tr>
-<tr class="separator:a15cca106d51e0928512e282039497524"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56d0e4a961c5f3d4da235d0e15312b2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a56d0e4a961c5f3d4da235d0e15312b2e">moveAllePassengers</a> (std::ostream &amp;output, std::ostream &amp;errors)</td></tr>
-<tr class="separator:a56d0e4a961c5f3d4da235d0e15312b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5766f383c6bce0568ba4d5bf528cd32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#aa5766f383c6bce0568ba4d5bf528cd32">moveAllePassengers</a> (std::ostream &amp;output)</td></tr>
+<tr class="separator:aa5766f383c6bce0568ba4d5bf528cd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72094d816ae5cf6424b727db3196e9e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a72094d816ae5cf6424b727db3196e9e1">runSimulation</a> (std::ostream &amp;output)</td></tr>
+<tr class="separator:a72094d816ae5cf6424b727db3196e9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21ef44359ee14acc506e2a6d5322a35a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#a21ef44359ee14acc506e2a6d5322a35a">writeToOutputStream</a> (std::ostream &amp;output)</td></tr>
 <tr class="separator:a21ef44359ee14acc506e2a6d5322a35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad43acb4a2bd08f134058c5fef90cefdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_metro_net.html#ad43acb4a2bd08f134058c5fef90cefdd">drawToOutputStream</a> (std::ostream &amp;output)</td></tr>
+<tr class="separator:ad43acb4a2bd08f134058c5fef90cefdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39710918816c671344b861d217cf4603"><td class="memItemLeft" align="right" valign="top"><a id="a39710918816c671344b861d217cf4603"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>writeToASCII</b> ()</td></tr>
 <tr class="separator:a39710918816c671344b861d217cf4603"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,6 +146,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>writeToASCII</b> ()</
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="afb913802d064e7851b92523e1ebcf734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb913802d064e7851b92523e1ebcf734">&#9670;&nbsp;</a></span>addPassagier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MetroNet::addPassagier </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_passagier.html">Passagier</a> *&#160;</td>
+          <td class="paramname"><em>newPassagier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addPassagier"); <br />
+ REQUIRE(getPassagier(newPassagier-&gt;getNaam()) == nullptr, "This MetroNet allready contains a passenger with this name"); <br />
+ ENSURE(getPassagier(newPassagier-&gt;getNaam) == newPassagier, "addPassagier post condition failure"); </p>
+
+</div>
+</div>
 <a id="a87bfd5b255b01f93fdb440a1ac16c6e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a87bfd5b255b01f93fdb440a1ac16c6e2">&#9670;&nbsp;</a></span>addStation()</h2>
 
@@ -167,8 +185,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>writeToASCII</b> ()</
 </div><div class="memdoc">
 <p><br />
  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addStation"); <br />
- REQUIRE(<a class="el" href="class_metro_net.html#ae1a6ded0af5b8c3697d638b97934087f">getAlleStations()</a>-&gt;count(newStation-&gt;getNaam()) == 0, "This MetroNet already contains a station with this name"); <br />
- ENSURE(<a class="el" href="class_metro_net.html#ae1a6ded0af5b8c3697d638b97934087f">getAlleStations()</a>-&gt;at(newStation-&gt;getNaam()) == newStation, "addStation post condition failure"); </p>
+ REQUIRE(getStation(newStation-&gt;getNaam()) == nullptr, "This MetroNet already contains a station with this name"); <br />
+ ENSURE(getStation(newStation-&gt;getNaam()) == newStation, "addStation post condition failure"); </p>
 
 </div>
 </div>
@@ -189,71 +207,98 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>writeToASCII</b> ()</
 </div><div class="memdoc">
 <p><br />
  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling addTram"); <br />
- REQUIRE(<a class="el" href="class_metro_net.html#a6147dc8838b5d5c5c825a908e15d04bc">getAlleTrams()</a>-&gt;count(newTram-&gt;getLijnNr()) == 0, "This MetroNet already contains a Tram with this lijnNr"); <br />
- ENSURE(<a class="el" href="class_metro_net.html#a6147dc8838b5d5c5c825a908e15d04bc">getAlleTrams()</a>-&gt;at(newTram-&gt;getLijnNr()) == newTram, "addTram post condition failure"); <br />
- ENSURE(<a class="el" href="class_metro_net.html#ae1a6ded0af5b8c3697d638b97934087f">getAlleStations()</a>-&gt;at(newTram-&gt;getBeginStation())-&gt;isTramInStation(), "addTram post condition failure"); </p>
+ REQUIRE(getTram(newTram-&gt;voertuigNr()) == nullptr, "This MetroNet already contains a Tram with this voertuigNr"); <br />
+ REQUIRE(getStation(newTram-&gt;getBeginStation())-&gt;isTramInStation(newTram-&gt;getLijnNr()) == false, "BeginStation of newTram isn't empty"); <br />
+ ENSURE(getTram(newTram-&gt;voertuigNr()) == newTram, "addTram post condition failure"); <br />
+ ENSURE(getStation(newTram-&gt;getBeginStation())-&gt;isTramInStation(), "addTram post condition failure"); </p>
 
 </div>
 </div>
-<a id="a5dc6397560d74d475e3536c211eacd5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5dc6397560d74d475e3536c211eacd5c">&#9670;&nbsp;</a></span>getAlleSporen()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::set&lt; int &gt; * MetroNet::getAlleSporen </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><br />
- REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleSporen"); </p>
-
-</div>
-</div>
-<a id="ae1a6ded0af5b8c3697d638b97934087f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1a6ded0af5b8c3697d638b97934087f">&#9670;&nbsp;</a></span>getAlleStations()</h2>
+<a id="ad43acb4a2bd08f134058c5fef90cefdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad43acb4a2bd08f134058c5fef90cefdd">&#9670;&nbsp;</a></span>drawToOutputStream()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, <a class="el" href="class_station.html">Station</a> * &gt; * MetroNet::getAlleStations </td>
+          <td class="memname">void MetroNet::drawToOutputStream </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p><br />
- REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleStations"); </p>
+ REQUIRE(<a class="el" href="class_metro_net.html#a0c35b41e3a86ddd00d973e0dc7f3b3aa">isConsistent()</a>, "MetroNet is not consistent"); </p>
 
 </div>
 </div>
-<a id="a6147dc8838b5d5c5c825a908e15d04bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6147dc8838b5d5c5c825a908e15d04bc">&#9670;&nbsp;</a></span>getAlleTrams()</h2>
+<a id="a4ad953a0dda4f33551945460249ba8d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ad953a0dda4f33551945460249ba8d8">&#9670;&nbsp;</a></span>getPassagier()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; int, <a class="el" href="class_tram.html">Tram</a> * &gt; * MetroNet::getAlleTrams </td>
+          <td class="memname"><a class="el" href="class_passagier.html">Passagier</a> * MetroNet::getPassagier </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>naam</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p><br />
- REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleTrams"); </p>
+ REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getPassagier"); <br />
+ REQUIRE(naam != "", "naam must not be empty"); </p>
 
 </div>
 </div>
-<a id="a6043975099a0257fd3a96ce67ebf12a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6043975099a0257fd3a96ce67ebf12a8">&#9670;&nbsp;</a></span>isConsistent()</h2>
+<a id="ad261828021880b64f3da045db24fc55e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad261828021880b64f3da045db24fc55e">&#9670;&nbsp;</a></span>getStation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_station.html">Station</a> * MetroNet::getStation </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>naam</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleStations"); <br />
+ REQUIRE(naam != "", "naam must not be empty"); </p>
+
+</div>
+</div>
+<a id="ad0ba9a3bc5867a334d5e8d6e4e6060d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ba9a3bc5867a334d5e8d6e4e6060d8">&#9670;&nbsp;</a></span>getTram()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_tram.html">Tram</a> * MetroNet::getTram </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>voertuigNr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling getAlleTrams"); <br />
+ REQUIRE(voertuigNr &gt;= 0, "voertuigNr must be greater or equal to zero"); </p>
+
+</div>
+</div>
+<a id="a0c35b41e3a86ddd00d973e0dc7f3b3aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c35b41e3a86ddd00d973e0dc7f3b3aa">&#9670;&nbsp;</a></span>isConsistent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,7 +307,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>writeToASCII</b> ()</
           <td class="memname">bool MetroNet::isConsistent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -271,8 +316,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>writeToASCII</b> ()</
 
 </div>
 </div>
-<a id="a56d0e4a961c5f3d4da235d0e15312b2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56d0e4a961c5f3d4da235d0e15312b2e">&#9670;&nbsp;</a></span>moveAllePassengers()</h2>
+<a id="aa5766f383c6bce0568ba4d5bf528cd32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5766f383c6bce0568ba4d5bf528cd32">&#9670;&nbsp;</a></span>moveAllePassengers()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,18 +326,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>writeToASCII</b> ()</
           <td class="memname">void MetroNet::moveAllePassengers </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>output</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>output</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>errors</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -318,157 +353,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>writeToASCII</b> ()</
 </div><div class="memdoc">
 <p><br />
  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveAlleTrams"); <br />
- ENSURE(<a class="el" href="class_metro_net.html#a6043975099a0257fd3a96ce67ebf12a8">isConsistent()</a>, "moveAlleTrams made MetroNet inconsistent"); </p>
+ ENSURE(<a class="el" href="class_metro_net.html#a0c35b41e3a86ddd00d973e0dc7f3b3aa">isConsistent()</a>, "moveAlleTrams made MetroNet inconsistent"); </p>
 
 </div>
 </div>
-<a id="a15cca106d51e0928512e282039497524"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15cca106d51e0928512e282039497524">&#9670;&nbsp;</a></span>movePassengers()</h2>
+<a id="a72094d816ae5cf6424b727db3196e9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72094d816ae5cf6424b727db3196e9e1">&#9670;&nbsp;</a></span>runSimulation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void MetroNet::movePassengers </td>
+          <td class="memname">void MetroNet::runSimulation </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>station</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>spoor</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>output</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>errors</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><br />
- REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling movePassengers"); <br />
- REQUIRE(spoor &gt;= 0 , "spoor must be bigger or equal to zero"); <br />
- REQUIRE(station != "", "station must not be empty"); <br />
- REQUIRE(<a class="el" href="class_metro_net.html#a6147dc8838b5d5c5c825a908e15d04bc">getAlleTrams()</a>-&gt;at(spoor)-&gt;getCurrentStation() == station, "Tram not in given station"); <br />
- REQUIRE(<a class="el" href="class_metro_net.html#ae1a6ded0af5b8c3697d638b97934087f">getAlleStations()</a>-&gt;at(station)-&gt;isTramInStation(), "Station is empty"); </p>
-
-</div>
-</div>
-<a id="a874191fcb2c270d57f7abb1b268e714d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a874191fcb2c270d57f7abb1b268e714d">&#9670;&nbsp;</a></span>moveTram()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MetroNet::moveTram </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>station</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>spoor</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>output</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><br />
- REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling moveTram"); <br />
- REQUIRE(spoor &gt;= 0 , "spoor must be bigger or equal to zero"); <br />
- REQUIRE(station != "", "station must not be empty"); <br />
- ENSURE(<a class="el" href="class_metro_net.html#ae1a6ded0af5b8c3697d638b97934087f">getAlleStations()</a>-&gt;at(station)-&gt;getTramInStation() != spoor, "moveTram post condition failure"); <br />
- ENSURE(station == getTrams()-&gt;at(spoor)-&gt;getCurrentStation(), "moveTram post condition failure"); <br />
- ENSURE(<a class="el" href="class_metro_net.html#a6043975099a0257fd3a96ce67ebf12a8">isConsistent()</a>, "moveTram made MetroNet inconsistent"); </p>
-
-</div>
-</div>
-<a id="afdcabc401c5389ed80315ba5f4501974"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdcabc401c5389ed80315ba5f4501974">&#9670;&nbsp;</a></span>setAlleSporen()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MetroNet::setAlleSporen </td>
-          <td>(</td>
-          <td class="paramtype">std::set&lt; int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>newAlleSporen</em></td><td>)</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p><br />
- REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling setAlleSporen"); <br />
- ENSURE(*getAlleSporen() == newAlleSporen, "setAlleSporen post condition failure"); </p>
-
-</div>
-</div>
-<a id="ab72fb5bccef975884f0ee09cd0c35b28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab72fb5bccef975884f0ee09cd0c35b28">&#9670;&nbsp;</a></span>setAlleStations()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MetroNet::setAlleStations </td>
-          <td>(</td>
-          <td class="paramtype">std::map&lt; std::string, <a class="el" href="class_station.html">Station</a> *&gt; &amp;&#160;</td>
-          <td class="paramname"><em>newAlleStations</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><br />
- REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling setAlleStations"); <br />
- ENSURE(*getAlleStations() == newAlleStations, "setAlleStations post condition failure"); </p>
-
-</div>
-</div>
-<a id="a737c6f063b9719cedb3eec9bd6c66dde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a737c6f063b9719cedb3eec9bd6c66dde">&#9670;&nbsp;</a></span>setAlleTrams()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MetroNet::setAlleTrams </td>
-          <td>(</td>
-          <td class="paramtype">std::map&lt; int, <a class="el" href="class_tram.html">Tram</a> *&gt; &amp;&#160;</td>
-          <td class="paramname"><em>newAlleTrams</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><br />
- REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling setAlleTrams"); <br />
- ENSURE(*getAlleTrams() == newAlleTrams, "setAlleTrams post condition failure"); </p>
+ REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling runSimulation"); <br />
+ ENSURE(<a class="el" href="class_metro_net.html#a0c35b41e3a86ddd00d973e0dc7f3b3aa">isConsistent()</a>, "runSimulation made MetroNet inconsistent"); </p>
 
 </div>
 </div>
@@ -488,7 +394,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>writeToASCII</b> ()</
       </table>
 </div><div class="memdoc">
 <p><br />
- REQUIRE(<a class="el" href="class_metro_net.html#a6043975099a0257fd3a96ce67ebf12a8">isConsistent()</a>, "MetroNet is not consistent"); </p>
+ REQUIRE(<a class="el" href="class_metro_net.html#a0c35b41e3a86ddd00d973e0dc7f3b3aa">isConsistent()</a>, "MetroNet is not consistent"); </p>
 
 </div>
 </div>

@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="UA-logo-3-700x300.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Software Engineering
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">Simulation of a metro network</div>
   </td>
@@ -89,22 +89,35 @@ $(document).ready(function(){initNavTree('class_tram.html','');});
 
 <p>This is the complete list of members for <a class="el" href="class_tram.html">Tram</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#ae4a7cf6313452140ed54d219d1f6afba">getBeginStation</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_tram.html#aa8cd4cb2eeae4b1ca73e891cd8a63b91">getCurrentStation</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#ad2404fa7837b41287feab05f6a1b52bf">getLijnNr</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_tram.html#a678ba2cd0c6ab76e966947944f599d56">getPassagiers</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#aa8bcd980469801cb8524f170006f666c">getSnelheid</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_tram.html#abcb1ce0d10e394fce8a99b460e5104de">getZitplaatsen</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#a93ea22971348de256170a861ad8942a0">addPassagier</a>(std::string passagier, int aantal)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tram.html#a2163f8dd60775bab651c6dd71132bb5c">afstappenInHalte</a>(MetroNet &amp;metronet, std::string station)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#a0326abfc7705c890d7b7dbca87ff08bb">getAantalPassagiers</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tram.html#ae4a7cf6313452140ed54d219d1f6afba">getBeginStation</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#aa8cd4cb2eeae4b1ca73e891cd8a63b91">getCurrentStation</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tram.html#ad2404fa7837b41287feab05f6a1b52bf">getLijnNr</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#abcdc393787aa1d23669f0564521207b6">getOmzet</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tram.html#aa8bcd980469801cb8524f170006f666c">getSnelheid</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#a2e75ee5e2cbc43da2862334e6ff148e1">getType</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tram.html#a412e29599e83015c030b44419d183c1e">getVoertuigNr</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#abcb1ce0d10e394fce8a99b460e5104de">getZitplaatsen</a>() const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tram.html#aa4e867c678a2197c9f0cf7010ea348c6">isInTram</a>(std::string passagier) const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#a3b8d6aa970b412392fc1ee712ecbf760">isReachable</a>(MetroNet &amp;metronet, std::string station)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tram.html#ab72bbb1a2616c98337ffdbb86a650a84">moveTram</a>(MetroNet &amp;metronet, std::ostream &amp;output)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>properlyInitialized</b>() const (defined in <a class="el" href="class_tram.html">Tram</a>)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tram.html#a81095dcb5e012025fa036169fbea04c0">removePassagier</a>(std::string passagier)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#ab036eabdaaa85270049fa1556fc4bc35">setAantalPassagiers</a>(const int newAantalPassagiers)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_tram.html#a5e303c78c15f96a549182e736c81af0e">setBeginStation</a>(const std::string &amp;newBeginStation)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_tram.html#a69b7204cb6ef1b34801093c167b89ecc">setCurrentStation</a>(const std::string &amp;newCurrentStation)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_tram.html#aaa98ab526143ec4ac086a290da272f05">setLijnNr</a>(const int newLijnNr)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#a3cce546332f41b5504fd4a33182fbefb">setPassagiers</a>(const int newPassagiers)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#a32069b9f820e812c2769d945395d9d16">setOmzet</a>(const int newOmzet)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_tram.html#aad71884e9d521c325961541d60846b5d">setSnelheid</a>(const int newSnelheid)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#a4232d62594ea7f639d2e23afad91677a">setType</a>(const std::string &amp;newType)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tram.html#ae84cc80a888db6d42ea3bdc8fa4934d4">setVoertuigNr</a>(const int newVoertuigNr)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_tram.html#a9f7c40d14ad294dd0d5f517688a07e38">setZitplaatsen</a>(const int newZitplaatsen)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_tram.html#aad83b2e7e79d57528691bf317ab0e1ef">Tram</a>()</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#a2c6e0319cec185edb72cc477b88c6206">Tram</a>(const int lijnNr, const int zitplaatsen, const std::string &amp;beginStation, const int snelheid)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>~Tram</b>() (defined in <a class="el" href="class_tram.html">Tram</a>)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tram.html#abbc9568803fd85491e8c3e10189d2cd8">stoptInStation</a>(MetroNet &amp;metronet, std::string station) const</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tram.html#aad83b2e7e79d57528691bf317ab0e1ef">Tram</a>()</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tram.html#ae29954bfb139f7a7551aae24a5322cbe">Tram</a>(const int lijnNr, const int voertuigNr, const std::string &amp;type, const int zitplaatsen, const std::string &amp;beginStation, const int snelheid)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~Tram</b>() (defined in <a class="el" href="class_tram.html">Tram</a>)</td><td class="entry"><a class="el" href="class_tram.html">Tram</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

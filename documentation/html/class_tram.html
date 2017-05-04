@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="UA-logo-3-700x300.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Software Engineering
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">Simulation of a metro network</div>
   </td>
@@ -94,8 +94,8 @@ $(document).ready(function(){initNavTree('class_tram.html','');});
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aad83b2e7e79d57528691bf317ab0e1ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#aad83b2e7e79d57528691bf317ab0e1ef">Tram</a> ()</td></tr>
 <tr class="separator:aad83b2e7e79d57528691bf317ab0e1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c6e0319cec185edb72cc477b88c6206"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a2c6e0319cec185edb72cc477b88c6206">Tram</a> (const int lijnNr, const int zitplaatsen, const std::string &amp;beginStation, const int snelheid)</td></tr>
-<tr class="separator:a2c6e0319cec185edb72cc477b88c6206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae29954bfb139f7a7551aae24a5322cbe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#ae29954bfb139f7a7551aae24a5322cbe">Tram</a> (const int lijnNr, const int voertuigNr, const std::string &amp;type, const int zitplaatsen, const std::string &amp;beginStation, const int snelheid)</td></tr>
+<tr class="separator:ae29954bfb139f7a7551aae24a5322cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54135dd1028b6362213abdd10150266a"><td class="memItemLeft" align="right" valign="top"><a id="a54135dd1028b6362213abdd10150266a"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</b> () const</td></tr>
 <tr class="separator:a54135dd1028b6362213abdd10150266a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,26 +103,52 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
 <tr class="separator:ad2404fa7837b41287feab05f6a1b52bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcb1ce0d10e394fce8a99b460e5104de"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#abcb1ce0d10e394fce8a99b460e5104de">getZitplaatsen</a> () const</td></tr>
 <tr class="separator:abcb1ce0d10e394fce8a99b460e5104de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e75ee5e2cbc43da2862334e6ff148e1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a2e75ee5e2cbc43da2862334e6ff148e1">getType</a> () const</td></tr>
+<tr class="separator:a2e75ee5e2cbc43da2862334e6ff148e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4a7cf6313452140ed54d219d1f6afba"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#ae4a7cf6313452140ed54d219d1f6afba">getBeginStation</a> () const</td></tr>
 <tr class="separator:ae4a7cf6313452140ed54d219d1f6afba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8cd4cb2eeae4b1ca73e891cd8a63b91"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#aa8cd4cb2eeae4b1ca73e891cd8a63b91">getCurrentStation</a> () const</td></tr>
 <tr class="separator:aa8cd4cb2eeae4b1ca73e891cd8a63b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8bcd980469801cb8524f170006f666c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#aa8bcd980469801cb8524f170006f666c">getSnelheid</a> () const</td></tr>
 <tr class="separator:aa8bcd980469801cb8524f170006f666c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a678ba2cd0c6ab76e966947944f599d56"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a678ba2cd0c6ab76e966947944f599d56">getPassagiers</a> () const</td></tr>
-<tr class="separator:a678ba2cd0c6ab76e966947944f599d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0326abfc7705c890d7b7dbca87ff08bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a0326abfc7705c890d7b7dbca87ff08bb">getAantalPassagiers</a> () const</td></tr>
+<tr class="separator:a0326abfc7705c890d7b7dbca87ff08bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a412e29599e83015c030b44419d183c1e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a412e29599e83015c030b44419d183c1e">getVoertuigNr</a> () const</td></tr>
+<tr class="separator:a412e29599e83015c030b44419d183c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcdc393787aa1d23669f0564521207b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#abcdc393787aa1d23669f0564521207b6">getOmzet</a> () const</td></tr>
+<tr class="separator:abcdc393787aa1d23669f0564521207b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e867c678a2197c9f0cf7010ea348c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#aa4e867c678a2197c9f0cf7010ea348c6">isInTram</a> (std::string passagier) const</td></tr>
+<tr class="separator:aa4e867c678a2197c9f0cf7010ea348c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc9568803fd85491e8c3e10189d2cd8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#abbc9568803fd85491e8c3e10189d2cd8">stoptInStation</a> (<a class="el" href="class_metro_net.html">MetroNet</a> &amp;metronet, std::string station) const</td></tr>
+<tr class="separator:abbc9568803fd85491e8c3e10189d2cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa98ab526143ec4ac086a290da272f05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#aaa98ab526143ec4ac086a290da272f05">setLijnNr</a> (const int newLijnNr)</td></tr>
 <tr class="separator:aaa98ab526143ec4ac086a290da272f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f7c40d14ad294dd0d5f517688a07e38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a9f7c40d14ad294dd0d5f517688a07e38">setZitplaatsen</a> (const int newZitplaatsen)</td></tr>
 <tr class="separator:a9f7c40d14ad294dd0d5f517688a07e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4232d62594ea7f639d2e23afad91677a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a4232d62594ea7f639d2e23afad91677a">setType</a> (const std::string &amp;newType)</td></tr>
+<tr class="separator:a4232d62594ea7f639d2e23afad91677a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e303c78c15f96a549182e736c81af0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a5e303c78c15f96a549182e736c81af0e">setBeginStation</a> (const std::string &amp;newBeginStation)</td></tr>
 <tr class="separator:a5e303c78c15f96a549182e736c81af0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69b7204cb6ef1b34801093c167b89ecc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a69b7204cb6ef1b34801093c167b89ecc">setCurrentStation</a> (const std::string &amp;newCurrentStation)</td></tr>
 <tr class="separator:a69b7204cb6ef1b34801093c167b89ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad71884e9d521c325961541d60846b5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#aad71884e9d521c325961541d60846b5d">setSnelheid</a> (const int newSnelheid)</td></tr>
 <tr class="separator:aad71884e9d521c325961541d60846b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cce546332f41b5504fd4a33182fbefb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a3cce546332f41b5504fd4a33182fbefb">setPassagiers</a> (const int newPassagiers)</td></tr>
-<tr class="separator:a3cce546332f41b5504fd4a33182fbefb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab036eabdaaa85270049fa1556fc4bc35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#ab036eabdaaa85270049fa1556fc4bc35">setAantalPassagiers</a> (const int newAantalPassagiers)</td></tr>
+<tr class="separator:ab036eabdaaa85270049fa1556fc4bc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84cc80a888db6d42ea3bdc8fa4934d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#ae84cc80a888db6d42ea3bdc8fa4934d4">setVoertuigNr</a> (const int newVoertuigNr)</td></tr>
+<tr class="separator:ae84cc80a888db6d42ea3bdc8fa4934d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32069b9f820e812c2769d945395d9d16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a32069b9f820e812c2769d945395d9d16">setOmzet</a> (const int newOmzet)</td></tr>
+<tr class="separator:a32069b9f820e812c2769d945395d9d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ea22971348de256170a861ad8942a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a93ea22971348de256170a861ad8942a0">addPassagier</a> (std::string passagier, int aantal)</td></tr>
+<tr class="separator:a93ea22971348de256170a861ad8942a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81095dcb5e012025fa036169fbea04c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a81095dcb5e012025fa036169fbea04c0">removePassagier</a> (std::string passagier)</td></tr>
+<tr class="separator:a81095dcb5e012025fa036169fbea04c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2163f8dd60775bab651c6dd71132bb5c"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a2163f8dd60775bab651c6dd71132bb5c">afstappenInHalte</a> (<a class="el" href="class_metro_net.html">MetroNet</a> &amp;metronet, std::string station)</td></tr>
+<tr class="separator:a2163f8dd60775bab651c6dd71132bb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b8d6aa970b412392fc1ee712ecbf760"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a3b8d6aa970b412392fc1ee712ecbf760">isReachable</a> (<a class="el" href="class_metro_net.html">MetroNet</a> &amp;metronet, std::string station)</td></tr>
+<tr class="separator:a3b8d6aa970b412392fc1ee712ecbf760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab72bbb1a2616c98337ffdbb86a650a84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#ab72bbb1a2616c98337ffdbb86a650a84">moveTram</a> (<a class="el" href="class_metro_net.html">MetroNet</a> &amp;metronet, std::ostream &amp;output)</td></tr>
+<tr class="separator:ab72bbb1a2616c98337ffdbb86a650a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aad83b2e7e79d57528691bf317ab0e1ef"></a>
@@ -144,8 +170,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
 
 </div>
 </div>
-<a id="a2c6e0319cec185edb72cc477b88c6206"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c6e0319cec185edb72cc477b88c6206">&#9670;&nbsp;</a></span>Tram() <span class="overload">[2/2]</span></h2>
+<a id="ae29954bfb139f7a7551aae24a5322cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae29954bfb139f7a7551aae24a5322cbe">&#9670;&nbsp;</a></span>Tram() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,6 +181,18 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>lijnNr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>voertuigNr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -184,6 +222,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
 <p><br />
  REQUIRE(beginStation != "", "newBeginStation must not be empty"); <br />
  REQUIRE(lijnNr &gt;= 0 , "lijnNr must be bigger or equal to zero"); <br />
+ REQUIRE(newVoertuigNr &gt;= 0 , "newVoertuigNr must be bigger or equal to zero"); <br />
  REQUIRE(zitplaatsen &gt;= 0 , "zitplaatsen must be bigger or equal to zero"); <br />
  REQUIRE(snelheid &gt;= 0 , "snelheid must be bigger or equal to zero"); <br />
  ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state"); </p>
@@ -191,6 +230,91 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a93ea22971348de256170a861ad8942a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ea22971348de256170a861ad8942a0">&#9670;&nbsp;</a></span>addPassagier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tram::addPassagier </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>passagier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>aantal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling addPassagier"); <br />
+ REQUIRE(passagier != "", "passagier must not be empty"); <br />
+ REQUIRE(aantal &gt;= 0, "aantal must be bigger or equal to zero"); <br />
+ REQUIRE(isInTram(passagier) == false, "passenger allready in Tram"); <br />
+ ENSURE(isInTram(passagier) == true, "addPassagier post condition failure"); </p>
+
+</div>
+</div>
+<a id="a2163f8dd60775bab651c6dd71132bb5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2163f8dd60775bab651c6dd71132bb5c">&#9670;&nbsp;</a></span>afstappenInHalte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; std::string &gt; Tram::afstappenInHalte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_metro_net.html">MetroNet</a> &amp;&#160;</td>
+          <td class="paramname"><em>metronet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>station</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte"); <br />
+ REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte"); <br />
+ REQUIRE(station != "", "station must not be empty"); </p>
+
+</div>
+</div>
+<a id="a0326abfc7705c890d7b7dbca87ff08bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0326abfc7705c890d7b7dbca87ff08bb">&#9670;&nbsp;</a></span>getAantalPassagiers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Tram::getAantalPassagiers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getAantalPassagiers"); </p>
+
+</div>
+</div>
 <a id="ae4a7cf6313452140ed54d219d1f6afba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae4a7cf6313452140ed54d219d1f6afba">&#9670;&nbsp;</a></span>getBeginStation()</h2>
 
@@ -248,14 +372,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
 
 </div>
 </div>
-<a id="a678ba2cd0c6ab76e966947944f599d56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a678ba2cd0c6ab76e966947944f599d56">&#9670;&nbsp;</a></span>getPassagiers()</h2>
+<a id="abcdc393787aa1d23669f0564521207b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcdc393787aa1d23669f0564521207b6">&#9670;&nbsp;</a></span>getOmzet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Tram::getPassagiers </td>
+          <td class="memname">int Tram::getOmzet </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -263,7 +387,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
       </table>
 </div><div class="memdoc">
 <p><br />
- REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getPassagiers"); </p>
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getOmzet"); </p>
 
 </div>
 </div>
@@ -286,6 +410,44 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
 
 </div>
 </div>
+<a id="a2e75ee5e2cbc43da2862334e6ff148e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e75ee5e2cbc43da2862334e6ff148e1">&#9670;&nbsp;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Tram::getType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getType"); </p>
+
+</div>
+</div>
+<a id="a412e29599e83015c030b44419d183c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a412e29599e83015c030b44419d183c1e">&#9670;&nbsp;</a></span>getVoertuigNr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Tram::getVoertuigNr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getVoertuigNr"); </p>
+
+</div>
+</div>
 <a id="abcb1ce0d10e394fce8a99b460e5104de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abcb1ce0d10e394fce8a99b460e5104de">&#9670;&nbsp;</a></span>getZitplaatsen()</h2>
 
@@ -302,6 +464,136 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
 </div><div class="memdoc">
 <p><br />
  REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getZitplaatsen"); </p>
+
+</div>
+</div>
+<a id="aa4e867c678a2197c9f0cf7010ea348c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4e867c678a2197c9f0cf7010ea348c6">&#9670;&nbsp;</a></span>isInTram()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tram::isInTram </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>passagier</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling isInTram"); <br />
+ REQUIRE(passagier != "", "passagier must not be empty"); </p>
+
+</div>
+</div>
+<a id="a3b8d6aa970b412392fc1ee712ecbf760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b8d6aa970b412392fc1ee712ecbf760">&#9670;&nbsp;</a></span>isReachable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tram::isReachable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_metro_net.html">MetroNet</a> &amp;&#160;</td>
+          <td class="paramname"><em>metronet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>station</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram"); <br />
+ REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram"); <br />
+ ENSURE(metronet.isConsistent(), "isReachable made MetroNet inconsistent"); </p>
+
+</div>
+</div>
+<a id="ab72bbb1a2616c98337ffdbb86a650a84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab72bbb1a2616c98337ffdbb86a650a84">&#9670;&nbsp;</a></span>moveTram()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tram::moveTram </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_metro_net.html">MetroNet</a> &amp;&#160;</td>
+          <td class="paramname"><em>metronet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram"); <br />
+ REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram"); <br />
+ ENSURE(metronet.isConsistent(), "moveTram made MetroNet inconsistent"); </p>
+
+</div>
+</div>
+<a id="a81095dcb5e012025fa036169fbea04c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81095dcb5e012025fa036169fbea04c0">&#9670;&nbsp;</a></span>removePassagier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tram::removePassagier </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>passagier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling removePassagier"); <br />
+ REQUIRE(passagier != "", "passagier must not be empty"); <br />
+ REQUIRE(isInTram(passagier) == true, "passenger not in Tram"); <br />
+ ENSURE(isInTram(passagier) == false, "removePassagier post condition failure"); </p>
+
+</div>
+</div>
+<a id="ab036eabdaaa85270049fa1556fc4bc35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab036eabdaaa85270049fa1556fc4bc35">&#9670;&nbsp;</a></span>setAantalPassagiers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tram::setAantalPassagiers </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>newAantalPassagiers</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setAantalPassagiers"); <br />
+ REQUIRE(newAantalPassagiers &gt;= 0 , "newAantalPassagiers must be bigger or equal to zero"); <br />
+ ENSURE(<a class="el" href="class_tram.html#a0326abfc7705c890d7b7dbca87ff08bb">getAantalPassagiers()</a> == newAantalPassagiers, "setAantalPassagiers post condition failure"); </p>
 
 </div>
 </div>
@@ -371,25 +663,25 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
 
 </div>
 </div>
-<a id="a3cce546332f41b5504fd4a33182fbefb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cce546332f41b5504fd4a33182fbefb">&#9670;&nbsp;</a></span>setPassagiers()</h2>
+<a id="a32069b9f820e812c2769d945395d9d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32069b9f820e812c2769d945395d9d16">&#9670;&nbsp;</a></span>setOmzet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Tram::setPassagiers </td>
+          <td class="memname">void Tram::setOmzet </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>newPassagiers</em></td><td>)</td>
+          <td class="paramname"><em>newOmzet</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p><br />
- REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setPassagiers"); <br />
- REQUIRE(newPassagiers &gt;= 0 , "newPassagiers must be bigger or equal to zero"); <br />
- ENSURE(<a class="el" href="class_tram.html#a678ba2cd0c6ab76e966947944f599d56">getPassagiers()</a> == newPassagiers, "setPassagiers post condition failure"); </p>
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setOmzet"); <br />
+ REQUIRE(newOmzet &gt;= 0 , "newOmzet must be bigger or equal to zero"); <br />
+ ENSURE(<a class="el" href="class_tram.html#abcdc393787aa1d23669f0564521207b6">getOmzet()</a> == newOmzet, "setOmzet post condition failure"); </p>
 
 </div>
 </div>
@@ -415,6 +707,50 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
 
 </div>
 </div>
+<a id="a4232d62594ea7f639d2e23afad91677a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4232d62594ea7f639d2e23afad91677a">&#9670;&nbsp;</a></span>setType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tram::setType </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>newType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setType"); <br />
+ REQUIRE(newType != "", "newType must not be empty"); <br />
+ ENSURE(<a class="el" href="class_tram.html#a2e75ee5e2cbc43da2862334e6ff148e1">getType()</a> == newType, "setType post condition failure"); </p>
+
+</div>
+</div>
+<a id="ae84cc80a888db6d42ea3bdc8fa4934d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84cc80a888db6d42ea3bdc8fa4934d4">&#9670;&nbsp;</a></span>setVoertuigNr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tram::setVoertuigNr </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>newVoertuigNr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setVoertuigNr"); <br />
+ REQUIRE(newVoertuigNr &gt;= 0 , "newVoertuigNr must be bigger or equal to zero"); <br />
+ ENSURE(<a class="el" href="class_tram.html#a412e29599e83015c030b44419d183c1e">getVoertuigNr()</a> == newVoertuigNr, "setVoertuigNr post condition failure"); </p>
+
+</div>
+</div>
 <a id="a9f7c40d14ad294dd0d5f517688a07e38"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f7c40d14ad294dd0d5f517688a07e38">&#9670;&nbsp;</a></span>setZitplaatsen()</h2>
 
@@ -434,6 +770,38 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
  REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setZitplaatsen"); <br />
  REQUIRE(newZitplaatsen &gt;= 0 , "newZitplaatsen must be bigger or equal to zero"); <br />
  ENSURE(<a class="el" href="class_tram.html#abcb1ce0d10e394fce8a99b460e5104de">getZitplaatsen()</a> == newZitplaatsen, "setZitplaatsen post condition failure"); </p>
+
+</div>
+</div>
+<a id="abbc9568803fd85491e8c3e10189d2cd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc9568803fd85491e8c3e10189d2cd8">&#9670;&nbsp;</a></span>stoptInStation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tram::stoptInStation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_metro_net.html">MetroNet</a> &amp;&#160;</td>
+          <td class="paramname"><em>metronet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>station</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><br />
+ REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte"); <br />
+ REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte"); <br />
+ REQUIRE(station != "", "station must not be empty"); </p>
 
 </div>
 </div>
