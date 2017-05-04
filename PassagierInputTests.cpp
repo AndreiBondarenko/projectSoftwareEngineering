@@ -12,11 +12,8 @@ protected:
 	friend class MetroNet;
 
 	virtual void SetUp() {
-		metronet = new MetroNet();
-	}
-
-	virtual void TearDown() {
 		delete metronet;
+		metronet = new MetroNet();
 	}
 
 	MetroNet* metronet = new MetroNet();	

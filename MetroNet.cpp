@@ -5,6 +5,8 @@
 #include <fstream>
 #include <stdexcept>
 
+const int MAXAANTALLOOPS = 1000;
+
 MetroNet::MetroNet()  {
   initCheck = this;
 	alleStations.clear();
@@ -21,9 +23,13 @@ MetroNet::~MetroNet() {
   for(auto it = alleTrams.begin(); it != alleTrams.end(); ++it) {
       delete it->second;
   }
+	for (auto it = allePassagiers.begin(); it != allePassagiers.end(); ++it) {
+		delete it->second;
+	}
   alleStations.clear();
   alleTrams.clear();
   alleSporen.clear();
+	allePassagiers.clear();
 }
 
 bool MetroNet::properlyInitialized() const {
@@ -173,6 +179,10 @@ void MetroNet::runSimulation(std::ostream &output) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling runSimulation");
 	bool simulationCompleted = false;
 	for (int i = 1; !simulationCompleted; i++) {
+		if (i == MAXAANTALLOOPS) {
+			output << "MetroNetSimulation stopped. Infinite loop occured." << std::endl;
+			break;
+		}
 		output << i << "." << std::endl;
     simulationCompleted = true;
 	moveAlleTrams(output);
