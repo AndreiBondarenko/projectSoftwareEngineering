@@ -186,3 +186,33 @@ TEST_F(PassagierInputTests, wrongInputCrash4) {
 	std::string expectedFileName = "_testOutput/PassagierInputTestsExpected/crash4.txt";
 	EXPECT_TRUE(FileCompare("_testOutput/passagierInputTestsError.txt", expectedFileName));
 }
+
+TEST_F(PassagierInputTests, multipleWrongInputs) {
+	ASSERT_TRUE(DirectoryExists("_testInput"));
+	ASSERT_TRUE(DirectoryExists("_testInput/PassagierInputTests"));
+	ASSERT_TRUE(DirectoryExists("_testOutput"));
+	ASSERT_TRUE(DirectoryExists("_testOutput/PassagierInputTestsExpected"));
+
+	std::ofstream ofile;
+	SuccessEnum importResult;
+
+	int fileCounter = 1;
+	std::string fileName = "_testInput/PassagierInputTests/multipleWrongInputs" + std::to_string(fileCounter) + ".xml";
+
+	while (FileExists(fileName)) {
+		SetUp();
+		importResult = MetroNetImporter::importMetroNet("_testInput/PassagierInputTests/MetroNetInput.xml", ofile, *metronet);
+		EXPECT_TRUE(importResult == Success);
+
+		ofile.open("_testOutput/passagierInputTestsError.txt");
+		importResult = MetroNetImporter::importPassengers(fileName.c_str(), ofile, *metronet);
+		ofile.close();
+		EXPECT_TRUE(importResult == PartialImport);
+		std::string expectedFileName = "_testOutput/PassagierInputTestsExpected/multipleWrongInputs" + std::to_string(fileCounter) + ".txt";
+		EXPECT_TRUE(FileCompare("_testOutput/passagierInputTestsError.txt", expectedFileName));
+
+		fileCounter++;
+		fileName = "_testInput/PassagierInputTests/multipleWrongInputs" + std::to_string(fileCounter) + ".xml";
+	}
+	EXPECT_TRUE(fileCounter == 3);
+}
