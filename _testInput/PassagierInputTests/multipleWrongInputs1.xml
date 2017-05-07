@@ -1,0 +1,33 @@
+<!-- expected naam, beginstation, eindstation or hoeveelheid, got huidigstation -->
+<!-- naam is empty -->
+<!-- eindStation is missing -->
+<PASSAGIER>
+	<naam></naam>
+	<beginstation>A</beginstation>
+	<hoeveelheid>7</hoeveelheid>
+	<huidigstation>B</huidigstation>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep2</naam>
+	<beginstation>C</beginstation>
+	<eindstation>B</eindstation>
+	<hoeveelheid>4</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep3</naam>
+	<beginstation>B</beginstation>
+	<eindstation>A</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep4</naam>
+	<beginstation>C</beginstation>
+	<eindstation>A</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep5</naam>
+	<beginstation>A</beginstation>
+	<eindstation>C</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</PASSAGIER>

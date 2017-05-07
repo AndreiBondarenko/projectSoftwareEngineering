@@ -1,0 +1,6 @@
+XML PARTIAL IMPORT: Tram not created, negative line number: -12.
+XML PARTIAL IMPORT: Tram not created, negative number of seats: -16.
+XML PARTIAL IMPORT: Tram not created, invalid speed: tien.
+XML PARTIAL IMPORT: <beginStation> ... </beginStation> is empty.
+XML PARTIAL IMPORT: Tram not created, tram type "Tram" not recognized.
+XML PARTIAL IMPORT: Tram not created, invalid voertuigNr: tien.

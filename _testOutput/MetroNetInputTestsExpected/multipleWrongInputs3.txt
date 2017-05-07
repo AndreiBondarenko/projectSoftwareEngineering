@@ -1,0 +1,20 @@
+XML PARTIAL IMPORT: Expected <naam> ... </naam>.
+XML PARTIAL IMPORT: Expected <SPOOR> ... </SPOOR>.
+XML PARTIAL IMPORT:
+Expected:
+<naam> ... </naam> or
+<type> ... </type> or
+<SPOOR> ... </SPOOR>
+and got: <name> ... </name>.
+XML PARTIAL IMPORT:
+Expected:
+<naam> ... </naam> or
+<type> ... </type> or
+<SPOOR> ... </SPOOR>
+and got: <EXTRA> ... </EXTRA>.
+XML PARTIAL IMPORT:
+Expected:
+<naam> ... </naam> or
+<type> ... </type> or
+<SPOOR> ... </SPOOR>
+and got: <LIJN> ... </LIJN>.

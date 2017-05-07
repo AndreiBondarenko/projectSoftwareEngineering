@@ -1,0 +1,3 @@
+XML PARTIAL IMPORT: Expected <vorige> ... </vorige>.
+XML PARTIAL IMPORT: <spoor> ... </spoor> is empty.
+XML PARTIAL IMPORT: Tram not created, invalid number of seats: Zestien.

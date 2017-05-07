@@ -1,0 +1,9 @@
+XML PARTIAL IMPORT:
+Expected:
+<spoor> ... </spoor> or
+<volgende> ... </volgende> or
+<vorige> ... </vorige>
+and got: <huidig> ... </huidig>.
+XML PARTIAL IMPORT: Station not created, dubble line number: 12.
+XML PARTIAL IMPORT: <vorige> ... </vorige> is empty.
+XML PARTIAL IMPORT: Tram not created, tram type "Tram" not recognized.

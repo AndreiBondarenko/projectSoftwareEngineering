@@ -1,0 +1,9 @@
+XML PARTIAL IMPORT: Expected <eindstation> ... </eindstation>.
+XML PARTIAL IMPORT: <naam> ... </naam> is empty.
+XML PARTIAL IMPORT:
+Expected:
+<naam> ... </naam> or
+<beginstation> ... </beginstation> or
+<eindstation> ... </eindstation> or
+<hoeveelheid> ... </hoeveelheid> or
+and got: <huidigstation> ... </huidigstation>.

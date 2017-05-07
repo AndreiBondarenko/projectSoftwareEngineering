@@ -1,0 +1,34 @@
+<!-- hoeveelheid is empty -->
+<!-- negative hoeveelheid -->
+<!-- invalid hoeveelheid -->
+<!-- naam is missing -->
+<!-- expected PASSAGIER, got GROEP -->
+<PASSAGIER>
+	<naam>Groep1</naam>
+	<beginstation>A</beginstation>
+	<eindstation>B</eindstation>
+	<hoeveelheid></hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep2</naam>
+	<beginstation>C</beginstation>
+	<eindstation>B</eindstation>
+	<hoeveelheid>-4</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep3</naam>
+	<beginstation>B</beginstation>
+	<eindstation>A</eindstation>
+	<hoeveelheid>tien</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<beginstation>C</beginstation>
+	<eindstation>A</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<GROEP>
+	<naam>Groep5</naam>
+	<beginstation>A</beginstation>
+	<eindstation>C</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</GROEP>
