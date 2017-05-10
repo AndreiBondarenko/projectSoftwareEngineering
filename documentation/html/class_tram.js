@@ -15,7 +15,6 @@ var class_tram =
     [ "getVoertuigNr", "class_tram.html#a412e29599e83015c030b44419d183c1e", null ],
     [ "getZitplaatsen", "class_tram.html#abcb1ce0d10e394fce8a99b460e5104de", null ],
     [ "isInTram", "class_tram.html#aa4e867c678a2197c9f0cf7010ea348c6", null ],
-    [ "isReachable", "class_tram.html#a3b8d6aa970b412392fc1ee712ecbf760", null ],
     [ "moveTram", "class_tram.html#ab72bbb1a2616c98337ffdbb86a650a84", null ],
     [ "properlyInitialized", "class_tram.html#a54135dd1028b6362213abdd10150266a", null ],
     [ "removePassagier", "class_tram.html#a81095dcb5e012025fa036169fbea04c0", null ],

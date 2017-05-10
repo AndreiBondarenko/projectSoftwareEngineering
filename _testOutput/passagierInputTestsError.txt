@@ -1,0 +1,5 @@
+XML PARTIAL IMPORT: <hoeveelheid> ... </hoeveelheid> is empty.
+XML PARTIAL IMPORT: Passagier not created, negative hoeveelheid: -4.
+XML PARTIAL IMPORT: Passagier not created, invalid hoeveelheid: tien.
+XML PARTIAL IMPORT: Expected <naam> ... </naam>.
+XML PARTIAL IMPORT: Expected <PASSAGIER> ... </PASSAGIER> and got <GROEP> ... </GROEP>.

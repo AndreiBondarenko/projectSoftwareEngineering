@@ -1,0 +1,2 @@
+XML PARTIAL IMPORT: Tram not created, negative line number: -12.
+XML PARTIAL IMPORT: Tram not created, invalid speed: tien.

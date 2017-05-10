@@ -1,0 +1,31 @@
+--== STATIONS ==--
+-> Station A
+wachtende passagiers:
+gearriveerde passagiers:
+
+-> Station B
+wachtende passagiers:
+gearriveerde passagiers:
+
+-> Station C
+wachtende passagiers:
+gearriveerde passagiers:
+* Groep1, 7
+* Groep3, 9
+
+-> Station D
+wachtende passagiers:
+gearriveerde passagiers:
+* Groep2, 10
+* Groep4, 14
+
+
+--== TRAMS ==--
+Tram 1 nr 2
+omzet: 80
+zitplaatsen: 20
+snelheid: 20
+huidige station: D
+reizende passagiers:
+vrije zitplaatsen: 20
+

@@ -1,0 +1,19 @@
+1.
+Tram #2 op spoor 1 reed van station B naar station C.
+Groep2 (10) stapt op tram met voertuigNr 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.
+Tram #2 op spoor 1 reed van station C naar station D.
+Groep2 (10) stapt uit in station D
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3.
+Tram #2 op spoor 1 reed van station D naar station A.
+Groep1 (7) stapt op tram met voertuigNr 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4.
+Tram #2 op spoor 1 reed van station A naar station B.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5.
+Tram #2 op spoor 1 reed van station B naar station C.
+Groep1 (7) stapt uit in station C
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

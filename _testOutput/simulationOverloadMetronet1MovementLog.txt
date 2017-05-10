@@ -1,0 +1,27 @@
+1.
+Tram #2 op spoor 1 reed van station B naar station C.
+Groep2 (10) stapt op tram met voertuigNr 2
+Groep4 (14) kan niet meer op tram met voertuigNr 2, slechts 10 vrije plaatsen.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.
+Tram #2 op spoor 1 reed van station C naar station D.
+Groep2 (10) stapt uit in station D
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3.
+Tram #2 op spoor 1 reed van station D naar station A.
+Groep1 (7) stapt op tram met voertuigNr 2
+Groep3 (9) stapt op tram met voertuigNr 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4.
+Tram #2 op spoor 1 reed van station A naar station B.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5.
+Tram #2 op spoor 1 reed van station B naar station C.
+Groep1 (7) stapt uit in station C
+Groep3 (9) stapt uit in station C
+Groep4 (14) stapt op tram met voertuigNr 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6.
+Tram #2 op spoor 1 reed van station C naar station D.
+Groep4 (14) stapt uit in station D
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

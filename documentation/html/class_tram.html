@@ -145,8 +145,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
 <tr class="separator:a81095dcb5e012025fa036169fbea04c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2163f8dd60775bab651c6dd71132bb5c"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a2163f8dd60775bab651c6dd71132bb5c">afstappenInHalte</a> (<a class="el" href="class_metro_net.html">MetroNet</a> &amp;metronet, std::string station)</td></tr>
 <tr class="separator:a2163f8dd60775bab651c6dd71132bb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b8d6aa970b412392fc1ee712ecbf760"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#a3b8d6aa970b412392fc1ee712ecbf760">isReachable</a> (<a class="el" href="class_metro_net.html">MetroNet</a> &amp;metronet, std::string station)</td></tr>
-<tr class="separator:a3b8d6aa970b412392fc1ee712ecbf760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab72bbb1a2616c98337ffdbb86a650a84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tram.html#ab72bbb1a2616c98337ffdbb86a650a84">moveTram</a> (<a class="el" href="class_metro_net.html">MetroNet</a> &amp;metronet, std::ostream &amp;output)</td></tr>
 <tr class="separator:ab72bbb1a2616c98337ffdbb86a650a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -485,38 +483,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</
 <p><br />
  REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling isInTram"); <br />
  REQUIRE(passagier != "", "passagier must not be empty"); </p>
-
-</div>
-</div>
-<a id="a3b8d6aa970b412392fc1ee712ecbf760"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b8d6aa970b412392fc1ee712ecbf760">&#9670;&nbsp;</a></span>isReachable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Tram::isReachable </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_metro_net.html">MetroNet</a> &amp;&#160;</td>
-          <td class="paramname"><em>metronet</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>station</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><br />
- REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram"); <br />
- REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram"); <br />
- ENSURE(metronet.isConsistent(), "isReachable made MetroNet inconsistent"); </p>
 
 </div>
 </div>

@@ -1,0 +1,55 @@
+--== STATIONS ==--
+-> Station A
+wachtende passagiers:
+* Groep1, 7 mensen, reist naar station C
+* Groep3, 9 mensen, reist naar station C
+gearriveerde passagiers:
+
+-> Station B
+wachtende passagiers:
+gearriveerde passagiers:
+
+-> Station C
+wachtende passagiers:
+* Groep2, 10 mensen, reist naar station D
+* Groep4, 14 mensen, reist naar station D
+* Groep6, 8 mensen, reist naar station E
+* Groep8, 20 mensen, reist naar station E
+gearriveerde passagiers:
+
+-> Station D
+wachtende passagiers:
+gearriveerde passagiers:
+
+-> Station E
+wachtende passagiers:
+gearriveerde passagiers:
+
+-> Station F
+wachtende passagiers:
+gearriveerde passagiers:
+
+-> Station M
+wachtende passagiers:
+* Groep5, 12 mensen, reist naar station E
+* Groep7, 9 mensen, reist naar station E
+gearriveerde passagiers:
+
+
+--== TRAMS ==--
+Tram 1 nr 2
+omzet: 0
+zitplaatsen: 20
+snelheid: 20
+huidige station: B
+reizende passagiers:
+vrije zitplaatsen: 20
+
+Tram 2 nr 3
+omzet: 0
+zitplaatsen: 20
+snelheid: 40
+huidige station: F
+reizende passagiers:
+vrije zitplaatsen: 20
+
