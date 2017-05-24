@@ -9,6 +9,7 @@ class MetroNet;
 
 class Tram {
 protected:
+  friend class ClassTestTram;
   Tram* initCheck;
   int lijnNr;
   int voertuigNr;
@@ -170,7 +171,7 @@ public:
   \n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
   \n REQUIRE(station != "", "station must not be empty");
   */
-  virtual bool stoptInStation(MetroNet& metronet, std::string station) const = 0;
+  virtual bool stoptInStation(MetroNet& metronet, std::string station) const;
 
 private:
 	/**

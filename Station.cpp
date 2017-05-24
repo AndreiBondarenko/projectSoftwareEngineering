@@ -211,3 +211,8 @@ void Station::movePassagiers(MetroNet& metronet, std::ostream& output) {
 	}
 	ENSURE(metronet.isConsistent(), "movePassagiers made MetroNet inconsistent");
 }
+
+bool Station::albatrosCanStop() const {
+	REQUIRE(properlyInitialized(), "Station wasn't initialized when calling albatrosCanStop");
+	return false;
+}

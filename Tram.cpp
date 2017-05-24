@@ -230,3 +230,10 @@ void Tram::moveTram(MetroNet& metronet, std::ostream& output) {
 	}
 	ENSURE(metronet.isConsistent(), "moveTram made MetroNet inconsistent");
 }
+
+bool Tram::stoptInStation(MetroNet& metronet, std::string station) const {
+	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
+  REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
+  REQUIRE(station != "", "station must not be empty");
+	return false;
+	}

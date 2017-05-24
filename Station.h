@@ -10,6 +10,7 @@ class MetroNet;
 
 class Station {
 protected:
+  friend class ClassTestStation;
   Station* initCheck;
   std::string naam;
   std::map<int, std::string> vorige;
@@ -127,7 +128,7 @@ public:
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling albatrosCanStop");
   */
-  virtual bool albatrosCanStop() const = 0;
+  virtual bool albatrosCanStop() const;
 
 private:
 	/**
