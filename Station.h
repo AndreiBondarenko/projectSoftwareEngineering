@@ -6,20 +6,17 @@
 #include <map>
 #include <set>
 
-#include "MetroNet.h"
-
 class MetroNet;
 
 class Station {
-private:
+protected:
   Station* initCheck;
   std::string naam;
   std::map<int, std::string> vorige;
   std::map<int, std::string> volgende;
-  std::string type;
   std::map<std::pair<int, int>, bool> tramInStation;
   std::set<std::string> passagiers;
-public:
+
   // CONSTRUCTORS
   /**
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
@@ -27,13 +24,13 @@ public:
   Station(); // default
   /**
   \n REQUIRE(naam != "", "naam must not be empty");
-  \n REQUIRE(type != "", "type must not be empty");
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   */
-  Station(const std::string& naam, const std::string& type); // full
+  Station(const std::string& naam); // full
 
+public:
   // DESTRUCTOR
-  ~Station();
+  virtual ~Station();
 
   // INITIALIZATION CHECK
   bool properlyInitialized() const;
@@ -53,10 +50,6 @@ public:
   \n REQUIRE(spoor >= 0, "parameter spoor must be >= 0, when passed to getVolgende");
   */
   std::string getVolgende(const int& spoor) const;
-  /**
-  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getType");
-  */
-  std::string getType() const;
   /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getSporen");
   */
@@ -95,12 +88,6 @@ public:
   */
   void addVolgende(const int& spoor, const std::string& newVolgende);
   /**
-  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setType");
-  \n REQUIRE(newType != "", "newType must not be empty");
-  \n ENSURE(getType() == newType, "setType post condition failure");
-  */
-  void setType(const std::string& newType);
-  /**
   \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setTramInStation");
 	\n REQUIRE(spoor >= 0, "spoor must be bigger or equal to zero");
 	\n REQUIRE(voertuigNr >= 0, "voertuigNr must be bigger or equal to zero");
@@ -135,6 +122,12 @@ public:
 	\n ENSURE(metronet.isConsistent(), "movePassagiers made MetroNet inconsistent");
 	*/
 	void movePassagiers(MetroNet& metronet, std::ostream& output);
+
+  // VIRTUAL METHODS
+  /**
+  \n REQUIRE(properlyInitialized(), "Station wasn't initialized when calling albatrosCanStop");
+  */
+  virtual bool albatrosCanStop() const = 0;
 
 private:
 	/**

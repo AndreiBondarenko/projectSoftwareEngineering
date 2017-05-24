@@ -1,25 +1,25 @@
 --== STATIONS ==--
--> Station A
+-> Station A - Metro Station
 wachtende passagiers:
 gearriveerde passagiers:
 
--> Station B
+-> Station B - Halte
 wachtende passagiers:
 gearriveerde passagiers:
 
--> Station C
+-> Station C - Metro Station
 wachtende passagiers:
 gearriveerde passagiers:
 * Groep1, 7
 * Groep3, 9
 
--> Station D
+-> Station D - Halte
 wachtende passagiers:
 gearriveerde passagiers:
 * Groep2, 10
 * Groep4, 14
 
--> Station E
+-> Station E - Metro Station
 wachtende passagiers:
 gearriveerde passagiers:
 * Groep10, 15
@@ -30,39 +30,39 @@ gearriveerde passagiers:
 * Groep8, 20
 * Groep9, 15
 
--> Station F
+-> Station F - Metro Station
 wachtende passagiers:
 gearriveerde passagiers:
 * Groep13, 10
 
--> Station G
+-> Station G - Metro Station
 wachtende passagiers:
 gearriveerde passagiers:
 
--> Station H
+-> Station H - Metro Station
 wachtende passagiers:
 gearriveerde passagiers:
 * Groep12, 20
 * Groep15, 20
 
--> Station I
+-> Station I - Metro Station
 wachtende passagiers:
 gearriveerde passagiers:
 
--> Station J
+-> Station J - Halte
 wachtende passagiers:
 gearriveerde passagiers:
 
--> Station K
+-> Station K - Metro Station
 wachtende passagiers:
 gearriveerde passagiers:
 
--> Station L
+-> Station L - Halte
 wachtende passagiers:
 gearriveerde passagiers:
 * Groep14, 16
 
--> Station M
+-> Station M - Halte
 wachtende passagiers:
 gearriveerde passagiers:
 

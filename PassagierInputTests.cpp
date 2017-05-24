@@ -107,84 +107,41 @@ TEST_F(PassagierInputTests, wrongInputNoCrash) {
 	EXPECT_TRUE(fileCounter == 13);
 }
 
-TEST_F(PassagierInputTests, wrongInputCrash1) {
+TEST_F(PassagierInputTests, wrongInputCrash) {
 	ASSERT_TRUE(DirectoryExists("_testInput"));
 	ASSERT_TRUE(DirectoryExists("_testInput/PassagierInputTests"));
 	ASSERT_TRUE(DirectoryExists("_testOutput"));
 	ASSERT_TRUE(DirectoryExists("_testOutput/PassagierInputTestsExpected"));
 
-	std::ofstream ofile;
-	SuccessEnum importResult;
-
-	importResult = MetroNetImporter::importMetroNet("_testInput/PassagierInputTests/MetroNetInput.xml", ofile, *metronet);
-	EXPECT_TRUE(importResult == Success);
-
-	ofile.open("_testOutput/passagierInputTestsError.txt");
-	EXPECT_DEATH(MetroNetImporter::importPassengers("_testInput/PassagierInputTests/crashInput1.xml", ofile, *metronet),
-		"Passagier::moveToBeginStation made MetroNet inconsistent");
-	ofile.close();
-	std::string expectedFileName = "_testOutput/PassagierInputTestsExpected/crash1.txt";
-	EXPECT_TRUE(FileCompare("_testOutput/passagierInputTestsError.txt", expectedFileName));
-}
-
-TEST_F(PassagierInputTests, wrongInputCrash2) {
-	ASSERT_TRUE(DirectoryExists("_testInput"));
-	ASSERT_TRUE(DirectoryExists("_testInput/PassagierInputTests"));
-	ASSERT_TRUE(DirectoryExists("_testOutput"));
-	ASSERT_TRUE(DirectoryExists("_testOutput/PassagierInputTestsExpected"));
+	std::string errors[4] = 
+		{
+		"Passagier::moveToBeginStation made MetroNet inconsistent",
+		"Passagier::moveToBeginStation made MetroNet inconsistent",
+		"beginStation is not a station of MetroNet",
+		"This MetroNet allready contains a passenger with this name"
+		};
 
 	std::ofstream ofile;
 	SuccessEnum importResult;
 
-	importResult = MetroNetImporter::importMetroNet("_testInput/PassagierInputTests/MetroNetInput.xml", ofile, *metronet);
-	EXPECT_TRUE(importResult == Success);
+	int fileCounter = 1;
+	std::string fileName = "_testInput/PassagierInputTests/crashInput" + std::to_string(fileCounter) + ".xml";
 
-	ofile.open("_testOutput/passagierInputTestsError.txt");
-	EXPECT_DEATH(MetroNetImporter::importPassengers("_testInput/PassagierInputTests/crashInput2.xml", ofile, *metronet),
-		"Passagier::moveToBeginStation made MetroNet inconsistent");
-	ofile.close();
-	std::string expectedFileName = "_testOutput/PassagierInputTestsExpected/crash2.txt";
-	EXPECT_TRUE(FileCompare("_testOutput/passagierInputTestsError.txt", expectedFileName));
-}
+	while (FileExists(fileName)) {
+		SetUp();
+		importResult = MetroNetImporter::importMetroNet("_testInput/PassagierInputTests/MetroNetInput.xml", ofile, *metronet);
+		EXPECT_TRUE(importResult == Success);
 
-TEST_F(PassagierInputTests, wrongInputCrash3) {
-	ASSERT_TRUE(DirectoryExists("_testInput"));
-	ASSERT_TRUE(DirectoryExists("_testInput/PassagierInputTests"));
-	ASSERT_TRUE(DirectoryExists("_testOutput"));
-	ASSERT_TRUE(DirectoryExists("_testOutput/PassagierInputTestsExpected"));
+		ofile.open("_testOutput/passagierInputTestsError.txt");
+		EXPECT_DEATH(MetroNetImporter::importPassengers(fileName.c_str(), ofile, *metronet), errors[fileCounter-1]);
+		ofile.close();
+		std::string expectedFileName = "_testOutput/PassagierInputTestsExpected/crash" + std::to_string(fileCounter) + ".txt";
+		EXPECT_TRUE(FileCompare("_testOutput/passagierInputTestsError.txt", expectedFileName));
 
-	std::ofstream ofile;
-	SuccessEnum importResult;
-
-	importResult = MetroNetImporter::importMetroNet("_testInput/PassagierInputTests/MetroNetInput.xml", ofile, *metronet);
-	EXPECT_TRUE(importResult == Success);
-
-	ofile.open("_testOutput/passagierInputTestsError.txt");
-	EXPECT_DEATH(MetroNetImporter::importPassengers("_testInput/PassagierInputTests/crashInput3.xml", ofile, *metronet),
-		"beginStation is not a station of MetroNet");
-	ofile.close();
-	std::string expectedFileName = "_testOutput/PassagierInputTestsExpected/crash3.txt";
-	EXPECT_TRUE(FileCompare("_testOutput/passagierInputTestsError.txt", expectedFileName));
-}
-
-TEST_F(PassagierInputTests, wrongInputCrash4) {
-	ASSERT_TRUE(DirectoryExists("_testInput"));
-	ASSERT_TRUE(DirectoryExists("_testInput/PassagierInputTests"));
-	ASSERT_TRUE(DirectoryExists("_testOutput"));
-	ASSERT_TRUE(DirectoryExists("_testOutput/PassagierInputTestsExpected"));
-
-	std::ofstream ofile;
-	SuccessEnum importResult;
-
-	importResult = MetroNetImporter::importMetroNet("_testInput/PassagierInputTests/MetroNetInput.xml", ofile, *metronet);
-	EXPECT_TRUE(importResult == Success);
-
-	ofile.open("_testOutput/passagierInputTestsError.txt");
-	EXPECT_DEATH(MetroNetImporter::importPassengers("_testInput/PassagierInputTests/crashInput4.xml", ofile, *metronet),
-		"This MetroNet allready contains a passenger with this name");
-	ofile.close();
-	std::string expectedFileName = "_testOutput/PassagierInputTestsExpected/crash4.txt";
-	EXPECT_TRUE(FileCompare("_testOutput/passagierInputTestsError.txt", expectedFileName));
+		fileCounter++;
+		fileName = "_testInput/PassagierInputTests/crashInput" + std::to_string(fileCounter) + ".xml";
+	}
+	EXPECT_TRUE(fileCounter == 5);
 }
 
 TEST_F(PassagierInputTests, multipleWrongInputs) {

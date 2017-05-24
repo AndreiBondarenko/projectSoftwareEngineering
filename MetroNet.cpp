@@ -202,8 +202,10 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
   REQUIRE(isConsistent(), "MetroNet is not consistent");
   output << "--== STATIONS ==--" << std::endl;
   for(auto stationIt = alleStations.begin(); stationIt != alleStations.end(); stationIt++) {
-    output << "-> Station " << stationIt->first << std::endl;
-    output << "wachtende passagiers:" << std::endl;
+    output << "-> Station " << stationIt->first;
+    if(stationIt->second->albatrosCanStop()) output << " - Metro Station";
+    else output << " - Halte";
+    output << std::endl << "wachtende passagiers:" << std::endl;
     for(auto passengerIt = allePassagiers.begin(); passengerIt != allePassagiers.end(); passengerIt++) {
       if (stationIt->second->isInStation(passengerIt->first) && passengerIt->second->getBeginStation() == stationIt->first) {
         Passagier* info = passengerIt->second;

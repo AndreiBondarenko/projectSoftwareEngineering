@@ -1,15 +1,15 @@
 --== STATIONS ==--
--> Station A
+-> Station A - Metro Station
 wachtende passagiers:
 * Groep1, 7 mensen, reist naar station C
 * Groep3, 9 mensen, reist naar station C
 gearriveerde passagiers:
 
--> Station B
+-> Station B - Halte
 wachtende passagiers:
 gearriveerde passagiers:
 
--> Station C
+-> Station C - Metro Station
 wachtende passagiers:
 * Groep2, 10 mensen, reist naar station D
 * Groep4, 14 mensen, reist naar station D
@@ -17,19 +17,19 @@ wachtende passagiers:
 * Groep8, 20 mensen, reist naar station E
 gearriveerde passagiers:
 
--> Station D
+-> Station D - Halte
 wachtende passagiers:
 gearriveerde passagiers:
 
--> Station E
+-> Station E - Metro Station
 wachtende passagiers:
 gearriveerde passagiers:
 
--> Station F
+-> Station F - Metro Station
 wachtende passagiers:
 gearriveerde passagiers:
 
--> Station M
+-> Station M - Halte
 wachtende passagiers:
 * Groep5, 12 mensen, reist naar station E
 * Groep7, 9 mensen, reist naar station E

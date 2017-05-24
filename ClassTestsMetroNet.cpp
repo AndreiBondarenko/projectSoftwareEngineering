@@ -2,17 +2,6 @@
 
 #include "MetroNet.h"
 
-//
-// Voor volgende functies zijn geen of enkel death-tests geschreven:
-// bool isConsistent();
-// void moveAlleTrams(std::ostream& output);
-// void moveAllePassengers(std::ostream& output, std::ostream& errors);
-// void runSimulation(std::ostream& output, std::ostream& errors);
-// void writeToOutputStream(std::ostream& output);
-// void drawToOutputStream(std::ostream& output);
-// void writeToASCII();
-//
-
 class ClassTestMetroNet: public ::testing::Test {
 protected:
 	friend class MetroNet;
@@ -28,10 +17,10 @@ TEST_F(ClassTestMetroNet, DefaultConstructors) {
 }
 
 TEST_F(ClassTestMetroNet, SettersGetters) {
-  Station* testStation = new Station("testNaam", "testType");
+  Station* testStation = new Halte("testNaam");
   metronet.addStation(testStation);
   EXPECT_EQ(testStation, metronet.getStation("testNaam"));
-  Tram* testTram = new Tram(1, 1, "testType", 1, "testNaam", 1);
+  Tram* testTram = new PCC(1, 1, 1, "testNaam", 1);
   metronet.addTram(testTram);
   EXPECT_EQ(testTram, metronet.getTram(1));
   Passagier* testPassagier = new Passagier("testNaam", "testBeginStation", "testEindStation", 1);
@@ -43,10 +32,10 @@ TEST_F(ClassTestMetroNet, ContractViolations) {
   EXPECT_DEATH(metronet.getStation(""), "naam must not be empty");
   EXPECT_DEATH(metronet.getTram(-1), "voertuigNr must be greater or equal to zero");
   EXPECT_DEATH(metronet.getPassagier(""), "naam must not be empty");
-  Station* testStation = new Station("testNaam", "testType");
+  Station* testStation = new Halte("testNaam");
   metronet.addStation(testStation);
   EXPECT_DEATH(metronet.addStation(testStation), "This MetroNet already contains a station with this name");
-  Tram* testTram = new Tram(1, 1, "testType", 1, "testNaam", 1);
+  Tram* testTram = new PCC(1, 1, 1, "testNaam", 1);
   metronet.addTram(testTram);
   EXPECT_DEATH(metronet.addTram(testTram), "This MetroNet already contains a Tram with this voertuigNr");
   Passagier* testPassagier = new Passagier("testNaam", "testBeginStation", "testEindStation", 1);

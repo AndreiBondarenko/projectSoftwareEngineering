@@ -4,30 +4,29 @@
 
 #include <string>
 #include <set>
-#include "MetroNet.h"
 
 class MetroNet;
 
 class Tram {
-private:
+protected:
   Tram* initCheck;
   int lijnNr;
   int voertuigNr;
   int zitplaatsen;
   int snelheid;
-  std::string type;
   std::string beginStation;
   std::string currentStation;
   std::set<std::string> passagiers;
   int aantalPassagiers = 0;
   int omzet = 0;
   const int ticketPrijs = 2;
-public:
+  
   // CONSTRUCTORS
   /**
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   */
   Tram(); // default
+
   /**
   \n REQUIRE(beginStation != "", "newBeginStation must not be empty");
   \n REQUIRE(lijnNr >= 0 , "lijnNr must be bigger or equal to zero");
@@ -36,11 +35,13 @@ public:
   \n REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
   */
-  Tram(const int lijnNr, const int voertuigNr, const std::string& type,
+  Tram(const int lijnNr, const int voertuigNr,
     const int zitplaatsen, const std::string& beginStation, const int snelheid); // full
 
+public:
+
   // DESTRUCTOR
-  ~Tram();
+  virtual ~Tram();
 
   // INITIALIZATION CHECK
   bool properlyInitialized() const;
@@ -54,10 +55,6 @@ public:
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getZitplaatsen");
   */
   int getZitplaatsen() const;
-  /**
-  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getType");
-  */
-  std::string getType() const;
   /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling getBeginStation");
   */
@@ -87,12 +84,6 @@ public:
   \n REQUIRE(passagier != "", "passagier must not be empty");
   */
   bool isInTram(std::string passagier) const;
-  /**
-  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
-  \n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
-  \n REQUIRE(station != "", "station must not be empty");
-  */
-  bool stoptInStation(MetroNet& metronet, std::string station) const;
 
   // SETTER METHODS
   /**
@@ -107,12 +98,6 @@ public:
   \n ENSURE(getZitplaatsen() == newZitplaatsen, "setZitplaatsen post condition failure");
   */
   void setZitplaatsen(const int newZitplaatsen);
-  /**
-  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setType");
-  \n REQUIRE(newType != "", "newType must not be empty");
-  \n ENSURE(getType() == newType, "setType post condition failure");
-  */
-  void setType(const std::string& newType);
   /**
   \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling setBeginStation");
   \n REQUIRE(newBeginStation != "", "newBeginStation must not be empty");
@@ -172,12 +157,20 @@ public:
 	\n REQUIRE(station != "", "station must not be empty");
 	*/
 	std::set<std::string> afstappenInHalte(MetroNet& metronet, std::string station);
-	/**
+  	/**
 	\n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram");
 	\n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
 	\n ENSURE(metronet.isConsistent(), "moveTram made MetroNet inconsistent");
 	*/
 	void moveTram(MetroNet& metronet, std::ostream& output);
+
+  // VIRTUAL METHODS
+  /**
+  \n REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
+  \n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
+  \n REQUIRE(station != "", "station must not be empty");
+  */
+  virtual bool stoptInStation(MetroNet& metronet, std::string station) const = 0;
 
 private:
 	/**

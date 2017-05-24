@@ -2,11 +2,6 @@
 
 #include "MetroNet.h"
 
-//
-// Voor volgende functies zijn geen of enkel death-tests geschreven:
-// void moveToBeginStation(MetroNet& metronet) const;
-//
-
 class ClassTestPassagier: public ::testing::Test {
 protected:
 	friend class MetroNet;

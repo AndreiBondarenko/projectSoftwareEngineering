@@ -1,62 +1,83 @@
 #include <gtest/gtest.h>
-
 #include "MetroNet.h"
-
-//
-// Voor volgende functies zijn geen of enkel death-tests geschreven:
-// void movePassagiers(MetroNet& metronet, std::ostream& output, std::ostream& error);
-//
-
 
 class ClassTestStation: public ::testing::Test {
 protected:
 	friend class MetroNet;
 
-	Station station;
-  MetroNet metronet;
+	Halte halte;
+	MetroStation metroStation;
+  	MetroNet metronet;
 
 };
 
-TEST_F(ClassTestStation, DefaultConstructor) {
-  EXPECT_TRUE(station.properlyInitialized());
+TEST_F(ClassTestStation, DefaultConstructors) {
+  EXPECT_TRUE(halte.properlyInitialized());
+  EXPECT_TRUE(metroStation.properlyInitialized());
 }
 
 TEST_F(ClassTestStation, SettersGetters) {
-  station.setNaam("Antwerpen");
-  EXPECT_EQ("Antwerpen", station.getNaam());
-  station.addVorige(13, "Vorige");
-  EXPECT_EQ("Vorige", station.getVorige(13));
-  station.addVolgende(13, "Volgende");
-  EXPECT_EQ("Volgende", station.getVolgende(13));
-  // EXPECT_EQ({13}, station.getSporen());  Google test framework kan geen set vergelijken, andere oplossing?
-  station.setType("TEST");
-  EXPECT_EQ("TEST", station.getType());
-  station.setTramInStation(13, 33, true);
-  EXPECT_TRUE(station.isTramInStation(13));
-  EXPECT_EQ(33, station.getTramInStation(13));
-  // EXPECT_EQ({33}, station.getTramInStation()); Google test framework kan geen set vergelijken, andere oplossing?
-  station.addPassagier("groep1");
-  EXPECT_TRUE(station.isInStation("groep1"));
-  station.removePassagier("groep1");
-  EXPECT_FALSE(station.isInStation("groep1"));
+  halte.setNaam("Antwerpen");
+  EXPECT_EQ("Antwerpen", halte.getNaam());
+  halte.addVorige(13, "Vorige");
+  EXPECT_EQ("Vorige", halte.getVorige(13));
+  halte.addVolgende(13, "Volgende");
+  EXPECT_EQ("Volgende", halte.getVolgende(13));
+  EXPECT_EQ(13, *halte.getSporen().begin());
+  halte.setTramInStation(13, 33, true);
+  EXPECT_TRUE(halte.isTramInStation(13));
+  EXPECT_EQ(33, halte.getTramInStation(13));
+  halte.addPassagier("groep1");
+  EXPECT_TRUE(halte.isInStation("groep1"));
+  halte.removePassagier("groep1");
+  EXPECT_FALSE(halte.isInStation("groep1"));
+  EXPECT_FALSE(halte.albatrosCanStop());
+  metroStation.setNaam("Antwerpen");
+  EXPECT_EQ("Antwerpen", metroStation.getNaam());
+  metroStation.addVorige(13, "Vorige");
+  EXPECT_EQ("Vorige", metroStation.getVorige(13));
+  metroStation.addVolgende(13, "Volgende");
+  EXPECT_EQ("Volgende", metroStation.getVolgende(13));
+  EXPECT_EQ(13, *metroStation.getSporen().begin());
+  metroStation.setTramInStation(13, 33, true);
+  EXPECT_TRUE(metroStation.isTramInStation(13));
+  EXPECT_EQ(33, metroStation.getTramInStation(13));
+  metroStation.addPassagier("groep1");
+  EXPECT_TRUE(metroStation.isInStation("groep1"));
+  metroStation.removePassagier("groep1");
+  EXPECT_FALSE(metroStation.isInStation("groep1"));
+  EXPECT_TRUE(metroStation.albatrosCanStop());
 }
 
 TEST_F(ClassTestStation, ContractViolations) {
-  EXPECT_DEATH(Station("", "TEST"), "naam must not be empty");
-  EXPECT_DEATH(Station("TEST", ""), "type must not be empty");
-  EXPECT_DEATH(station.getVorige(-1), "parameter spoor must be >= 0, when passed to getVorige");
-  EXPECT_DEATH(station.getVolgende(-1), "parameter spoor must be >= 0, when passed to getVolgende");
-  EXPECT_DEATH(station.isTramInStation(-1), "parameter spoor must be >= 0, when passed to isTramInStation");
-  EXPECT_DEATH(station.getTramInStation(-1), "spoor must be bigger or equal to zero");
-  EXPECT_DEATH(station.setNaam(""), "newNaam must not be empty");
-  EXPECT_DEATH(station.addVorige(1 ,""), "newVorige must not be empty");
-  EXPECT_DEATH(station.addVorige(-1 ,"TEST"), "spoor must be bigger or equal to zero");
-  EXPECT_DEATH(station.addVolgende(1 ,""), "newVolgende must not be empty");
-  EXPECT_DEATH(station.addVolgende(-1 ,"TEST"), "spoor must be bigger or equal to zero");
-  EXPECT_DEATH(station.setType(""), "newType must not be empty");
-  EXPECT_DEATH(station.setTramInStation(-1, 1, true), "spoor must be bigger or equal to zero");
-  EXPECT_DEATH(station.setTramInStation(1, -1, true), "voertuigNr must be bigger or equal to zero");
-  EXPECT_DEATH(station.isInStation(""), "passagier must not be empty");
-  EXPECT_DEATH(station.addPassagier(""), "passagier must not be empty");
-  EXPECT_DEATH(station.removePassagier(""), "passagier must not be empty");
+  EXPECT_DEATH(MetroStation(""), "naam must not be empty");
+  EXPECT_DEATH(Halte(""), "naam must not be empty");
+  EXPECT_DEATH(metroStation.getVorige(-1), "parameter spoor must be >= 0, when passed to getVorige");
+  EXPECT_DEATH(halte.getVorige(-1), "parameter spoor must be >= 0, when passed to getVorige");
+  EXPECT_DEATH(metroStation.getVolgende(-1), "parameter spoor must be >= 0, when passed to getVolgende");
+  EXPECT_DEATH(halte.getVolgende(-1), "parameter spoor must be >= 0, when passed to getVolgende");
+  EXPECT_DEATH(metroStation.isTramInStation(-1), "parameter spoor must be >= 0, when passed to isTramInStation");
+  EXPECT_DEATH(halte.isTramInStation(-1), "parameter spoor must be >= 0, when passed to isTramInStation");
+  EXPECT_DEATH(metroStation.getTramInStation(-1), "spoor must be bigger or equal to zero");
+  EXPECT_DEATH(halte.getTramInStation(-1), "spoor must be bigger or equal to zero");
+  EXPECT_DEATH(metroStation.setNaam(""), "newNaam must not be empty");
+  EXPECT_DEATH(halte.setNaam(""), "newNaam must not be empty");
+  EXPECT_DEATH(metroStation.addVorige(1 ,""), "newVorige must not be empty");
+  EXPECT_DEATH(halte.addVorige(1 ,""), "newVorige must not be empty");
+  EXPECT_DEATH(metroStation.addVorige(-1 ,"TEST"), "spoor must be bigger or equal to zero");
+  EXPECT_DEATH(halte.addVorige(-1 ,"TEST"), "spoor must be bigger or equal to zero");
+  EXPECT_DEATH(metroStation.addVolgende(1 ,""), "newVolgende must not be empty");
+  EXPECT_DEATH(halte.addVolgende(1 ,""), "newVolgende must not be empty");
+  EXPECT_DEATH(metroStation.addVolgende(-1 ,"TEST"), "spoor must be bigger or equal to zero");
+  EXPECT_DEATH(halte.addVolgende(-1 ,"TEST"), "spoor must be bigger or equal to zero");
+  EXPECT_DEATH(metroStation.setTramInStation(-1, 1, true), "spoor must be bigger or equal to zero");
+  EXPECT_DEATH(halte.setTramInStation(-1, 1, true), "spoor must be bigger or equal to zero");
+  EXPECT_DEATH(metroStation.setTramInStation(1, -1, true), "voertuigNr must be bigger or equal to zero");
+  EXPECT_DEATH(halte.setTramInStation(1, -1, true), "voertuigNr must be bigger or equal to zero");
+  EXPECT_DEATH(metroStation.isInStation(""), "passagier must not be empty");
+  EXPECT_DEATH(halte.isInStation(""), "passagier must not be empty");
+  EXPECT_DEATH(metroStation.addPassagier(""), "passagier must not be empty");
+  EXPECT_DEATH(halte.addPassagier(""), "passagier must not be empty");
+  EXPECT_DEATH(metroStation.removePassagier(""), "passagier must not be empty");
+  EXPECT_DEATH(halte.removePassagier(""), "passagier must not be empty");
 }

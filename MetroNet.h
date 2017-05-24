@@ -5,9 +5,11 @@
 #include <map>
 #include <set>
 #include <string>
-#include "Tram.h"
-#include "Station.h"
 #include "Passagier.h"
+#include "PCC.h"
+#include "Albatros.h"
+#include "Halte.h"
+#include "MetroStation.h"
 
 
 class Station;

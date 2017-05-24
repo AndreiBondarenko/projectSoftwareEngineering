@@ -2,6 +2,7 @@
 #include "DesignByContract.h"
 #include <iostream>
 #include <algorithm>
+#include "MetroNet.h"
 
 Station::Station()  {
   initCheck = this;
@@ -9,12 +10,10 @@ Station::Station()  {
     "constructor must end in properlyInitialized state");
 }
 
-Station::Station(const std::string& naam, const std::string& type):
-  naam(naam),
-  type(type)
+Station::Station(const std::string& naam):
+  naam(naam)
 {
   REQUIRE(naam != "", "naam must not be empty");
-  REQUIRE(type != "", "type must not be empty");
   initCheck = this;
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
@@ -46,11 +45,6 @@ std::string Station::getVolgende(const int& spoor) const {
   REQUIRE(spoor >= 0,
     "parameter spoor must be >= 0, when passed to getVolgende");
   return volgende.at(spoor);
-}
-
-std::string Station::getType() const {
-  REQUIRE(properlyInitialized(), "Station wasn't initialized when calling getType");
-  return type;
 }
 
 std::set<int> Station::getSporen() const {
@@ -124,13 +118,6 @@ void Station::addVolgende(const int& spoor, const std::string& newVolgende) {
   volgende[spoor] = newVolgende;
   ENSURE(getVolgende(spoor) == newVolgende,
     "setVolgende post condition failure");
-}
-
-void Station::setType(const std::string& newType) {
-    REQUIRE(properlyInitialized(), "Station wasn't initialized when calling setType");
-    REQUIRE(newType != "", "newType must not be empty");
-    type = newType;
-    ENSURE(getType() == newType, "setType post condition failure");
 }
 
 bool Station::setTramInStation(const int& spoor, const int voertuigNr, const bool& newTramInStation) {

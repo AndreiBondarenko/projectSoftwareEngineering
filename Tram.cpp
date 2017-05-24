@@ -1,5 +1,6 @@
 #include "Tram.h"
 #include "DesignByContract.h"
+#include "MetroNet.h"
 #include <iostream>
 
 Tram::Tram()  {
@@ -7,13 +8,12 @@ Tram::Tram()  {
   ENSURE(properlyInitialized(),
     "constructor must end in properlyInitialized state");
 }
-Tram::Tram(const int lijnNr, const int voertuigNr, const std::string& type,
+Tram::Tram(const int lijnNr, const int voertuigNr,
     const int zitplaatsen, const std::string& beginStation, const int snelheid) :
 	lijnNr(lijnNr),
 	voertuigNr(voertuigNr),
 	zitplaatsen(zitplaatsen),
   snelheid(snelheid),
-  type(type),
 	beginStation(beginStation),
   currentStation(beginStation)
 {
@@ -22,7 +22,6 @@ Tram::Tram(const int lijnNr, const int voertuigNr, const std::string& type,
   REQUIRE(voertuigNr >= 0 , "voertuigNr must be bigger or equal to zero");
   REQUIRE(zitplaatsen >= 0 , "zitplaatsen must be bigger or equal to zero");
   REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
-  REQUIRE(type != "", "type must not be empty");
 	initCheck = this;
   ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
@@ -43,12 +42,6 @@ int Tram::getZitplaatsen() const {
 	REQUIRE(properlyInitialized(),
     "Tram wasn't initialized when calling getZitplaatsen");
 	return zitplaatsen;
-}
-
-std::string Tram::getType() const {
-    REQUIRE(properlyInitialized(),
-      "Tram wasn't initialized when calling getType");
-    return type;
 }
 
 std::string Tram::getBeginStation() const {
@@ -98,16 +91,6 @@ void Tram::setZitplaatsen(const int newZitplaatsen) {
 	zitplaatsen = newZitplaatsen;
 	ENSURE(getZitplaatsen() == newZitplaatsen,
     "setZitplaatsen post condition failure");
-}
-
-void Tram::setType(const std::string &newType) {
-  REQUIRE(properlyInitialized(),
-    "Tram wasn't initialized when calling setType");
-  REQUIRE(newType != "",
-    "newType must not be empty");
-  type = newType;
-  ENSURE(getType() == newType,
-    "setType post condition failure");
 }
 
 void Tram::setBeginStation(const std::string & newBeginStation) {
@@ -190,27 +173,6 @@ std::set<std::string> Tram::afstappenInHalte(MetroNet& metronet, std::string sta
 		}
 	}
 	return afstappen;
-}
-
-bool Tram::stoptInStation(MetroNet& metronet, std::string station) const {
-	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling afstappenInHalte");
-	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
-	REQUIRE(station != "", "station must not be empty");
-	if (currentStation == station) {
-		if (type == "Albatros" && metronet.getStation(station)->getType() != "Metrostation")
-			return false;
-		return true;
-	}
-	std::string nextStation = metronet.getStation(currentStation)->getVolgende(lijnNr);
-	while (nextStation != currentStation) {
-		if (nextStation == station) {
-			if (type == "Albatros" && metronet.getStation(station)->getType() != "Metrostation")
-				return false;
-			return true;
-		}
-		nextStation = metronet.getStation(nextStation)->getVolgende(lijnNr);
-	}
-	return false;
 }
 
 int Tram::getOmzet() const {
