@@ -14,7 +14,7 @@ public:
   /**
   \n REQUIRE(beginStation != "", "newBeginStation must not be empty");
   \n REQUIRE(lijnNr >= 0 , "lijnNr must be bigger or equal to zero");
-  \n REQUIRE(newVoertuigNr >= 0 , "newVoertuigNr must be bigger or equal to zero");
+  \n REQUIRE(voertuigNr >= 0 , "voertuigNr must be bigger or equal to zero");
   \n REQUIRE(zitplaatsen >= 0 , "zitplaatsen must be bigger or equal to zero");
   \n REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
   \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");

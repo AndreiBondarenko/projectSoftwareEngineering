@@ -198,13 +198,13 @@ bool Tram::isReachable(MetroNet& metronet, std::string station) {
 		}
 		nextStation = metronet.getStation(nextStation->getVolgende(lijnNr));
 	}
-	ENSURE(metronet.isConsistent(), "isReachable made MetroNet inconsistent");
 	return true;
 }
 
 void Tram::moveTram(MetroNet& metronet, std::ostream& output) {
 	REQUIRE(properlyInitialized(), "Tram wasn't initialized when calling moveTram");
 	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling moveTram");
+	bool attemptedToMove, moved = false;
 	Station* nextStation = metronet.getStation(metronet.getStation(currentStation)->getVolgende(lijnNr));
 	if (!nextStation->isTramInStation(lijnNr)) {
 		if (isReachable(metronet, nextStation->getNaam())) {
@@ -214,12 +214,14 @@ void Tram::moveTram(MetroNet& metronet, std::ostream& output) {
 				<< "Tram #" << voertuigNr << " op spoor " << lijnNr << " reed van station "
 				<< currentStation << " naar station " << nextStation->getNaam() << "." << std::endl;
 			currentStation = nextStation->getNaam();
+			moved = true;
 		}
 		else {
 			output
 				<< "Tram #" << voertuigNr << " op spoor " << lijnNr << " wachtte in station "
 				<< currentStation << ", want de route naar station " << nextStation->getNaam()
 				<< " was bezet." << std::endl;
+			attemptedToMove = true;
 		}
 	}
 	else {
@@ -227,7 +229,9 @@ void Tram::moveTram(MetroNet& metronet, std::ostream& output) {
 			<< "Tram #" << voertuigNr << " op spoor " << lijnNr << " wachtte in station "
 			<< currentStation << ", want station " << nextStation->getNaam()
 			<< " was bezet door Tram #" << nextStation->getTramInStation(lijnNr) << "." << std::endl;
+		attemptedToMove = true;
 	}
+	ENSURE(moved || attemptedToMove, "moveTram post condition failure");
 	ENSURE(metronet.isConsistent(), "moveTram made MetroNet inconsistent");
 }
 

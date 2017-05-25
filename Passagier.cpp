@@ -82,6 +82,7 @@ void Passagier::moveToBeginStation(MetroNet& metronet) const {
 	REQUIRE(metronet.getStation(beginStation) != nullptr, "beginStation is not a station of MetroNet");
 	Station* station = metronet.getStation(beginStation);
 	station->addPassagier(naam);
+	ENSURE(station->isInStation(naam), "moveToBeginStation post condition failure");
 	ENSURE(metronet.isConsistent(), "Passagier::moveToBeginStation made MetroNet inconsistent");
 }
 

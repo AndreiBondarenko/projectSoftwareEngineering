@@ -93,7 +93,7 @@ public:
   \n REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling runSimulation");
   \n ENSURE(isConsistent(), "runSimulation made MetroNet inconsistent");
   */
-  void runSimulation(std::ostream& output);
+  void runSimulation(std::ostream& output, const bool live=false);
 
   // FILE I/O METHODS
   /**
@@ -106,10 +106,6 @@ public:
   void drawToOutputStream(std::ostream& output);
 
   void writeToASCII();
-
-
-
-protected:
 
 };
 

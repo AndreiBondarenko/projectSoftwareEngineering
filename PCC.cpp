@@ -4,12 +4,21 @@
 
 #include "MetroNet.h"
 
-PCC::PCC() : Tram() {}
+PCC::PCC() : Tram() {
+	ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
+}
 
 PCC::PCC(const int lijnNr, const int voertuigNr,
          const int zitplaatsen, const std::string& beginStation,
          const int snelheid)
-    : Tram(lijnNr, voertuigNr, zitplaatsen, beginStation, snelheid) {}
+    : Tram(lijnNr, voertuigNr, zitplaatsen, beginStation, snelheid) {
+	REQUIRE(beginStation != "", "newBeginStation must not be empty");
+  	REQUIRE(lijnNr >= 0 , "lijnNr must be bigger or equal to zero");
+  	REQUIRE(voertuigNr >= 0 , "voertuigNr must be bigger or equal to zero");
+  	REQUIRE(zitplaatsen >= 0 , "zitplaatsen must be bigger or equal to zero");
+  	REQUIRE(snelheid >= 0 , "snelheid must be bigger or equal to zero");
+  	ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");	
+	}
 
 PCC::~PCC() {}
 

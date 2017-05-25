@@ -175,9 +175,10 @@ void MetroNet::moveAllePassengers(std::ostream& output) {
   }
 }
 
-void MetroNet::runSimulation(std::ostream &output) {
+void MetroNet::runSimulation(std::ostream &output, const bool live) {
   REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling runSimulation");
 	bool simulationCompleted = false;
+  int steps = 0;
 	for (int i = 1; !simulationCompleted; i++) {
 		if (i == MAXAANTALLOOPS) {
 			output << "MetroNetSimulation stopped. Infinite loop occured." << std::endl;
@@ -185,7 +186,7 @@ void MetroNet::runSimulation(std::ostream &output) {
 		}
 		output << i << "." << std::endl;
     simulationCompleted = true;
-	moveAlleTrams(output);
+	  moveAlleTrams(output);
     moveAllePassengers(output);
 		output << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
     for(auto mapIt = allePassagiers.begin(); mapIt != allePassagiers.end(); mapIt++) {
@@ -194,6 +195,42 @@ void MetroNet::runSimulation(std::ostream &output) {
         break;
       }
     }
+    if(live)
+    {
+      if(steps == 0)
+      {
+        bool exitLoop = false;
+        while(!exitLoop)
+        {
+        output << "Druk op ENTER om verder te gaan of:\n- geef \"-o\" in voor een overzicht\n- geef \"-v\" in voor een visuele impressie\n- geef het aantal stappen dat je verder wil gaan in\nResponse: ";
+        std::string input;
+        getline(std::cin, input);
+        output << std::endl;
+        if (input.empty())  break;
+        else if(input == "-o") writeToOutputStream(output);
+        else if(input == "-v") drawToOutputStream(output);
+        try {
+          steps = std::stoi(input);
+          break;
+        }
+        catch (const std::exception&){continue;}
+        }
+      }
+      else --steps;
+    }
+    if(simulationCompleted && live)
+    {
+      output << "Wilt u een overzicht van de eindsituatie tonen? (Y/N)\nResponse: ";
+      std::string input;
+      getline(std::cin, input);
+      output << std::endl;
+      if (!input.empty() && (input == "Y" || input == "y"))
+      {
+        writeToOutputStream(output);
+        drawToOutputStream(output);
+      }
+    }
+    
   }
   ENSURE(isConsistent(), "runSimulation made MetroNet inconsistent");
 }

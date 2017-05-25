@@ -89,6 +89,7 @@ public:
 	/**
 	\n REQUIRE(properlyInitialized(), "Passagier wasn't initialized when calling moveToBeginStation");
 	\n REQUIRE(metronet->properlyInitialized(), "MetroNet wasn't initialized when calling Passagier::moveToBeginStation");
+	\n ENSURE(station->isInStation(naam), "moveToBeginStation post condition failure");
 	\n ENSURE(metronet->isConsistent(), "Passagier::moveToBeginStation made MetroNet inconsistent");
 	*/
 	void moveToBeginStation(MetroNet& metronet) const;
