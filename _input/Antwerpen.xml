@@ -1,0 +1,2342 @@
+<METRONET>
+  <STATION>
+    <naam>P+R Merksem</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Ringlaan</volgende>
+        <vorige>Lelieplaats</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Ringlaan</volgende>
+        <vorige>P+R Melsele</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Ringlaan</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Rerum Novarum</volgende>
+        <vorige>P+R Merksem</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Rerum Novarum</volgende>
+        <vorige>P+R Merksem</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Rerum Novarum</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Victor Roosens</volgende>
+        <vorige>Ringlaan</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Victor Roosens</volgende>
+        <vorige>Ringlaan</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Victor Roosens</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Oudebareel</volgende>
+        <vorige>Rerum Novarum</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Oudebareel</volgende>
+        <vorige>Rerum Novarum</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Oudebareel</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Barnkracht</volgende>
+        <vorige>Victor Roosens</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Barnkracht</volgende>
+        <vorige>Victor Roosens</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Barnkracht</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Burgemeester Nolf</volgende>
+        <vorige>Oudebareel</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Burgemeester Nolf</volgende>
+        <vorige>Oudebareel</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Burgemeester Nolf</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Gasthuishoeve</volgende>
+        <vorige>Barnkracht</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Gasthuishoeve</volgende>
+        <vorige>Barnkracht</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Gasthuishoeve</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Sport</volgende>
+        <vorige>Burgemeester Nolf</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Sport</volgende>
+        <vorige>Burgemeester Nolf</vorige>
+    </SPOOR>
+	  <SPOOR>
+        <spoor>6</spoor>
+        <volgende>Sport</volgende>
+        <vorige>Bredabaan</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Sport</naam>
+    <type>Metrostation</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Schijnpoort</volgende>
+        <vorige>Gasthuishoeve</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Schijnpoort</volgende>
+        <vorige>Gasthuishoeve</vorige>
+    </SPOOR>
+	  <SPOOR>
+        <spoor>6</spoor>
+        <volgende>Schijnpoort</volgende>
+        <vorige>Gasthuishoeve</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Schijnpoort</naam>
+    <type>Metrostation</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Handel</volgende>
+        <vorige>Sport</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Handel</volgende>
+        <vorige>Sport</vorige>
+    </SPOOR>
+	  <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Handel</volgende>
+        <vorige>Sportpaleis</vorige>
+    </SPOOR>
+	  <SPOOR>
+        <spoor>6</spoor>
+        <volgende>Handel</volgende>
+        <vorige>Sport</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Handel</naam>
+    <type>Metrostation</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Elisabeth</volgende>
+        <vorige>Schijnpoort</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Elisabeth</volgende>
+        <vorige>Schijnpoort</vorige>
+    </SPOOR>
+	  <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Elisabeth</volgende>
+        <vorige>Schijnpoort</vorige>
+    </SPOOR>
+	  <SPOOR>
+        <spoor>6</spoor>
+        <volgende>Elisabeth</volgende>
+        <vorige>Schijnpoort</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Elisabeth</naam>
+    <type>Metrostation</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Astrid</volgende>
+        <vorige>Handel</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Astrid</volgende>
+        <vorige>Handel</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>5</spoor>
+        <volgende>Astrid</volgende>
+        <vorige>Handel</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>Astrid</volgende>
+        <vorige>Handel</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Astrid</naam>
+    <type>Metrostation</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Diamand</volgende>
+        <vorige>Elisabeth</vorige>
+    </SPOOR>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Meir</volgende>
+        <vorige>Elisabeth</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>5</spoor>
+        <volgende>Meir</volgende>
+        <vorige>Elisabeth</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>Diamand</volgende>
+        <vorige>Elisabeth</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>8</spoor>
+        <volgende>P+R Wommelgem</volgende>
+        <vorige>Zegel</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Fortveld</volgende>
+        <vorige>Zegel</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Diamand</naam>
+    <type>Metrostation</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Plantin</volgende>
+        <vorige>Astrid</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>Plantin</volgende>
+        <vorige>Astrid</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Meir</volgende>
+        <vorige>Plantin</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Meir</volgende>
+        <vorige>Plantin</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Plantin</naam>
+    <type>Metrostation</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Lange Leemstraat</volgende>
+        <vorige>Diamand</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>Lange Leemstraat</volgende>
+        <vorige>Diamand</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Diamand</volgende>
+        <vorige>Zurenborg</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Diamand</volgende>
+        <vorige>Lange Leemstraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Lange Leemstraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Harmonie</volgende>
+        <vorige>Plantin</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>Harmonie</volgende>
+        <vorige>Plantin</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Plantin</volgende>
+        <vorige>Harmonie</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Harmonie</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Provinciehuis</volgende>
+        <vorige>Lange Leemstraat</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>Provinciehuis</volgende>
+        <vorige>Lange Leemstraat</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>7</spoor>
+        <volgende>Gounod</volgende>
+        <vorige>De Merode</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Lange Leemstraat</volgende>
+        <vorige>De Merode</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Provinciehuis</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Markgravelei</volgende>
+        <vorige>Harmonie</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>Markgravelei</volgende>
+        <vorige>Harmonie</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Markgravelei</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>deSingel</volgende>
+        <vorige>Provinciehuis</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>deSingel</volgende>
+        <vorige>Provinciehuis</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>deSingel</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Antwerp Expo</volgende>
+        <vorige>Markgravelei</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>Antwerp Expo</volgende>
+        <vorige>Markgravelei</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Antwerp Expo</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Volhardingstraat</volgende>
+        <vorige>deSingel</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>Volhardingstraat</volgende>
+        <vorige>deSingel</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Volhardingstraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Olympiade</volgende>
+        <vorige>Antwerp Expo</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>Olympiade</volgende>
+        <vorige>Antwerp Expo</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Olympiade</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>De Bosschaert</volgende>
+        <vorige>Volhardingstraat</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>6</spoor>
+        <volgende>P+R Olympiade</volgende>
+        <vorige>Volhardingstraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>De Bosschaert</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Schijfwerper</volgende>
+        <vorige>Olympiade</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Schijfwerper</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Sportstraat</volgende>
+        <vorige>De Bosschaert</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Sportstraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Zwaantjes</volgende>
+        <vorige>Schijfwerper</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Zwaantjes</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Jan Van de Wouwer</volgende>
+        <vorige>Sportstraat</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>4</spoor>
+        <volgende>Jan Van de Wouwer</volgende>
+        <vorige>Grens Kiel</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Aartselaarstraat</volgende>
+        <vorige>Grens Kiel</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Jan Van de Wouwer</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Draaiboom</volgende>
+        <vorige>Zwaantjes</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>4</spoor>
+        <volgende>Draaiboom</volgende>
+        <vorige>Zwaantjes</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Draaiboom</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Steynstraat</volgende>
+        <vorige>Jan Van de Wouwer</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>4</spoor>
+        <volgende>Steynstraat</volgende>
+        <vorige>Jan Van de Wouwer</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Steynstraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Kioskplaats</volgende>
+        <vorige>Draaiboom</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>4</spoor>
+        <volgende>Kioskplaats</volgende>
+        <vorige>Draaiboom</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Kioskplaats</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>Lelieplaats</volgende>
+        <vorige>Steynstraat</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>4</spoor>
+        <volgende>Lelieplaats</volgende>
+        <vorige>Steynstraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Lelieplaats</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>2</spoor>
+        <volgende>P+R Merksem</volgende>
+        <vorige>Kioskplaats</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>4</spoor>
+        <volgende>Silsburg</volgende>
+        <vorige>Kioskplaats</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Meir</naam>
+    <type>Metrostation</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Groenplaats</volgende>
+        <vorige>Astrid</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>5</spoor>
+        <volgende>Groenplaats</volgende>
+        <vorige>Astrid</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Groenplaats</volgende>
+        <vorige>Astrid</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Groenplaats</volgende>
+        <vorige>Astrid</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Groenplaats</naam>
+    <type>Metrostation</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Van Eeden</volgende>
+        <vorige>Meir</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>5</spoor>
+        <volgende>Van Eeden</volgende>
+        <vorige>Meir</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Van Eeden</volgende>
+        <vorige>Meir</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Van Eeden</volgende>
+        <vorige>Meir</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Van Eeden</naam>
+    <type>Metrostation</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Halewijn</volgende>
+        <vorige>Groenplaats</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>5</spoor>
+        <volgende>Halewijn</volgende>
+        <vorige>Groenplaats</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Halewijn</volgende>
+        <vorige>Groenplaats</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Halewijn</volgende>
+        <vorige>Groenplaats</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Halewijn</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Van Cauwelaert</volgende>
+        <vorige>Van Eeden</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>5</spoor>
+        <volgende>Van Cauwelaert</volgende>
+        <vorige>Van Eeden</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Van Cauwelaert</volgende>
+        <vorige>Van Eeden</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Van Cauwelaert</volgende>
+        <vorige>Van Eeden</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Van Cauwelaert</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Sporthal</volgende>
+        <vorige>Halewijn</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>5</spoor>
+        <volgende>Sporthal</volgende>
+        <vorige>Halewijn</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Sporthal</volgende>
+        <vorige>Halewijn</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Sporthal</volgende>
+        <vorige>Halewijn</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Sporthal</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>P+R Linkeroever</volgende>
+        <vorige>Van Cauwelaert</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>5</spoor>
+        <volgende>P+R Linkeroever</volgende>
+        <vorige>Van Cauwelaert</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>P+R Linkeroever</volgende>
+        <vorige>Van Cauwelaert</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>P+R Linkeroever</volgende>
+        <vorige>Van Cauwelaert</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>P+R Linkeroever</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Schep Vreugde</volgende>
+        <vorige>Sporthal</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>5</spoor>
+        <volgende>Fortveld</volgende>
+        <vorige>Sporthal</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Eksterlaar</volgende>
+        <vorige>Sporthal</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>P+R Boechout</volgende>
+        <vorige>Sporthal</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Schep Vreugde</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Verbrandendijk</volgende>
+        <vorige>P+R Linkeroever</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Verbrandendijk</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Van Goey</volgende>
+        <vorige>Schep Vreugde</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Van Goey</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Vredespark</volgende>
+        <vorige>Verbrandendijk</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Vredespark</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Dorp</volgende>
+        <vorige>Van Goey</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Dorp</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>Hof Ter Rijen</volgende>
+        <vorige>Vredespark</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Hof Ter Rijen</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>P+R Melsele</volgende>
+        <vorige>Dorp</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>P+R Melsele</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>3</spoor>
+        <volgende>P+R Merksem</volgende>
+        <vorige>Hof Ter Rijen</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Silsburg</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Dassastraat</volgende>
+        <vorige>Lelieplaats</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Dassastraat</volgende>
+        <vorige>Jezusstraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Dassastraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Florent Pauwels</volgende>
+        <vorige>Silsburg</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Florent Pauwels</volgende>
+        <vorige>Silsburg</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Florent Pauwels</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Van den Hautelei</volgende>
+        <vorige>Dassastraat</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>8</spoor>
+        <volgende>Stevenslei</volgende>
+        <vorige>Van Riel</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Stevenslei</volgende>
+        <vorige>Van Riel</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Stevenslei</volgende>
+        <vorige>Dassastraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Van den Hautelei</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Eksterlaar</volgende>
+        <vorige>Florent Pauwels</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Eksterlaar</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Jozef Verboven</volgende>
+        <vorige>Van den Hautelei</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Jozef Verboven</volgende>
+        <vorige>P+R Linkeroever</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Jozef Verboven</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Cruyslei</volgende>
+        <vorige>Eksterlaar</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Cruyslei</volgende>
+        <vorige>Eksterlaar</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Cruyslei</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Te Boelaarpark</volgende>
+        <vorige>Jozef Verboven</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Te Boelaarpark</volgende>
+        <vorige>Jozef Verboven</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Te Boelaarpark</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>De Preter</volgende>
+        <vorige>Cruyslei</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>De Preter</volgende>
+        <vorige>Cruyslei</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>De Preter</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Apollo</volgende>
+        <vorige>Te Boelaarpark</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Apollo</volgende>
+        <vorige>Te Boelaarpark</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Apollo</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Groenenhoek</volgende>
+        <vorige>De Preter</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Groenenhoek</volgende>
+        <vorige>De Preter</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Groenenhoek</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Berchem Station</volgende>
+        <vorige>Apollo</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Berchem Station</volgende>
+        <vorige>Apollo</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>11</spoor>
+        <volgende>Berchem Station</volgende>
+        <vorige>Jezusstraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Berchem Station</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Cuperus</volgende>
+        <vorige>Groenenhoek</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Cuperus</volgende>
+        <vorige>Groenenhoek</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>11</spoor>
+        <volgende>Draakplaats</volgende>
+        <vorige>Groenenhoek</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Cuperus</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Lamorinierestraat</volgende>
+        <vorige>Berchem Station</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>9</spoor>
+        <volgende>Zurenborg</volgende>
+        <vorige>Berchem Station</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Lamorinierestraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Belgielei</volgende>
+        <vorige>Cuperus</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Belgielei</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Sint Vincentius</volgende>
+        <vorige>Lamorinierestraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Sint Vincentius</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Hemel</volgende>
+        <vorige>Belgielei</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Hemel</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Nationale Bank</volgende>
+        <vorige>Sint Vincentius</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Nationale Bank</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Mechelseplein</volgende>
+        <vorige>Hemel</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>7</spoor>
+        <volgende>Mechelseplein</volgende>
+        <vorige>Van Bree</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>12</spoor>
+        <volgende>Kasteelplein</volgende>
+        <vorige>Stadspark</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Kasteelplein</volgende>
+        <vorige>Stadspark</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Mechelseplein</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Oudaan</volgende>
+        <vorige>Nationale Bank</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>7</spoor>
+        <volgende>Oudaan</volgende>
+        <vorige>Nationale Bank</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Oudaan</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Meirbrug</volgende>
+        <vorige>Mechelseplein</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>7</spoor>
+        <volgende>Meirbrug</volgende>
+        <vorige>Mechelseplein</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Meirbrug</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Groenplaats_halte</volgende>
+        <vorige>Oudaan</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>7</spoor>
+        <volgende>Keizerstraat</volgende>
+        <vorige>Oudaan</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Groenplaats_halte</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Sint-Andries</volgende>
+        <vorige>Meirbrug</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Sint-Andries</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Tropisch Instituut</volgende>
+        <vorige>Groenplaats_halte</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Tropisch Instituut</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Museum</volgende>
+        <vorige>Sint-Andries</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Museum</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Pacificatie</volgende>
+        <vorige>Tropisch Instituut</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Pacificatie</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Bolivarplaats</volgende>
+        <vorige>Museum</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Bolivarplaats</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Brussel</volgende>
+        <vorige>Pacificatie</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>12</spoor>
+        <volgende>Sportpaleis</volgende>
+        <vorige>Montigny</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Brussel</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Station Zuid</volgende>
+        <vorige>Bolivarplaats</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Station Zuid</volgende>
+        <vorige>Broedermin</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Station Zuid</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Kolonel Silvertop</volgende>
+        <vorige>Brussel</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Kolonel Silvertop</volgende>
+        <vorige>Brussel</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Kolonel Silvertop</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Generaal Armstrong</volgende>
+        <vorige>Station Zuid</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Generaal Armstrong</volgende>
+        <vorige>Station Zuid</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Generaal Armstrong</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Kielpark</volgende>
+        <vorige>Kolonel Silvertop</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Kielpark</volgende>
+        <vorige>Kolonel Silvertop</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Kielpark</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Abdijstraat</volgende>
+        <vorige>Generaal Armstrong</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Abdijstraat</volgende>
+        <vorige>Generaal Armstrong</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Abdijstraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Grens Kiel</volgende>
+        <vorige>Kielpark</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Grens Kiel</volgende>
+        <vorige>Kielpark</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Grens Kiel</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>4</spoor>
+        <volgende>Zwaantjes</volgende>
+        <vorige>Abdijstraat</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Zwaantjes</volgende>
+        <vorige>Abdijstraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Fortveld</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Schijnbeemden</volgende>
+        <vorige>P+R Linkeroever</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Schijnbeemden</volgende>
+        <vorige>Astrid</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Schijnbeemden</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Wijnegem Shopping Center</volgende>
+        <vorige>Fortveld</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Wijnegem Shopping Center</volgende>
+        <vorige>Fortveld</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Wijnegem Shopping Center</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Ertbrugge</volgende>
+        <vorige>Schijnbeemden</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Ertbrugge</volgende>
+        <vorige>Schijnbeemden</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Ertbrugge</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Havik</volgende>
+        <vorige>Wijnegem Shopping Center</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Havik</volgende>
+        <vorige>Wijnegem Shopping Center</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Havik</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Ruggeveld</volgende>
+        <vorige>Ertbrugge</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Ruggeveld</volgende>
+        <vorige>Ertbrugge</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Ruggeveld</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Frans Van Dijck</volgende>
+        <vorige>Havik</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Parkweg</volgende>
+        <vorige>Havik</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Frans Van Dijck</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Van Overmeire</volgende>
+        <vorige>Ruggeveld</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Van Overmeire</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Ruggeveldlaan</volgende>
+        <vorige>Frans Van Dijck</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Ruggeveldlaan</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Hermans</volgende>
+        <vorige>Van Overmeire</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Hermans</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Antwerp Stadion</volgende>
+        <vorige>Ruggeveldlaan</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Antwerp Stadion</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Clara Snellings</volgende>
+        <vorige>Hermans</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Clara Snellings</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Craebeckx</volgende>
+        <vorige>Antwerp Stadion</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Craebeckx</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Confortalei</volgende>
+        <vorige>Clara Snellings</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Confortalei</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Lakborslei</volgende>
+        <vorige>Craebeckx</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Lakborslei</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Ten Eekhove</volgende>
+        <vorige>Confortalei</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Ten Eekhove</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Sportpaleis</volgende>
+        <vorige>Lakborslei</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Sportpaleis</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>5</spoor>
+        <volgende>Schijnpoort</volgende>
+        <vorige>Ten Eekhove</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>12</spoor>
+        <volgende>Schijnpoort_halte</volgende>
+        <vorige>Bolivarplaats</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>P+R Olympiade</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>6</spoor>
+        <volgende>Kruishof</volgende>
+        <vorige>Olympiade</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Kruishof</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>6</spoor>
+        <volgende>Groenendaal</volgende>
+        <vorige>P+R Olympiade</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Groenendaal</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>6</spoor>
+        <volgende>Station Luchtbal</volgende>
+        <vorige>Kruishof</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Station Luchtbal</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>6</spoor>
+        <volgende>Lambrechtshoeken</volgende>
+        <vorige>Groenendaal</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Lambrechtshoeken</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>6</spoor>
+        <volgende>Bredabaan</volgende>
+        <vorige>Station Luchtbal</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Bredabaan</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>6</spoor>
+        <volgende>Gasthuishoeve</volgende>
+        <vorige>Lambrechtshoeken</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Gounod</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Van Bree</volgende>
+        <vorige>Harmonie</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Van Bree</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Nationale Bank</volgende>
+        <vorige>Gounod</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Keizerstraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Klapdorp</volgende>
+        <vorige>Meirbrug</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Klapdorp</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Sint-Pietersvliet</volgende>
+        <vorige>Keizerstraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Sint-Pietersvliet</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Gemeenteplein</volgende>
+        <vorige>Klapdorp</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Gemeenteplein</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Vredebaan</volgende>
+        <vorige>Sint-Pietersvliet</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Vredebaan</volgende>
+        <vorige>Station Oude God</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Vredebaan</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Gevaert</volgende>
+        <vorige>Gemeenteplein</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Gevaert</volgende>
+        <vorige>Gemeenteplein</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Gevaert</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Kuijpers</volgende>
+        <vorige>Vredebaan</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Kuijpers</volgende>
+        <vorige>Vredebaan</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Kuijpers</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Fruithoflaan</volgende>
+        <vorige>Gevaert</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Fruithoflaan</volgende>
+        <vorige>Gevaert</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Fruithoflaan</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Pulhof</volgende>
+        <vorige>Kuijpers</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Pulhof</volgende>
+        <vorige>Kuijpers</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Pulhof</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Jan Moorkens</volgende>
+        <vorige>Fruithoflaan</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Jan Moorkens</volgende>
+        <vorige>Fruithoflaan</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Jan Moorkens</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Koninklijkelaan</volgende>
+        <vorige>Pulhof</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Koninklijkelaan</volgende>
+        <vorige>Pulhof</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Koninklijkelaan</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Sint-Willibrordus</volgende>
+        <vorige>Jan Moorkens</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Sint-Willibrordus</volgende>
+        <vorige>Jan Moorkens</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Sint-Willibrordus</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Driekoningen</volgende>
+        <vorige>Koninklijkelaan</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Driekoningen</volgende>
+        <vorige>Koninklijkelaan</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Driekoningen</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>De Merode</volgende>
+        <vorige>Sint-Willibrordus</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>De Merode</volgende>
+        <vorige>Sint-Willibrordus</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>De Merode</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>7</spoor>
+        <volgende>Harmonie</volgende>
+        <vorige>Driekoningen</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>15</spoor>
+        <volgende>Harmonie</volgende>
+        <vorige>Driekoningen</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>P+R Wommelgem</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>8</spoor>
+        <volgende>Van Riel</volgende>
+        <vorige>Astrid</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Van Riel</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>8</spoor>
+        <volgende>Florent Pauwels</volgende>
+        <vorige>P+R Wommelgem</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Florent Pauwels</volgende>
+        <vorige>Parkweg</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Stevenslei</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>8</spoor>
+        <volgende>Waterbaan</volgende>
+        <vorige>Florent Pauwels</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Waterbaan</volgende>
+        <vorige>Florent Pauwels</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Waterbaan</volgende>
+        <vorige>Florent Pauwels</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Waterbaan</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>8</spoor>
+        <volgende>Mestputteke</volgende>
+        <vorige>Stevenslei</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Mestputteke</volgende>
+        <vorige>Stevenslei</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Mestputteke</volgende>
+        <vorige>Stevenslei</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Mestputteke</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>8</spoor>
+        <volgende>Muggenberg</volgende>
+        <vorige>Waterbaan</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Muggenberg</volgende>
+        <vorige>Waterbaan</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Muggenberg</volgende>
+        <vorige>Waterbaan</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Muggenberg</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>8</spoor>
+        <volgende>Zegel</volgende>
+        <vorige>Mestputteke</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Zegel</volgende>
+        <vorige>Mestputteke</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Morckhoven</volgende>
+        <vorige>Mestputteke</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Zegel</naam>
+    <type>Metrostation</type>
+    <SPOOR>
+        <spoor>8</spoor>
+        <volgende>Astrid</volgende>
+        <vorige>Muggenberg</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Astrid</volgende>
+        <vorige>Muggenberg</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Zurenborg</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>9</spoor>
+        <volgende>Plantin</volgende>
+        <vorige>Cuperus</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Parkweg</naam>
+    <type>Halte</type>
+	<SPOOR>
+        <spoor>10</spoor>
+        <volgende>Van Riel</volgende>
+        <vorige>Ruggeveld</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Draakplaats</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Dagenraadplaats</volgende>
+        <vorige>Berchem Station</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Dagenraadplaats</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Van Ruusbroec</volgende>
+        <vorige>Draakplaats</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Van Ruusbroec</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Plantin-Moretus</volgende>
+        <vorige>Dagenraadplaats</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Plantin-Moretus</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Lente</volgende>
+        <vorige>Van Ruusbroec</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Lente</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Ploeg</volgende>
+        <vorige>Plantin-Moretus</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Ploeg</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Ommegang</volgende>
+        <vorige>Lente</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Ommegang</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Centraal Station</volgende>
+        <vorige>Ploeg</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Centraal Station</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Rooseveltplaats</volgende>
+        <vorige>Ommegang</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>12</spoor>
+        <volgende>Rooseveltplaats</volgende>
+        <vorige>De Coninck</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Rooseveltplaats</volgende>
+        <vorige>Kerkstraat</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Rooseveltplaats</volgende>
+        <vorige>P+R Schoonselhof</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Rooseveltplaats</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Sint-Jacob</volgende>
+        <vorige>Centraal Station</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>12</spoor>
+        <volgende>Stadspark</volgende>
+        <vorige>Centraal Station</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Sint-Jacob</volgende>
+        <vorige>Centraal Station</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Stadspark</volgende>
+        <vorige>Centraal Station</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Sint-Jacob</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Sint-Katelijne</volgende>
+        <vorige>Rooseveltplaats</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Sint-Katelijne</volgende>
+        <vorige>Rooseveltplaats</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Sint-Katelijne</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Melkmarkt</volgende>
+        <vorige>Sint-Jacob</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Melkmarkt</volgende>
+        <vorige>Sint-Jacob</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Melkmarkt</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Jezusstraat</volgende>
+        <vorige>Sint-Katelijne</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Jezusstraat</volgende>
+        <vorige>Sint-Katelijne</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Jezusstraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>11</spoor>
+        <volgende>Groenenhoek</volgende>
+        <vorige>Melkmarkt</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>23</spoor>
+        <volgende>Silsburg</volgende>
+        <vorige>Melkmarkt</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Schijnpoort_halte</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>12</spoor>
+        <volgende>Halenstraat</volgende>
+        <vorige>Sportpaleis</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Halenstraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>12</spoor>
+        <volgende>Stuivenberg</volgende>
+        <vorige>Schijnpoort_halte</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Stuivenberg</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>12</spoor>
+        <volgende>Gaststraat</volgende>
+        <vorige>Halenstraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Gaststraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>12</spoor>
+        <volgende>Sint-Gummarus</volgende>
+        <vorige>Stuivenberg</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Sint-Gummarus</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>12</spoor>
+        <volgende>Richard</volgende>
+        <vorige>Gaststraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Richard</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>12</spoor>
+        <volgende>De Coninck</volgende>
+        <vorige>Sint-Gummarus</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>De Coninck</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>12</spoor>
+        <volgende>Centraal Station</volgende>
+        <vorige>Richard</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Stadspark</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>12</spoor>
+        <volgende>Nationale Bank</volgende>
+        <vorige>Rooseveltplaats</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Nationale Bank</volgende>
+        <vorige>Rooseveltplaats</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Kasteelplein</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>12</spoor>
+        <volgende>Bres</volgende>
+        <vorige>Nationale Bank</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Bres</volgende>
+        <vorige>Nationale Bank</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Bres</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>12</spoor>
+        <volgende>Montigny</volgende>
+        <vorige>Kasteelplein</vorige>
+    </SPOOR>
+	<SPOOR>
+        <spoor>24</spoor>
+        <volgende>Bestorming</volgende>
+        <vorige>Kasteelplein</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Montigny</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>12</spoor>
+        <volgende>Bolivarplaats</volgende>
+        <vorige>Bres</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>P+R Boechout</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>15</spoor>
+        <volgende>Hof Savelkoui</volgende>
+        <vorige>P+R Linkeroever</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Hof Savelkoui</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>15</spoor>
+        <volgende>Kaphaan</volgende>
+        <vorige>P+R Boechout</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Kaphaan</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>15</spoor>
+        <volgende>Kerkstraat_Mortsel</volgende>
+        <vorige>Hof Savelkoui</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Kerkstraat_Mortsel</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>15</spoor>
+        <volgende>Station Oude God</volgende>
+        <vorige>Kaphaan</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Station Oude God</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>15</spoor>
+        <volgende>Gemeenteplein</volgende>
+        <vorige>Kerkstraat_Mortsel</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Morckhoven</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>23</spoor>
+        <volgende>Joe English</volgende>
+        <vorige>Muggenberg</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Joe English</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>23</spoor>
+        <volgende>Stenenburg</volgende>
+        <vorige>Morckhoven</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Stenenburg</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>23</spoor>
+        <volgende>De Roma</volgende>
+        <vorige>Joe English</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>De Roma</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>23</spoor>
+        <volgende>Drink</volgende>
+        <vorige>Stenenburg</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Drink</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>23</spoor>
+        <volgende>Kerkstraat</volgende>
+        <vorige>De Roma</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Kerkstraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>23</spoor>
+        <volgende>Centraal Station</volgende>
+        <vorige>Drink</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Bestorming</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>24</spoor>
+        <volgende>Broedermin</volgende>
+        <vorige>Bres</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Broedermin</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>24</spoor>
+        <volgende>Brussel</volgende>
+        <vorige>Bestorming</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Aartselaarstraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>24</spoor>
+        <volgende>Heidestraat</volgende>
+        <vorige>Zwaantjes</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Heidestraat</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>24</spoor>
+        <volgende>Karel Meyvis</volgende>
+        <vorige>Aartselaarstraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>Karel Meyvis</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>24</spoor>
+        <volgende>P+R Schoonselhof</volgende>
+        <vorige>Heidestraat</vorige>
+    </SPOOR>
+</STATION>
+<STATION>
+    <naam>P+R Schoonselhof</naam>
+    <type>Halte</type>
+    <SPOOR>
+        <spoor>24</spoor>
+        <volgende>Centraal Station</volgende>
+        <vorige>Karel Meyvis</vorige>
+    </SPOOR>
+</STATION>
+
+
+  <TRAM>
+    <lijnNr>2</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>P+R Merksem</beginStation>
+    <type>PCC</type>
+	<voertuigNr>1</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>3</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>P+R Merksem</beginStation>
+	<type>PCC</type>
+	<voertuigNr>2</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>4</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Silsburg</beginStation>
+    <type>PCC</type>
+	<voertuigNr>3</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>5</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Fortveld</beginStation>
+	<type>PCC</type>
+	<voertuigNr>4</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>6</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Groenendaal</beginStation>
+    <type>PCC</type>
+	<voertuigNr>5</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>7</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Gemeenteplein</beginStation>
+	<type>PCC</type>
+	<voertuigNr>6</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>8</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>P+R Wommelgem</beginStation>
+    <type>PCC</type>
+	<voertuigNr>7</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>9</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Eksterlaar</beginStation>
+	<type>PCC</type>
+	<voertuigNr>8</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>10</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Fortveld</beginStation>
+    <type>PCC</type>
+	<voertuigNr>9</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>11</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Groenenhoek</beginStation>
+	<type>PCC</type>
+	<voertuigNr>10</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>12</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Sportpaleis</beginStation>
+    <type>PCC</type>
+	<voertuigNr>11</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>15</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>P+R Boechout</beginStation>
+	<type>PCC</type>
+	<voertuigNr>12</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>23</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Silsburg</beginStation>
+    <type>PCC</type>
+	<voertuigNr>13</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>24</lijnNr>
+    <zitplaatsen>16</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Centraal Station</beginStation>
+    <type>PCC</type>
+	<voertuigNr>14</voertuigNr>
+  </TRAM>
+</METRONET>
