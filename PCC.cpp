@@ -5,6 +5,7 @@
 #include "MetroNet.h"
 
 PCC::PCC() : Tram() {
+	zitplaatsen = 16;
 	ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 

@@ -202,18 +202,12 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
       Tram* tram;
       TiXmlNode *lijnNr, *zitplaatsen, *snelheid, *beginStation, *type, *voertuigNr;
       lijnNr = element->FirstChild("lijnNr");
-      zitplaatsen = element->FirstChild("zitplaatsen");
       snelheid = element->FirstChild("snelheid");
       beginStation = element->FirstChild("beginStation");
       type = element->FirstChild("type");
       voertuigNr = element->FirstChild("voertuigNr");
       if(lijnNr == NULL) {
         errStream << "XML PARTIAL IMPORT: Expected <lijnNr> ... </lijnNr>." << std::endl;
-        endResult = PartialImport;
-				deleted = true;
-      }
-      if(zitplaatsen == NULL) {
-        errStream << "XML PARTIAL IMPORT: Expected <zitplaatsen> ... </zitplaatsen>." << std::endl;
         endResult = PartialImport;
 				deleted = true;
       }

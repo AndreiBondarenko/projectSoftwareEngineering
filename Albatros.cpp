@@ -5,6 +5,7 @@
 #include "MetroNet.h"
 
 Albatros::Albatros() : Tram() {
+	zitplaatsen = 72;
 	ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state");
 }
 
