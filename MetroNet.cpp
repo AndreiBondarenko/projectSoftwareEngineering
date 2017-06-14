@@ -312,9 +312,14 @@ void MetroNet::drawToOutputStream(std::ostream &output) {
         route.append(firstStop);
         if(stationIt->second->isTramInStation(*spoorIt)) {
           trams.append("T");
+		  for (unsigned int i = 0; i < stationIt->second->getNaam().length() - 1; i++) {
+			trams.append(" ");
+		  }
         }
         else {
-          trams.append(" ");
+		  for (unsigned int i = 0; i < stationIt->second->getNaam().length(); i++) {
+		  	trams.append(" ");
+		  }
         }
         break;
       }
@@ -326,9 +331,14 @@ void MetroNet::drawToOutputStream(std::ostream &output) {
       trams.append("  ");
       if(getStation(current)->isTramInStation(*spoorIt)) {
         trams.append("T");
+		for (unsigned int i = 0; i < getStation(current)->getNaam().length() - 1; i++) {
+		  trams.append(" ");
+		}
       }
       else {
-        trams.append(" ");
+		for (unsigned int i = 0; i < getStation(current)->getNaam().length(); i++) {
+		  trams.append(" ");
+		}
       }
       current = getStation(current)->getVolgende(*spoorIt);
     }
