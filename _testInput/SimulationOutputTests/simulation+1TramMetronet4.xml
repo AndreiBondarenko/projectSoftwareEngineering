@@ -1,0 +1,105 @@
+<METRONET>
+    <STATION>
+	<naam>Noord</naam>
+	<type>Metrostation</type>
+	<SPOOR>
+	    <spoor>1</spoor>
+	    <volgende>Oost</volgende>
+	    <vorige>West</vorige>
+	</SPOOR>
+    </STATION>
+    <STATION>
+	<naam>Oost</naam>
+	<type>Halte</type>
+	<SPOOR>
+	    <spoor>1</spoor>
+	    <volgende>Zuid</volgende>
+	    <vorige>Noord</vorige>
+	</SPOOR>
+	</STATION>
+    <STATION>
+        <naam>Zuid</naam>
+        <type>Metrostation</type>
+        <SPOOR>
+            <spoor>1</spoor>
+            <volgende>West</volgende>
+            <vorige>Oost</vorige>
+        </SPOOR>
+    </STATION>
+    <STATION>
+        <naam>West</naam>
+        <type>Halte</type>
+        <SPOOR>
+            <spoor>1</spoor>
+            <volgende>Noord</volgende>
+            <vorige>Zuid</vorige>
+        </SPOOR>
+	<SPOOR>
+            <spoor>2</spoor>
+            <volgende>Centraal</volgende>
+            <vorige>Buurtstation</vorige>
+        </SPOOR>
+    </STATION>
+    <STATION>
+        <naam>Centraal</naam>
+        <type>Halte</type>
+        <SPOOR>
+            <spoor>2</spoor>
+            <volgende>Halte 2</volgende>
+            <vorige>West</vorige>
+        </SPOOR>
+    </STATION>
+    <STATION>
+        <naam>Halte 2</naam>
+        <type>Halte</type>
+        <SPOOR>
+            <spoor>2</spoor>
+            <volgende>Buurtstation</volgende>
+            <vorige>Centraal</vorige>
+        </SPOOR>
+    </STATION>
+    <STATION>
+        <naam>Buurtstation</naam>
+        <type>Metrostation</type>
+        <SPOOR>
+            <spoor>2</spoor>
+            <volgende>West</volgende>
+            <vorige>Halte 2</vorige>
+        </SPOOR>
+    </STATION>
+
+    <TRAM>
+      <lijnNr>1</lijnNr>
+      <zitplaatsen>32</zitplaatsen>
+      <snelheid>40</snelheid>
+      <beginStation>Zuid</beginStation>
+      <type>Albatros</type>
+      <voertuigNr>1</voertuigNr>
+    </TRAM>
+    <TRAM>
+      <lijnNr>1</lijnNr>
+      <zitplaatsen>16</zitplaatsen>
+      <snelheid>20</snelheid>
+      <beginStation>West</beginStation>
+      <type>PCC</type>
+      <voertuigNr>2</voertuigNr>
+    </TRAM>
+    <TRAM>
+      <lijnNr>2</lijnNr>
+      <zitplaatsen>10</zitplaatsen>
+      <snelheid>40</snelheid>
+      <beginStation>West</beginStation>
+      <type>Albatros</type>
+      <voertuigNr>3</voertuigNr>
+    </TRAM>
+    <TRAM>
+      <lijnNr>2</lijnNr>
+      <zitplaatsen>30</zitplaatsen>
+      <snelheid>20</snelheid>
+      <beginStation>Halte 2</beginStation>
+      <type>PCC</type>
+      <voertuigNr>4</voertuigNr>
+    </TRAM>
+
+
+</METRONET>

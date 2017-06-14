@@ -1,0 +1,18 @@
+<PASSAGIER>
+    <naam>Groep1</naam>
+    <beginstation>Centraal</beginstation>
+    <eindstation>West</eindstation>
+    <hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+    <naam>Groep2</naam>
+    <beginstation>Oost</beginstation>
+    <eindstation>Noord</eindstation>
+    <hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+    <naam>Groep3</naam>
+    <beginstation>Oost</beginstation>
+    <eindstation>Noord</eindstation>
+    <hoeveelheid>10</hoeveelheid>
+</PASSAGIER>

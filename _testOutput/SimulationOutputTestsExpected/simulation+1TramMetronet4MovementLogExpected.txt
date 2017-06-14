@@ -1,0 +1,61 @@
+1.
+Tram #1 op spoor 1 wachtte in station Zuid, want station West was bezet door Tram #2.
+Tram #2 op spoor 1 reed van station West naar station Noord.
+Tram #3 op spoor 2 reed van station West naar station Centraal.
+Tram #4 op spoor 2 reed van station Halte 2 naar station Buurtstation.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.
+Tram #1 op spoor 1 reed van station Zuid naar station West.
+Tram #2 op spoor 1 reed van station Noord naar station Oost.
+Tram #3 op spoor 2 reed van station Centraal naar station Halte 2.
+Tram #4 op spoor 2 reed van station Buurtstation naar station West.
+Groep2 (10) stapt op tram met voertuigNr 2
+Groep3 (10) kan niet meer op tram met voertuigNr 2, slechts 6 vrije plaatsen.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3.
+Tram #1 op spoor 1 reed van station West naar station Noord.
+Tram #2 op spoor 1 reed van station Oost naar station Zuid.
+Tram #3 op spoor 2 reed van station Halte 2 naar station Buurtstation.
+Tram #4 op spoor 2 reed van station West naar station Centraal.
+Groep1 (15) stapt op tram met voertuigNr 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4.
+Tram #1 op spoor 1 reed van station Noord naar station Oost.
+Tram #2 op spoor 1 reed van station Zuid naar station West.
+Tram #3 op spoor 2 reed van station Buurtstation naar station West.
+Tram #4 op spoor 2 reed van station Centraal naar station Halte 2.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5.
+Tram #1 op spoor 1 reed van station Oost naar station Zuid.
+Tram #2 op spoor 1 reed van station West naar station Noord.
+Tram #3 op spoor 2 reed van station West naar station Centraal.
+Tram #4 op spoor 2 reed van station Halte 2 naar station Buurtstation.
+Groep2 (10) stapt uit in station Noord
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6.
+Tram #1 op spoor 1 reed van station Zuid naar station West.
+Tram #2 op spoor 1 reed van station Noord naar station Oost.
+Tram #3 op spoor 2 reed van station Centraal naar station Halte 2.
+Tram #4 op spoor 2 reed van station Buurtstation naar station West.
+Groep3 (10) stapt op tram met voertuigNr 2
+Groep1 (15) stapt uit in station West
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7.
+Tram #1 op spoor 1 reed van station West naar station Noord.
+Tram #2 op spoor 1 reed van station Oost naar station Zuid.
+Tram #3 op spoor 2 reed van station Halte 2 naar station Buurtstation.
+Tram #4 op spoor 2 reed van station West naar station Centraal.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+8.
+Tram #1 op spoor 1 reed van station Noord naar station Oost.
+Tram #2 op spoor 1 reed van station Zuid naar station West.
+Tram #3 op spoor 2 reed van station Buurtstation naar station West.
+Tram #4 op spoor 2 reed van station Centraal naar station Halte 2.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.
+Tram #1 op spoor 1 reed van station Oost naar station Zuid.
+Tram #2 op spoor 1 reed van station West naar station Noord.
+Tram #3 op spoor 2 reed van station West naar station Centraal.
+Tram #4 op spoor 2 reed van station Halte 2 naar station Buurtstation.
+Groep3 (10) stapt uit in station Noord
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

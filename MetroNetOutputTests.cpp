@@ -206,7 +206,7 @@ TEST_F(MetroNetOutputTest, SimulationMeerdereTramsPerLijnNoErrors) {
 		fileName1 = "_testInput/SimulationOutputTests/simulation+1TramMetronet" + std::to_string(fileCounter) + ".xml";
 	    fileName2 = "_testInput/SimulationOutputTests/simulation+1TramPassagiers" + std::to_string(fileCounter) + ".xml";
 	}
-    EXPECT_TRUE(fileCounter-1 == 3);
+    EXPECT_TRUE(fileCounter-1 == 4);
 }
 
 TEST_F(MetroNetOutputTest, SimulationTramsOverloaded) {

@@ -1,0 +1,8 @@
+Spoor 1 :
+=Noord==Oost==Zuid==West=
+              T     T    
+
+Spoor 2 :
+=Buurtstation==West==Centraal==Halte 2=
+               T               T       
+

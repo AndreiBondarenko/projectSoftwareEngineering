@@ -1,0 +1,66 @@
+--== STATIONS ==--
+-> Station Buurtstation - Metro Station
+wachtende passagiers:
+gearriveerde passagiers:
+
+-> Station Centraal - Halte
+wachtende passagiers:
+* Groep1, 15 mensen, reist naar station West
+gearriveerde passagiers:
+
+-> Station Halte 2 - Halte
+wachtende passagiers:
+gearriveerde passagiers:
+
+-> Station Noord - Metro Station
+wachtende passagiers:
+gearriveerde passagiers:
+
+-> Station Oost - Halte
+wachtende passagiers:
+* Groep2, 10 mensen, reist naar station Noord
+* Groep3, 10 mensen, reist naar station Noord
+gearriveerde passagiers:
+
+-> Station West - Halte
+wachtende passagiers:
+gearriveerde passagiers:
+
+-> Station Zuid - Metro Station
+wachtende passagiers:
+gearriveerde passagiers:
+
+
+--== TRAMS ==--
+Tram 1 nr 1
+omzet: 0
+zitplaatsen: 32
+snelheid: 40
+huidige station: Zuid
+reizende passagiers:
+vrije zitplaatsen: 32
+
+Tram 1 nr 2
+omzet: 0
+zitplaatsen: 16
+snelheid: 20
+huidige station: West
+reizende passagiers:
+vrije zitplaatsen: 16
+
+Tram 2 nr 3
+omzet: 0
+zitplaatsen: 10
+snelheid: 40
+huidige station: West
+reizende passagiers:
+vrije zitplaatsen: 10
+
+Tram 2 nr 4
+omzet: 0
+zitplaatsen: 30
+snelheid: 20
+huidige station: Halte 2
+reizende passagiers:
+vrije zitplaatsen: 30
+
