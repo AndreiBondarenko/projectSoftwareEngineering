@@ -200,7 +200,7 @@ SuccessEnum MetroNetImporter::importMetroNet(const char *inputfilename, std::ost
     }
     else if(elementType == "TRAM"){
       Tram* tram;
-      TiXmlNode *lijnNr, *zitplaatsen, *snelheid, *beginStation, *type, *voertuigNr;
+      TiXmlNode *lijnNr, *snelheid, *beginStation, *type, *voertuigNr;
       lijnNr = element->FirstChild("lijnNr");
       snelheid = element->FirstChild("snelheid");
       beginStation = element->FirstChild("beginStation");

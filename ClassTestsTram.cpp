@@ -17,7 +17,9 @@ protected:
 TEST_F(ClassTestTram, DefaultConstructors) {
   EXPECT_TRUE(tram.properlyInitialized());
   EXPECT_TRUE(albatros.properlyInitialized());
+  EXPECT_EQ(albatros.getZitplaatsen(), 72);
   EXPECT_TRUE(pcc.properlyInitialized());
+  EXPECT_EQ(pcc.getZitplaatsen(), 16);
 }
 
 TEST_F(ClassTestTram, SettersGetters) {
