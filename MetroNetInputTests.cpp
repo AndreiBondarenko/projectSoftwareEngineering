@@ -61,6 +61,7 @@ TEST_F(MetroNetInputTests, correctInput) {
 	std::string fileName = "_testInput/MetroNetInputTests/correctInput" + std::to_string(fileCounter) + ".xml";
 
 	while (FileExists(fileName)) {
+		SetUp();
 		ofile.open("_testOutput/metronetInputTestsError.txt");
 		importResult = MetroNetImporter::importMetroNet(fileName.c_str(), ofile, *metronet);
 		ofile.close();
@@ -70,7 +71,7 @@ TEST_F(MetroNetInputTests, correctInput) {
 		fileCounter++;
 		fileName = "_testInput/MetroNetInputTests/correctInput" + std::to_string(fileCounter) + ".xml";
 	}
-	EXPECT_TRUE(fileCounter == 2);
+	EXPECT_TRUE(fileCounter == 3);
 }
 
 TEST_F(MetroNetInputTests, wrongInputSyntaxError) {
@@ -106,7 +107,7 @@ TEST_F(MetroNetInputTests, wrongInputNoCrash) {
 
 	std::ofstream ofile;
 	SuccessEnum importResult;
-	int fileCounter = 34;
+	int fileCounter = 1;
 	std::string fileName = "_testInput/MetroNetInputTests/wrongInput" + std::to_string(fileCounter) + ".xml";
 
 	while (FileExists(fileName)) {
@@ -120,7 +121,7 @@ TEST_F(MetroNetInputTests, wrongInputNoCrash) {
 		fileCounter++;
 		fileName = "_testInput/MetroNetInputTests/wrongInput" + std::to_string(fileCounter) + ".xml";
 	}
-	EXPECT_TRUE(fileCounter == 41);
+	EXPECT_TRUE(fileCounter == 40);
 }
 
 TEST_F(MetroNetInputTests, inconsistent) {

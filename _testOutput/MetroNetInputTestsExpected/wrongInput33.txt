@@ -1,1 +1,1 @@
-XML PARTIAL IMPORT: <snelheid> ... </snelheid> is empty.
+XML PARTIAL IMPORT: <type> ... </type> is empty.

@@ -1,1 +1,1 @@
-XML PARTIAL IMPORT: Expected <type> ... </type>.
+XML PARTIAL IMPORT: Expected <voertuigNr> ... </voertuigNr>.

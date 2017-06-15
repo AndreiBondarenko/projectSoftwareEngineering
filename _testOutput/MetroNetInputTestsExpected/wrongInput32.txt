@@ -1,1 +1,1 @@
-XML PARTIAL IMPORT: <zitplaatsen> ... </zitplaatsen> is empty.
+XML PARTIAL IMPORT: <snelheid> ... </snelheid> is empty.

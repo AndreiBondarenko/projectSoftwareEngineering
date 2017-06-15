@@ -1,1 +1,1 @@
-XML PARTIAL IMPORT: <voertuigNr> ... </voertuigNr> is empty.
+XML PARTIAL IMPORT: Tram not created, negative voertuigNr: -3.

@@ -1,4 +1,4 @@
-<!-- type is missing -->
+<!-- voertuigNr is missing -->
 <METRONET>
 <STATION>    <naam>A</naam>    <type>Metrostation</type>    <SPOOR>        <spoor>12</spoor>        <volgende>B</volgende>        <vorige>C</vorige>    </SPOOR>    <SPOOR>        <spoor>21</spoor>        <volgende>C</volgende>        <vorige>B</vorige>    </SPOOR></STATION><STATION>    <naam>B</naam>    <type>Halte</type>    <SPOOR>        <spoor>12</spoor>        <volgende>C</volgende>        <vorige>A</vorige>    </SPOOR>    <SPOOR>        <spoor>21</spoor>        <volgende>A</volgende>        <vorige>C</vorige>    </SPOOR></STATION><STATION>    <naam>C</naam>    <type>Metrostation</type>    <SPOOR>        <spoor>12</spoor>        <volgende>A</volgende>        <vorige>B</vorige>    </SPOOR>    <SPOOR>        <spoor>21</spoor>        <volgende>B</volgende>        <vorige>A</vorige>    </SPOOR></STATION>
   <TRAM>
@@ -6,7 +6,7 @@
     <zitplaatsen>72</zitplaatsen>
 	<snelheid>70</snelheid>
     <beginStation>A</beginStation>
-	<voertuigNr>3</voertuigNr>
+	<type>Albatros</type>
   </TRAM>
   <TRAM>
 	<lijnNr>12</lijnNr>

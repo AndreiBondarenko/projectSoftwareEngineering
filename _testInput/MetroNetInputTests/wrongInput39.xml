@@ -1,18 +1,19 @@
-<!-- dubble spoor '21' in station -->
+<!-- dubble spoor '12' -->
+<!-- expected naam, type or SPOOR, got LIJN -->
 <METRONET>
   <STATION>
     <naam>D</naam>
 	<type>Metrostation</type>
 	<SPOOR>
-		<spoor>21</spoor>
+		<spoor>12</spoor>
 		<volgende>B</volgende>
 		<vorige>C</vorige>
     </SPOOR>
-    <SPOOR>
-        <spoor>21</spoor>
-        <volgende>C</volgende>
-        <vorige>B</vorige>
-    </SPOOR>
+    <LIJN>
+        <spoor>12</spoor>
+		<volgende>B</volgende>
+		<vorige>C</vorige>
+    </LIJN>
 </STATION>
 <STATION>    <naam>A</naam>    <type>Metrostation</type>    <SPOOR>        <spoor>12</spoor>        <volgende>B</volgende>        <vorige>C</vorige>    </SPOOR>    <SPOOR>        <spoor>21</spoor>        <volgende>C</volgende>        <vorige>B</vorige>    </SPOOR></STATION><STATION>    <naam>B</naam>    <type>Halte</type>    <SPOOR>        <spoor>12</spoor>        <volgende>C</volgende>        <vorige>A</vorige>    </SPOOR>    <SPOOR>        <spoor>21</spoor>        <volgende>A</volgende>        <vorige>C</vorige>    </SPOOR></STATION><STATION>    <naam>C</naam>    <type>Metrostation</type>    <SPOOR>        <spoor>12</spoor>        <volgende>A</volgende>        <vorige>B</vorige>    </SPOOR>    <SPOOR>        <spoor>21</spoor>        <volgende>B</volgende>        <vorige>A</vorige>    </SPOOR></STATION>
   <TRAM>

@@ -1,6 +1,0 @@
-XML PARTIAL IMPORT:
-Expected:
-<naam> ... </naam> or
-<type> ... </type> or
-<SPOOR> ... </SPOOR>
-and got: <LIJN> ... </LIJN>.
