@@ -4,8 +4,10 @@
 #include <iostream>
 #include <fstream>
 #include <stdexcept>
+#include <vector>
 
 const int MAXAANTALLOOPS = 1000;
+const int MAX_CHARACTERS = 120;
 
 MetroNet::MetroNet()  {
   initCheck = this;
@@ -176,63 +178,63 @@ void MetroNet::moveAllePassengers(std::ostream& output) {
 }
 
 void MetroNet::runSimulation(std::ostream &output, const bool live) {
-  REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling runSimulation");
+	REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling runSimulation");
 	bool simulationCompleted = false;
-  int steps = 0;
+	int steps = 0;
 	for (int i = 1; !simulationCompleted; i++) {
 		if (i == MAXAANTALLOOPS) {
 			output << "MetroNetSimulation stopped. Infinite loop occured." << std::endl;
 			break;
 		}
 		output << i << "." << std::endl;
-    simulationCompleted = true;
-	  moveAlleTrams(output);
-    moveAllePassengers(output);
+		simulationCompleted = true;
+		moveAlleTrams(output);
+		moveAllePassengers(output);
 		output << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
-    for(auto mapIt = allePassagiers.begin(); mapIt != allePassagiers.end(); mapIt++) {
-      if (!mapIt->second->isAangekomen()) {
-        simulationCompleted = false;
-        break;
-      }
-    }
-    if(live)
-    {
-      if(steps == 0)
-      {
-        bool exitLoop = false;
-        while(!exitLoop)
-        {
-        output << "Druk op ENTER om verder te gaan of:\n- geef \"-o\" in voor een overzicht\n- geef \"-v\" in voor een visuele impressie\n- geef het aantal stappen dat je verder wil gaan in\nResponse: ";
-        std::string input;
-        getline(std::cin, input);
-        output << std::endl;
-        if (input.empty())  break;
-        else if(input == "-o") writeToOutputStream(output);
-        else if(input == "-v") drawToOutputStream(output);
-        try {
-          steps = std::stoi(input);
-          break;
-        }
-        catch (const std::exception&){continue;}
-        }
-      }
-      else --steps;
-    }
-    if(simulationCompleted && live)
-    {
-      output << "Wilt u een overzicht van de eindsituatie tonen? (Y/N)\nResponse: ";
-      std::string input;
-      getline(std::cin, input);
-      output << std::endl;
-      if (!input.empty() && (input == "Y" || input == "y"))
-      {
-        writeToOutputStream(output);
-        drawToOutputStream(output);
-      }
-    }
-    
-  }
-  ENSURE(isConsistent(), "runSimulation made MetroNet inconsistent");
+		for (auto mapIt = allePassagiers.begin(); mapIt != allePassagiers.end(); mapIt++) {
+			if (!mapIt->second->isAangekomen()) {
+				simulationCompleted = false;
+				break;
+			}
+		}
+		if (live)
+		{
+			if (steps == 0)
+			{
+				bool exitLoop = false;
+				while (!exitLoop)
+				{
+					output << "Druk op ENTER om verder te gaan of:\n- geef \"-o\" in voor een overzicht\n- geef \"-v\" in voor een visuele impressie\n- geef het aantal stappen dat je verder wil gaan in\nResponse: ";
+					std::string input;
+					getline(std::cin, input);
+					output << std::endl;
+					if (input.empty())  break;
+					else if (input == "-o") writeToOutputStream(output);
+					else if (input == "-v") drawToOutputStream(output);
+					try {
+						steps = std::stoi(input);
+						break;
+					}
+					catch (const std::exception&) { continue; }
+				}
+			}
+			else --steps;
+		}
+		if (simulationCompleted && live)
+		{
+			output << "Wilt u een overzicht van de eindsituatie tonen? (Y/N)\nResponse: ";
+			std::string input;
+			getline(std::cin, input);
+			output << std::endl;
+			if (!input.empty() && (input == "Y" || input == "y"))
+			{
+				writeToOutputStream(output);
+				drawToOutputStream(output);
+			}
+		}
+
+	}
+	ENSURE(isConsistent(), "runSimulation made MetroNet inconsistent");
 }
 
 void MetroNet::writeToOutputStream(std::ostream& output) {
@@ -300,53 +302,72 @@ void MetroNet::writeToOutputStream(std::ostream& output) {
 }
 
 void MetroNet::drawToOutputStream(std::ostream &output) {
-  for(auto spoorIt = alleSporen.begin(); spoorIt != alleSporen.end(); spoorIt++) {
-    output << "Spoor " << *spoorIt << " :" << std::endl;
-    std::string route = "=";
-    std::string trams = " ";
-    std::string firstStop;
-    std::string current;
-    for(auto stationIt = alleStations.begin(); stationIt != alleStations.end(); stationIt++) {
-      if (stationIt->second->getSporen().count(*spoorIt) == 1) {
-        firstStop = stationIt->first;
-        route.append(firstStop);
-        if(stationIt->second->isTramInStation(*spoorIt)) {
-          trams.append("T");
-		  for (unsigned int i = 0; i < stationIt->second->getNaam().length() - 1; i++) {
-			trams.append(" ");
-		  }
-        }
-        else {
-		  for (unsigned int i = 0; i < stationIt->second->getNaam().length(); i++) {
-		  	trams.append(" ");
-		  }
-        }
-        break;
-      }
-    }
-    current = getStation(firstStop)->getVolgende(*spoorIt);
-    while (current != firstStop) {
-      route.append("==");
-      route.append(current);
-      trams.append("  ");
-      if(getStation(current)->isTramInStation(*spoorIt)) {
-        trams.append("T");
-		for (unsigned int i = 0; i < getStation(current)->getNaam().length() - 1; i++) {
-		  trams.append(" ");
+	for (auto spoorIt = alleSporen.begin(); spoorIt != alleSporen.end(); spoorIt++) {
+		output << "Spoor " << *spoorIt << " :" << std::endl;
+		std::vector<std::string> routeVec;
+		std::vector<std::string> tramVec;
+		std::string route = "=";
+		std::string trams = " ";
+		std::string firstStop;
+		std::string current;
+		for (auto stationIt = alleStations.begin(); stationIt != alleStations.end(); stationIt++) {
+			if (stationIt->second->getSporen().count(*spoorIt) == 1) {
+				firstStop = stationIt->first;
+				route.append(firstStop);
+				if (stationIt->second->isTramInStation(*spoorIt)) {
+					trams.append("T");
+					for (unsigned int i = 0; i < stationIt->second->getNaam().length() - 1; i++) {
+						trams.append(" ");
+					}
+				}
+				else {
+					for (unsigned int i = 0; i < stationIt->second->getNaam().length(); i++) {
+						trams.append(" ");
+					}
+				}
+				break;
+			}
 		}
-      }
-      else {
-		for (unsigned int i = 0; i < getStation(current)->getNaam().length(); i++) {
-		  trams.append(" ");
+		current = getStation(firstStop)->getVolgende(*spoorIt);
+		while (current != firstStop) {
+			if (route.length() < MAX_CHARACTERS) {
+				route.append("==");
+				route.append(current);
+				trams.append("  ");
+			}
+			else {
+				route.append("=");
+				routeVec.push_back(route);
+				route = "=";
+				route.append(current);
+				trams.append("  ");
+				tramVec.push_back(trams);
+				trams = " ";
+			}
+			if (getStation(current)->isTramInStation(*spoorIt)) {
+				trams.append("T");
+				for (unsigned int i = 0; i < getStation(current)->getNaam().length() - 1; i++) {
+					trams.append(" ");
+				}
+			}
+			else {
+				for (unsigned int i = 0; i < getStation(current)->getNaam().length(); i++) {
+					trams.append(" ");
+				}
+			}
+			current = getStation(current)->getVolgende(*spoorIt);
+			
 		}
-      }
-      current = getStation(current)->getVolgende(*spoorIt);
-    }
-    route.append("=");
-    trams.append(" ");
-    output << route << std::endl;
-    output << trams << std::endl << std::endl;
-  }
+		route.append("=");
+		trams.append(" ");
+		routeVec.push_back(route);
+		tramVec.push_back(trams);
+		for (unsigned int i = 0; i < routeVec.size(); i++) {
+			output << routeVec[i] << std::endl;
+			output << tramVec[i] << std::endl;
+		}
+		output << std::endl;
+	}
 }
 
 void MetroNet::writeToASCII() {
