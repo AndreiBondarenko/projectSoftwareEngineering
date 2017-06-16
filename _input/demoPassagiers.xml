@@ -1,0 +1,60 @@
+<PASSAGIER>
+	<naam>Groep1</naam>
+	<beginstation>P+R Merksem</beginstation>
+	<eindstation>Diamant</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep2</naam>
+	<beginstation>Diamant</beginstation>
+	<eindstation>Rerum Novarum</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep3</naam>
+	<beginstation>Meir</beginstation>
+	<eindstation>Plantin</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep4</naam>
+	<beginstation>Diamant</beginstation>
+	<eindstation>Plantin</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep5</naam>
+	<beginstation>Provinciehuis</beginstation>
+	<eindstation>Plantin</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep6</naam>
+	<beginstation>Olympiade</beginstation>
+	<eindstation>Plantin</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep7</naam>
+	<beginstation>deSingel</beginstation>
+	<eindstation>Plantin</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep8</naam>
+	<beginstation>Plantin</beginstation>
+	<eindstation>Olympiade</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep9</naam>
+	<beginstation>Eksterlaar</beginstation>
+	<eindstation>Van Cauwelaert</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep10</naam>
+	<beginstation>Van Cauwelaert</beginstation>
+	<eindstation>Eksterlaar</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>

@@ -179,6 +179,11 @@ void MetroNet::moveAllePassengers(std::ostream& output) {
 
 void MetroNet::runSimulation(std::ostream &output, const bool live) {
 	REQUIRE(properlyInitialized(), "MetroNet wasn't initialized when calling runSimulation");
+  if(live) {
+    output << "BEGINSITUATIE:" << std::endl << std::endl;
+    writeToOutputStream(output);
+    output << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+  }
 	bool simulationCompleted = false;
 	int steps = 0;
 	for (int i = 1; !simulationCompleted; i++) {
@@ -186,23 +191,11 @@ void MetroNet::runSimulation(std::ostream &output, const bool live) {
 			output << "MetroNetSimulation stopped. Infinite loop occured." << std::endl;
 			break;
 		}
-		output << i << "." << std::endl;
-		simulationCompleted = true;
-		moveAlleTrams(output);
-		moveAllePassengers(output);
-		output << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
-		for (auto mapIt = allePassagiers.begin(); mapIt != allePassagiers.end(); mapIt++) {
-			if (!mapIt->second->isAangekomen()) {
-				simulationCompleted = false;
-				break;
-			}
-		}
-		if (live)
+    if (live)
 		{
 			if (steps == 0)
 			{
-				bool exitLoop = false;
-				while (!exitLoop)
+				while (true)
 				{
 					output << "Druk op ENTER om verder te gaan of:\n- geef \"-o\" in voor een overzicht\n- geef \"-v\" in voor een visuele impressie\n- geef het aantal stappen dat je verder wil gaan in\nResponse: ";
 					std::string input;
@@ -220,17 +213,28 @@ void MetroNet::runSimulation(std::ostream &output, const bool live) {
 			}
 			else --steps;
 		}
+		output << i << "." << std::endl;
+		simulationCompleted = true;
+		moveAlleTrams(output);
+		moveAllePassengers(output);
+		output << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+		for (auto mapIt = allePassagiers.begin(); mapIt != allePassagiers.end(); mapIt++) {
+			if (!mapIt->second->isAangekomen()) {
+				simulationCompleted = false;
+				break;
+			}
+		}
 		if (simulationCompleted && live)
 		{
-			output << "Wilt u een overzicht van de eindsituatie tonen? (Y/N)\nResponse: ";
-			std::string input;
-			getline(std::cin, input);
-			output << std::endl;
-			if (!input.empty() && (input == "Y" || input == "y"))
-			{
-				writeToOutputStream(output);
-				drawToOutputStream(output);
-			}
+      while (true) {
+        output << "Wilt u een overzicht van de eindsituatie tonen?\n- geef \"-o\" in voor een overzicht\n- geef \"-v\" in voor een visuele impressie\n- druk op ENTER om af te sluiten\nResponse: ";
+        std::string input;
+        getline(std::cin, input);
+        output << std::endl;
+        if (input.empty())  break;
+        else if (input == "-o") writeToOutputStream(output);
+        else if (input == "-v") drawToOutputStream(output);
+      }
 		}
 
 	}
