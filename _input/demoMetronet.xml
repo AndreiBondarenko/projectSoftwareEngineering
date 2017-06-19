@@ -186,7 +186,7 @@
       <snelheid>40</snelheid>
       <beginStation>P+R Linkeroever</beginStation>
       <type>Albatros</type>
-      <voertuigNr>5</voertuigNr>
+      <voertuigNr>9</voertuigNr>
     </TRAM>
     <TRAM>
       <lijnNr>4</lijnNr>
@@ -196,5 +196,12 @@
       <type>PCC</type>
       <voertuigNr>6</voertuigNr>
     </TRAM>
-
+    <TRAM>
+      <lijnNr>4</lijnNr>
+      <zitplaatsen>16</zitplaatsen>
+      <snelheid>20</snelheid>
+      <beginStation>Astrid</beginStation>
+      <type>PCC</type>
+      <voertuigNr>5</voertuigNr>
+    </TRAM>
 </METRONET>
