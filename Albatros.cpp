@@ -24,8 +24,8 @@ Albatros::Albatros(const int lijnNr, const int voertuigNr,
 Albatros::~Albatros() {}
 
 bool Albatros::stoptInStation(MetroNet& metronet, std::string station) const {
-	REQUIRE(properlyInitialized(), "Albatros wasn't initialized when calling afstappenInHalte");
-	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
+	REQUIRE(properlyInitialized(), "Albatros wasn't initialized when calling stoptInStation");
+	REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling stoptInStation");
 	REQUIRE(station != "", "station must not be empty");
     std::string current = getCurrentStation();
     if (current == station) {

@@ -26,8 +26,8 @@ public:
   ~Albatros();
 
   /**
-  \n REQUIRE(properlyInitialized(), "Albatros wasn't initialized when calling afstappenInHalte");
-  \n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling afstappenInHalte");
+  \n REQUIRE(properlyInitialized(), "Albatros wasn't initialized when calling stoptInStation");
+  \n REQUIRE(metronet.properlyInitialized(), "MetroNet wasn't initialized when calling stoptInStation");
   \n REQUIRE(station != "", "station must not be empty");
   */
   bool stoptInStation(MetroNet& metronet, std::string station) const;
