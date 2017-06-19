@@ -1,15 +1,15 @@
 var class_station =
 [
     [ "Station", "class_station.html#a73d335726aad1d844d81cda6d9fd74e6", null ],
-    [ "Station", "class_station.html#a1f9a1100eb3eefb689841096fb2263bf", null ],
+    [ "Station", "class_station.html#ac8341d36d3d9f0879208ad9107090141", null ],
     [ "~Station", "class_station.html#a00434e79e8ee7f4ebd6d3b631dde5ac0", null ],
     [ "addPassagier", "class_station.html#a282abc39259c3139ede9dad47d955e44", null ],
     [ "addVolgende", "class_station.html#af45a12e8e28740948fcd72e768e57ed4", null ],
     [ "addVorige", "class_station.html#a0a01328bdaed19b38f16d57b33da5041", null ],
+    [ "albatrosCanStop", "class_station.html#abd0fdc62730c20c5af972a384bf11981", null ],
     [ "getNaam", "class_station.html#aea6c31c39a5e1eb4c30337e7ce489e69", null ],
     [ "getSporen", "class_station.html#a60fa96894d67fb517eeaa4605fa6d480", null ],
     [ "getTramInStation", "class_station.html#a3b7ce860cb7c857d05fd2b78f759ee40", null ],
-    [ "getType", "class_station.html#a230fd67de82b464b0c9c41ce53954c0f", null ],
     [ "getVolgende", "class_station.html#a68f6d062b37f0a834aa13cb7dc238b39", null ],
     [ "getVorige", "class_station.html#a771cd7fac65b48ec45c1aa24f24921c1", null ],
     [ "isInStation", "class_station.html#a53da2484d481673d2fb4215793c5eb93", null ],
@@ -19,5 +19,11 @@ var class_station =
     [ "removePassagier", "class_station.html#a94f15294e239b2abca2a437063ddb526", null ],
     [ "setNaam", "class_station.html#a431a96ad789e543798c7d810e35f52cd", null ],
     [ "setTramInStation", "class_station.html#af9bd88f4bfd8e7c35a15d5f8cefb710a", null ],
-    [ "setType", "class_station.html#aeb75534db310ea48f514d48c44e9e0a1", null ]
+    [ "ClassTestStation", "class_station.html#ace2ee9dd01c9b67f01ec4ead0c534970", null ],
+    [ "initCheck", "class_station.html#a438141c78adcf8d4a765c752a14980e1", null ],
+    [ "naam", "class_station.html#a53e9a2718e4164028fb4d4ee80e61b5f", null ],
+    [ "passagiers", "class_station.html#a921202e02f5bf4140969f97c692a4bc9", null ],
+    [ "tramInStation", "class_station.html#a71baf7e2e6b93c2d6104300788841ace", null ],
+    [ "volgende", "class_station.html#a9bd1fc51d2a335de0c8480d4abb8df53", null ],
+    [ "vorige", "class_station.html#aba84524e45579d23bcbd967c926d780c", null ]
 ];

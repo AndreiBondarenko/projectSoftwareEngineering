@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['markaangekomen',['markAangekomen',['../class_passagier.html#a543f716503505b1344bbaf7995ce5669',1,'Passagier']]],
-  ['metronet',['MetroNet',['../class_metro_net.html',1,'MetroNet'],['../class_metro_net.html#ac412bda72e2e95d64ddce9f860acdf92',1,'MetroNet::MetroNet()']]],
-  ['metronetimporter',['MetroNetImporter',['../class_metro_net_importer.html',1,'']]],
-  ['metronetinputtests',['MetroNetInputTests',['../class_metro_net_input_tests.html',1,'']]],
-  ['metronetoutputtest',['MetroNetOutputTest',['../class_metro_net_output_test.html',1,'']]],
-  ['moveallepassengers',['moveAllePassengers',['../class_metro_net.html#aa5766f383c6bce0568ba4d5bf528cd32',1,'MetroNet']]],
-  ['movealletrams',['moveAlleTrams',['../class_metro_net.html#a43b7e0167bc86727a6a863f3213a77e9',1,'MetroNet']]],
-  ['movepassagiers',['movePassagiers',['../class_station.html#a7b4509c4f112799ee481c94b0f13f26f',1,'Station']]],
-  ['movetobeginstation',['moveToBeginStation',['../class_passagier.html#a7bba85c9f9b37cdf8cf151592f77ad73',1,'Passagier']]],
-  ['movetram',['moveTram',['../class_tram.html#ab72bbb1a2616c98337ffdbb86a650a84',1,'Tram']]]
+  ['importmetronet',['importMetroNet',['../class_metro_net_importer.html#a817edcdd0d1286b0076d67083dca2e9e',1,'MetroNetImporter']]],
+  ['importpassengers',['importPassengers',['../class_metro_net_importer.html#abb7990308f3cf821b30443853b7e7265',1,'MetroNetImporter']]],
+  ['isaangekomen',['isAangekomen',['../class_passagier.html#af9aad5531cb77f847ab40fb7054b0dab',1,'Passagier']]],
+  ['isconsistent',['isConsistent',['../class_metro_net.html#a0c35b41e3a86ddd00d973e0dc7f3b3aa',1,'MetroNet']]],
+  ['isinstation',['isInStation',['../class_station.html#a53da2484d481673d2fb4215793c5eb93',1,'Station']]],
+  ['isintram',['isInTram',['../class_tram.html#aa4e867c678a2197c9f0cf7010ea348c6',1,'Tram']]],
+  ['istraminstation',['isTramInStation',['../class_station.html#a90dcac017fe6265ad72bbb879c049e14',1,'Station']]]
 ];

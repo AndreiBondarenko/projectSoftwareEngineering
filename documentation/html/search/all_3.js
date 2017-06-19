@@ -14,7 +14,6 @@ var searchData=
   ['getstation',['getStation',['../class_metro_net.html#ad261828021880b64f3da045db24fc55e',1,'MetroNet']]],
   ['gettram',['getTram',['../class_metro_net.html#ad0ba9a3bc5867a334d5e8d6e4e6060d8',1,'MetroNet']]],
   ['gettraminstation',['getTramInStation',['../class_station.html#a3b7ce860cb7c857d05fd2b78f759ee40',1,'Station']]],
-  ['gettype',['getType',['../class_station.html#a230fd67de82b464b0c9c41ce53954c0f',1,'Station::getType()'],['../class_tram.html#a2e75ee5e2cbc43da2862334e6ff148e1',1,'Tram::getType()']]],
   ['getvoertuignr',['getVoertuigNr',['../class_tram.html#a412e29599e83015c030b44419d183c1e',1,'Tram']]],
   ['getvolgende',['getVolgende',['../class_station.html#a68f6d062b37f0a834aa13cb7dc238b39',1,'Station']]],
   ['getvorige',['getVorige',['../class_station.html#a771cd7fac65b48ec45c1aa24f24921c1',1,'Station']]],

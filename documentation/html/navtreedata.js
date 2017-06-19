@@ -19,7 +19,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_design_by_contract_8h_source.html"
+"_albatros_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,7 +1,7 @@
 var class_tram =
 [
     [ "Tram", "class_tram.html#aad83b2e7e79d57528691bf317ab0e1ef", null ],
-    [ "Tram", "class_tram.html#ae29954bfb139f7a7551aae24a5322cbe", null ],
+    [ "Tram", "class_tram.html#aa8aaf62dfee1f3fb6a5fb5060ef15976", null ],
     [ "~Tram", "class_tram.html#acd6056d2289f2dccd371bc226cd2cb17", null ],
     [ "addPassagier", "class_tram.html#a93ea22971348de256170a861ad8942a0", null ],
     [ "afstappenInHalte", "class_tram.html#a2163f8dd60775bab651c6dd71132bb5c", null ],
@@ -11,7 +11,6 @@ var class_tram =
     [ "getLijnNr", "class_tram.html#ad2404fa7837b41287feab05f6a1b52bf", null ],
     [ "getOmzet", "class_tram.html#abcdc393787aa1d23669f0564521207b6", null ],
     [ "getSnelheid", "class_tram.html#aa8bcd980469801cb8524f170006f666c", null ],
-    [ "getType", "class_tram.html#a2e75ee5e2cbc43da2862334e6ff148e1", null ],
     [ "getVoertuigNr", "class_tram.html#a412e29599e83015c030b44419d183c1e", null ],
     [ "getZitplaatsen", "class_tram.html#abcb1ce0d10e394fce8a99b460e5104de", null ],
     [ "isInTram", "class_tram.html#aa4e867c678a2197c9f0cf7010ea348c6", null ],
@@ -24,8 +23,19 @@ var class_tram =
     [ "setLijnNr", "class_tram.html#aaa98ab526143ec4ac086a290da272f05", null ],
     [ "setOmzet", "class_tram.html#a32069b9f820e812c2769d945395d9d16", null ],
     [ "setSnelheid", "class_tram.html#aad71884e9d521c325961541d60846b5d", null ],
-    [ "setType", "class_tram.html#a4232d62594ea7f639d2e23afad91677a", null ],
     [ "setVoertuigNr", "class_tram.html#ae84cc80a888db6d42ea3bdc8fa4934d4", null ],
     [ "setZitplaatsen", "class_tram.html#a9f7c40d14ad294dd0d5f517688a07e38", null ],
-    [ "stoptInStation", "class_tram.html#abbc9568803fd85491e8c3e10189d2cd8", null ]
+    [ "stoptInStation", "class_tram.html#abbc9568803fd85491e8c3e10189d2cd8", null ],
+    [ "ClassTestTram", "class_tram.html#a03630ff06c569a7fa3627893ff358f83", null ],
+    [ "aantalPassagiers", "class_tram.html#acb04d06ddb43e8f0dc1d18fd4c794933", null ],
+    [ "beginStation", "class_tram.html#a7fb70bf3b6c67a5fa41b4b454ddb9492", null ],
+    [ "currentStation", "class_tram.html#aa6c3ff3c3810929486ec0de67750ac3c", null ],
+    [ "initCheck", "class_tram.html#aa0e8e11121c7c9c7fff2f58df3c0e69d", null ],
+    [ "lijnNr", "class_tram.html#a568ecdf8b0310bd4cd255ab3db45e4e4", null ],
+    [ "omzet", "class_tram.html#a3a78cdae93270bdc0c88986fb116395f", null ],
+    [ "passagiers", "class_tram.html#a629c6a3da88bc6d9f954e387263e6e33", null ],
+    [ "snelheid", "class_tram.html#abcdf7f3ab0e67b537067f06092c5019e", null ],
+    [ "ticketPrijs", "class_tram.html#aa27e7e35e05a2c4950ffb1760e283727", null ],
+    [ "voertuigNr", "class_tram.html#a99f395a082f23b4c309fdc5e46334ce3", null ],
+    [ "zitplaatsen", "class_tram.html#a2c5a45f0cc9fa86b9615ac0bfec0cd63", null ]
 ];
