@@ -1,0 +1,1680 @@
+<PASSAGIER>
+	<naam>Groep1</naam>
+	<beginstation>Provinciehuis</beginstation>
+	<eindstation>Diamand</eindstation>
+	<hoeveelheid>4</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep2</naam>
+	<beginstation>Sportstraat</beginstation>
+	<eindstation>De Bosschaert</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep3</naam>
+	<beginstation>Plantin</beginstation>
+	<eindstation>Draaiboom</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep4</naam>
+	<beginstation>Oudebareel</beginstation>
+	<eindstation>Oudebareel</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep5</naam>
+	<beginstation>Barnkracht</beginstation>
+	<eindstation>Gasthuishoeve</eindstation>
+	<hoeveelheid>17</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep6</naam>
+	<beginstation>Ringlaan</beginstation>
+	<eindstation>Markgravelei</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep7</naam>
+	<beginstation>Volhardingstraat</beginstation>
+	<eindstation>Schijfwerper</eindstation>
+	<hoeveelheid>2</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep8</naam>
+	<beginstation>Kioskplaats</beginstation>
+	<eindstation>Schijfwerper</eindstation>
+	<hoeveelheid>2</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep9</naam>
+	<beginstation>Victor Roosens</beginstation>
+	<eindstation>Schijnpoort</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep10</naam>
+	<beginstation>Sport</beginstation>
+	<eindstation>Oudebareel</eindstation>
+	<hoeveelheid>29</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep11</naam>
+	<beginstation>Elisabeth</beginstation>
+	<eindstation>Draaiboom</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep12</naam>
+	<beginstation>Astrid</beginstation>
+	<eindstation>Antwerp Expo</eindstation>
+	<hoeveelheid>18</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep13</naam>
+	<beginstation>Olympiade</beginstation>
+	<eindstation>Provinciehuis</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep14</naam>
+	<beginstation>Volhardingstraat</beginstation>
+	<eindstation>Diamand</eindstation>
+	<hoeveelheid>1</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep15</naam>
+	<beginstation>Sportstraat</beginstation>
+	<eindstation>Elisabeth</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep16</naam>
+	<beginstation>De Bosschaert</beginstation>
+	<eindstation>Volhardingstraat</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep17</naam>
+	<beginstation>Kioskplaats</beginstation>
+	<eindstation>Sportstraat</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep18</naam>
+	<beginstation>Oudebareel</beginstation>
+	<eindstation>Draaiboom</eindstation>
+	<hoeveelheid>19</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep19</naam>
+	<beginstation>Oudebareel</beginstation>
+	<eindstation>Burgemeester Nolf</eindstation>
+	<hoeveelheid>18</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep20</naam>
+	<beginstation>Kioskplaats</beginstation>
+	<eindstation>Victor Roosens</eindstation>
+	<hoeveelheid>29</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep21</naam>
+	<beginstation>P+R Melsele</beginstation>
+	<eindstation>Van Cauwelaert</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep22</naam>
+	<beginstation>Gasthuishoeve</beginstation>
+	<eindstation>Rerum Novarum</eindstation>
+	<hoeveelheid>4</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep23</naam>
+	<beginstation>P+R Linkeroever</beginstation>
+	<eindstation>Schijnpoort</eindstation>
+	<hoeveelheid>2</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep24</naam>
+	<beginstation>P+R Merksem</beginstation>
+	<eindstation>Vredespark</eindstation>
+	<hoeveelheid>25</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep25</naam>
+	<beginstation>Astrid</beginstation>
+	<eindstation>P+R Merksem</eindstation>
+	<hoeveelheid>23</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep26</naam>
+	<beginstation>Van Eeden</beginstation>
+	<eindstation>Vredespark</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep27</naam>
+	<beginstation>Vredespark</beginstation>
+	<eindstation>Elisabeth</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep28</naam>
+	<beginstation>Gasthuishoeve</beginstation>
+	<eindstation>Astrid</eindstation>
+	<hoeveelheid>29</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep29</naam>
+	<beginstation>Schijnpoort</beginstation>
+	<eindstation>Gasthuishoeve</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep30</naam>
+	<beginstation>Verbrandendijk</beginstation>
+	<eindstation>Barnkracht</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep31</naam>
+	<beginstation>Halewijn</beginstation>
+	<eindstation>Dorp</eindstation>
+	<hoeveelheid>14</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep32</naam>
+	<beginstation>Elisabeth</beginstation>
+	<eindstation>Verbrandendijk</eindstation>
+	<hoeveelheid>24</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep33</naam>
+	<beginstation>Victor Roosens</beginstation>
+	<eindstation>Hof Ter Rijen</eindstation>
+	<hoeveelheid>28</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep34</naam>
+	<beginstation>Meir</beginstation>
+	<eindstation>P+R Melsele</eindstation>
+	<hoeveelheid>16</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep35</naam>
+	<beginstation>P+R Linkeroever</beginstation>
+	<eindstation>P+R Melsele</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep36</naam>
+	<beginstation>Barnkracht</beginstation>
+	<eindstation>Victor Roosens</eindstation>
+	<hoeveelheid>27</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep37</naam>
+	<beginstation>Verbrandendijk</beginstation>
+	<eindstation>Verbrandendijk</eindstation>
+	<hoeveelheid>13</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep38</naam>
+	<beginstation>Dorp</beginstation>
+	<eindstation>Schijnpoort</eindstation>
+	<hoeveelheid>24</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep39</naam>
+	<beginstation>Sport</beginstation>
+	<eindstation>Hof Ter Rijen</eindstation>
+	<hoeveelheid>25</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep40</naam>
+	<beginstation>Elisabeth</beginstation>
+	<eindstation>Groenplaats</eindstation>
+	<hoeveelheid>4</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep41</naam>
+	<beginstation>Museum</beginstation>
+	<eindstation>Eksterlaar</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep42</naam>
+	<beginstation>Bolivarplaats</beginstation>
+	<eindstation>Lelieplaats</eindstation>
+	<hoeveelheid>23</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep43</naam>
+	<beginstation>Jozef Verboven</beginstation>
+	<eindstation>Kioskplaats</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep44</naam>
+	<beginstation>Lelieplaats</beginstation>
+	<eindstation>Van den Hautelei</eindstation>
+	<hoeveelheid>16</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep45</naam>
+	<beginstation>Hemel</beginstation>
+	<eindstation>Lelieplaats</eindstation>
+	<hoeveelheid>23</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep46</naam>
+	<beginstation>Cuperus</beginstation>
+	<eindstation>Draaiboom</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep47</naam>
+	<beginstation>Silsburg</beginstation>
+	<eindstation>Mechelseplein</eindstation>
+	<hoeveelheid>20</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep48</naam>
+	<beginstation>Kioskplaats</beginstation>
+	<eindstation>Groenenhoek</eindstation>
+	<hoeveelheid>28</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep49</naam>
+	<beginstation>Florent Pauwels</beginstation>
+	<eindstation>Te Boelaarpark</eindstation>
+	<hoeveelheid>4</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep50</naam>
+	<beginstation>Kielpark</beginstation>
+	<eindstation>De Preter</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep51</naam>
+	<beginstation>Station Zuid</beginstation>
+	<eindstation>Nationale Bank</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep52</naam>
+	<beginstation>Berchem Station</beginstation>
+	<eindstation>Sint-Andries</eindstation>
+	<hoeveelheid>14</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep53</naam>
+	<beginstation>Station Zuid</beginstation>
+	<eindstation>Bolivarplaats</eindstation>
+	<hoeveelheid>21</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep54</naam>
+	<beginstation>Kielpark</beginstation>
+	<eindstation>Kioskplaats</eindstation>
+	<hoeveelheid>17</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep55</naam>
+	<beginstation>Apollo</beginstation>
+	<eindstation>Pacificatie</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep56</naam>
+	<beginstation>Abdijstraat</beginstation>
+	<eindstation>Tropisch Instituut</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep57</naam>
+	<beginstation>Te Boelaarpark</beginstation>
+	<eindstation>Kielpark</eindstation>
+	<hoeveelheid>13</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep58</naam>
+	<beginstation>Hemel</beginstation>
+	<eindstation>Apollo</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep59</naam>
+	<beginstation>Steynstraat</beginstation>
+	<eindstation>Generaal Armstrong</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep60</naam>
+	<beginstation>Groenenhoek</beginstation>
+	<eindstation>Sint-Andries</eindstation>
+	<hoeveelheid>24</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep61</naam>
+	<beginstation>Groenplaats</beginstation>
+	<eindstation>Ten Eekhove</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep62</naam>
+	<beginstation>Ruggeveld</beginstation>
+	<eindstation>Van Overmeire</eindstation>
+	<hoeveelheid>20</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep63</naam>
+	<beginstation>Van Overmeire</beginstation>
+	<eindstation>P+R Linkeroever</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep64</naam>
+	<beginstation>Confortalei</beginstation>
+	<eindstation>Ruggeveld</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep65</naam>
+	<beginstation>Confortalei</beginstation>
+	<eindstation>Ruggeveldlaan</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep66</naam>
+	<beginstation>Van Overmeire</beginstation>
+	<eindstation>Van Overmeire</eindstation>
+	<hoeveelheid>1</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep67</naam>
+	<beginstation>Antwerp Stadion</beginstation>
+	<eindstation>Sportpaleis</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep68</naam>
+	<beginstation>Van Overmeire</beginstation>
+	<eindstation>Handel</eindstation>
+	<hoeveelheid>29</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep69</naam>
+	<beginstation>Schijnpoort</beginstation>
+	<eindstation>Halewijn</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep70</naam>
+	<beginstation>Sportpaleis</beginstation>
+	<eindstation>Ertbrugge</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep71</naam>
+	<beginstation>Sportpaleis</beginstation>
+	<eindstation>Wijnegem Shopping Center</eindstation>
+	<hoeveelheid>18</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep72</naam>
+	<beginstation>Ruggeveldlaan</beginstation>
+	<eindstation>P+R Linkeroever</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep73</naam>
+	<beginstation>Schijnbeemden</beginstation>
+	<eindstation>Lakborslei</eindstation>
+	<hoeveelheid>2</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep74</naam>
+	<beginstation>Antwerp Stadion</beginstation>
+	<eindstation>Ruggeveldlaan</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep75</naam>
+	<beginstation>Ten Eekhove</beginstation>
+	<eindstation>Elisabeth</eindstation>
+	<hoeveelheid>21</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep76</naam>
+	<beginstation>Ten Eekhove</beginstation>
+	<eindstation>Meir</eindstation>
+	<hoeveelheid>18</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep77</naam>
+	<beginstation>Groenplaats</beginstation>
+	<eindstation>Meir</eindstation>
+	<hoeveelheid>4</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep78</naam>
+	<beginstation>Sportpaleis</beginstation>
+	<eindstation>Lakborslei</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep79</naam>
+	<beginstation>Groenplaats</beginstation>
+	<eindstation>Ruggeveldlaan</eindstation>
+	<hoeveelheid>21</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep80</naam>
+	<beginstation>Van Overmeire</beginstation>
+	<eindstation>Van Eeden</eindstation>
+	<hoeveelheid>25</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep81</naam>
+	<beginstation>Harmonie</beginstation>
+	<eindstation>Olympiade</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep82</naam>
+	<beginstation>Plantin</beginstation>
+	<eindstation>Astrid</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep83</naam>
+	<beginstation>Diamand</beginstation>
+	<eindstation>Provinciehuis</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep84</naam>
+	<beginstation>Elisabeth</beginstation>
+	<eindstation>Bredabaan</eindstation>
+	<hoeveelheid>4</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep85</naam>
+	<beginstation>Gasthuishoeve</beginstation>
+	<eindstation>Kruishof</eindstation>
+	<hoeveelheid>19</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep86</naam>
+	<beginstation>Kruishof</beginstation>
+	<eindstation>Kruishof</eindstation>
+	<hoeveelheid>24</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep87</naam>
+	<beginstation>Antwerp Expo</beginstation>
+	<eindstation>Markgravelei</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep88</naam>
+	<beginstation>Volhardingstraat</beginstation>
+	<eindstation>Groenendaal</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep89</naam>
+	<beginstation>Sport</beginstation>
+	<eindstation>Antwerp Expo</eindstation>
+	<hoeveelheid>23</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep90</naam>
+	<beginstation>Schijnpoort</beginstation>
+	<eindstation>Volhardingstraat</eindstation>
+	<hoeveelheid>29</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep91</naam>
+	<beginstation>Bredabaan</beginstation>
+	<eindstation>Groenendaal</eindstation>
+	<hoeveelheid>22</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep92</naam>
+	<beginstation>Lambrechtshoeken</beginstation>
+	<eindstation>Station Luchtbal</eindstation>
+	<hoeveelheid>2</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep93</naam>
+	<beginstation>Schijnpoort</beginstation>
+	<eindstation>Astrid</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep94</naam>
+	<beginstation>Markgravelei</beginstation>
+	<eindstation>Gasthuishoeve</eindstation>
+	<hoeveelheid>21</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep95</naam>
+	<beginstation>Diamand</beginstation>
+	<eindstation>Harmonie</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep96</naam>
+	<beginstation>Plantin</beginstation>
+	<eindstation>Plantin</eindstation>
+	<hoeveelheid>18</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep97</naam>
+	<beginstation>Provinciehuis</beginstation>
+	<eindstation>Provinciehuis</eindstation>
+	<hoeveelheid>1</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep98</naam>
+	<beginstation>Lange Leemstraat</beginstation>
+	<eindstation>P+R Olympiade</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep99</naam>
+	<beginstation>Sport</beginstation>
+	<eindstation>Harmonie</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep100</naam>
+	<beginstation>P+R Olympiade</beginstation>
+	<eindstation>Elisabeth</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep101</naam>
+	<beginstation>Oudaan</beginstation>
+	<eindstation>Kuijpers</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep102</naam>
+	<beginstation>Sint-Willibrordus</beginstation>
+	<eindstation>Meirbrug</eindstation>
+	<hoeveelheid>29</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep103</naam>
+	<beginstation>Harmonie</beginstation>
+	<eindstation>Meirbrug</eindstation>
+	<hoeveelheid>16</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep104</naam>
+	<beginstation>Nationale Bank</beginstation>
+	<eindstation>De Merode</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep105</naam>
+	<beginstation>Vredebaan</beginstation>
+	<eindstation>Pulhof</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep106</naam>
+	<beginstation>Vredebaan</beginstation>
+	<eindstation>Gemeenteplein</eindstation>
+	<hoeveelheid>23</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep107</naam>
+	<beginstation>Meirbrug</beginstation>
+	<eindstation>Kuijpers</eindstation>
+	<hoeveelheid>1</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep108</naam>
+	<beginstation>Sint-Willibrordus</beginstation>
+	<eindstation>Harmonie</eindstation>
+	<hoeveelheid>28</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep109</naam>
+	<beginstation>Keizerstraat</beginstation>
+	<eindstation>Gounod</eindstation>
+	<hoeveelheid>27</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep110</naam>
+	<beginstation>Kuijpers</beginstation>
+	<eindstation>Jan Moorkens</eindstation>
+	<hoeveelheid>24</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep111</naam>
+	<beginstation>Gevaert</beginstation>
+	<eindstation>De Merode</eindstation>
+	<hoeveelheid>29</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep112</naam>
+	<beginstation>Vredebaan</beginstation>
+	<eindstation>Pulhof</eindstation>
+	<hoeveelheid>2</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep113</naam>
+	<beginstation>Nationale Bank</beginstation>
+	<eindstation>Driekoningen</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep114</naam>
+	<beginstation>Nationale Bank</beginstation>
+	<eindstation>Oudaan</eindstation>
+	<hoeveelheid>19</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep115</naam>
+	<beginstation>De Merode</beginstation>
+	<eindstation>Mechelseplein</eindstation>
+	<hoeveelheid>18</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep116</naam>
+	<beginstation>Nationale Bank</beginstation>
+	<eindstation>Koninklijkelaan</eindstation>
+	<hoeveelheid>20</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep117</naam>
+	<beginstation>Gounod</beginstation>
+	<eindstation>Fruithoflaan</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep118</naam>
+	<beginstation>Kuijpers</beginstation>
+	<eindstation>Sint-Willibrordus</eindstation>
+	<hoeveelheid>21</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep119</naam>
+	<beginstation>Klapdorp</beginstation>
+	<eindstation>Gevaert</eindstation>
+	<hoeveelheid>28</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep120</naam>
+	<beginstation>Oudaan</beginstation>
+	<eindstation>Oudaan</eindstation>
+	<hoeveelheid>17</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep121</naam>
+	<beginstation>Florent Pauwels</beginstation>
+	<eindstation>Muggenberg</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep122</naam>
+	<beginstation>Florent Pauwels</beginstation>
+	<eindstation>Zegel</eindstation>
+	<hoeveelheid>22</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep123</naam>
+	<beginstation>Van Riel</beginstation>
+	<eindstation>Mestputteke</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep124</naam>
+	<beginstation>P+R Wommelgem</beginstation>
+	<eindstation>Zegel</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep125</naam>
+	<beginstation>Stevenslei</beginstation>
+	<eindstation>Van Riel</eindstation>
+	<hoeveelheid>27</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep126</naam>
+	<beginstation>Astrid</beginstation>
+	<eindstation>Mestputteke</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep127</naam>
+	<beginstation>Astrid</beginstation>
+	<eindstation>Mestputteke</eindstation>
+	<hoeveelheid>21</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep128</naam>
+	<beginstation>P+R Wommelgem</beginstation>
+	<eindstation>Waterbaan</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep129</naam>
+	<beginstation>Van Riel</beginstation>
+	<eindstation>Muggenberg</eindstation>
+	<hoeveelheid>27</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep130</naam>
+	<beginstation>Zegel</beginstation>
+	<eindstation>Waterbaan</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep131</naam>
+	<beginstation>Astrid</beginstation>
+	<eindstation>Astrid</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep132</naam>
+	<beginstation>Florent Pauwels</beginstation>
+	<eindstation>Zegel</eindstation>
+	<hoeveelheid>14</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep133</naam>
+	<beginstation>Van Riel</beginstation>
+	<eindstation>Stevenslei</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep134</naam>
+	<beginstation>P+R Wommelgem</beginstation>
+	<eindstation>Astrid</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep135</naam>
+	<beginstation>Waterbaan</beginstation>
+	<eindstation>P+R Wommelgem</eindstation>
+	<hoeveelheid>16</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep136</naam>
+	<beginstation>Stevenslei</beginstation>
+	<eindstation>P+R Wommelgem</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep137</naam>
+	<beginstation>Muggenberg</beginstation>
+	<eindstation>P+R Wommelgem</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep138</naam>
+	<beginstation>Stevenslei</beginstation>
+	<eindstation>Waterbaan</eindstation>
+	<hoeveelheid>29</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep139</naam>
+	<beginstation>Waterbaan</beginstation>
+	<eindstation>P+R Wommelgem</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep140</naam>
+	<beginstation>Zegel</beginstation>
+	<eindstation>Florent Pauwels</eindstation>
+	<hoeveelheid>16</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep141</naam>
+	<beginstation>Berchem Station</beginstation>
+	<eindstation>De Preter</eindstation>
+	<hoeveelheid>1</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep142</naam>
+	<beginstation>Plantin</beginstation>
+	<eindstation>Plantin</eindstation>
+	<hoeveelheid>29</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep143</naam>
+	<beginstation>Van Eeden</beginstation>
+	<eindstation>Zurenborg</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep144</naam>
+	<beginstation>P+R Linkeroever</beginstation>
+	<eindstation>Plantin</eindstation>
+	<hoeveelheid>18</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep145</naam>
+	<beginstation>Cruyslei</beginstation>
+	<eindstation>Berchem Station</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep146</naam>
+	<beginstation>Halewijn</beginstation>
+	<eindstation>Diamand</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep147</naam>
+	<beginstation>Apollo</beginstation>
+	<eindstation>Berchem Station</eindstation>
+	<hoeveelheid>13</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep148</naam>
+	<beginstation>Groenenhoek</beginstation>
+	<eindstation>P+R Linkeroever</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep149</naam>
+	<beginstation>Van Cauwelaert</beginstation>
+	<eindstation>Jozef Verboven</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep150</naam>
+	<beginstation>Cuperus</beginstation>
+	<eindstation>Halewijn</eindstation>
+	<hoeveelheid>23</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep151</naam>
+	<beginstation>Zurenborg</beginstation>
+	<eindstation>Groenenhoek</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep152</naam>
+	<beginstation>De Preter</beginstation>
+	<eindstation>Berchem Station</eindstation>
+	<hoeveelheid>20</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep153</naam>
+	<beginstation>Groenplaats</beginstation>
+	<eindstation>Te Boelaarpark</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep154</naam>
+	<beginstation>Cruyslei</beginstation>
+	<eindstation>Eksterlaar</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep155</naam>
+	<beginstation>Zurenborg</beginstation>
+	<eindstation>Groenplaats</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep156</naam>
+	<beginstation>Cuperus</beginstation>
+	<eindstation>Van Eeden</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep157</naam>
+	<beginstation>P+R Linkeroever</beginstation>
+	<eindstation>Van Eeden</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep158</naam>
+	<beginstation>Groenplaats</beginstation>
+	<eindstation>Cruyslei</eindstation>
+	<hoeveelheid>19</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep159</naam>
+	<beginstation>Zurenborg</beginstation>
+	<eindstation>Van Cauwelaert</eindstation>
+	<hoeveelheid>21</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep160</naam>
+	<beginstation>Apollo</beginstation>
+	<eindstation>Apollo</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep161</naam>
+	<beginstation>Ruggeveld</beginstation>
+	<eindstation>Ruggeveld</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep162</naam>
+	<beginstation>Havik</beginstation>
+	<eindstation>Ruggeveld</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep163</naam>
+	<beginstation>Schijnbeemden</beginstation>
+	<eindstation>Muggenberg</eindstation>
+	<hoeveelheid>1</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep164</naam>
+	<beginstation>Havik</beginstation>
+	<eindstation>Astrid</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep165</naam>
+	<beginstation>Muggenberg</beginstation>
+	<eindstation>Stevenslei</eindstation>
+	<hoeveelheid>19</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep166</naam>
+	<beginstation>Zegel</beginstation>
+	<eindstation>Ertbrugge</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep167</naam>
+	<beginstation>Astrid</beginstation>
+	<eindstation>Mestputteke</eindstation>
+	<hoeveelheid>18</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep168</naam>
+	<beginstation>Ruggeveld</beginstation>
+	<eindstation>Waterbaan</eindstation>
+	<hoeveelheid>16</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep169</naam>
+	<beginstation>Stevenslei</beginstation>
+	<eindstation>Florent Pauwels</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep170</naam>
+	<beginstation>Ertbrugge</beginstation>
+	<eindstation>Astrid</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep171</naam>
+	<beginstation>Fortveld</beginstation>
+	<eindstation>Ruggeveld</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep172</naam>
+	<beginstation>Stevenslei</beginstation>
+	<eindstation>Havik</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep173</naam>
+	<beginstation>Zegel</beginstation>
+	<eindstation>Wijnegem Shopping Center</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep174</naam>
+	<beginstation>Parkweg</beginstation>
+	<eindstation>Fortveld</eindstation>
+	<hoeveelheid>17</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep175</naam>
+	<beginstation>Wijnegem Shopping Center</beginstation>
+	<eindstation>Schijnbeemden</eindstation>
+	<hoeveelheid>17</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep176</naam>
+	<beginstation>Mestputteke</beginstation>
+	<eindstation>Astrid</eindstation>
+	<hoeveelheid>1</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep177</naam>
+	<beginstation>Parkweg</beginstation>
+	<eindstation>Astrid</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep178</naam>
+	<beginstation>Ertbrugge</beginstation>
+	<eindstation>Ruggeveld</eindstation>
+	<hoeveelheid>2</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep179</naam>
+	<beginstation>Wijnegem Shopping Center</beginstation>
+	<eindstation>Fortveld</eindstation>
+	<hoeveelheid>24</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep180</naam>
+	<beginstation>Mestputteke</beginstation>
+	<eindstation>Van Riel</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep181</naam>
+	<beginstation>Dagenraadplaats</beginstation>
+	<eindstation>Lente</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep182</naam>
+	<beginstation>Van Ruusbroec</beginstation>
+	<eindstation>Dagenraadplaats</eindstation>
+	<hoeveelheid>22</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep183</naam>
+	<beginstation>Groenenhoek</beginstation>
+	<eindstation>Centraal Station</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep184</naam>
+	<beginstation>Melkmarkt</beginstation>
+	<eindstation>Berchem Station</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep185</naam>
+	<beginstation>Draakplaats</beginstation>
+	<eindstation>Lente</eindstation>
+	<hoeveelheid>1</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep186</naam>
+	<beginstation>Centraal Station</beginstation>
+	<eindstation>Rooseveltplaats</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep187</naam>
+	<beginstation>Berchem Station</beginstation>
+	<eindstation>Ploeg</eindstation>
+	<hoeveelheid>13</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep188</naam>
+	<beginstation>Groenenhoek</beginstation>
+	<eindstation>Draakplaats</eindstation>
+	<hoeveelheid>28</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep189</naam>
+	<beginstation>Sint-Jacob</beginstation>
+	<eindstation>Dagenraadplaats</eindstation>
+	<hoeveelheid>18</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep190</naam>
+	<beginstation>Berchem Station</beginstation>
+	<eindstation>Van Ruusbroec</eindstation>
+	<hoeveelheid>22</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep191</naam>
+	<beginstation>Ploeg</beginstation>
+	<eindstation>Dagenraadplaats</eindstation>
+	<hoeveelheid>18</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep192</naam>
+	<beginstation>Sint-Katelijne</beginstation>
+	<eindstation>Ommegang</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep193</naam>
+	<beginstation>Groenenhoek</beginstation>
+	<eindstation>Jezusstraat</eindstation>
+	<hoeveelheid>16</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep194</naam>
+	<beginstation>Plantin-Moretus</beginstation>
+	<eindstation>Groenenhoek</eindstation>
+	<hoeveelheid>25</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep195</naam>
+	<beginstation>Centraal Station</beginstation>
+	<eindstation>Melkmarkt</eindstation>
+	<hoeveelheid>22</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep196</naam>
+	<beginstation>Draakplaats</beginstation>
+	<eindstation>Centraal Station</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep197</naam>
+	<beginstation>Sint-Jacob</beginstation>
+	<eindstation>Centraal Station</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep198</naam>
+	<beginstation>Lente</beginstation>
+	<eindstation>Sint-Katelijne</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep199</naam>
+	<beginstation>Ommegang</beginstation>
+	<eindstation>Dagenraadplaats</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep200</naam>
+	<beginstation>Van Ruusbroec</beginstation>
+	<eindstation>Dagenraadplaats</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep201</naam>
+	<beginstation>Sportpaleis</beginstation>
+	<eindstation>Centraal Station</eindstation>
+	<hoeveelheid>18</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep202</naam>
+	<beginstation>Rooseveltplaats</beginstation>
+	<eindstation>Montigny</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep203</naam>
+	<beginstation>Rooseveltplaats</beginstation>
+	<eindstation>Sint-Gummarus</eindstation>
+	<hoeveelheid>19</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep204</naam>
+	<beginstation>Montigny</beginstation>
+	<eindstation>De Coninck</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep205</naam>
+	<beginstation>Gaststraat</beginstation>
+	<eindstation>Bres</eindstation>
+	<hoeveelheid>1</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep206</naam>
+	<beginstation>Sint-Gummarus</beginstation>
+	<eindstation>Bres</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep207</naam>
+	<beginstation>Rooseveltplaats</beginstation>
+	<eindstation>Sportpaleis</eindstation>
+	<hoeveelheid>13</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep208</naam>
+	<beginstation>Stadspark</beginstation>
+	<eindstation>Stadspark</eindstation>
+	<hoeveelheid>13</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep209</naam>
+	<beginstation>Sportpaleis</beginstation>
+	<eindstation>Kasteelplein</eindstation>
+	<hoeveelheid>19</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep210</naam>
+	<beginstation>Bres</beginstation>
+	<eindstation>Gaststraat</eindstation>
+	<hoeveelheid>9</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep211</naam>
+	<beginstation>Sint-Gummarus</beginstation>
+	<eindstation>Bres</eindstation>
+	<hoeveelheid>28</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep212</naam>
+	<beginstation>Rooseveltplaats</beginstation>
+	<eindstation>Sint-Gummarus</eindstation>
+	<hoeveelheid>16</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep213</naam>
+	<beginstation>Rooseveltplaats</beginstation>
+	<eindstation>Kasteelplein</eindstation>
+	<hoeveelheid>28</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep214</naam>
+	<beginstation>Bolivarplaats</beginstation>
+	<eindstation>Sportpaleis</eindstation>
+	<hoeveelheid>21</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep215</naam>
+	<beginstation>Rooseveltplaats</beginstation>
+	<eindstation>Bres</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep216</naam>
+	<beginstation>Stuivenberg</beginstation>
+	<eindstation>Sportpaleis</eindstation>
+	<hoeveelheid>25</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep217</naam>
+	<beginstation>Stuivenberg</beginstation>
+	<eindstation>Nationale Bank</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep218</naam>
+	<beginstation>Nationale Bank</beginstation>
+	<eindstation>Kasteelplein</eindstation>
+	<hoeveelheid>16</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep219</naam>
+	<beginstation>Nationale Bank</beginstation>
+	<eindstation>De Coninck</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep220</naam>
+	<beginstation>Rooseveltplaats</beginstation>
+	<eindstation>Gaststraat</eindstation>
+	<hoeveelheid>13</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep221</naam>
+	<beginstation>Meir</beginstation>
+	<eindstation>P+R Linkeroever</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep222</naam>
+	<beginstation>Station Oude God</beginstation>
+	<eindstation>Fruithoflaan</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep223</naam>
+	<beginstation>Sporthal</beginstation>
+	<eindstation>Station Oude God</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep224</naam>
+	<beginstation>Diamand</beginstation>
+	<eindstation>P+R Boechout</eindstation>
+	<hoeveelheid>25</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep225</naam>
+	<beginstation>Diamand</beginstation>
+	<eindstation>Diamand</eindstation>
+	<hoeveelheid>25</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep226</naam>
+	<beginstation>Lange Leemstraat</beginstation>
+	<eindstation>Vredebaan</eindstation>
+	<hoeveelheid>8</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep227</naam>
+	<beginstation>Sint-Willibrordus</beginstation>
+	<eindstation>P+R Linkeroever</eindstation>
+	<hoeveelheid>7</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep228</naam>
+	<beginstation>Fruithoflaan</beginstation>
+	<eindstation>Pulhof</eindstation>
+	<hoeveelheid>2</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep229</naam>
+	<beginstation>Harmonie</beginstation>
+	<eindstation>Plantin</eindstation>
+	<hoeveelheid>13</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep230</naam>
+	<beginstation>Gevaert</beginstation>
+	<eindstation>Fruithoflaan</eindstation>
+	<hoeveelheid>20</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep231</naam>
+	<beginstation>Gemeenteplein</beginstation>
+	<eindstation>Harmonie</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep232</naam>
+	<beginstation>Lange Leemstraat</beginstation>
+	<eindstation>Pulhof</eindstation>
+	<hoeveelheid>21</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep233</naam>
+	<beginstation>P+R Linkeroever</beginstation>
+	<eindstation>Lange Leemstraat</eindstation>
+	<hoeveelheid>28</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep234</naam>
+	<beginstation>Groenplaats</beginstation>
+	<eindstation>Gevaert</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep235</naam>
+	<beginstation>Fruithoflaan</beginstation>
+	<eindstation>Sporthal</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep236</naam>
+	<beginstation>Meir</beginstation>
+	<eindstation>De Merode</eindstation>
+	<hoeveelheid>25</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep237</naam>
+	<beginstation>Groenplaats</beginstation>
+	<eindstation>Sint-Willibrordus</eindstation>
+	<hoeveelheid>4</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep238</naam>
+	<beginstation>Harmonie</beginstation>
+	<eindstation>Koninklijkelaan</eindstation>
+	<hoeveelheid>27</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep239</naam>
+	<beginstation>Halewijn</beginstation>
+	<eindstation>Kaphaan</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep240</naam>
+	<beginstation>Station Oude God</beginstation>
+	<eindstation>Meir</eindstation>
+	<hoeveelheid>2</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep241</naam>
+	<beginstation>Drink</beginstation>
+	<eindstation>Morckhoven</eindstation>
+	<hoeveelheid>14</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep242</naam>
+	<beginstation>Joe English</beginstation>
+	<eindstation>Rooseveltplaats</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep243</naam>
+	<beginstation>Mestputteke</beginstation>
+	<eindstation>Muggenberg</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep244</naam>
+	<beginstation>Drink</beginstation>
+	<eindstation>Silsburg</eindstation>
+	<hoeveelheid>24</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep245</naam>
+	<beginstation>Centraal Station</beginstation>
+	<eindstation>Silsburg</eindstation>
+	<hoeveelheid>19</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep246</naam>
+	<beginstation>Stevenslei</beginstation>
+	<eindstation>Muggenberg</eindstation>
+	<hoeveelheid>24</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep247</naam>
+	<beginstation>Stevenslei</beginstation>
+	<eindstation>Rooseveltplaats</eindstation>
+	<hoeveelheid>4</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep248</naam>
+	<beginstation>De Roma</beginstation>
+	<eindstation>Sint-Katelijne</eindstation>
+	<hoeveelheid>19</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep249</naam>
+	<beginstation>Florent Pauwels</beginstation>
+	<eindstation>Sint-Katelijne</eindstation>
+	<hoeveelheid>28</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep250</naam>
+	<beginstation>Mestputteke</beginstation>
+	<eindstation>De Roma</eindstation>
+	<hoeveelheid>11</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep251</naam>
+	<beginstation>Waterbaan</beginstation>
+	<eindstation>Jezusstraat</eindstation>
+	<hoeveelheid>1</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep252</naam>
+	<beginstation>Stenenburg</beginstation>
+	<eindstation>Melkmarkt</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep253</naam>
+	<beginstation>Joe English</beginstation>
+	<eindstation>Stevenslei</eindstation>
+	<hoeveelheid>2</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep254</naam>
+	<beginstation>Drink</beginstation>
+	<eindstation>Waterbaan</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep255</naam>
+	<beginstation>Waterbaan</beginstation>
+	<eindstation>Waterbaan</eindstation>
+	<hoeveelheid>27</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep256</naam>
+	<beginstation>Melkmarkt</beginstation>
+	<eindstation>Sint-Jacob</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep257</naam>
+	<beginstation>Silsburg</beginstation>
+	<eindstation>Rooseveltplaats</eindstation>
+	<hoeveelheid>24</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep258</naam>
+	<beginstation>Rooseveltplaats</beginstation>
+	<eindstation>Sint-Jacob</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep259</naam>
+	<beginstation>Mestputteke</beginstation>
+	<eindstation>Waterbaan</eindstation>
+	<hoeveelheid>25</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep260</naam>
+	<beginstation>Florent Pauwels</beginstation>
+	<eindstation>Jezusstraat</eindstation>
+	<hoeveelheid>23</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep261</naam>
+	<beginstation>Generaal Armstrong</beginstation>
+	<eindstation>Abdijstraat</eindstation>
+	<hoeveelheid>22</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep262</naam>
+	<beginstation>Rooseveltplaats</beginstation>
+	<eindstation>Aartselaarstraat</eindstation>
+	<hoeveelheid>15</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep263</naam>
+	<beginstation>Grens Kiel</beginstation>
+	<eindstation>Generaal Armstrong</eindstation>
+	<hoeveelheid>3</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep264</naam>
+	<beginstation>Rooseveltplaats</beginstation>
+	<eindstation>Stadspark</eindstation>
+	<hoeveelheid>24</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep265</naam>
+	<beginstation>Rooseveltplaats</beginstation>
+	<eindstation>Heidestraat</eindstation>
+	<hoeveelheid>26</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep266</naam>
+	<beginstation>Aartselaarstraat</beginstation>
+	<eindstation>Rooseveltplaats</eindstation>
+	<hoeveelheid>27</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep267</naam>
+	<beginstation>Aartselaarstraat</beginstation>
+	<eindstation>Kielpark</eindstation>
+	<hoeveelheid>21</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep268</naam>
+	<beginstation>Kasteelplein</beginstation>
+	<eindstation>Bestorming</eindstation>
+	<hoeveelheid>25</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep269</naam>
+	<beginstation>Station Zuid</beginstation>
+	<eindstation>Bres</eindstation>
+	<hoeveelheid>23</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep270</naam>
+	<beginstation>Abdijstraat</beginstation>
+	<eindstation>Generaal Armstrong</eindstation>
+	<hoeveelheid>6</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep271</naam>
+	<beginstation>P+R Schoonselhof</beginstation>
+	<eindstation>Nationale Bank</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep272</naam>
+	<beginstation>Generaal Armstrong</beginstation>
+	<eindstation>Bestorming</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep273</naam>
+	<beginstation>Kasteelplein</beginstation>
+	<eindstation>Bestorming</eindstation>
+	<hoeveelheid>16</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep274</naam>
+	<beginstation>Aartselaarstraat</beginstation>
+	<eindstation>Zwaantjes</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep275</naam>
+	<beginstation>Station Zuid</beginstation>
+	<eindstation>Generaal Armstrong</eindstation>
+	<hoeveelheid>10</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep276</naam>
+	<beginstation>Kolonel Silvertop</beginstation>
+	<eindstation>Generaal Armstrong</eindstation>
+	<hoeveelheid>12</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep277</naam>
+	<beginstation>Bres</beginstation>
+	<eindstation>Zwaantjes</eindstation>
+	<hoeveelheid>17</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep278</naam>
+	<beginstation>Abdijstraat</beginstation>
+	<eindstation>Karel Meyvis</eindstation>
+	<hoeveelheid>5</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep279</naam>
+	<beginstation>Kolonel Silvertop</beginstation>
+	<eindstation>Aartselaarstraat</eindstation>
+	<hoeveelheid>17</hoeveelheid>
+</PASSAGIER>
+<PASSAGIER>
+	<naam>Groep280</naam>
+	<beginstation>Centraal Station</beginstation>
+	<eindstation>Kolonel Silvertop</eindstation>
+	<hoeveelheid>14</hoeveelheid>
+</PASSAGIER>

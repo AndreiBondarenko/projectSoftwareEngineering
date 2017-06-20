@@ -2229,114 +2229,650 @@
 
   <TRAM>
     <lijnNr>2</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
     <beginStation>P+R Merksem</beginStation>
     <type>PCC</type>
 	<voertuigNr>1</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>3</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>2</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>P+R Merksem</beginStation>
-	<type>PCC</type>
+    <beginStation>Handel</beginStation>
+    <type>PCC</type>
 	<voertuigNr>2</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>4</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>2</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>Silsburg</beginStation>
+    <beginStation>Plantin</beginStation>
     <type>PCC</type>
 	<voertuigNr>3</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>5</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>2</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>Fortveld</beginStation>
-	<type>PCC</type>
+    <beginStation>Barnkracht</beginStation>
+    <type>PCC</type>
 	<voertuigNr>4</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>6</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>2</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>Groenendaal</beginStation>
+    <beginStation>Astrid</beginStation>
     <type>PCC</type>
 	<voertuigNr>5</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>7</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>2</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>Gemeenteplein</beginStation>
-	<type>PCC</type>
+    <beginStation>Draaiboom</beginStation>
+    <type>PCC</type>
 	<voertuigNr>6</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>8</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>2</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>P+R Wommelgem</beginStation>
+    <beginStation>Oudebareel</beginStation>
     <type>PCC</type>
 	<voertuigNr>7</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>9</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>2</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>Eksterlaar</beginStation>
-	<type>PCC</type>
+    <beginStation>deSingel</beginStation>
+    <type>PCC</type>
 	<voertuigNr>8</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>10</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>3</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>Fortveld</beginStation>
-    <type>PCC</type>
+    <beginStation>Elisabeth</beginStation>
+	<type>PCC</type>
 	<voertuigNr>9</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>11</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>3</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>Groenenhoek</beginStation>
+    <beginStation>Sport</beginStation>
 	<type>PCC</type>
 	<voertuigNr>10</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>12</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>3</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>Sportpaleis</beginStation>
-    <type>PCC</type>
+    <beginStation>P+R Merksem</beginStation>
+	<type>PCC</type>
 	<voertuigNr>11</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>15</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>3</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>P+R Boechout</beginStation>
+    <beginStation>Ringlaan</beginStation>
 	<type>PCC</type>
 	<voertuigNr>12</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>23</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>3</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
-    <beginStation>Silsburg</beginStation>
-    <type>PCC</type>
+    <beginStation>Van Eeden</beginStation>
+	<type>PCC</type>
 	<voertuigNr>13</voertuigNr>
   </TRAM>
   <TRAM>
-    <lijnNr>24</lijnNr>
-    <zitplaatsen>16</zitplaatsen>
+    <lijnNr>3</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Sporthal</beginStation>
+	<type>PCC</type>
+	<voertuigNr>14</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>3</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>P+R Linkeroever</beginStation>
+	<type>PCC</type>
+	<voertuigNr>15</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>3</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Halewijn</beginStation>
+	<type>PCC</type>
+	<voertuigNr>16</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>4</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Silsburg</beginStation>
+    <type>PCC</type>
+	<voertuigNr>17</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>4</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Florent Pauwels</beginStation>
+    <type>PCC</type>
+	<voertuigNr>18</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>4</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Jozef Verboven</beginStation>
+    <type>PCC</type>
+	<voertuigNr>19</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>4</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Eksterlaar</beginStation>
+    <type>PCC</type>
+	<voertuigNr>20</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>4</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Nationale Bank</beginStation>
+    <type>PCC</type>
+	<voertuigNr>21</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>4</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Oudaan</beginStation>
+    <type>PCC</type>
+	<voertuigNr>22</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>4</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Groenplaats_halte</beginStation>
+    <type>PCC</type>
+	<voertuigNr>23</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>4</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Tropisch Instituut</beginStation>
+    <type>PCC</type>
+	<voertuigNr>24</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>5</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Fortveld</beginStation>
+	<type>PCC</type>
+	<voertuigNr>25</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>5</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Ertbrugge</beginStation>
+	<type>PCC</type>
+	<voertuigNr>26</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>5</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Ruggeveld</beginStation>
+	<type>PCC</type>
+	<voertuigNr>27</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>5</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Antwerp Stadion</beginStation>
+	<type>PCC</type>
+	<voertuigNr>28</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>5</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Confortalei</beginStation>
+	<type>PCC</type>
+	<voertuigNr>29</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>5</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Ruggeveldlaan</beginStation>
+	<type>PCC</type>
+	<voertuigNr>30</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>5</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Groenplaats</beginStation>
+	<type>PCC</type>
+	<voertuigNr>31</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>5</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Sporthal</beginStation>
+	<type>PCC</type>
+	<voertuigNr>32</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>6</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Groenendaal</beginStation>
+    <type>PCC</type>
+	<voertuigNr>33</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>6</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>P+R Olympiade</beginStation>
+    <type>PCC</type>
+	<voertuigNr>34</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>6</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Lambrechtshoeken</beginStation>
+    <type>PCC</type>
+	<voertuigNr>35</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>6</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Sport</beginStation>
+    <type>PCC</type>
+	<voertuigNr>36</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>6</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Handel</beginStation>
+    <type>PCC</type>
+	<voertuigNr>37</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>6</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Plantin</beginStation>
+    <type>PCC</type>
+	<voertuigNr>38</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>6</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Lange Leemstraat</beginStation>
+    <type>PCC</type>
+	<voertuigNr>39</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>6</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Markgravelei</beginStation>
+    <type>PCC</type>
+	<voertuigNr>40</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>7</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Nationale Bank</beginStation>
+	<type>PCC</type>
+	<voertuigNr>41</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>7</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Mechelseplein</beginStation>
+	<type>PCC</type>
+	<voertuigNr>42</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>7</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Van Bree</beginStation>
+	<type>PCC</type>
+	<voertuigNr>43</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>7</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Gevaert</beginStation>
+	<type>PCC</type>
+	<voertuigNr>44</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>7</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Jan Moorkens</beginStation>
+	<type>PCC</type>
+	<voertuigNr>45</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>7</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Driekoningen</beginStation>
+	<type>PCC</type>
+	<voertuigNr>46</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>7</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Gemeenteplein</beginStation>
+	<type>PCC</type>
+	<voertuigNr>47</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>7</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Keizerstraat</beginStation>
+	<type>PCC</type>
+	<voertuigNr>48</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>8</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Mestputteke</beginStation>
+    <type>PCC</type>
+	<voertuigNr>49</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>8</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>P+R Wommelgem</beginStation>
+    <type>PCC</type>
+	<voertuigNr>50</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>8</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Waterbaan</beginStation>
+    <type>PCC</type>
+	<voertuigNr>51</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>9</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Eksterlaar</beginStation>
+	<type>PCC</type>
+	<voertuigNr>52</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>9</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Zurenborg</beginStation>
+	<type>PCC</type>
+	<voertuigNr>53</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>9</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Diamand</beginStation>
+	<type>PCC</type>
+	<voertuigNr>54</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>9</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Meir</beginStation>
+	<type>PCC</type>
+	<voertuigNr>55</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>9</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Groenplaats</beginStation>
+	<type>PCC</type>
+	<voertuigNr>56</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>10</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Fortveld</beginStation>
+    <type>PCC</type>
+	<voertuigNr>57</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>10</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Florent Pauwels</beginStation>
+    <type>PCC</type>
+	<voertuigNr>58</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>10</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Ertbrugge</beginStation>
+    <type>PCC</type>
+	<voertuigNr>59</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>10</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Van Riel</beginStation>
+    <type>PCC</type>
+	<voertuigNr>60</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>11</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Groenenhoek</beginStation>
+	<type>PCC</type>
+	<voertuigNr>61</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>11</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Draakplaats</beginStation>
+	<type>PCC</type>
+	<voertuigNr>62</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>11</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Ploeg</beginStation>
+	<type>PCC</type>
+	<voertuigNr>63</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>11</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Ommegang</beginStation>
+	<type>PCC</type>
+	<voertuigNr>64</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>12</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Sportpaleis</beginStation>
+    <type>PCC</type>
+	<voertuigNr>65</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>12</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
     <snelheid>40</snelheid>
     <beginStation>Centraal Station</beginStation>
     <type>PCC</type>
-	<voertuigNr>14</voertuigNr>
+	<voertuigNr>66</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>12</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Stuivenberg</beginStation>
+    <type>PCC</type>
+	<voertuigNr>67</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>12</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Richard</beginStation>
+    <type>PCC</type>
+	<voertuigNr>68</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>15</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>P+R Boechout</beginStation>
+	<type>PCC</type>
+	<voertuigNr>69</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>15</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Station Oude God</beginStation>
+	<type>PCC</type>
+	<voertuigNr>70</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>15</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Lange Leemstraat</beginStation>
+	<type>PCC</type>
+	<voertuigNr>71</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>15</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Van Eeden</beginStation>
+	<type>PCC</type>
+	<voertuigNr>72</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>23</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Silsburg</beginStation>
+    <type>PCC</type>
+	<voertuigNr>73</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>23</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Dassastraat</beginStation>
+    <type>PCC</type>
+	<voertuigNr>74</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>23</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Stevenslei</beginStation>
+    <type>PCC</type>
+	<voertuigNr>75</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>23</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Sint-Jacob</beginStation>
+    <type>PCC</type>
+	<voertuigNr>76</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>23</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Jezusstraat</beginStation>
+    <type>PCC</type>
+	<voertuigNr>77</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>24</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Centraal Station</beginStation>
+    <type>PCC</type>
+	<voertuigNr>78</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>24</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Stadspark</beginStation>
+    <type>PCC</type>
+	<voertuigNr>79</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>24</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Bres</beginStation>
+    <type>PCC</type>
+	<voertuigNr>80</voertuigNr>
+  </TRAM>
+  <TRAM>
+    <lijnNr>24</lijnNr>
+    <zitplaatsen>32</zitplaatsen>
+    <snelheid>40</snelheid>
+    <beginStation>Broedermin</beginStation>
+    <type>PCC</type>
+	<voertuigNr>81</voertuigNr>
   </TRAM>
 </METRONET>
