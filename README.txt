@@ -1,3 +1,13 @@
+This reposityory was used for development of our project for the course "Project Software Engineering", during our second semester at the University of Antwerp.
+The course is taught by: Prof. Dr. Serge Demeyer and Brent van Bladel
+During this course we learned the following:
+-important aspects of object oriented programming and good design
+-developing software that is easy to adapt to future additions and changes to the specifiaction
+-estimating the amount of work we could finish within the given timeframe
+-an introduction on using the Google Test Framework
+
+A .pdf-file of the final specification (dutch) can be found in the root of this repository
+
 Project Software Engineering 2.1 - Final
 door Andrei Bondarenko en Igor Schittekat
 
